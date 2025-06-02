@@ -1,0 +1,87 @@
+/**
+ * @file    trig_trim_adc.c
+ * @brief   ADC driver implementation for STM32F103
+ * @author  Umesh Puri
+ * @date    2025-06-02
+ * @version 1.0
+ *
+ * This file implements analog-to-digital conversion using the STM32 ADC peripheral.
+ * It includes functions to initialize the ADC, read values, and manage channels.
+ *
+ * @license MIT License
+ * Copyright (c) 2025 Umesh
+ */
+
+#include "stm32f1xx.h"
+#include "trig_tim_adc.h"
+volatile uint16_t adc_data_dma[10];
+volatile uint8_t finished = 0;
+
+void triggered_adc_init(void)
+{
+    /*ADC related set up*/
+    RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
+    // SET PAO as analog input
+    GPIOA->CRL &= ~GPIO_CRL_CNF0;
+    GPIOA->CRL &= ~GPIO_CRL_MODE0;
+
+    RCC->APB2ENR |= RCC_APB2ENR_ADC1EN;
+
+    ADC1->CR2 |= ADC_CR2_DMA;
+    ADC1->CR2 |= ADC_CR2_CONT;
+    ADC1->CR2 |= ADC_CR2_EXTTRIG;
+    ADC1->CR2 |= ADC_CR2_EXTSEL_1 | ADC_CR2_EXTSEL_2;
+
+    /*DMA related setup*/
+    RCC->AHBENR |= RCC_AHBENR_DMA1EN;
+    // disable dma chanell1 for adc1 before configuring
+    DMA1_Channel1->CCR &= ~DMA_CCR_EN;
+    while (DMA1_Channel1->CCR & DMA_CCR_EN)
+        ;
+
+    // configure DMA for ADC1
+
+    DMA1_Channel1->CCR |= DMA_CCR_MSIZE_0 | DMA_CCR_PSIZE_0 | DMA_CCR_MINC | DMA_CCR_CIRC;
+
+    DMA1_Channel1->CNDTR = 10;
+
+    DMA1_Channel1->CPAR = (uint32_t)(&ADC1->DR);
+
+    DMA1_Channel1->CMAR = (uint32_t)(adc_data_dma);
+    NVIC_EnableIRQ(DMA1_Channel1_IRQn);
+
+    // clear the prescaler
+    RCC->CFGR &= ~RCC_CFGR_ADCPRE;
+    // Set the prescaler to divide by 6
+    RCC->CFGR |= RCC_CFGR_ADCPRE_DIV6;
+    // timer related setup
+
+    RCC->APB1ENR |= RCC_APB1ENR_TIM3EN;
+    TIM3->PSC = 8000 - 1;
+    TIM3->ARR = 10 - 1;
+    TIM3->CR2 |= TIM_CR2_MMS_1;
+    /*Launch the ADC*/
+    /*Launch the DMA*/
+
+    DMA1_Channel1->CCR |= DMA_CCR_EN;
+    ADC1->CR2 |= ADC_CR2_ADON;
+
+    /*Launch the timer*/
+    TIM3->CR1 |= TIM_CR1_CEN;
+}
+
+void DMA1_Channel1_IRQHandler(void)
+{
+    // Check if the Transfer Complete interrupt flag for DMA1 Channel 1 is set
+    if (((DMA1->ISR) & DMA_ISR_TCIF1))
+    {
+        // Set the flag 'finished' to indicate the DMA transfer is complete
+        finished = 1;
+
+        // Clear the Transfer Complete interrupt flag for DMA1 Channel 1
+        DMA1->IFCR = DMA_IFCR_CTCIF1;
+    }
+
+    // Clear the pending interrupt in the NVIC (Nested Vectored Interrupt Controller)
+    NVIC_ClearPendingIRQ(DMA1_Channel1_IRQn);
+}
