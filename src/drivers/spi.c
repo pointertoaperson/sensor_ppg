@@ -83,7 +83,7 @@ void spi_transmit(uint32_t data)
     ;
   SPI1->DR = 0x00;
 
-  GPIOC->BSRR = GPIO_BSRR_BR13; // LED HIGH
+  //GPIOC->BSRR = GPIO_BSRR_BR13; // LED HIGH
   // Send 4 data bytes
   for (int i = 0; i < sizeof(uint32_t); i++)
   {

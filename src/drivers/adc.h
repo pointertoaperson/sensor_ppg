@@ -1,5 +1,5 @@
 /**
- * @file    trig_trim_adc.h
+ * @file    adc.h
  * @brief   ADC driver implementation for STM32F103
  * @author  Umesh Puri
  * @date    2025-06-02
@@ -12,11 +12,20 @@
  * Copyright (c) 2025 Umesh
  */
 
-#ifndef _TRIG_TIM_ADC_H_
-#define _TRIG_TIM_ADC_H_
+
+#ifndef __ADC_H
+#define __ADC_H
+
 #include "stm32f1xx.h"
-extern volatile uint16_t adc_data_dma[10];
-extern volatile uint8_t finished;
-void triggered_adc_init(void);
+#include "stdbool.h"
+
+#define ADC_BUFFER (256*3)
+
+extern uint16_t adc_buffer[ADC_BUFFER];
+extern volatile uint16_t adc_val;
+extern bool ACC_COMP;
+void adc_init_cont(void);
+void stop_process(void);
+void start_process(void);
 
 #endif
