@@ -2,7 +2,7 @@
 
 ## Overview
 
-**connectHeart** is an embedded systems/IoT project based on the STM32F103 microcontroller for signal processing and the ESP8266 as a display controller and radio unit. This is the initial development phase focused on **hardware bring-up** and **integration of the CMSIS library** for low-level peripheral control. The goal is to build a reliable foundation for embedded development using modular, reusable drivers and communication interfaces.
+**connectHeart** is an embedded systems/IoT project to evaluate HEART RATE and OXYGEN saturation from PPG signal (from custom built analog circuit) based on the STM32F103 microcontroller for signal processing and the ESP8266 as a display controller and radio unit. This is the initial development phase focused on **hardware bring-up** and **integration of the CMSIS library** for low-level peripheral control. The goal is to build a reliable foundation for embedded development using modular, reusable drivers and communication interfaces.
 
 This stage includes interfacing key components, validating hardware, and building minimal firmware drivers.
 
@@ -28,7 +28,19 @@ This stage includes interfacing key components, validating hardware, and buildin
 - **Delay Utility**  
   CPU-based and timer-based delay functions abstracted for portability across platforms.
 
+- **Wifi & MQTT**
+  Wifi credential saving and reset in NVS flash and MQTT connection. 
+
+- **LED & ADC**
+  Data acquisition process implemented.
 ---
+
+## TO DO
+- Implement PPG and SPO2 algorithm.
+
+- Implement security on netwrok.
+
+- Build a basic android app interface.
 
 ## Status
 
