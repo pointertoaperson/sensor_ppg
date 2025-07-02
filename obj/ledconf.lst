@@ -1,0 +1,947 @@
+ARM GAS  /tmp/cci9GhTB.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"ledconf.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "src/drivers/ledconf.c"
+  18              		.align	1
+  19              		.global	led_init
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	led_init, %function
+  24              	led_init:
+  25              	.LFB63:
+   1:src/drivers/ledconf.c **** /**
+   2:src/drivers/ledconf.c ****  * @file    ledconf.c
+   3:src/drivers/ledconf.c ****  * @brief   LED control logic for STM32F103 using GPIOA and GPIOC
+   4:src/drivers/ledconf.c ****  * @author  Umesh Puri
+   5:src/drivers/ledconf.c ****  * @date    2025-06-02
+   6:src/drivers/ledconf.c ****  * @version 1.0
+   7:src/drivers/ledconf.c ****  *
+   8:src/drivers/ledconf.c ****  * This file implements LED initialization and state control for a 3-LED setup
+   9:src/drivers/ledconf.c ****  * (Green, IR, Red) using STM32F103 GPIO. The LEDs cycle through a predefined pattern.
+  10:src/drivers/ledconf.c ****  * 
+  11:src/drivers/ledconf.c ****  * @license MIT License
+  12:src/drivers/ledconf.c ****  * Copyright (c) 2025 Umesh
+  13:src/drivers/ledconf.c ****  */
+  14:src/drivers/ledconf.c **** 
+  15:src/drivers/ledconf.c ****  
+  16:src/drivers/ledconf.c **** #include "ledconf.h"
+  17:src/drivers/ledconf.c **** 
+  18:src/drivers/ledconf.c **** void led_init(void)
+  19:src/drivers/ledconf.c **** {
+  26              		.loc 1 19 1 view -0
+  27              		.cfi_startproc
+  28              		@ args = 0, pretend = 0, frame = 0
+  29              		@ frame_needed = 0, uses_anonymous_args = 0
+  30              		@ link register save eliminated.
+  20:src/drivers/ledconf.c ****     RCC->APB2ENR |= RCC_APB2ENR_IOPAEN;
+  31              		.loc 1 20 5 view .LVU1
+  32              		.loc 1 20 8 is_stmt 0 view .LVU2
+  33 0000 134B     		ldr	r3, .L2
+  34 0002 9A69     		ldr	r2, [r3, #24]
+  35              		.loc 1 20 18 view .LVU3
+  36 0004 42F00402 		orr	r2, r2, #4
+  37 0008 9A61     		str	r2, [r3, #24]
+ARM GAS  /tmp/cci9GhTB.s 			page 2
+
+
+  21:src/drivers/ledconf.c **** 
+  22:src/drivers/ledconf.c ****     RCC->APB2ENR |= RCC_APB2ENR_IOPCEN;
+  38              		.loc 1 22 5 is_stmt 1 view .LVU4
+  39              		.loc 1 22 8 is_stmt 0 view .LVU5
+  40 000a 9A69     		ldr	r2, [r3, #24]
+  41              		.loc 1 22 18 view .LVU6
+  42 000c 42F01002 		orr	r2, r2, #16
+  43 0010 9A61     		str	r2, [r3, #24]
+  23:src/drivers/ledconf.c **** 
+  24:src/drivers/ledconf.c ****     // PA5, PA6, PA7 output push-pull 10 MHz
+  25:src/drivers/ledconf.c ****     GPIOA->CRL &= ~(GPIO_CRL_CNF5 | GPIO_CRL_MODE5 |
+  44              		.loc 1 25 5 is_stmt 1 view .LVU7
+  45              		.loc 1 25 10 is_stmt 0 view .LVU8
+  46 0012 A3F58433 		sub	r3, r3, #67584
+  47 0016 1A68     		ldr	r2, [r3]
+  48              		.loc 1 25 16 view .LVU9
+  49 0018 C2F31302 		ubfx	r2, r2, #0, #20
+  50 001c 1A60     		str	r2, [r3]
+  26:src/drivers/ledconf.c ****                     GPIO_CRL_CNF6 | GPIO_CRL_MODE6 |
+  27:src/drivers/ledconf.c ****                     GPIO_CRL_CNF7 | GPIO_CRL_MODE7);
+  28:src/drivers/ledconf.c ****     GPIOA->CRL |= (GPIO_CRL_MODE5_0 | GPIO_CRL_MODE6_0 | GPIO_CRL_MODE7_0);
+  51              		.loc 1 28 5 is_stmt 1 view .LVU10
+  52              		.loc 1 28 10 is_stmt 0 view .LVU11
+  53 001e 1A68     		ldr	r2, [r3]
+  54              		.loc 1 28 16 view .LVU12
+  55 0020 42F08852 		orr	r2, r2, #285212672
+  56 0024 42F48012 		orr	r2, r2, #1048576
+  57 0028 1A60     		str	r2, [r3]
+  29:src/drivers/ledconf.c **** 
+  30:src/drivers/ledconf.c ****     // default to green LED
+  31:src/drivers/ledconf.c ****     GPIOA->ODR &= ~RED_LED_PIN;
+  58              		.loc 1 31 5 is_stmt 1 view .LVU13
+  59              		.loc 1 31 10 is_stmt 0 view .LVU14
+  60 002a DA68     		ldr	r2, [r3, #12]
+  61              		.loc 1 31 16 view .LVU15
+  62 002c 22F02002 		bic	r2, r2, #32
+  63 0030 DA60     		str	r2, [r3, #12]
+  32:src/drivers/ledconf.c ****     GPIOA->ODR &= ~IR_LED_PIN;
+  64              		.loc 1 32 5 is_stmt 1 view .LVU16
+  65              		.loc 1 32 10 is_stmt 0 view .LVU17
+  66 0032 DA68     		ldr	r2, [r3, #12]
+  67              		.loc 1 32 16 view .LVU18
+  68 0034 22F04002 		bic	r2, r2, #64
+  69 0038 DA60     		str	r2, [r3, #12]
+  33:src/drivers/ledconf.c ****     GPIOA->ODR |= GREEN_LED_PIN;
+  70              		.loc 1 33 5 is_stmt 1 view .LVU19
+  71              		.loc 1 33 10 is_stmt 0 view .LVU20
+  72 003a DA68     		ldr	r2, [r3, #12]
+  73              		.loc 1 33 16 view .LVU21
+  74 003c 42F08002 		orr	r2, r2, #128
+  75 0040 DA60     		str	r2, [r3, #12]
+  34:src/drivers/ledconf.c **** 
+  35:src/drivers/ledconf.c ****     GPIOC->CRH &= ~(GPIO_CRH_CNF13 | GPIO_CRH_MODE13);
+  76              		.loc 1 35 5 is_stmt 1 view .LVU22
+  77              		.loc 1 35 10 is_stmt 0 view .LVU23
+  78 0042 044A     		ldr	r2, .L2+4
+  79 0044 5368     		ldr	r3, [r2, #4]
+ARM GAS  /tmp/cci9GhTB.s 			page 3
+
+
+  80              		.loc 1 35 16 view .LVU24
+  81 0046 23F47003 		bic	r3, r3, #15728640
+  82 004a 5360     		str	r3, [r2, #4]
+  36:src/drivers/ledconf.c ****     
+  37:src/drivers/ledconf.c ****   // GPIOC->ODR |= GPIO_ODR_ODR13; //test led off remove later
+  38:src/drivers/ledconf.c ****     
+  39:src/drivers/ledconf.c **** }
+  83              		.loc 1 39 1 view .LVU25
+  84 004c 7047     		bx	lr
+  85              	.L3:
+  86 004e 00BF     		.align	2
+  87              	.L2:
+  88 0050 00100240 		.word	1073876992
+  89 0054 00100140 		.word	1073811456
+  90              		.cfi_endproc
+  91              	.LFE63:
+  92              		.size	led_init, .-led_init
+  93              		.align	1
+  94              		.global	led_state
+  95              		.syntax unified
+  96              		.thumb
+  97              		.thumb_func
+  98              		.type	led_state, %function
+  99              	led_state:
+ 100              	.LFB64:
+  40:src/drivers/ledconf.c **** 
+  41:src/drivers/ledconf.c **** uint8_t state =  0x01;
+  42:src/drivers/ledconf.c **** 
+  43:src/drivers/ledconf.c **** uint8_t led_state()
+  44:src/drivers/ledconf.c **** {
+ 101              		.loc 1 44 1 is_stmt 1 view -0
+ 102              		.cfi_startproc
+ 103              		@ args = 0, pretend = 0, frame = 0
+ 104              		@ frame_needed = 0, uses_anonymous_args = 0
+ 105              		@ link register save eliminated.
+  45:src/drivers/ledconf.c ****      state <<= 1;
+ 106              		.loc 1 45 6 view .LVU27
+ 107              		.loc 1 45 12 is_stmt 0 view .LVU28
+ 108 0058 184A     		ldr	r2, .L10
+ 109 005a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+ 110 005c 5B00     		lsls	r3, r3, #1
+ 111 005e DBB2     		uxtb	r3, r3
+  46:src/drivers/ledconf.c **** 
+  47:src/drivers/ledconf.c ****     switch (state)
+ 112              		.loc 1 47 5 view .LVU29
+ 113 0060 042B     		cmp	r3, #4
+  45:src/drivers/ledconf.c ****      state <<= 1;
+ 114              		.loc 1 45 12 view .LVU30
+ 115 0062 1370     		strb	r3, [r2]
+ 116              		.loc 1 47 5 is_stmt 1 view .LVU31
+ 117 0064 10D0     		beq	.L5
+ 118 0066 082B     		cmp	r3, #8
+ 119 0068 1DD0     		beq	.L6
+ 120 006a 022B     		cmp	r3, #2
+ 121 006c 19D1     		bne	.L7
+  48:src/drivers/ledconf.c ****     {
+  49:src/drivers/ledconf.c **** 
+ARM GAS  /tmp/cci9GhTB.s 			page 4
+
+
+  50:src/drivers/ledconf.c ****     case 0x02:
+  51:src/drivers/ledconf.c ****         // Turn on IR only
+  52:src/drivers/ledconf.c ****         GPIOA->ODR &= ~GREEN_LED_PIN;
+ 122              		.loc 1 52 9 view .LVU32
+ 123              		.loc 1 52 14 is_stmt 0 view .LVU33
+ 124 006e 144B     		ldr	r3, .L10+4
+ 125 0070 D968     		ldr	r1, [r3, #12]
+ 126              		.loc 1 52 20 view .LVU34
+ 127 0072 21F08001 		bic	r1, r1, #128
+ 128 0076 D960     		str	r1, [r3, #12]
+  53:src/drivers/ledconf.c ****         GPIOA->ODR |= IR_LED_PIN;
+ 129              		.loc 1 53 9 is_stmt 1 view .LVU35
+ 130              		.loc 1 53 14 is_stmt 0 view .LVU36
+ 131 0078 D968     		ldr	r1, [r3, #12]
+ 132              		.loc 1 53 20 view .LVU37
+ 133 007a 41F04001 		orr	r1, r1, #64
+ 134              	.L8:
+  54:src/drivers/ledconf.c ****         GPIOA->ODR &= ~RED_LED_PIN;
+  55:src/drivers/ledconf.c **** 
+  56:src/drivers/ledconf.c ****         break;
+  57:src/drivers/ledconf.c **** 
+  58:src/drivers/ledconf.c ****     case 0x04:
+  59:src/drivers/ledconf.c **** 
+  60:src/drivers/ledconf.c ****         // turn of RED only
+  61:src/drivers/ledconf.c ****         GPIOA->ODR &= ~GREEN_LED_PIN;
+  62:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
+  63:src/drivers/ledconf.c ****         GPIOA->ODR |= RED_LED_PIN;
+  64:src/drivers/ledconf.c **** 
+  65:src/drivers/ledconf.c ****         break;
+  66:src/drivers/ledconf.c ****     case 0x08:
+  67:src/drivers/ledconf.c ****         //RESET state
+  68:src/drivers/ledconf.c ****         state = 0x01;
+  69:src/drivers/ledconf.c ****          GPIOA->ODR |= GREEN_LED_PIN;
+  70:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
+ 135              		.loc 1 70 20 view .LVU38
+ 136 007e D960     		str	r1, [r3, #12]
+  71:src/drivers/ledconf.c ****         GPIOA->ODR &= ~RED_LED_PIN;
+ 137              		.loc 1 71 9 is_stmt 1 view .LVU39
+ 138              		.loc 1 71 14 is_stmt 0 view .LVU40
+ 139 0080 D968     		ldr	r1, [r3, #12]
+ 140              		.loc 1 71 20 view .LVU41
+ 141 0082 21F02001 		bic	r1, r1, #32
+ 142 0086 0BE0     		b	.L9
+ 143              	.L5:
+  61:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
+ 144              		.loc 1 61 9 is_stmt 1 view .LVU42
+  61:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
+ 145              		.loc 1 61 14 is_stmt 0 view .LVU43
+ 146 0088 0D4B     		ldr	r3, .L10+4
+ 147 008a D968     		ldr	r1, [r3, #12]
+  61:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
+ 148              		.loc 1 61 20 view .LVU44
+ 149 008c 21F08001 		bic	r1, r1, #128
+ 150 0090 D960     		str	r1, [r3, #12]
+  62:src/drivers/ledconf.c ****         GPIOA->ODR |= RED_LED_PIN;
+ 151              		.loc 1 62 9 is_stmt 1 view .LVU45
+  62:src/drivers/ledconf.c ****         GPIOA->ODR |= RED_LED_PIN;
+ARM GAS  /tmp/cci9GhTB.s 			page 5
+
+
+ 152              		.loc 1 62 14 is_stmt 0 view .LVU46
+ 153 0092 D968     		ldr	r1, [r3, #12]
+  62:src/drivers/ledconf.c ****         GPIOA->ODR |= RED_LED_PIN;
+ 154              		.loc 1 62 20 view .LVU47
+ 155 0094 21F04001 		bic	r1, r1, #64
+ 156 0098 D960     		str	r1, [r3, #12]
+  63:src/drivers/ledconf.c **** 
+ 157              		.loc 1 63 9 is_stmt 1 view .LVU48
+  63:src/drivers/ledconf.c **** 
+ 158              		.loc 1 63 14 is_stmt 0 view .LVU49
+ 159 009a D968     		ldr	r1, [r3, #12]
+  63:src/drivers/ledconf.c **** 
+ 160              		.loc 1 63 20 view .LVU50
+ 161 009c 41F02001 		orr	r1, r1, #32
+ 162              	.L9:
+ 163              		.loc 1 71 20 view .LVU51
+ 164 00a0 D960     		str	r1, [r3, #12]
+  72:src/drivers/ledconf.c ****         
+  73:src/drivers/ledconf.c ****         break;
+ 165              		.loc 1 73 9 is_stmt 1 view .LVU52
+ 166              	.L7:
+  74:src/drivers/ledconf.c **** 
+  75:src/drivers/ledconf.c ****         
+  76:src/drivers/ledconf.c ****     }
+  77:src/drivers/ledconf.c ****     return state;
+ 167              		.loc 1 77 5 view .LVU53
+  78:src/drivers/ledconf.c **** }
+ 168              		.loc 1 78 1 is_stmt 0 view .LVU54
+ 169 00a2 1078     		ldrb	r0, [r2]	@ zero_extendqisi2
+ 170 00a4 7047     		bx	lr
+ 171              	.L6:
+  68:src/drivers/ledconf.c ****          GPIOA->ODR |= GREEN_LED_PIN;
+ 172              		.loc 1 68 9 is_stmt 1 view .LVU55
+  68:src/drivers/ledconf.c ****          GPIOA->ODR |= GREEN_LED_PIN;
+ 173              		.loc 1 68 15 is_stmt 0 view .LVU56
+ 174 00a6 0123     		movs	r3, #1
+ 175 00a8 1370     		strb	r3, [r2]
+  69:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
+ 176              		.loc 1 69 10 is_stmt 1 view .LVU57
+  69:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
+ 177              		.loc 1 69 15 is_stmt 0 view .LVU58
+ 178 00aa 054B     		ldr	r3, .L10+4
+ 179 00ac D968     		ldr	r1, [r3, #12]
+  69:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
+ 180              		.loc 1 69 21 view .LVU59
+ 181 00ae 41F08001 		orr	r1, r1, #128
+ 182 00b2 D960     		str	r1, [r3, #12]
+  70:src/drivers/ledconf.c ****         GPIOA->ODR &= ~RED_LED_PIN;
+ 183              		.loc 1 70 9 is_stmt 1 view .LVU60
+  70:src/drivers/ledconf.c ****         GPIOA->ODR &= ~RED_LED_PIN;
+ 184              		.loc 1 70 14 is_stmt 0 view .LVU61
+ 185 00b4 D968     		ldr	r1, [r3, #12]
+  70:src/drivers/ledconf.c ****         GPIOA->ODR &= ~RED_LED_PIN;
+ 186              		.loc 1 70 20 view .LVU62
+ 187 00b6 21F04001 		bic	r1, r1, #64
+ 188 00ba E0E7     		b	.L8
+ 189              	.L11:
+ARM GAS  /tmp/cci9GhTB.s 			page 6
+
+
+ 190              		.align	2
+ 191              	.L10:
+ 192 00bc 00000000 		.word	.LANCHOR0
+ 193 00c0 00080140 		.word	1073809408
+ 194              		.cfi_endproc
+ 195              	.LFE64:
+ 196              		.size	led_state, .-led_state
+ 197              		.global	state
+ 198              		.data
+ 199              		.set	.LANCHOR0,. + 0
+ 200              		.type	state, %object
+ 201              		.size	state, 1
+ 202              	state:
+ 203 0000 01       		.byte	1
+ 204              		.text
+ 205              	.Letext0:
+ 206              		.file 2 "/opt/arm-none-eabi/arm-none-eabi/include/machine/_default_types.h"
+ 207              		.file 3 "/opt/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h"
+ 208              		.file 4 "common/include/stm32f103xb.h"
+ 209              		.section	.debug_info,"",%progbits
+ 210              	.Ldebug_info0:
+ 211 0000 D2010000 		.4byte	0x1d2
+ 212 0004 0500     		.2byte	0x5
+ 213 0006 01       		.byte	0x1
+ 214 0007 04       		.byte	0x4
+ 215 0008 00000000 		.4byte	.Ldebug_abbrev0
+ 216 000c 07       		.uleb128 0x7
+ 217 000d 3C000000 		.4byte	.LASF27
+ 218 0011 1D       		.byte	0x1d
+ 219 0012 26000000 		.4byte	.LASF28
+ 220 0016 62010000 		.4byte	.LASF29
+ 221 001a 00000000 		.4byte	.Ltext0
+ 222 001e C4000000 		.4byte	.Letext0-.Ltext0
+ 223 0022 00000000 		.4byte	.Ldebug_line0
+ 224 0026 01       		.uleb128 0x1
+ 225 0027 01       		.byte	0x1
+ 226 0028 06       		.byte	0x6
+ 227 0029 A8010000 		.4byte	.LASF0
+ 228 002d 04       		.uleb128 0x4
+ 229 002e 17000000 		.4byte	.LASF5
+ 230 0032 02       		.byte	0x2
+ 231 0033 2B       		.byte	0x2b
+ 232 0034 18       		.byte	0x18
+ 233 0035 39000000 		.4byte	0x39
+ 234 0039 01       		.uleb128 0x1
+ 235 003a 01       		.byte	0x1
+ 236 003b 08       		.byte	0x8
+ 237 003c B1000000 		.4byte	.LASF1
+ 238 0040 01       		.uleb128 0x1
+ 239 0041 02       		.byte	0x2
+ 240 0042 05       		.byte	0x5
+ 241 0043 80010000 		.4byte	.LASF2
+ 242 0047 01       		.uleb128 0x1
+ 243 0048 02       		.byte	0x2
+ 244 0049 07       		.byte	0x7
+ 245 004a D1000000 		.4byte	.LASF3
+ 246 004e 01       		.uleb128 0x1
+ARM GAS  /tmp/cci9GhTB.s 			page 7
+
+
+ 247 004f 04       		.byte	0x4
+ 248 0050 05       		.byte	0x5
+ 249 0051 9F010000 		.4byte	.LASF4
+ 250 0055 04       		.uleb128 0x4
+ 251 0056 EC000000 		.4byte	.LASF6
+ 252 005a 02       		.byte	0x2
+ 253 005b 4F       		.byte	0x4f
+ 254 005c 19       		.byte	0x19
+ 255 005d 61000000 		.4byte	0x61
+ 256 0061 01       		.uleb128 0x1
+ 257 0062 04       		.byte	0x4
+ 258 0063 07       		.byte	0x7
+ 259 0064 BF000000 		.4byte	.LASF7
+ 260 0068 01       		.uleb128 0x1
+ 261 0069 08       		.byte	0x8
+ 262 006a 05       		.byte	0x5
+ 263 006b 54010000 		.4byte	.LASF8
+ 264 006f 01       		.uleb128 0x1
+ 265 0070 08       		.byte	0x8
+ 266 0071 07       		.byte	0x7
+ 267 0072 2B010000 		.4byte	.LASF9
+ 268 0076 08       		.uleb128 0x8
+ 269 0077 04       		.byte	0x4
+ 270 0078 05       		.byte	0x5
+ 271 0079 696E7400 		.ascii	"int\000"
+ 272 007d 01       		.uleb128 0x1
+ 273 007e 04       		.byte	0x4
+ 274 007f 07       		.byte	0x7
+ 275 0080 11010000 		.4byte	.LASF10
+ 276 0084 04       		.uleb128 0x4
+ 277 0085 42010000 		.4byte	.LASF11
+ 278 0089 03       		.byte	0x3
+ 279 008a 18       		.byte	0x18
+ 280 008b 13       		.byte	0x13
+ 281 008c 2D000000 		.4byte	0x2d
+ 282 0090 04       		.uleb128 0x4
+ 283 0091 96010000 		.4byte	.LASF12
+ 284 0095 03       		.byte	0x3
+ 285 0096 30       		.byte	0x30
+ 286 0097 14       		.byte	0x14
+ 287 0098 55000000 		.4byte	0x55
+ 288 009c 09       		.uleb128 0x9
+ 289 009d 90000000 		.4byte	0x90
+ 290 00a1 05       		.uleb128 0x5
+ 291 00a2 1C       		.byte	0x1c
+ 292 00a3 6601     		.2byte	0x166
+ 293 00a5 FE000000 		.4byte	0xfe
+ 294 00a9 03       		.uleb128 0x3
+ 295 00aa 43524C00 		.ascii	"CRL\000"
+ 296 00ae 6801     		.2byte	0x168
+ 297 00b0 9C000000 		.4byte	0x9c
+ 298 00b4 00       		.byte	0
+ 299 00b5 03       		.uleb128 0x3
+ 300 00b6 43524800 		.ascii	"CRH\000"
+ 301 00ba 6901     		.2byte	0x169
+ 302 00bc 9C000000 		.4byte	0x9c
+ 303 00c0 04       		.byte	0x4
+ARM GAS  /tmp/cci9GhTB.s 			page 8
+
+
+ 304 00c1 03       		.uleb128 0x3
+ 305 00c2 49445200 		.ascii	"IDR\000"
+ 306 00c6 6A01     		.2byte	0x16a
+ 307 00c8 9C000000 		.4byte	0x9c
+ 308 00cc 08       		.byte	0x8
+ 309 00cd 03       		.uleb128 0x3
+ 310 00ce 4F445200 		.ascii	"ODR\000"
+ 311 00d2 6B01     		.2byte	0x16b
+ 312 00d4 9C000000 		.4byte	0x9c
+ 313 00d8 0C       		.byte	0xc
+ 314 00d9 02       		.uleb128 0x2
+ 315 00da 21000000 		.4byte	.LASF13
+ 316 00de 6C01     		.2byte	0x16c
+ 317 00e0 9C000000 		.4byte	0x9c
+ 318 00e4 10       		.byte	0x10
+ 319 00e5 03       		.uleb128 0x3
+ 320 00e6 42525200 		.ascii	"BRR\000"
+ 321 00ea 6D01     		.2byte	0x16d
+ 322 00ec 9C000000 		.4byte	0x9c
+ 323 00f0 14       		.byte	0x14
+ 324 00f1 02       		.uleb128 0x2
+ 325 00f2 BA010000 		.4byte	.LASF14
+ 326 00f6 6E01     		.2byte	0x16e
+ 327 00f8 9C000000 		.4byte	0x9c
+ 328 00fc 18       		.byte	0x18
+ 329 00fd 00       		.byte	0
+ 330 00fe 06       		.uleb128 0x6
+ 331 00ff 1E010000 		.4byte	.LASF15
+ 332 0103 6F01     		.2byte	0x16f
+ 333 0105 A1000000 		.4byte	0xa1
+ 334 0109 05       		.uleb128 0x5
+ 335 010a 28       		.byte	0x28
+ 336 010b A801     		.2byte	0x1a8
+ 337 010d 89010000 		.4byte	0x189
+ 338 0111 03       		.uleb128 0x3
+ 339 0112 435200   		.ascii	"CR\000"
+ 340 0115 AA01     		.2byte	0x1aa
+ 341 0117 9C000000 		.4byte	0x9c
+ 342 011b 00       		.byte	0
+ 343 011c 02       		.uleb128 0x2
+ 344 011d 05000000 		.4byte	.LASF16
+ 345 0121 AB01     		.2byte	0x1ab
+ 346 0123 9C000000 		.4byte	0x9c
+ 347 0127 04       		.byte	0x4
+ 348 0128 03       		.uleb128 0x3
+ 349 0129 43495200 		.ascii	"CIR\000"
+ 350 012d AC01     		.2byte	0x1ac
+ 351 012f 9C000000 		.4byte	0x9c
+ 352 0133 08       		.byte	0x8
+ 353 0134 02       		.uleb128 0x2
+ 354 0135 FF000000 		.4byte	.LASF17
+ 355 0139 AD01     		.2byte	0x1ad
+ 356 013b 9C000000 		.4byte	0x9c
+ 357 013f 0C       		.byte	0xc
+ 358 0140 02       		.uleb128 0x2
+ 359 0141 A8000000 		.4byte	.LASF18
+ 360 0145 AE01     		.2byte	0x1ae
+ARM GAS  /tmp/cci9GhTB.s 			page 9
+
+
+ 361 0147 9C000000 		.4byte	0x9c
+ 362 014b 10       		.byte	0x10
+ 363 014c 02       		.uleb128 0x2
+ 364 014d 0A000000 		.4byte	.LASF19
+ 365 0151 AF01     		.2byte	0x1af
+ 366 0153 9C000000 		.4byte	0x9c
+ 367 0157 14       		.byte	0x14
+ 368 0158 02       		.uleb128 0x2
+ 369 0159 E4000000 		.4byte	.LASF20
+ 370 015d B001     		.2byte	0x1b0
+ 371 015f 9C000000 		.4byte	0x9c
+ 372 0163 18       		.byte	0x18
+ 373 0164 02       		.uleb128 0x2
+ 374 0165 F7000000 		.4byte	.LASF21
+ 375 0169 B101     		.2byte	0x1b1
+ 376 016b 9C000000 		.4byte	0x9c
+ 377 016f 1C       		.byte	0x1c
+ 378 0170 02       		.uleb128 0x2
+ 379 0171 00000000 		.4byte	.LASF22
+ 380 0175 B201     		.2byte	0x1b2
+ 381 0177 9C000000 		.4byte	0x9c
+ 382 017b 20       		.byte	0x20
+ 383 017c 03       		.uleb128 0x3
+ 384 017d 43535200 		.ascii	"CSR\000"
+ 385 0181 B301     		.2byte	0x1b3
+ 386 0183 9C000000 		.4byte	0x9c
+ 387 0187 24       		.byte	0x24
+ 388 0188 00       		.byte	0
+ 389 0189 06       		.uleb128 0x6
+ 390 018a 8A010000 		.4byte	.LASF23
+ 391 018e B601     		.2byte	0x1b6
+ 392 0190 09010000 		.4byte	0x109
+ 393 0194 01       		.uleb128 0x1
+ 394 0195 01       		.byte	0x1
+ 395 0196 02       		.byte	0x2
+ 396 0197 B4010000 		.4byte	.LASF24
+ 397 019b 0A       		.uleb128 0xa
+ 398 019c 11000000 		.4byte	.LASF30
+ 399 01a0 01       		.byte	0x1
+ 400 01a1 29       		.byte	0x29
+ 401 01a2 09       		.byte	0x9
+ 402 01a3 84000000 		.4byte	0x84
+ 403 01a7 05       		.uleb128 0x5
+ 404 01a8 03       		.byte	0x3
+ 405 01a9 00000000 		.4byte	state
+ 406 01ad 0B       		.uleb128 0xb
+ 407 01ae 4A010000 		.4byte	.LASF25
+ 408 01b2 01       		.byte	0x1
+ 409 01b3 2B       		.byte	0x2b
+ 410 01b4 09       		.byte	0x9
+ 411 01b5 84000000 		.4byte	0x84
+ 412 01b9 58000000 		.4byte	.LFB64
+ 413 01bd 6C000000 		.4byte	.LFE64-.LFB64
+ 414 01c1 01       		.uleb128 0x1
+ 415 01c2 9C       		.byte	0x9c
+ 416 01c3 0C       		.uleb128 0xc
+ 417 01c4 08010000 		.4byte	.LASF26
+ARM GAS  /tmp/cci9GhTB.s 			page 10
+
+
+ 418 01c8 01       		.byte	0x1
+ 419 01c9 12       		.byte	0x12
+ 420 01ca 06       		.byte	0x6
+ 421 01cb 00000000 		.4byte	.LFB63
+ 422 01cf 58000000 		.4byte	.LFE63-.LFB63
+ 423 01d3 01       		.uleb128 0x1
+ 424 01d4 9C       		.byte	0x9c
+ 425 01d5 00       		.byte	0
+ 426              		.section	.debug_abbrev,"",%progbits
+ 427              	.Ldebug_abbrev0:
+ 428 0000 01       		.uleb128 0x1
+ 429 0001 24       		.uleb128 0x24
+ 430 0002 00       		.byte	0
+ 431 0003 0B       		.uleb128 0xb
+ 432 0004 0B       		.uleb128 0xb
+ 433 0005 3E       		.uleb128 0x3e
+ 434 0006 0B       		.uleb128 0xb
+ 435 0007 03       		.uleb128 0x3
+ 436 0008 0E       		.uleb128 0xe
+ 437 0009 00       		.byte	0
+ 438 000a 00       		.byte	0
+ 439 000b 02       		.uleb128 0x2
+ 440 000c 0D       		.uleb128 0xd
+ 441 000d 00       		.byte	0
+ 442 000e 03       		.uleb128 0x3
+ 443 000f 0E       		.uleb128 0xe
+ 444 0010 3A       		.uleb128 0x3a
+ 445 0011 21       		.uleb128 0x21
+ 446 0012 04       		.sleb128 4
+ 447 0013 3B       		.uleb128 0x3b
+ 448 0014 05       		.uleb128 0x5
+ 449 0015 39       		.uleb128 0x39
+ 450 0016 21       		.uleb128 0x21
+ 451 0017 11       		.sleb128 17
+ 452 0018 49       		.uleb128 0x49
+ 453 0019 13       		.uleb128 0x13
+ 454 001a 38       		.uleb128 0x38
+ 455 001b 0B       		.uleb128 0xb
+ 456 001c 00       		.byte	0
+ 457 001d 00       		.byte	0
+ 458 001e 03       		.uleb128 0x3
+ 459 001f 0D       		.uleb128 0xd
+ 460 0020 00       		.byte	0
+ 461 0021 03       		.uleb128 0x3
+ 462 0022 08       		.uleb128 0x8
+ 463 0023 3A       		.uleb128 0x3a
+ 464 0024 21       		.uleb128 0x21
+ 465 0025 04       		.sleb128 4
+ 466 0026 3B       		.uleb128 0x3b
+ 467 0027 05       		.uleb128 0x5
+ 468 0028 39       		.uleb128 0x39
+ 469 0029 21       		.uleb128 0x21
+ 470 002a 11       		.sleb128 17
+ 471 002b 49       		.uleb128 0x49
+ 472 002c 13       		.uleb128 0x13
+ 473 002d 38       		.uleb128 0x38
+ 474 002e 0B       		.uleb128 0xb
+ARM GAS  /tmp/cci9GhTB.s 			page 11
+
+
+ 475 002f 00       		.byte	0
+ 476 0030 00       		.byte	0
+ 477 0031 04       		.uleb128 0x4
+ 478 0032 16       		.uleb128 0x16
+ 479 0033 00       		.byte	0
+ 480 0034 03       		.uleb128 0x3
+ 481 0035 0E       		.uleb128 0xe
+ 482 0036 3A       		.uleb128 0x3a
+ 483 0037 0B       		.uleb128 0xb
+ 484 0038 3B       		.uleb128 0x3b
+ 485 0039 0B       		.uleb128 0xb
+ 486 003a 39       		.uleb128 0x39
+ 487 003b 0B       		.uleb128 0xb
+ 488 003c 49       		.uleb128 0x49
+ 489 003d 13       		.uleb128 0x13
+ 490 003e 00       		.byte	0
+ 491 003f 00       		.byte	0
+ 492 0040 05       		.uleb128 0x5
+ 493 0041 13       		.uleb128 0x13
+ 494 0042 01       		.byte	0x1
+ 495 0043 0B       		.uleb128 0xb
+ 496 0044 0B       		.uleb128 0xb
+ 497 0045 3A       		.uleb128 0x3a
+ 498 0046 21       		.uleb128 0x21
+ 499 0047 04       		.sleb128 4
+ 500 0048 3B       		.uleb128 0x3b
+ 501 0049 05       		.uleb128 0x5
+ 502 004a 39       		.uleb128 0x39
+ 503 004b 21       		.uleb128 0x21
+ 504 004c 09       		.sleb128 9
+ 505 004d 01       		.uleb128 0x1
+ 506 004e 13       		.uleb128 0x13
+ 507 004f 00       		.byte	0
+ 508 0050 00       		.byte	0
+ 509 0051 06       		.uleb128 0x6
+ 510 0052 16       		.uleb128 0x16
+ 511 0053 00       		.byte	0
+ 512 0054 03       		.uleb128 0x3
+ 513 0055 0E       		.uleb128 0xe
+ 514 0056 3A       		.uleb128 0x3a
+ 515 0057 21       		.uleb128 0x21
+ 516 0058 04       		.sleb128 4
+ 517 0059 3B       		.uleb128 0x3b
+ 518 005a 05       		.uleb128 0x5
+ 519 005b 39       		.uleb128 0x39
+ 520 005c 21       		.uleb128 0x21
+ 521 005d 03       		.sleb128 3
+ 522 005e 49       		.uleb128 0x49
+ 523 005f 13       		.uleb128 0x13
+ 524 0060 00       		.byte	0
+ 525 0061 00       		.byte	0
+ 526 0062 07       		.uleb128 0x7
+ 527 0063 11       		.uleb128 0x11
+ 528 0064 01       		.byte	0x1
+ 529 0065 25       		.uleb128 0x25
+ 530 0066 0E       		.uleb128 0xe
+ 531 0067 13       		.uleb128 0x13
+ARM GAS  /tmp/cci9GhTB.s 			page 12
+
+
+ 532 0068 0B       		.uleb128 0xb
+ 533 0069 03       		.uleb128 0x3
+ 534 006a 0E       		.uleb128 0xe
+ 535 006b 1B       		.uleb128 0x1b
+ 536 006c 0E       		.uleb128 0xe
+ 537 006d 11       		.uleb128 0x11
+ 538 006e 01       		.uleb128 0x1
+ 539 006f 12       		.uleb128 0x12
+ 540 0070 06       		.uleb128 0x6
+ 541 0071 10       		.uleb128 0x10
+ 542 0072 17       		.uleb128 0x17
+ 543 0073 00       		.byte	0
+ 544 0074 00       		.byte	0
+ 545 0075 08       		.uleb128 0x8
+ 546 0076 24       		.uleb128 0x24
+ 547 0077 00       		.byte	0
+ 548 0078 0B       		.uleb128 0xb
+ 549 0079 0B       		.uleb128 0xb
+ 550 007a 3E       		.uleb128 0x3e
+ 551 007b 0B       		.uleb128 0xb
+ 552 007c 03       		.uleb128 0x3
+ 553 007d 08       		.uleb128 0x8
+ 554 007e 00       		.byte	0
+ 555 007f 00       		.byte	0
+ 556 0080 09       		.uleb128 0x9
+ 557 0081 35       		.uleb128 0x35
+ 558 0082 00       		.byte	0
+ 559 0083 49       		.uleb128 0x49
+ 560 0084 13       		.uleb128 0x13
+ 561 0085 00       		.byte	0
+ 562 0086 00       		.byte	0
+ 563 0087 0A       		.uleb128 0xa
+ 564 0088 34       		.uleb128 0x34
+ 565 0089 00       		.byte	0
+ 566 008a 03       		.uleb128 0x3
+ 567 008b 0E       		.uleb128 0xe
+ 568 008c 3A       		.uleb128 0x3a
+ 569 008d 0B       		.uleb128 0xb
+ 570 008e 3B       		.uleb128 0x3b
+ 571 008f 0B       		.uleb128 0xb
+ 572 0090 39       		.uleb128 0x39
+ 573 0091 0B       		.uleb128 0xb
+ 574 0092 49       		.uleb128 0x49
+ 575 0093 13       		.uleb128 0x13
+ 576 0094 3F       		.uleb128 0x3f
+ 577 0095 19       		.uleb128 0x19
+ 578 0096 02       		.uleb128 0x2
+ 579 0097 18       		.uleb128 0x18
+ 580 0098 00       		.byte	0
+ 581 0099 00       		.byte	0
+ 582 009a 0B       		.uleb128 0xb
+ 583 009b 2E       		.uleb128 0x2e
+ 584 009c 00       		.byte	0
+ 585 009d 3F       		.uleb128 0x3f
+ 586 009e 19       		.uleb128 0x19
+ 587 009f 03       		.uleb128 0x3
+ 588 00a0 0E       		.uleb128 0xe
+ARM GAS  /tmp/cci9GhTB.s 			page 13
+
+
+ 589 00a1 3A       		.uleb128 0x3a
+ 590 00a2 0B       		.uleb128 0xb
+ 591 00a3 3B       		.uleb128 0x3b
+ 592 00a4 0B       		.uleb128 0xb
+ 593 00a5 39       		.uleb128 0x39
+ 594 00a6 0B       		.uleb128 0xb
+ 595 00a7 49       		.uleb128 0x49
+ 596 00a8 13       		.uleb128 0x13
+ 597 00a9 11       		.uleb128 0x11
+ 598 00aa 01       		.uleb128 0x1
+ 599 00ab 12       		.uleb128 0x12
+ 600 00ac 06       		.uleb128 0x6
+ 601 00ad 40       		.uleb128 0x40
+ 602 00ae 18       		.uleb128 0x18
+ 603 00af 7A       		.uleb128 0x7a
+ 604 00b0 19       		.uleb128 0x19
+ 605 00b1 00       		.byte	0
+ 606 00b2 00       		.byte	0
+ 607 00b3 0C       		.uleb128 0xc
+ 608 00b4 2E       		.uleb128 0x2e
+ 609 00b5 00       		.byte	0
+ 610 00b6 3F       		.uleb128 0x3f
+ 611 00b7 19       		.uleb128 0x19
+ 612 00b8 03       		.uleb128 0x3
+ 613 00b9 0E       		.uleb128 0xe
+ 614 00ba 3A       		.uleb128 0x3a
+ 615 00bb 0B       		.uleb128 0xb
+ 616 00bc 3B       		.uleb128 0x3b
+ 617 00bd 0B       		.uleb128 0xb
+ 618 00be 39       		.uleb128 0x39
+ 619 00bf 0B       		.uleb128 0xb
+ 620 00c0 27       		.uleb128 0x27
+ 621 00c1 19       		.uleb128 0x19
+ 622 00c2 11       		.uleb128 0x11
+ 623 00c3 01       		.uleb128 0x1
+ 624 00c4 12       		.uleb128 0x12
+ 625 00c5 06       		.uleb128 0x6
+ 626 00c6 40       		.uleb128 0x40
+ 627 00c7 18       		.uleb128 0x18
+ 628 00c8 7A       		.uleb128 0x7a
+ 629 00c9 19       		.uleb128 0x19
+ 630 00ca 00       		.byte	0
+ 631 00cb 00       		.byte	0
+ 632 00cc 00       		.byte	0
+ 633              		.section	.debug_aranges,"",%progbits
+ 634 0000 1C000000 		.4byte	0x1c
+ 635 0004 0200     		.2byte	0x2
+ 636 0006 00000000 		.4byte	.Ldebug_info0
+ 637 000a 04       		.byte	0x4
+ 638 000b 00       		.byte	0
+ 639 000c 0000     		.2byte	0
+ 640 000e 0000     		.2byte	0
+ 641 0010 00000000 		.4byte	.Ltext0
+ 642 0014 C4000000 		.4byte	.Letext0-.Ltext0
+ 643 0018 00000000 		.4byte	0
+ 644 001c 00000000 		.4byte	0
+ 645              		.section	.debug_line,"",%progbits
+ARM GAS  /tmp/cci9GhTB.s 			page 14
+
+
+ 646              	.Ldebug_line0:
+ 647 0000 C8010000 		.section	.debug_str,"MS",%progbits,1
+ 647      0300CB00 
+ 647      00000201 
+ 647      FB0E0D00 
+ 647      01010101 
+ 648              	.LASF22:
+ 649 0000 42444352 		.ascii	"BDCR\000"
+ 649      00
+ 650              	.LASF16:
+ 651 0005 43464752 		.ascii	"CFGR\000"
+ 651      00
+ 652              	.LASF19:
+ 653 000a 41484245 		.ascii	"AHBENR\000"
+ 653      4E5200
+ 654              	.LASF30:
+ 655 0011 73746174 		.ascii	"state\000"
+ 655      6500
+ 656              	.LASF5:
+ 657 0017 5F5F7569 		.ascii	"__uint8_t\000"
+ 657      6E74385F 
+ 657      7400
+ 658              	.LASF13:
+ 659 0021 42535252 		.ascii	"BSRR\000"
+ 659      00
+ 660              	.LASF28:
+ 661 0026 7372632F 		.ascii	"src/drivers/ledconf.c\000"
+ 661      64726976 
+ 661      6572732F 
+ 661      6C656463 
+ 661      6F6E662E 
+ 662              	.LASF27:
+ 663 003c 474E5520 		.ascii	"GNU C11 13.3.1 20240614 -mthumb -mcpu=cortex-m3 -mf"
+ 663      43313120 
+ 663      31332E33 
+ 663      2E312032 
+ 663      30323430 
+ 664 006f 6C6F6174 		.ascii	"loat-abi=soft -march=armv7-m -g -Os -std=c11 -fno-c"
+ 664      2D616269 
+ 664      3D736F66 
+ 664      74202D6D 
+ 664      61726368 
+ 665 00a2 6F6D6D6F 		.ascii	"ommon\000"
+ 665      6E00
+ 666              	.LASF18:
+ 667 00a8 41504231 		.ascii	"APB1RSTR\000"
+ 667      52535452 
+ 667      00
+ 668              	.LASF1:
+ 669 00b1 756E7369 		.ascii	"unsigned char\000"
+ 669      676E6564 
+ 669      20636861 
+ 669      7200
+ 670              	.LASF7:
+ 671 00bf 6C6F6E67 		.ascii	"long unsigned int\000"
+ 671      20756E73 
+ 671      69676E65 
+ARM GAS  /tmp/cci9GhTB.s 			page 15
+
+
+ 671      6420696E 
+ 671      7400
+ 672              	.LASF3:
+ 673 00d1 73686F72 		.ascii	"short unsigned int\000"
+ 673      7420756E 
+ 673      7369676E 
+ 673      65642069 
+ 673      6E7400
+ 674              	.LASF20:
+ 675 00e4 41504232 		.ascii	"APB2ENR\000"
+ 675      454E5200 
+ 676              	.LASF6:
+ 677 00ec 5F5F7569 		.ascii	"__uint32_t\000"
+ 677      6E743332 
+ 677      5F7400
+ 678              	.LASF21:
+ 679 00f7 41504231 		.ascii	"APB1ENR\000"
+ 679      454E5200 
+ 680              	.LASF17:
+ 681 00ff 41504232 		.ascii	"APB2RSTR\000"
+ 681      52535452 
+ 681      00
+ 682              	.LASF26:
+ 683 0108 6C65645F 		.ascii	"led_init\000"
+ 683      696E6974 
+ 683      00
+ 684              	.LASF10:
+ 685 0111 756E7369 		.ascii	"unsigned int\000"
+ 685      676E6564 
+ 685      20696E74 
+ 685      00
+ 686              	.LASF15:
+ 687 011e 4750494F 		.ascii	"GPIO_TypeDef\000"
+ 687      5F547970 
+ 687      65446566 
+ 687      00
+ 688              	.LASF9:
+ 689 012b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 689      206C6F6E 
+ 689      6720756E 
+ 689      7369676E 
+ 689      65642069 
+ 690              	.LASF11:
+ 691 0142 75696E74 		.ascii	"uint8_t\000"
+ 691      385F7400 
+ 692              	.LASF25:
+ 693 014a 6C65645F 		.ascii	"led_state\000"
+ 693      73746174 
+ 693      6500
+ 694              	.LASF8:
+ 695 0154 6C6F6E67 		.ascii	"long long int\000"
+ 695      206C6F6E 
+ 695      6720696E 
+ 695      7400
+ 696              	.LASF29:
+ 697 0162 2F686F6D 		.ascii	"/home/umesh_adwait/sensor_ppg\000"
+ 697      652F756D 
+ARM GAS  /tmp/cci9GhTB.s 			page 16
+
+
+ 697      6573685F 
+ 697      61647761 
+ 697      69742F73 
+ 698              	.LASF2:
+ 699 0180 73686F72 		.ascii	"short int\000"
+ 699      7420696E 
+ 699      7400
+ 700              	.LASF23:
+ 701 018a 5243435F 		.ascii	"RCC_TypeDef\000"
+ 701      54797065 
+ 701      44656600 
+ 702              	.LASF12:
+ 703 0196 75696E74 		.ascii	"uint32_t\000"
+ 703      33325F74 
+ 703      00
+ 704              	.LASF4:
+ 705 019f 6C6F6E67 		.ascii	"long int\000"
+ 705      20696E74 
+ 705      00
+ 706              	.LASF0:
+ 707 01a8 7369676E 		.ascii	"signed char\000"
+ 707      65642063 
+ 707      68617200 
+ 708              	.LASF24:
+ 709 01b4 5F426F6F 		.ascii	"_Bool\000"
+ 709      6C00
+ 710              	.LASF14:
+ 711 01ba 4C434B52 		.ascii	"LCKR\000"
+ 711      00
+ 712              		.ident	"GCC: (Arm GNU Toolchain 13.3.Rel1 (Build arm-13.24)) 13.3.1 20240614"
+ARM GAS  /tmp/cci9GhTB.s 			page 17
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 ledconf.c
+     /tmp/cci9GhTB.s:18     .text:00000000 $t
+     /tmp/cci9GhTB.s:24     .text:00000000 led_init
+     /tmp/cci9GhTB.s:88     .text:00000050 $d
+     /tmp/cci9GhTB.s:93     .text:00000058 $t
+     /tmp/cci9GhTB.s:99     .text:00000058 led_state
+     /tmp/cci9GhTB.s:192    .text:000000bc $d
+     /tmp/cci9GhTB.s:202    .data:00000000 state
+
+NO UNDEFINED SYMBOLS

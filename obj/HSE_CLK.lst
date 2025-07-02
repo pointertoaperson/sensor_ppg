@@ -1,0 +1,800 @@
+ARM GAS  /tmp/ccMLmYFt.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 4
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"HSE_CLK.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.file 1 "src/drivers/HSE_CLK.c"
+  18              		.align	1
+  19              		.global	X_Clock_Init
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	X_Clock_Init, %function
+  24              	X_Clock_Init:
+  25              	.LFB63:
+   1:src/drivers/HSE_CLK.c **** 
+   2:src/drivers/HSE_CLK.c **** /**
+   3:src/drivers/HSE_CLK.c ****  * @file    HSE_CLK.c
+   4:src/drivers/HSE_CLK.c ****  * @brief   HSE clock configuration header for STM32F103 microcontroller series
+   5:src/drivers/HSE_CLK.c ****  * @author  Umesh Puri
+   6:src/drivers/HSE_CLK.c ****  * @date    2025-06-02
+   7:src/drivers/HSE_CLK.c ****  * @version 1.0
+   8:src/drivers/HSE_CLK.c ****  *
+   9:src/drivers/HSE_CLK.c ****  * This file contains functions and definitions for initializing and configuring
+  10:src/drivers/HSE_CLK.c ****  * the High-Speed External (HSE) clock source for the STM32F103 system clock.
+  11:src/drivers/HSE_CLK.c ****  *
+  12:src/drivers/HSE_CLK.c ****  * @license MIT License
+  13:src/drivers/HSE_CLK.c ****  * Copyright (c) 2025 Umesh
+  14:src/drivers/HSE_CLK.c ****  */
+  15:src/drivers/HSE_CLK.c **** 
+  16:src/drivers/HSE_CLK.c **** #include "stm32f1xx.h"
+  17:src/drivers/HSE_CLK.c **** #include "system_stm32f1xx.h"
+  18:src/drivers/HSE_CLK.c **** 
+  19:src/drivers/HSE_CLK.c **** #include "HSE_CLK.h"
+  20:src/drivers/HSE_CLK.c **** void X_Clock_Init(void)
+  21:src/drivers/HSE_CLK.c **** {
+  26              		.loc 1 21 1 view -0
+  27              		.cfi_startproc
+  28              		@ args = 0, pretend = 0, frame = 0
+  29              		@ frame_needed = 0, uses_anonymous_args = 0
+  30              		@ link register save eliminated.
+  22:src/drivers/HSE_CLK.c ****   /* 1. Enable HSE (High Speed External clock) */
+  23:src/drivers/HSE_CLK.c ****   RCC->CR |= RCC_CR_HSEON;
+  31              		.loc 1 23 3 view .LVU1
+  32              		.loc 1 23 6 is_stmt 0 view .LVU2
+  33 0000 204B     		ldr	r3, .L10
+  34 0002 1A68     		ldr	r2, [r3]
+ARM GAS  /tmp/ccMLmYFt.s 			page 2
+
+
+  35              		.loc 1 23 11 view .LVU3
+  36 0004 42F48032 		orr	r2, r2, #65536
+  37 0008 1A60     		str	r2, [r3]
+  24:src/drivers/HSE_CLK.c ****   while ((RCC->CR & RCC_CR_HSERDY) == 0)
+  38              		.loc 1 24 3 is_stmt 1 view .LVU4
+  39              	.L2:
+  40              		.loc 1 24 36 discriminator 1 view .LVU5
+  41              		.loc 1 24 14 is_stmt 0 discriminator 1 view .LVU6
+  42 000a 1A68     		ldr	r2, [r3]
+  43              		.loc 1 24 36 discriminator 1 view .LVU7
+  44 000c 9103     		lsls	r1, r2, #14
+  45 000e FCD5     		bpl	.L2
+  25:src/drivers/HSE_CLK.c ****     ; // Wait until HSE is ready
+  26:src/drivers/HSE_CLK.c **** 
+  27:src/drivers/HSE_CLK.c ****   /* 2. Configure Flash prefetch and latency */
+  28:src/drivers/HSE_CLK.c ****   FLASH->ACR |= FLASH_ACR_PRFTBE;    // Enable prefetch buffer
+  46              		.loc 1 28 3 is_stmt 1 view .LVU8
+  47              		.loc 1 28 8 is_stmt 0 view .LVU9
+  48 0010 1D4A     		ldr	r2, .L10+4
+  49 0012 1168     		ldr	r1, [r2]
+  50              		.loc 1 28 14 view .LVU10
+  51 0014 41F01001 		orr	r1, r1, #16
+  52 0018 1160     		str	r1, [r2]
+  29:src/drivers/HSE_CLK.c ****   FLASH->ACR &= ~FLASH_ACR_LATENCY;  // Clear latency bits
+  53              		.loc 1 29 3 is_stmt 1 view .LVU11
+  54              		.loc 1 29 8 is_stmt 0 view .LVU12
+  55 001a 1168     		ldr	r1, [r2]
+  56              		.loc 1 29 14 view .LVU13
+  57 001c 21F00701 		bic	r1, r1, #7
+  58 0020 1160     		str	r1, [r2]
+  30:src/drivers/HSE_CLK.c ****   FLASH->ACR |= FLASH_ACR_LATENCY_2; // 2 wait states for 72 MHz
+  59              		.loc 1 30 3 is_stmt 1 view .LVU14
+  60              		.loc 1 30 8 is_stmt 0 view .LVU15
+  61 0022 1168     		ldr	r1, [r2]
+  62              		.loc 1 30 14 view .LVU16
+  63 0024 41F00401 		orr	r1, r1, #4
+  64 0028 1160     		str	r1, [r2]
+  31:src/drivers/HSE_CLK.c **** 
+  32:src/drivers/HSE_CLK.c ****   /* 3. Set AHB, APB1, and APB2 prescalers */
+  33:src/drivers/HSE_CLK.c ****   RCC->CFGR &= ~(RCC_CFGR_HPRE |  // AHB prescaler
+  65              		.loc 1 33 3 is_stmt 1 view .LVU17
+  66              		.loc 1 33 6 is_stmt 0 view .LVU18
+  67 002a 5A68     		ldr	r2, [r3, #4]
+  68              		.loc 1 33 13 view .LVU19
+  69 002c 6FF30D12 		bfc	r2, #4, #10
+  70 0030 5A60     		str	r2, [r3, #4]
+  34:src/drivers/HSE_CLK.c ****                  RCC_CFGR_PPRE1 | // APB1 prescaler
+  35:src/drivers/HSE_CLK.c ****                  RCC_CFGR_PPRE2); // APB2 prescaler
+  36:src/drivers/HSE_CLK.c **** 
+  37:src/drivers/HSE_CLK.c ****   RCC->CFGR |= RCC_CFGR_HPRE_DIV1;  // AHB = SYSCLK / 1 = 72 MHz
+  71              		.loc 1 37 3 is_stmt 1 view .LVU20
+  72              		.loc 1 37 6 is_stmt 0 view .LVU21
+  73 0032 5A68     		ldr	r2, [r3, #4]
+  74              		.loc 1 37 13 view .LVU22
+  75 0034 5A60     		str	r2, [r3, #4]
+  38:src/drivers/HSE_CLK.c ****   RCC->CFGR |= RCC_CFGR_PPRE1_DIV2; // APB1 = HCLK / 2 = 36 MHz (max)
+  76              		.loc 1 38 3 is_stmt 1 view .LVU23
+ARM GAS  /tmp/ccMLmYFt.s 			page 3
+
+
+  77              		.loc 1 38 6 is_stmt 0 view .LVU24
+  78 0036 5A68     		ldr	r2, [r3, #4]
+  79              		.loc 1 38 13 view .LVU25
+  80 0038 42F48062 		orr	r2, r2, #1024
+  81 003c 5A60     		str	r2, [r3, #4]
+  39:src/drivers/HSE_CLK.c ****   RCC->CFGR |= RCC_CFGR_PPRE2_DIV1; // APB2 = HCLK / 1 = 72 MHz
+  82              		.loc 1 39 3 is_stmt 1 view .LVU26
+  83              		.loc 1 39 6 is_stmt 0 view .LVU27
+  84 003e 5A68     		ldr	r2, [r3, #4]
+  85              		.loc 1 39 13 view .LVU28
+  86 0040 5A60     		str	r2, [r3, #4]
+  40:src/drivers/HSE_CLK.c **** 
+  41:src/drivers/HSE_CLK.c ****   /* 4. Configure PLL: source = HSE, multiplier = 9 → 8 MHz × 9 = 72 MHz */
+  42:src/drivers/HSE_CLK.c ****   RCC->CFGR &= ~(RCC_CFGR_PLLSRC |
+  87              		.loc 1 42 3 is_stmt 1 view .LVU29
+  88              		.loc 1 42 6 is_stmt 0 view .LVU30
+  89 0042 5A68     		ldr	r2, [r3, #4]
+  90              		.loc 1 42 13 view .LVU31
+  91 0044 22F47C12 		bic	r2, r2, #4128768
+  92 0048 5A60     		str	r2, [r3, #4]
+  43:src/drivers/HSE_CLK.c ****                  RCC_CFGR_PLLXTPRE |
+  44:src/drivers/HSE_CLK.c ****                  RCC_CFGR_PLLMULL);
+  45:src/drivers/HSE_CLK.c ****   RCC->CFGR |= RCC_CFGR_PLLSRC;   // PLL source = HSE (not divided)
+  93              		.loc 1 45 3 is_stmt 1 view .LVU32
+  94              		.loc 1 45 6 is_stmt 0 view .LVU33
+  95 004a 5A68     		ldr	r2, [r3, #4]
+  96              		.loc 1 45 13 view .LVU34
+  97 004c 42F48032 		orr	r2, r2, #65536
+  98 0050 5A60     		str	r2, [r3, #4]
+  46:src/drivers/HSE_CLK.c ****   RCC->CFGR |= RCC_CFGR_PLLMULL9; // PLL multiplier = 9
+  99              		.loc 1 46 3 is_stmt 1 view .LVU35
+ 100              		.loc 1 46 6 is_stmt 0 view .LVU36
+ 101 0052 5A68     		ldr	r2, [r3, #4]
+ 102              		.loc 1 46 13 view .LVU37
+ 103 0054 42F4E012 		orr	r2, r2, #1835008
+ 104 0058 5A60     		str	r2, [r3, #4]
+  47:src/drivers/HSE_CLK.c **** 
+  48:src/drivers/HSE_CLK.c ****   /* 5. Enable PLL */
+  49:src/drivers/HSE_CLK.c ****   RCC->CR |= RCC_CR_PLLON;
+ 105              		.loc 1 49 3 is_stmt 1 view .LVU38
+ 106              		.loc 1 49 6 is_stmt 0 view .LVU39
+ 107 005a 1A68     		ldr	r2, [r3]
+ 108              		.loc 1 49 11 view .LVU40
+ 109 005c 42F08072 		orr	r2, r2, #16777216
+ 110 0060 1A60     		str	r2, [r3]
+  50:src/drivers/HSE_CLK.c ****   while ((RCC->CR & RCC_CR_PLLRDY) == 0)
+ 111              		.loc 1 50 3 is_stmt 1 view .LVU41
+ 112              	.L3:
+ 113              		.loc 1 50 36 discriminator 1 view .LVU42
+ 114              		.loc 1 50 14 is_stmt 0 discriminator 1 view .LVU43
+ 115 0062 1A68     		ldr	r2, [r3]
+ 116              		.loc 1 50 36 discriminator 1 view .LVU44
+ 117 0064 9201     		lsls	r2, r2, #6
+ 118 0066 FCD5     		bpl	.L3
+  51:src/drivers/HSE_CLK.c ****     ; // Wait until PLL is ready
+  52:src/drivers/HSE_CLK.c **** 
+  53:src/drivers/HSE_CLK.c ****   /* 6. Select PLL as system clock */
+ARM GAS  /tmp/ccMLmYFt.s 			page 4
+
+
+  54:src/drivers/HSE_CLK.c ****   RCC->CFGR &= ~RCC_CFGR_SW;
+ 119              		.loc 1 54 3 is_stmt 1 view .LVU45
+ 120              		.loc 1 54 6 is_stmt 0 view .LVU46
+ 121 0068 5A68     		ldr	r2, [r3, #4]
+ 122              		.loc 1 54 13 view .LVU47
+ 123 006a 22F00302 		bic	r2, r2, #3
+ 124 006e 5A60     		str	r2, [r3, #4]
+  55:src/drivers/HSE_CLK.c ****   RCC->CFGR |= RCC_CFGR_SW_PLL;
+ 125              		.loc 1 55 3 is_stmt 1 view .LVU48
+ 126              		.loc 1 55 6 is_stmt 0 view .LVU49
+ 127 0070 5A68     		ldr	r2, [r3, #4]
+ 128              		.loc 1 55 13 view .LVU50
+ 129 0072 42F00202 		orr	r2, r2, #2
+ 130 0076 5A60     		str	r2, [r3, #4]
+  56:src/drivers/HSE_CLK.c ****   while ((RCC->CFGR & RCC_CFGR_SWS) != RCC_CFGR_SWS_PLL)
+ 131              		.loc 1 56 3 is_stmt 1 view .LVU51
+ 132              	.L4:
+ 133              		.loc 1 56 37 discriminator 1 view .LVU52
+ 134              		.loc 1 56 14 is_stmt 0 discriminator 1 view .LVU53
+ 135 0078 5A68     		ldr	r2, [r3, #4]
+ 136              		.loc 1 56 21 discriminator 1 view .LVU54
+ 137 007a 02F00C02 		and	r2, r2, #12
+ 138              		.loc 1 56 37 discriminator 1 view .LVU55
+ 139 007e 082A     		cmp	r2, #8
+ 140 0080 FAD1     		bne	.L4
+  57:src/drivers/HSE_CLK.c ****     ; // Wait for switch
+  58:src/drivers/HSE_CLK.c ****   for (int i = 0; i < 72000000; i++)
+  59:src/drivers/HSE_CLK.c ****     ; // 1 sec wait time
+  60:src/drivers/HSE_CLK.c ****       /* 7. Update SystemCoreClock variable */
+  61:src/drivers/HSE_CLK.c ****   // SystemCoreClock = 72000000;
+  62:src/drivers/HSE_CLK.c **** }
+ 141              		.loc 1 62 1 view .LVU56
+ 142 0082 7047     		bx	lr
+ 143              	.L11:
+ 144              		.align	2
+ 145              	.L10:
+ 146 0084 00100240 		.word	1073876992
+ 147 0088 00200240 		.word	1073881088
+ 148              		.cfi_endproc
+ 149              	.LFE63:
+ 150              		.size	X_Clock_Init, .-X_Clock_Init
+ 151              	.Letext0:
+ 152              		.file 2 "/opt/arm-none-eabi/arm-none-eabi/include/machine/_default_types.h"
+ 153              		.file 3 "/opt/arm-none-eabi/arm-none-eabi/include/sys/_stdint.h"
+ 154              		.file 4 "common/include/stm32f103xb.h"
+ 155              		.section	.debug_info,"",%progbits
+ 156              	.Ldebug_info0:
+ 157 0000 AD010000 		.4byte	0x1ad
+ 158 0004 0500     		.2byte	0x5
+ 159 0006 01       		.byte	0x1
+ 160 0007 04       		.byte	0x4
+ 161 0008 00000000 		.4byte	.Ldebug_abbrev0
+ 162 000c 07       		.uleb128 0x7
+ 163 000d 31000000 		.4byte	.LASF24
+ 164 0011 1D       		.byte	0x1d
+ 165 0012 A6000000 		.4byte	.LASF25
+ 166 0016 56010000 		.4byte	.LASF26
+ARM GAS  /tmp/ccMLmYFt.s 			page 5
+
+
+ 167 001a 00000000 		.4byte	.Ltext0
+ 168 001e 8C000000 		.4byte	.Letext0-.Ltext0
+ 169 0022 00000000 		.4byte	.Ldebug_line0
+ 170 0026 02       		.uleb128 0x2
+ 171 0027 01       		.byte	0x1
+ 172 0028 06       		.byte	0x6
+ 173 0029 A1010000 		.4byte	.LASF0
+ 174 002d 02       		.uleb128 0x2
+ 175 002e 01       		.byte	0x1
+ 176 002f 08       		.byte	0x8
+ 177 0030 D7000000 		.4byte	.LASF1
+ 178 0034 02       		.uleb128 0x2
+ 179 0035 02       		.byte	0x2
+ 180 0036 05       		.byte	0x5
+ 181 0037 74010000 		.4byte	.LASF2
+ 182 003b 02       		.uleb128 0x2
+ 183 003c 02       		.byte	0x2
+ 184 003d 07       		.byte	0x7
+ 185 003e BC000000 		.4byte	.LASF3
+ 186 0042 02       		.uleb128 0x2
+ 187 0043 04       		.byte	0x4
+ 188 0044 05       		.byte	0x5
+ 189 0045 93010000 		.4byte	.LASF4
+ 190 0049 04       		.uleb128 0x4
+ 191 004a 08010000 		.4byte	.LASF9
+ 192 004e 02       		.byte	0x2
+ 193 004f 4F       		.byte	0x4f
+ 194 0050 19       		.byte	0x19
+ 195 0051 55000000 		.4byte	0x55
+ 196 0055 02       		.uleb128 0x2
+ 197 0056 04       		.byte	0x4
+ 198 0057 07       		.byte	0x7
+ 199 0058 E5000000 		.4byte	.LASF5
+ 200 005c 02       		.uleb128 0x2
+ 201 005d 08       		.byte	0x8
+ 202 005e 05       		.byte	0x5
+ 203 005f 48010000 		.4byte	.LASF6
+ 204 0063 02       		.uleb128 0x2
+ 205 0064 08       		.byte	0x8
+ 206 0065 07       		.byte	0x7
+ 207 0066 31010000 		.4byte	.LASF7
+ 208 006a 08       		.uleb128 0x8
+ 209 006b 04       		.byte	0x4
+ 210 006c 05       		.byte	0x5
+ 211 006d 696E7400 		.ascii	"int\000"
+ 212 0071 02       		.uleb128 0x2
+ 213 0072 04       		.byte	0x4
+ 214 0073 07       		.byte	0x7
+ 215 0074 24010000 		.4byte	.LASF8
+ 216 0078 04       		.uleb128 0x4
+ 217 0079 8A010000 		.4byte	.LASF10
+ 218 007d 03       		.byte	0x3
+ 219 007e 30       		.byte	0x30
+ 220 007f 14       		.byte	0x14
+ 221 0080 49000000 		.4byte	0x49
+ 222 0084 09       		.uleb128 0x9
+ 223 0085 78000000 		.4byte	0x78
+ARM GAS  /tmp/ccMLmYFt.s 			page 6
+
+
+ 224 0089 05       		.uleb128 0x5
+ 225 008a 24       		.byte	0x24
+ 226 008b 4501     		.2byte	0x145
+ 227 008d FB000000 		.4byte	0xfb
+ 228 0091 03       		.uleb128 0x3
+ 229 0092 41435200 		.ascii	"ACR\000"
+ 230 0096 4701     		.2byte	0x147
+ 231 0098 84000000 		.4byte	0x84
+ 232 009c 00       		.byte	0
+ 233 009d 01       		.uleb128 0x1
+ 234 009e 9C010000 		.4byte	.LASF11
+ 235 00a2 4801     		.2byte	0x148
+ 236 00a4 84000000 		.4byte	0x84
+ 237 00a8 04       		.byte	0x4
+ 238 00a9 01       		.uleb128 0x1
+ 239 00aa CF000000 		.4byte	.LASF12
+ 240 00ae 4901     		.2byte	0x149
+ 241 00b0 84000000 		.4byte	0x84
+ 242 00b4 08       		.byte	0x8
+ 243 00b5 03       		.uleb128 0x3
+ 244 00b6 535200   		.ascii	"SR\000"
+ 245 00b9 4A01     		.2byte	0x14a
+ 246 00bb 84000000 		.4byte	0x84
+ 247 00bf 0C       		.byte	0xc
+ 248 00c0 03       		.uleb128 0x3
+ 249 00c1 435200   		.ascii	"CR\000"
+ 250 00c4 4B01     		.2byte	0x14b
+ 251 00c6 84000000 		.4byte	0x84
+ 252 00ca 10       		.byte	0x10
+ 253 00cb 03       		.uleb128 0x3
+ 254 00cc 415200   		.ascii	"AR\000"
+ 255 00cf 4C01     		.2byte	0x14c
+ 256 00d1 84000000 		.4byte	0x84
+ 257 00d5 14       		.byte	0x14
+ 258 00d6 01       		.uleb128 0x1
+ 259 00d7 F7000000 		.4byte	.LASF13
+ 260 00db 4D01     		.2byte	0x14d
+ 261 00dd 84000000 		.4byte	0x84
+ 262 00e1 18       		.byte	0x18
+ 263 00e2 03       		.uleb128 0x3
+ 264 00e3 4F425200 		.ascii	"OBR\000"
+ 265 00e7 4E01     		.2byte	0x14e
+ 266 00e9 84000000 		.4byte	0x84
+ 267 00ed 1C       		.byte	0x1c
+ 268 00ee 01       		.uleb128 0x1
+ 269 00ef 2C000000 		.4byte	.LASF14
+ 270 00f3 4F01     		.2byte	0x14f
+ 271 00f5 84000000 		.4byte	0x84
+ 272 00f9 20       		.byte	0x20
+ 273 00fa 00       		.byte	0
+ 274 00fb 06       		.uleb128 0x6
+ 275 00fc 17000000 		.4byte	.LASF15
+ 276 0100 5001     		.2byte	0x150
+ 277 0102 89000000 		.4byte	0x89
+ 278 0106 05       		.uleb128 0x5
+ 279 0107 28       		.byte	0x28
+ 280 0108 A801     		.2byte	0x1a8
+ARM GAS  /tmp/ccMLmYFt.s 			page 7
+
+
+ 281 010a 86010000 		.4byte	0x186
+ 282 010e 03       		.uleb128 0x3
+ 283 010f 435200   		.ascii	"CR\000"
+ 284 0112 AA01     		.2byte	0x1aa
+ 285 0114 84000000 		.4byte	0x84
+ 286 0118 00       		.byte	0
+ 287 0119 01       		.uleb128 0x1
+ 288 011a 05000000 		.4byte	.LASF16
+ 289 011e AB01     		.2byte	0x1ab
+ 290 0120 84000000 		.4byte	0x84
+ 291 0124 04       		.byte	0x4
+ 292 0125 03       		.uleb128 0x3
+ 293 0126 43495200 		.ascii	"CIR\000"
+ 294 012a AC01     		.2byte	0x1ac
+ 295 012c 84000000 		.4byte	0x84
+ 296 0130 08       		.byte	0x8
+ 297 0131 01       		.uleb128 0x1
+ 298 0132 1B010000 		.4byte	.LASF17
+ 299 0136 AD01     		.2byte	0x1ad
+ 300 0138 84000000 		.4byte	0x84
+ 301 013c 0C       		.byte	0xc
+ 302 013d 01       		.uleb128 0x1
+ 303 013e 9D000000 		.4byte	.LASF18
+ 304 0142 AE01     		.2byte	0x1ae
+ 305 0144 84000000 		.4byte	0x84
+ 306 0148 10       		.byte	0x10
+ 307 0149 01       		.uleb128 0x1
+ 308 014a 25000000 		.4byte	.LASF19
+ 309 014e AF01     		.2byte	0x1af
+ 310 0150 84000000 		.4byte	0x84
+ 311 0154 14       		.byte	0x14
+ 312 0155 01       		.uleb128 0x1
+ 313 0156 00010000 		.4byte	.LASF20
+ 314 015a B001     		.2byte	0x1b0
+ 315 015c 84000000 		.4byte	0x84
+ 316 0160 18       		.byte	0x18
+ 317 0161 01       		.uleb128 0x1
+ 318 0162 13010000 		.4byte	.LASF21
+ 319 0166 B101     		.2byte	0x1b1
+ 320 0168 84000000 		.4byte	0x84
+ 321 016c 1C       		.byte	0x1c
+ 322 016d 01       		.uleb128 0x1
+ 323 016e 00000000 		.4byte	.LASF22
+ 324 0172 B201     		.2byte	0x1b2
+ 325 0174 84000000 		.4byte	0x84
+ 326 0178 20       		.byte	0x20
+ 327 0179 03       		.uleb128 0x3
+ 328 017a 43535200 		.ascii	"CSR\000"
+ 329 017e B301     		.2byte	0x1b3
+ 330 0180 84000000 		.4byte	0x84
+ 331 0184 24       		.byte	0x24
+ 332 0185 00       		.byte	0
+ 333 0186 06       		.uleb128 0x6
+ 334 0187 7E010000 		.4byte	.LASF23
+ 335 018b B601     		.2byte	0x1b6
+ 336 018d 06010000 		.4byte	0x106
+ 337 0191 0A       		.uleb128 0xa
+ARM GAS  /tmp/ccMLmYFt.s 			page 8
+
+
+ 338 0192 0A000000 		.4byte	.LASF27
+ 339 0196 01       		.byte	0x1
+ 340 0197 14       		.byte	0x14
+ 341 0198 06       		.byte	0x6
+ 342 0199 00000000 		.4byte	.LFB63
+ 343 019d 8C000000 		.4byte	.LFE63-.LFB63
+ 344 01a1 01       		.uleb128 0x1
+ 345 01a2 9C       		.byte	0x9c
+ 346 01a3 0B       		.uleb128 0xb
+ 347 01a4 0C       		.uleb128 0xc
+ 348 01a5 6900     		.ascii	"i\000"
+ 349 01a7 01       		.byte	0x1
+ 350 01a8 3A       		.byte	0x3a
+ 351 01a9 0C       		.byte	0xc
+ 352 01aa 6A000000 		.4byte	0x6a
+ 353 01ae 00       		.byte	0
+ 354 01af 00       		.byte	0
+ 355 01b0 00       		.byte	0
+ 356              		.section	.debug_abbrev,"",%progbits
+ 357              	.Ldebug_abbrev0:
+ 358 0000 01       		.uleb128 0x1
+ 359 0001 0D       		.uleb128 0xd
+ 360 0002 00       		.byte	0
+ 361 0003 03       		.uleb128 0x3
+ 362 0004 0E       		.uleb128 0xe
+ 363 0005 3A       		.uleb128 0x3a
+ 364 0006 21       		.uleb128 0x21
+ 365 0007 04       		.sleb128 4
+ 366 0008 3B       		.uleb128 0x3b
+ 367 0009 05       		.uleb128 0x5
+ 368 000a 39       		.uleb128 0x39
+ 369 000b 21       		.uleb128 0x21
+ 370 000c 11       		.sleb128 17
+ 371 000d 49       		.uleb128 0x49
+ 372 000e 13       		.uleb128 0x13
+ 373 000f 38       		.uleb128 0x38
+ 374 0010 0B       		.uleb128 0xb
+ 375 0011 00       		.byte	0
+ 376 0012 00       		.byte	0
+ 377 0013 02       		.uleb128 0x2
+ 378 0014 24       		.uleb128 0x24
+ 379 0015 00       		.byte	0
+ 380 0016 0B       		.uleb128 0xb
+ 381 0017 0B       		.uleb128 0xb
+ 382 0018 3E       		.uleb128 0x3e
+ 383 0019 0B       		.uleb128 0xb
+ 384 001a 03       		.uleb128 0x3
+ 385 001b 0E       		.uleb128 0xe
+ 386 001c 00       		.byte	0
+ 387 001d 00       		.byte	0
+ 388 001e 03       		.uleb128 0x3
+ 389 001f 0D       		.uleb128 0xd
+ 390 0020 00       		.byte	0
+ 391 0021 03       		.uleb128 0x3
+ 392 0022 08       		.uleb128 0x8
+ 393 0023 3A       		.uleb128 0x3a
+ 394 0024 21       		.uleb128 0x21
+ARM GAS  /tmp/ccMLmYFt.s 			page 9
+
+
+ 395 0025 04       		.sleb128 4
+ 396 0026 3B       		.uleb128 0x3b
+ 397 0027 05       		.uleb128 0x5
+ 398 0028 39       		.uleb128 0x39
+ 399 0029 21       		.uleb128 0x21
+ 400 002a 11       		.sleb128 17
+ 401 002b 49       		.uleb128 0x49
+ 402 002c 13       		.uleb128 0x13
+ 403 002d 38       		.uleb128 0x38
+ 404 002e 0B       		.uleb128 0xb
+ 405 002f 00       		.byte	0
+ 406 0030 00       		.byte	0
+ 407 0031 04       		.uleb128 0x4
+ 408 0032 16       		.uleb128 0x16
+ 409 0033 00       		.byte	0
+ 410 0034 03       		.uleb128 0x3
+ 411 0035 0E       		.uleb128 0xe
+ 412 0036 3A       		.uleb128 0x3a
+ 413 0037 0B       		.uleb128 0xb
+ 414 0038 3B       		.uleb128 0x3b
+ 415 0039 0B       		.uleb128 0xb
+ 416 003a 39       		.uleb128 0x39
+ 417 003b 0B       		.uleb128 0xb
+ 418 003c 49       		.uleb128 0x49
+ 419 003d 13       		.uleb128 0x13
+ 420 003e 00       		.byte	0
+ 421 003f 00       		.byte	0
+ 422 0040 05       		.uleb128 0x5
+ 423 0041 13       		.uleb128 0x13
+ 424 0042 01       		.byte	0x1
+ 425 0043 0B       		.uleb128 0xb
+ 426 0044 0B       		.uleb128 0xb
+ 427 0045 3A       		.uleb128 0x3a
+ 428 0046 21       		.uleb128 0x21
+ 429 0047 04       		.sleb128 4
+ 430 0048 3B       		.uleb128 0x3b
+ 431 0049 05       		.uleb128 0x5
+ 432 004a 39       		.uleb128 0x39
+ 433 004b 21       		.uleb128 0x21
+ 434 004c 09       		.sleb128 9
+ 435 004d 01       		.uleb128 0x1
+ 436 004e 13       		.uleb128 0x13
+ 437 004f 00       		.byte	0
+ 438 0050 00       		.byte	0
+ 439 0051 06       		.uleb128 0x6
+ 440 0052 16       		.uleb128 0x16
+ 441 0053 00       		.byte	0
+ 442 0054 03       		.uleb128 0x3
+ 443 0055 0E       		.uleb128 0xe
+ 444 0056 3A       		.uleb128 0x3a
+ 445 0057 21       		.uleb128 0x21
+ 446 0058 04       		.sleb128 4
+ 447 0059 3B       		.uleb128 0x3b
+ 448 005a 05       		.uleb128 0x5
+ 449 005b 39       		.uleb128 0x39
+ 450 005c 21       		.uleb128 0x21
+ 451 005d 03       		.sleb128 3
+ARM GAS  /tmp/ccMLmYFt.s 			page 10
+
+
+ 452 005e 49       		.uleb128 0x49
+ 453 005f 13       		.uleb128 0x13
+ 454 0060 00       		.byte	0
+ 455 0061 00       		.byte	0
+ 456 0062 07       		.uleb128 0x7
+ 457 0063 11       		.uleb128 0x11
+ 458 0064 01       		.byte	0x1
+ 459 0065 25       		.uleb128 0x25
+ 460 0066 0E       		.uleb128 0xe
+ 461 0067 13       		.uleb128 0x13
+ 462 0068 0B       		.uleb128 0xb
+ 463 0069 03       		.uleb128 0x3
+ 464 006a 0E       		.uleb128 0xe
+ 465 006b 1B       		.uleb128 0x1b
+ 466 006c 0E       		.uleb128 0xe
+ 467 006d 11       		.uleb128 0x11
+ 468 006e 01       		.uleb128 0x1
+ 469 006f 12       		.uleb128 0x12
+ 470 0070 06       		.uleb128 0x6
+ 471 0071 10       		.uleb128 0x10
+ 472 0072 17       		.uleb128 0x17
+ 473 0073 00       		.byte	0
+ 474 0074 00       		.byte	0
+ 475 0075 08       		.uleb128 0x8
+ 476 0076 24       		.uleb128 0x24
+ 477 0077 00       		.byte	0
+ 478 0078 0B       		.uleb128 0xb
+ 479 0079 0B       		.uleb128 0xb
+ 480 007a 3E       		.uleb128 0x3e
+ 481 007b 0B       		.uleb128 0xb
+ 482 007c 03       		.uleb128 0x3
+ 483 007d 08       		.uleb128 0x8
+ 484 007e 00       		.byte	0
+ 485 007f 00       		.byte	0
+ 486 0080 09       		.uleb128 0x9
+ 487 0081 35       		.uleb128 0x35
+ 488 0082 00       		.byte	0
+ 489 0083 49       		.uleb128 0x49
+ 490 0084 13       		.uleb128 0x13
+ 491 0085 00       		.byte	0
+ 492 0086 00       		.byte	0
+ 493 0087 0A       		.uleb128 0xa
+ 494 0088 2E       		.uleb128 0x2e
+ 495 0089 01       		.byte	0x1
+ 496 008a 3F       		.uleb128 0x3f
+ 497 008b 19       		.uleb128 0x19
+ 498 008c 03       		.uleb128 0x3
+ 499 008d 0E       		.uleb128 0xe
+ 500 008e 3A       		.uleb128 0x3a
+ 501 008f 0B       		.uleb128 0xb
+ 502 0090 3B       		.uleb128 0x3b
+ 503 0091 0B       		.uleb128 0xb
+ 504 0092 39       		.uleb128 0x39
+ 505 0093 0B       		.uleb128 0xb
+ 506 0094 27       		.uleb128 0x27
+ 507 0095 19       		.uleb128 0x19
+ 508 0096 11       		.uleb128 0x11
+ARM GAS  /tmp/ccMLmYFt.s 			page 11
+
+
+ 509 0097 01       		.uleb128 0x1
+ 510 0098 12       		.uleb128 0x12
+ 511 0099 06       		.uleb128 0x6
+ 512 009a 40       		.uleb128 0x40
+ 513 009b 18       		.uleb128 0x18
+ 514 009c 7A       		.uleb128 0x7a
+ 515 009d 19       		.uleb128 0x19
+ 516 009e 00       		.byte	0
+ 517 009f 00       		.byte	0
+ 518 00a0 0B       		.uleb128 0xb
+ 519 00a1 0B       		.uleb128 0xb
+ 520 00a2 01       		.byte	0x1
+ 521 00a3 00       		.byte	0
+ 522 00a4 00       		.byte	0
+ 523 00a5 0C       		.uleb128 0xc
+ 524 00a6 34       		.uleb128 0x34
+ 525 00a7 00       		.byte	0
+ 526 00a8 03       		.uleb128 0x3
+ 527 00a9 08       		.uleb128 0x8
+ 528 00aa 3A       		.uleb128 0x3a
+ 529 00ab 0B       		.uleb128 0xb
+ 530 00ac 3B       		.uleb128 0x3b
+ 531 00ad 0B       		.uleb128 0xb
+ 532 00ae 39       		.uleb128 0x39
+ 533 00af 0B       		.uleb128 0xb
+ 534 00b0 49       		.uleb128 0x49
+ 535 00b1 13       		.uleb128 0x13
+ 536 00b2 00       		.byte	0
+ 537 00b3 00       		.byte	0
+ 538 00b4 00       		.byte	0
+ 539              		.section	.debug_aranges,"",%progbits
+ 540 0000 1C000000 		.4byte	0x1c
+ 541 0004 0200     		.2byte	0x2
+ 542 0006 00000000 		.4byte	.Ldebug_info0
+ 543 000a 04       		.byte	0x4
+ 544 000b 00       		.byte	0
+ 545 000c 0000     		.2byte	0
+ 546 000e 0000     		.2byte	0
+ 547 0010 00000000 		.4byte	.Ltext0
+ 548 0014 8C000000 		.4byte	.Letext0-.Ltext0
+ 549 0018 00000000 		.4byte	0
+ 550 001c 00000000 		.4byte	0
+ 551              		.section	.debug_line,"",%progbits
+ 552              	.Ldebug_line0:
+ 553 0000 D3010000 		.section	.debug_str,"MS",%progbits,1
+ 553      0300CB00 
+ 553      00000201 
+ 553      FB0E0D00 
+ 553      01010101 
+ 554              	.LASF22:
+ 555 0000 42444352 		.ascii	"BDCR\000"
+ 555      00
+ 556              	.LASF16:
+ 557 0005 43464752 		.ascii	"CFGR\000"
+ 557      00
+ 558              	.LASF27:
+ 559 000a 585F436C 		.ascii	"X_Clock_Init\000"
+ARM GAS  /tmp/ccMLmYFt.s 			page 12
+
+
+ 559      6F636B5F 
+ 559      496E6974 
+ 559      00
+ 560              	.LASF15:
+ 561 0017 464C4153 		.ascii	"FLASH_TypeDef\000"
+ 561      485F5479 
+ 561      70654465 
+ 561      6600
+ 562              	.LASF19:
+ 563 0025 41484245 		.ascii	"AHBENR\000"
+ 563      4E5200
+ 564              	.LASF14:
+ 565 002c 57525052 		.ascii	"WRPR\000"
+ 565      00
+ 566              	.LASF24:
+ 567 0031 474E5520 		.ascii	"GNU C11 13.3.1 20240614 -mthumb -mcpu=cortex-m3 -mf"
+ 567      43313120 
+ 567      31332E33 
+ 567      2E312032 
+ 567      30323430 
+ 568 0064 6C6F6174 		.ascii	"loat-abi=soft -march=armv7-m -g -Os -std=c11 -fno-c"
+ 568      2D616269 
+ 568      3D736F66 
+ 568      74202D6D 
+ 568      61726368 
+ 569 0097 6F6D6D6F 		.ascii	"ommon\000"
+ 569      6E00
+ 570              	.LASF18:
+ 571 009d 41504231 		.ascii	"APB1RSTR\000"
+ 571      52535452 
+ 571      00
+ 572              	.LASF25:
+ 573 00a6 7372632F 		.ascii	"src/drivers/HSE_CLK.c\000"
+ 573      64726976 
+ 573      6572732F 
+ 573      4853455F 
+ 573      434C4B2E 
+ 574              	.LASF3:
+ 575 00bc 73686F72 		.ascii	"short unsigned int\000"
+ 575      7420756E 
+ 575      7369676E 
+ 575      65642069 
+ 575      6E7400
+ 576              	.LASF12:
+ 577 00cf 4F50544B 		.ascii	"OPTKEYR\000"
+ 577      45595200 
+ 578              	.LASF1:
+ 579 00d7 756E7369 		.ascii	"unsigned char\000"
+ 579      676E6564 
+ 579      20636861 
+ 579      7200
+ 580              	.LASF5:
+ 581 00e5 6C6F6E67 		.ascii	"long unsigned int\000"
+ 581      20756E73 
+ 581      69676E65 
+ 581      6420696E 
+ 581      7400
+ARM GAS  /tmp/ccMLmYFt.s 			page 13
+
+
+ 582              	.LASF13:
+ 583 00f7 52455345 		.ascii	"RESERVED\000"
+ 583      52564544 
+ 583      00
+ 584              	.LASF20:
+ 585 0100 41504232 		.ascii	"APB2ENR\000"
+ 585      454E5200 
+ 586              	.LASF9:
+ 587 0108 5F5F7569 		.ascii	"__uint32_t\000"
+ 587      6E743332 
+ 587      5F7400
+ 588              	.LASF21:
+ 589 0113 41504231 		.ascii	"APB1ENR\000"
+ 589      454E5200 
+ 590              	.LASF17:
+ 591 011b 41504232 		.ascii	"APB2RSTR\000"
+ 591      52535452 
+ 591      00
+ 592              	.LASF8:
+ 593 0124 756E7369 		.ascii	"unsigned int\000"
+ 593      676E6564 
+ 593      20696E74 
+ 593      00
+ 594              	.LASF7:
+ 595 0131 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 595      206C6F6E 
+ 595      6720756E 
+ 595      7369676E 
+ 595      65642069 
+ 596              	.LASF6:
+ 597 0148 6C6F6E67 		.ascii	"long long int\000"
+ 597      206C6F6E 
+ 597      6720696E 
+ 597      7400
+ 598              	.LASF26:
+ 599 0156 2F686F6D 		.ascii	"/home/umesh_adwait/sensor_ppg\000"
+ 599      652F756D 
+ 599      6573685F 
+ 599      61647761 
+ 599      69742F73 
+ 600              	.LASF2:
+ 601 0174 73686F72 		.ascii	"short int\000"
+ 601      7420696E 
+ 601      7400
+ 602              	.LASF23:
+ 603 017e 5243435F 		.ascii	"RCC_TypeDef\000"
+ 603      54797065 
+ 603      44656600 
+ 604              	.LASF10:
+ 605 018a 75696E74 		.ascii	"uint32_t\000"
+ 605      33325F74 
+ 605      00
+ 606              	.LASF4:
+ 607 0193 6C6F6E67 		.ascii	"long int\000"
+ 607      20696E74 
+ 607      00
+ 608              	.LASF11:
+ARM GAS  /tmp/ccMLmYFt.s 			page 14
+
+
+ 609 019c 4B455952 		.ascii	"KEYR\000"
+ 609      00
+ 610              	.LASF0:
+ 611 01a1 7369676E 		.ascii	"signed char\000"
+ 611      65642063 
+ 611      68617200 
+ 612              		.ident	"GCC: (Arm GNU Toolchain 13.3.Rel1 (Build arm-13.24)) 13.3.1 20240614"
+ARM GAS  /tmp/ccMLmYFt.s 			page 15
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 HSE_CLK.c
+     /tmp/ccMLmYFt.s:18     .text:00000000 $t
+     /tmp/ccMLmYFt.s:24     .text:00000000 X_Clock_Init
+     /tmp/ccMLmYFt.s:146    .text:00000084 $d
+
+NO UNDEFINED SYMBOLS

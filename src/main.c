@@ -24,19 +24,23 @@
 #include "spi.h"
 #include "adc.h"
 #include "ledconf.h"
+#include "hamming.h"
+
 #define FFT_SIZE 256
 #define PPG_SAMP (&adc_buffer[0])
 #define SPO2_IR (&adc_buffer[1])
 #define SPO2_RED (&adc_buffer[2])
 
+int __errno = 0;
+
 int16_t *pPPG_Sample = PPG_SAMP; // pointer for Green
 int16_t *pSPO2_IR = SPO2_IR;     // pointer for IR
 int16_t *pSPO2_RED = SPO2_RED;   // pointer for RED
 q15_t input[FFT_SIZE * 2];
-q15_t output[FFT_SIZE];
+
 static q15_t mag[FFT_SIZE] = {0};
-static int16_t peak[FFT_SIZE] = {0};
-static q15_t reals[FFT_SIZE] = {0};
+//static int16_t peak[FFT_SIZE] = {0};
+//static q15_t reals[FFT_SIZE] = {0};
 q15_t maxVal = 0;
 uint32_t maxIndex = 0;
 uint32_t mean_value = 0;
@@ -44,12 +48,12 @@ q15_t noisefloor = 0;
 volatile q15_t confidence = 0;
 volatile float32_t hr_values = 0.0f;
 q15_t sampleMean = 0;
-int16_t j = 0;
+//int16_t j = 0;
 
 arm_cfft_radix4_instance_q15 fft_inst;
 arm_cfft_radix4_instance_q15 Ifft_inst;
 void DSP_process(void); // DSP_process function prototype
-float32_t calculate_heart_rate(const int16_t *peak_indices);
+//float32_t calculate_heart_rate(const int16_t *peak_indices);
 
 void DSP_process(void); // DSP_process function prototype
 
@@ -63,7 +67,7 @@ int main(void)
    led_init();      // LEDs initialization
 
    arm_cfft_radix4_init_q15(&fft_inst, FFT_SIZE, 0, 1);  // forward FFT
-   arm_cfft_radix4_init_q15(&Ifft_inst, FFT_SIZE, 1, 1); // IFFT
+   //arm_cfft_radix4_init_q15(&Ifft_inst, FFT_SIZE, 1, 1); // IFFT
 
    while (1)
    {
@@ -72,13 +76,15 @@ int main(void)
 
          ACC_COMP = false;
          DSP_process(); // call DSP_process
+       
          // after completion of DSP start the process again
          start_process();
-      }
+      }else{
 
-      _us_delay(500);
+      _us_delay(50);
       spi_transmit(hr_values, confidence);
-      _us_delay(500);
+      _us_delay(50);
+      }
    }
    return 0;
 }
@@ -98,6 +104,8 @@ void DSP_process(void)
    for (uint16_t i = 0; i < FFT_SIZE; i++)
    {
       input[i * 2] = input[i * 2] - (sampleMean << 1); // compensate the means of interleved array multiplying by 2
+      int32_t temp = (int32_t)input[i * 2] * hamming[i];  // Q15 * Q15 = Q30
+      input[i * 2] = (q15_t)__SSAT((temp >> 15), 16);     // Back to Q15 and saturate to 16-bit
       input[(i * 2) + 1] = 0;
    }
 
@@ -108,14 +116,23 @@ void DSP_process(void)
    // get noise floor before removing high bins
    arm_mean_q15(&mag[0], FFT_SIZE, &noisefloor);
 
-   // filtering: zero out high frequencies
+     // remove noise component
+   for (uint16_t i = 0; i < FFT_SIZE; i++)
+   {
+    mag[i] = mag[i] - noisefloor;
+   }
+
+   // Bandpass filtering: zero out low and high frequencies
+   memset(&mag[0], 0, 5 * sizeof(q15_t)); // zero bins from 0 to 4 
    memset(&mag[21], 0, (FFT_SIZE - 21) * sizeof(q15_t)); // zero bins 21 to end
 
    arm_max_q15(mag, FFT_SIZE / 2, &maxVal, &maxIndex);
 
+  
+
    confidence = (noisefloor > 0) ? maxVal / noisefloor : 0;
 
-   if (confidence < 10) // threshold confidence
+   if (confidence < 5) // threshold confidence
    {
       hr_values = 0;
       return;
@@ -138,6 +155,28 @@ void DSP_process(void)
       return;
    }
 
+
+//quadratic interpolation based estimation 
+float32_t delta, refined_freq;
+float32_t mag_km1 =(mag[maxIndex - 1]);
+mag_km1 = (mag_km1 <= 0)? 0.001f:mag_km1;
+float32_t mag_k   =(mag[maxIndex]);
+mag_k = (mag_k <= 0)? 0.001f:mag_k;
+float32_t mag_kp1 =(mag[maxIndex + 1]);
+mag_kp1 = (mag_kp1 <= 0)? 0.001f:mag_kp1;
+
+//delta = (mag_km1 - mag_kp1) / (2 * (mag_km1 - 2 * mag_k + mag_kp1));
+
+//log-magnitude interpolation
+delta = 0.5f * (logf(mag_km1) - logf(mag_kp1)) / (logf(mag_km1) - 2 * logf(mag_k) + logf(mag_kp1));
+
+refined_freq = ((float32_t)maxIndex + delta) * 0.22f;
+hr_values = (60.00f) * refined_freq;
+
+
+}
+
+   /*
    // prform Inverse FFT
    arm_shift_q15(input, 8, input, FFT_SIZE * 2);
    arm_cfft_radix4_q15(&Ifft_inst, input);
@@ -167,6 +206,7 @@ void DSP_process(void)
 
    // clear peak for next frame
    memset(peak, 0, sizeof(peak));
+  
 }
 
 float32_t calculate_heart_rate(const int16_t *peak_indices)
@@ -181,10 +221,11 @@ float32_t calculate_heart_rate(const int16_t *peak_indices)
 
    if (i > 0 && mean_diff > 0)
    {
-      return (3333.33f) / ((float32_t)mean_diff / i);
+      return (60000.0f) /(18 * ((float32_t)mean_diff / i));
    }
    else
    {
       return 0;
    }
 }
+*/
