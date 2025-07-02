@@ -21,8 +21,9 @@
 #include "delay.h"
 #include "uart.h"
 
+
 void spi_init(void);
-void spi_transmit(uint32_t data);
+void spi_transmit(uint32_t dataH, uint32_t dataL);
 void cs_low();
 void cs_high();
 

@@ -19,8 +19,8 @@
 #include "adc.h"
 #include "delay.h"
 
-uint16_t adc_buffer[ADC_BUFFER];
-volatile uint16_t adc_val = 0;
+volatile int16_t adc_buffer[ADC_BUFFER];
+volatile int16_t adc_val = 0;
 
 bool ACC_COMP = false;
 
@@ -70,7 +70,7 @@ void adc_init_cont(void)
 	// No circular mode
 	DMA1_Channel1->CNDTR = 1; // Count exactly one transfer
 	DMA1_Channel1->CPAR = (uint32_t)&ADC1->DR;
-	DMA1_Channel1->CMAR = (uint32_t)adc_val;
+	DMA1_Channel1->CMAR = (uint32_t)&adc_val;
 
 	NVIC_EnableIRQ(DMA1_Channel1_IRQn);
 

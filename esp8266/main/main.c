@@ -30,14 +30,19 @@
 #include "comm_spi.h"
 #include "network.h"
 
+TaskHandle_t oled_task_handle = NULL;
+TimerHandle_t reset_timer = NULL;
+
 volatile uint16_t adc_val;
-volatile char *bstr[20];
+volatile char *bstr[64];
 
 void oled_task(void);
 void network_task(void *pvParameter); // network task
 
 void app_main()
 {
+  
+
   // spi initialization
   comm_spi_init();
 
@@ -58,13 +63,14 @@ void app_main()
   // Dummy mqtt publish value
   mqtt_buff_int = 777;
   // DISPLAY TASK
-  xTaskCreate(oled_task, "oled_task", 1024, NULL, 4, NULL);
+
+  xTaskCreate(oled_task, "oled_task", 1024, NULL, configMAX_PRIORITIES-3, &oled_task_handle);
 
   // SPI TASK
-  xTaskCreate(spi_slave_read_master_task, "spi_task", 2048, NULL, 4, NULL);
+  xTaskCreate(spi_slave_read_master_task, "spi_task", 4096, NULL, configMAX_PRIORITIES-1, NULL);
 
   // NETWORK TASK
-  xTaskCreate(&network_task, "Network Task", 4096, NULL, 4, NULL);
+  xTaskCreate(&network_task, "Network Task", 4096, NULL, configMAX_PRIORITIES-2, NULL);
 }
 
 // oled task for diaplaying
@@ -72,17 +78,19 @@ void oled_task()
 {
   while (1)
   {
+   // ulTaskNotifyTake(pdTRUE, portMAX_DELAY); // clear on exit, block forever until notified
     // read and display adc value
     adc_read(&adc_val); // read adc and fill in adc_val
 
-    sprintf(bstr, "adc:%d  spi:%" PRIu32, adc_val, spi_val);
+    sprintf(bstr, "ppg:%u  spo2:%u" , ppg_val, spo2_val);
     draw_text(bstr, 0, 0);
 
-    uint16_t arr = 24;
-    animate((adc_val * 17) / 1024);
+      ESP_LOGI("adc_task", "adc_val, %u", adc_val);
+   
+    animate((adc_val*24)/1024);
     // ssd1306_updateDisplay();
 
-    vTaskDelay(20 / portTICK_PERIOD_MS); // to be updated at every 20ms
+    vTaskDelay(pdMS_TO_TICKS(5)); // to be updated at every 6ms
   };
 }
 

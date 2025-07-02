@@ -172,12 +172,7 @@ void draw_text(char *text, uint8_t x, uint8_t y)
     ssd1306_updateDisplay(0);
 }
 
-/*
-void draw_pixel_text(uint8_t x, uint8_t y) {
-    if (x >= 128 || y < 0 || y >= 32) return;  // Limit to bottom half
-    buffer[x + (y / 8) * 128] |= (1 << (y % 8));
-}
-*/
+
 
 void ssd1306_init()
 {
@@ -254,7 +249,7 @@ void ssd1306_updateDisplay(uint8_t page)
     }
 
     i2c_master_stop(cmd);
-    i2c_master_cmd_begin(I2C_NUM_0, cmd, 10 / portTICK_PERIOD_MS);
+    i2c_master_cmd_begin(I2C_NUM_0, cmd, pdMS_TO_TICKS(1));
     i2c_cmd_link_delete(cmd);
 
     // Write 128x32 pixels in the buffer (512 bytes in total)
@@ -271,7 +266,6 @@ void draw_pixel(uint8_t x, uint8_t y)
 {
     if (x >= 128 || y >= 32)
         return; // Ensure within bounds
-    // y = 31-y ;
     buffer[x + (y / 8) * 128] |= (1 << (y % 8));
 }
 
@@ -289,13 +283,11 @@ void draw_waveform(uint16_t *psample, uint16_t data_len)
     }
 }
 
+
 void animate(uint16_t adc_val)
 {
-    // uint16_t len = 0;
-    // while(len < data_len){
-
-    // uint16_t screen_pos =   (len & 0x7F);
-    uint16_t y = 31 - adc_val;
+    
+    uint16_t y = 32 - adc_val;
     buffer[(y / 8) * 128] |= (1 << (y % 8));
     memmove(buffer + 128, buffer + 127, 127);
 
@@ -303,11 +295,5 @@ void animate(uint16_t adc_val)
 
     memmove(buffer + 384, buffer + 383, 127);
     ssd1306_updateDisplay(0);
-    //  memset(buffer + 256,0x00,256);
-
-    // vTaskDelay(10/portTICK_PERIOD_MS);
-    //  len++;
-    // psample++;
-
-    //}
+    
 }

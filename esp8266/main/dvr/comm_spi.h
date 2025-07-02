@@ -30,8 +30,9 @@
 #define SPI_SLAVE_HANDSHARK_GPIO 2
 
 #define SPI_WRITE_BUFFER_MAX_SIZE 4
-#define SPI_READ_BUFFER_MAX_SIZE 4
-extern volatile uint32_t spi_val;
+#define SPI_READ_BUFFER_MAX_SIZE 8
+extern volatile uint32_t ppg_val;
+extern volatile uint32_t spo2_val;
 void comm_spi_init(void);
 void IRAM_ATTR spi_slave_read_master_task(void *arg);
 

@@ -21,9 +21,8 @@ static const char *TAG = "networ_main";
 void network_app(void)
 {
     ESP_LOGI(TAG, "Starting...");
-    // Reset pin initialization
-    reset_pin_init();
-
+    //initialize interrupt pins
+    intr_pin_init();
     // Initialize NVS
     esp_err_t ret = nvs_flash_init();
     if (ret == ESP_ERR_NVS_NO_FREE_PAGES || ret == ESP_ERR_NVS_NEW_VERSION_FOUND)

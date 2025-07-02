@@ -25,6 +25,7 @@ void i2c_init()
 	conf.sda_pullup_en = 0;
 	conf.scl_io_num = I2C_EXAMPLE_MASTER_SCL_IO;
 	conf.scl_pullup_en = 0;
+	
 	i2c_driver_install(i2c_master_port, conf.mode);
 	i2c_param_config(i2c_master_port, &conf);
 }
@@ -43,6 +44,7 @@ void i2c_write(uint8_t data)
 	i2c_master_write_byte(cmd, data, true);
 
 	i2c_master_stop(cmd);
-	i2c_master_cmd_begin(I2C_NUM_0, cmd, 10 / portTICK_PERIOD_MS);
+	i2c_master_cmd_begin(I2C_NUM_0, cmd, pdMS_TO_TICKS(10));
+
 	i2c_cmd_link_delete(cmd);
 }

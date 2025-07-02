@@ -69,8 +69,10 @@ void spi_init(void)
   SPI1->CR1 |= SPI_CR1_SPE;                    // Enable SPI
 }
 
-void spi_transmit(uint32_t data)
+void spi_transmit(uint32_t dataH,uint32_t dataL )
 {
+  uint64_t data = ((uint64_t)dataH << 32) | dataL;
+  
   uint8_t *pData = (uint8_t *)&data;
 
   cs_low();
@@ -84,8 +86,8 @@ void spi_transmit(uint32_t data)
   SPI1->DR = 0x00;
 
   //GPIOC->BSRR = GPIO_BSRR_BR13; // LED HIGH
-  // Send 4 data bytes
-  for (int i = 0; i < sizeof(uint32_t); i++)
+  // Send 8 data bytes
+  for (int i = 0; i < 8; i++)
   {
     while (!(SPI1->SR & SPI_SR_TXE))
       ;

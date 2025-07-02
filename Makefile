@@ -58,7 +58,7 @@ LSCRIPT = STM32F103XD_FLASH.ld
 CCOMMONFLAGS = -Wall -Os -fno-common -mthumb -mcpu=$(CPU) --specs=nosys.specs --specs=nano.specs -g
 
 # C Flags
-GCFLAGS  = -std=c11 -DARM_MATH_CM3 -Wa,-ahlms=$(addprefix $(OBJDIR)/,$(notdir $(<:.c=.lst)))
+GCFLAGS  = -std=c11 -DARM_MATH_CM3  -Wa,-ahlms=$(addprefix $(OBJDIR)/,$(notdir $(<:.c=.lst)))
 GCFLAGS += $(CCOMMONFLAGS) $(INCLUDE) $(DEFINE) 
 LDFLAGS +=  -Ldsp_lib/ -larm_cortexM3l_math  -T$(LSCRIPT) -mthumb -mcpu=$(CPU) --specs=nosys.specs --specs=nano.specs -Wl,-Map,$(BINDIR)/$(PROJECT).map -Wl,--gc-sections
 

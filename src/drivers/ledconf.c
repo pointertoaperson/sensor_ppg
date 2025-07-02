@@ -1,3 +1,18 @@
+/**
+ * @file    ledconf.c
+ * @brief   LED control logic for STM32F103 using GPIOA and GPIOC
+ * @author  Umesh Puri
+ * @date    2025-06-02
+ * @version 1.0
+ *
+ * This file implements LED initialization and state control for a 3-LED setup
+ * (Green, IR, Red) using STM32F103 GPIO. The LEDs cycle through a predefined pattern.
+ * 
+ * @license MIT License
+ * Copyright (c) 2025 Umesh
+ */
+
+ 
 #include "ledconf.h"
 
 void led_init(void)

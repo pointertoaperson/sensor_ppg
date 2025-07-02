@@ -21,8 +21,8 @@
 
 #define ADC_BUFFER (256*3)
 
-extern uint16_t adc_buffer[ADC_BUFFER];
-extern volatile uint16_t adc_val;
+extern volatile int16_t adc_buffer[ADC_BUFFER];
+extern volatile int16_t adc_val;
 extern bool ACC_COMP;
 void adc_init_cont(void);
 void stop_process(void);
