@@ -27,6 +27,8 @@ static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_
     {
     case MQTT_EVENT_CONNECTED:
         ESP_LOGI(TAG, "MQTT connected");
+        // create a mqtt publishing task
+        xTaskCreate(publish_task, "publish_task", 1024, NULL, configMAX_PRIORITIES - 2, NULL);
         // start MQTT PUBLISHING
         mqtt_publish_value(mqtt_buff_int);
         break;
@@ -56,6 +58,16 @@ void mqtt_app_start(void)
 void mqtt_publish_value(int val)
 {
     char payload[64];
-    snprintf(payload, sizeof(payload), "ADC value: %d", val);
+    snprintf(payload, sizeof(payload), "Heart Rate estimate : %d", val);
     esp_mqtt_client_publish(client, "/esp8266/adc", payload, 0, 1, 0);
+}
+
+void publish_task(void)
+{
+    while (1)
+
+    {
+        mqtt_publish_value(mqtt_buff_int);
+        vTaskDelay(pdMS_TO_TICKS(1000));
+    }
 }

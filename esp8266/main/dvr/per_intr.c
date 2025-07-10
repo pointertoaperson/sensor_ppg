@@ -92,12 +92,12 @@ static void IRAM_ATTR disp_isr_handler(void *arg)
         {
             
             // Notify the OLED task
-         //   vTaskNotifyGiveFromISR(oled_task_handle, &xHigherPriorityTaskWoken);
+          // vTaskNotifyGiveFromISR(oled_task_handle, &xHigherPriorityTaskWoken);
         }
 
         if (xHigherPriorityTaskWoken)
         {
-            portYIELD_FROM_ISR();
+           // portYIELD_FROM_ISR();
         }
        
     }
@@ -113,7 +113,7 @@ void intr_pin_init()
         .pull_up_en = GPIO_PULLUP_ENABLE, // enable pull up
         .pull_down_en = GPIO_PULLDOWN_DISABLE,
     };
-
+/*
     gpio_config_t io_conf_disp = {
         .intr_type = GPIO_INTR_POSEDGE, // Detect  rising edges
         .mode = GPIO_MODE_INPUT,
@@ -121,7 +121,7 @@ void intr_pin_init()
         .pull_up_en = GPIO_PULLUP_DISABLE,    // disable pull up
         .pull_down_en = GPIO_PULLDOWN_ENABLE, // enable pull down
     };
-
+*/
     gpio_config(&io_conf_reset);
    // gpio_config(&io_conf_disp);
 
@@ -138,7 +138,7 @@ void intr_pin_init()
 
     // Add ISR handler for the reset pin
     gpio_isr_handler_add(RESET_PIN, reset_isr_handler, NULL);
-    gpio_isr_handler_add(DISP_INTR_PIN, disp_isr_handler, NULL);
+    //gpio_isr_handler_add(DISP_INTR_PIN, disp_isr_handler, NULL);
 
     ESP_LOGI(TAG, " pin interrupt initialized on GPIO %d & %d", RESET_PIN, DISP_INTR_PIN);
 }

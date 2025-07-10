@@ -172,7 +172,12 @@ void draw_text(char *text, uint8_t x, uint8_t y)
     ssd1306_updateDisplay(0);
 }
 
-
+/*
+void draw_pixel_text(uint8_t x, uint8_t y) {
+    if (x >= 128 || y < 0 || y >= 32) return;  // Limit to bottom half
+    buffer[x + (y / 8) * 128] |= (1 << (y % 8));
+}
+*/
 
 void ssd1306_init()
 {
@@ -266,6 +271,7 @@ void draw_pixel(uint8_t x, uint8_t y)
 {
     if (x >= 128 || y >= 32)
         return; // Ensure within bounds
+    // y = 31-y ;
     buffer[x + (y / 8) * 128] |= (1 << (y % 8));
 }
 
@@ -286,14 +292,22 @@ void draw_waveform(uint16_t *psample, uint16_t data_len)
 
 void animate(uint16_t adc_val)
 {
-    
+
     uint16_t y = 32 - adc_val;
-    buffer[(y / 8) * 128] |= (1 << (y % 8));
+    buffer[(y / 8) * 128] |= (0x1 << (y % 8));
+   // buffer[((y / 8) * 128)+1] |= (0x2 << (y % 8));
+
+    for(uint8_t cntr = 0; cntr < 3; cntr ++)
+    {
     memmove(buffer + 128, buffer + 127, 127);
-
     memmove(buffer + 256, buffer + 255, 127);
-
     memmove(buffer + 384, buffer + 383, 127);
-    ssd1306_updateDisplay(0);
-    
 }
+    
+    ssd1306_updateDisplay(0);
+ 
+}
+    
+
+
+

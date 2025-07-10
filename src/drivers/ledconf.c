@@ -27,6 +27,7 @@ void led_init(void)
                     GPIO_CRL_CNF7 | GPIO_CRL_MODE7);
     GPIOA->CRL |= (GPIO_CRL_MODE5_0 | GPIO_CRL_MODE6_0 | GPIO_CRL_MODE7_0);
 
+   
     // default to green LED
     GPIOA->ODR &= ~RED_LED_PIN;
     GPIOA->ODR &= ~IR_LED_PIN;
@@ -49,6 +50,7 @@ uint8_t led_state()
 
     case 0x02:
         // Turn on IR only
+        
         GPIOA->ODR &= ~GREEN_LED_PIN;
         GPIOA->ODR |= IR_LED_PIN;
         GPIOA->ODR &= ~RED_LED_PIN;
@@ -69,7 +71,7 @@ uint8_t led_state()
          GPIOA->ODR |= GREEN_LED_PIN;
         GPIOA->ODR &= ~IR_LED_PIN;
         GPIOA->ODR &= ~RED_LED_PIN;
-        
+
         break;
 
         

@@ -2,9 +2,9 @@
 
 ## Overview
 
-**connectHeart** is an embedded systems/IoT project to evaluate HEART RATE and OXYGEN saturation from PPG signal (from custom built analog circuit) based on the STM32F103 microcontroller for signal processing and the ESP8266 as a display controller and radio unit. This is the initial development phase focused on **hardware bring-up** and **integration of the CMSIS library** for low-level peripheral control. The goal is to build a reliable foundation for embedded development using modular, reusable drivers and communication interfaces.
+**connectHeart** is an embedded systems/IoT project to evaluate HEART RATE and OXYGEN saturation from PPG signal (from custom built analog circuit) based on the STM32F103 microcontroller for signal processing and the ESP8266 as a display controller and radio unit. This is the initial development phase focused on **hardware bring-up** and **Algorithm development & testing** . 
 
-This stage includes interfacing key components, validating hardware, and building minimal firmware drivers.
+This stage includes interfacing key components, validating hardware, building minimal firmware drivers and developing Heart Rate estimation algorithm.
 
 ---
 
@@ -29,14 +29,25 @@ This stage includes interfacing key components, validating hardware, and buildin
   CPU-based and timer-based delay functions abstracted for portability across platforms.
 
 - **Wifi & MQTT**
-  Wifi credential saving and reset in NVS flash and MQTT connection. 
+  Wifi credential saving and reset in NVS flash and MQTT connection and publish of the estimated Heart Rate
+  every 1 second . 
 
 - **LED & ADC**
   Data acquisition process implemented.
----
+
+- **HEART RATE ESTIMATION**
+  Test algorithm using FFT and interpolation  implemented.
+
+**Video Demonstration:**  
+[TEST.mp4](media/ppg_test.mp4)
+
 
 ## TO DO
-- Implement PPG and SPO2 algorithm.
+- Redesign of AFE (Analog Frontend) implmenting AGC(automatic gain control) and modulation of LED.
+
+- Adjustment of the waveform display. (which most likely be solved by gain tuning of the AFE)
+
+- SPO2 algorithm.
 
 - Implement security on netwrok.
 
@@ -49,7 +60,7 @@ This stage includes interfacing key components, validating hardware, and buildin
 - Basic drivers are implemented and tested individually.
 - CMSIS-DSP integration is functional.
 - Communication between **STM32** and **ESP8266**, and with **SSD1306**, is working.
-- Modules are actively being evaluated and may be restructured or optimized in future phases.
+- Wifi and Network modules are working enough to publish the values.
 
 ---
 

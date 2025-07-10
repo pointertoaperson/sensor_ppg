@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "wifi_config.h": "c"
+        "wifi_config.h": "c",
+        "stdbool.h": "c"
     }
 }

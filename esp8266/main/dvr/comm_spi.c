@@ -45,6 +45,8 @@ void IRAM_ATTR spi_slave_read_master_task(void *arg)
 
     for (;;)
     {
+        taskYIELD();
+
         int read_len = hspi_slave_logic_read_data(read_data, 8, 1); // blocking read
 
         if (read_len == 8)
@@ -52,7 +54,7 @@ void IRAM_ATTR spi_slave_read_master_task(void *arg)
             spo2_val = *((uint32_t *)&read_data[0]);
             ppg_val = *((uint32_t *)&read_data[4]);
 
-            ESP_LOGI("spi_task", "PPG: %u, SpO2: %u", ppg_val, spo2_val);
+          //  ESP_LOGI("spi_task", "PPG: %u, SpO2: %u", ppg_val, spo2_val);
         }
 
        // vTaskDelay(pdMS_TO_TICKS(1));
