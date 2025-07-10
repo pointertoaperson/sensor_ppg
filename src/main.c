@@ -12,10 +12,10 @@
  * Copyright (c) 2025 Umesh
  */
 
-
 #include "stm32f1xx.h"
 #include "core_cm3.h"
 #include "arm_math.h"
+#include "string.h"
 #include <stdint.h>
 #include <stdio.h>
 
@@ -47,7 +47,6 @@ volatile q15_t confidence = 0;
 volatile float32_t hr_values = 0.0f;
 q15_t sampleMean = 0;
 
-
 arm_cfft_radix2_instance_q15 fft_inst;
 
 void DSP_process(void); // DSP_process function prototype
@@ -62,7 +61,6 @@ int main(void)
    led_init();      // LEDs initialization
 
    arm_cfft_radix2_init_q15(&fft_inst, FFT_SIZE, 0, 1); // forward FFT
-   
 
    while (1)
    {
@@ -96,20 +94,16 @@ void DSP_process(void)
    }
 
    // ZERO PADDING to 512
-   for (uint16_t i = FFT_SIZE / 2; i < FFT_SIZE; i++)
-   {
-      input[i << 1] = 0;
-      input[(i << 1) + 1] = 0;
-   }
-   // get mean of input only 256 * 2 interleved position 
+   memset(&input[FFT_SIZE], 0, ((FFT_SIZE)) * sizeof(q15_t));
+   // get mean of input only 256 * 2 interleved position
    arm_mean_q15(&input[0], FFT_SIZE, &sampleMean);
 
    // remove dc component
    for (uint16_t i = 0; i < FFT_SIZE; i++)
    {
       input[i << 1] = (i < FFT_SIZE / 2) ? input[i << 1] - (sampleMean << 1) : 0; // compensate the means of interleved array multiplying by 2
-      int32_t temp = (int32_t)input[i << 1] * hamming[i];                        // Q15 * Q15 = Q30
-      input[i << 1] = (q15_t)__SSAT((temp >> 15), 16);                           // Back to Q15 and saturate to 16-bit
+      int32_t temp = (int32_t)input[i << 1] * hamming[i];                         // Q15 * Q15 = Q30
+      input[i << 1] = (q15_t)__SSAT((temp >> 15), 16);                            // Back to Q15 and saturate to 16-bit
       input[(i << 1) + 1] = 0;
    }
 
@@ -123,7 +117,7 @@ void DSP_process(void)
    // remove noise component
    for (uint16_t i = 0; i < FFT_SIZE; i++)
    {
-      mag[i] = (i < FFT_SIZE/2) ? mag[i] - noisefloor : 0;
+      mag[i] = (i < FFT_SIZE / 2) ? mag[i] - noisefloor : 0;
    }
 
    // Bandpass filtering: zero out low and high frequencies
@@ -144,7 +138,6 @@ void DSP_process(void)
    if (maxIndex != 0 && maxIndex != FFT_SIZE - 1)
    {
 
-   
       float32_t delta, refined_freq;
       float32_t mag_km1 = (mag[maxIndex - 1]);
       mag_km1 = (mag_km1 <= 0) ? 0.001f : mag_km1;
