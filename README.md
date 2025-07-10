@@ -28,18 +28,19 @@ This stage includes interfacing key components, validating hardware, building mi
 - **Delay Utility**  
   CPU-based and timer-based delay functions abstracted for portability across platforms.
 
-- **Wifi & MQTT**
-  Wifi credential saving and reset in NVS flash and MQTT connection and publish of the estimated Heart Rate
-  every 1 second . 
+- **Wi-Fi & MQTT (ESP8266)**  
+  - Wi-Fi credentials saved in **NVS flash**, with reset support.  
+  - MQTT connection established.  
+  - Estimated heart rate is published every **1 second**.
 
-- **LED & ADC**
-  Data acquisition process implemented.
+- **LED & ADC**  
+  Complete data acquisition pipeline using analog input from LED-based sensors.
 
-- **HEART RATE ESTIMATION**
-  Test algorithm using FFT and interpolation  implemented.
+- **Heart Rate Estimation**  
+  Initial test algorithm implemented using **FFT** and **interpolation** for BPM estimation.
 
-**Video Demonstration:**  
-[TEST.mp4](media/ppg_test.mp4)
+- **Video Demonstration:**  
+  [TEST.mp4](media/ppg_test.mp4)
 
 
 ## TO DO

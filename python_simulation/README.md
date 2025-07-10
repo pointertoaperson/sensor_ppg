@@ -1,2 +1,2 @@
-#Note
+# Note
 -There has been  change in the algorithm, which addresses the problem with fixed frequency resolution of frequency bins. The derivations and simulation of the algorithm will be published separate from this github project. 
