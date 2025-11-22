@@ -1,0 +1,13 @@
+# Target labels
+ bootloader
+# Source files and their labels
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/CMakeFiles/bootloader
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/CMakeFiles/bootloader.rule
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/CMakeFiles/bootloader-complete.rule
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/bootloader-prefix/src/bootloader-stamp/bootloader-install.rule
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/bootloader-prefix/src/bootloader-stamp/bootloader-mkdir.rule
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/bootloader-prefix/src/bootloader-stamp/bootloader-download.rule
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/bootloader-prefix/src/bootloader-stamp/bootloader-update.rule
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/bootloader-prefix/src/bootloader-stamp/bootloader-patch.rule
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/bootloader-prefix/src/bootloader-stamp/bootloader-configure.rule
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/bootloader-prefix/src/bootloader-stamp/bootloader-build.rule

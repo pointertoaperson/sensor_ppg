@@ -1,0 +1,17 @@
+Command: make -j 14 all
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:26:
+/home/umesh_adwait/esp-idf/components/spi_flash/include/esp_spi_flash.h:6:2: warning: #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead [-Wcpp]
+    6 | #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead
+      |  ^~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c: In function 'app_main':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:75:44: error: 'FFT_SIZE' undeclared (first use in this function)
+   75 | esp_err_t ret = dsps_fft2r_init_fc32(NULL, FFT_SIZE);
+      |                                            ^~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:75:44: note: each undeclared identifier is reported only once for each function it appears in
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c: At top level:
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:51:34: warning: 'adc1_handle' defined but not used [-Wunused-variable]
+   51 | static adc_oneshot_unit_handle_t adc1_handle = NULL;
+      |                                  ^~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:63: esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

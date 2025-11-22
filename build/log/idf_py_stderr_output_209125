@@ -1,0 +1,26 @@
+Command: make -j 14 all
+Configuration Report               
+ ───────────────────────────────── 
+   Parser Version: 1               
+   Verbosity: default              
+   Status: Finished successfully   
+                                   
+ ───────────────────────────────── 
+Configuration Report                     
+ ─────────────────────────────────────── 
+   Parser Version: 1                     
+   Verbosity: default                    
+   Status: Finished with notifications   
+                                         
+ ─────────────────────────────────────── 
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:26:
+/home/umesh_adwait/esp-idf/components/spi_flash/include/esp_spi_flash.h:6:2: warning: #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead [-Wcpp]
+    6 | #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead
+      |  ^~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c: In function 'mqtt_event_handler':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:28:29: warning: unused variable 'event' [-Wunused-variable]
+   28 |     esp_mqtt_event_handle_t event = event_data;
+      |                             ^~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/per_intr.c:81:23: warning: 'disp_isr_handler' defined but not used [-Wunused-function]
+   81 | static void IRAM_ATTR disp_isr_handler(void *arg)
+      |                       ^~~~~~~~~~~~~~~~

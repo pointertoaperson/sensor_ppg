@@ -1,0 +1,88 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:9:1: error: unknown type name 'q15_t'
+    9 | q15_t input[FFT_SIZE * 2];  // interleaved real/imag
+      | ^~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:10:1: error: unknown type name 'q15_t'
+   10 | q15_t mag[FFT_SIZE] = {0};
+      | ^~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:12:1: error: unknown type name 'q15_t'
+   12 | q15_t maxVal = 0;
+      | ^~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:14:1: error: unknown type name 'q15_t'
+   14 | q15_t noisefloor = 0;
+      | ^~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:15:10: error: unknown type name 'q15_t'
+   15 | volatile q15_t confidence = 0;
+      |          ^~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:17:1: error: unknown type name 'q15_t'
+   17 | q15_t sampleMean = 0;
+      | ^~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c: In function 'DSP_process':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:30:51: error: 'q15_t' undeclared (first use in this function)
+   30 |     memset(&input[FFT_SIZE], 0, FFT_SIZE * sizeof(q15_t));
+      |                                                   ^~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:30:51: note: each undeclared identifier is reported only once for each function it appears in
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:33:10: error: expected ';' before 'sum'
+   33 |     q15_t sum = 0;
+      |          ^~~~
+      |          ;
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:35:9: error: 'sum' undeclared (first use in this function)
+   35 |         sum += input[i << 1];
+      |         ^~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:40:10: error: expected ';' before 'hamming'
+   40 |     q15_t hamming[FFT_SIZE];
+      |          ^~~~~~~~
+      |          ;
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:41:5: error: implicit declaration of function 'dsps_wind_hamming_q15'; did you mean 'dsps_wind_hann_f32'? [-Wimplicit-function-declaration]
+   41 |     dsps_wind_hamming_q15(hamming, FFT_SIZE);
+      |     ^~~~~~~~~~~~~~~~~~~~~
+      |     dsps_wind_hann_f32
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:45:32: error: expected ';' before '__SSAT'
+   45 |         input[i << 1] = (q15_t)__SSAT(temp >> 15, 16);                            // Q30 -> Q15
+      |                                ^~~~~~
+      |                                ;
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:44:17: warning: unused variable 'temp' [-Wunused-variable]
+   44 |         int32_t temp = (int32_t)(input[i << 1] - (sampleMean << 1)) * hamming[i]; // Q15 * Q15 = Q30
+      |                 ^~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:51:18: error: expected '=', ',', ';', 'asm' or '__attribute__' before '*' token
+   51 |     static q15_t *fft_buffer;
+      |                  ^
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:51:19: error: 'fft_buffer' undeclared (first use in this function); did you mean 'adc_buffer'?
+   51 |     static q15_t *fft_buffer;
+      |                   ^~~~~~~~~~
+      |                   adc_buffer
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:53:30: error: expected expression before ')' token
+   53 |         fft_buffer = (q15_t *)heap_caps_malloc(FFT_SIZE * 2 * sizeof(q15_t), MALLOC_CAP_8BIT);
+      |                              ^
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:54:9: error: implicit declaration of function 'dsps_fft2r_init_q15'; did you mean 'dsps_fft2r_init_sc16'? [-Wimplicit-function-declaration]
+   54 |         dsps_fft2r_init_q15(NULL, FFT_SIZE);
+      |         ^~~~~~~~~~~~~~~~~~~
+      |         dsps_fft2r_init_sc16
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:58:5: error: implicit declaration of function 'dsps_fft2r_q15'; did you mean 'dsps_fft2r_sc16'? [-Wimplicit-function-declaration]
+   58 |     dsps_fft2r_q15(input, FFT_SIZE);
+      |     ^~~~~~~~~~~~~~
+      |     dsps_fft2r_sc16
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:59:5: error: implicit declaration of function 'dsps_bit_rev_q15'; did you mean 'dsps_bit_rev_fc32'? [-Wimplicit-function-declaration]
+   59 |     dsps_bit_rev_q15(input, FFT_SIZE);
+      |     ^~~~~~~~~~~~~~~~
+      |     dsps_bit_rev_fc32
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:65:25: error: expected ';' before 'sqrtf'
+   65 |         mag[i] = (q15_t)sqrtf((float)real * real + (float)imag * imag);
+      |                         ^~~~~
+      |                         ;
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:64:17: warning: unused variable 'imag' [-Wunused-variable]
+   64 |         int32_t imag = input[(i << 1) + 1];
+      |                 ^~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:63:17: warning: unused variable 'real' [-Wunused-variable]
+   63 |         int32_t real = input[i << 1];
+      |                 ^~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:69:10: error: expected ';' before 'noise_sum'
+   69 |     q15_t noise_sum = 0;
+      |          ^~~~~~~~~~
+      |          ;
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:71:9: error: 'noise_sum' undeclared (first use in this function)
+   71 |         noise_sum += mag[i];
+      |         ^~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:180: esp-idf/main/CMakeFiles/__idf_main.dir/process.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

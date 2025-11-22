@@ -1,0 +1,14 @@
+Command: make -j 14 all
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:26:
+/home/umesh_adwait/esp-idf/components/spi_flash/include/esp_spi_flash.h:6:2: warning: #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead [-Wcpp]
+    6 | #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead
+      |  ^~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c: In function 'dsp_process':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:79:21: warning: variable 'fft_buffer' set but not used [-Wunused-but-set-variable]
+   79 |     static int16_t *fft_buffer;
+      |                     ^~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:72:58: warning: iteration 1024 invokes undefined behavior [-Waggressive-loop-optimizations]
+   72 |       int32_t temp = (int32_t)input[i << 1] * hamming1024[i];                         // Q15 * Q15 = Q30
+      |                                               ~~~~~~~~~~~^~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:68:27: note: within this loop
+   68 |    for (uint16_t i = 0; i < FFT_SIZE; i++)

@@ -1,0 +1,58 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:19:8: error: unknown type name 'adc_continuous_handle_t'; did you mean 'adc_continuous_clk_src_t'?
+   19 | static adc_continuous_handle_t adc_handle = NULL;
+      |        ^~~~~~~~~~~~~~~~~~~~~~~
+      |        adc_continuous_clk_src_t
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:19:45: error: initialization of 'int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+   19 | static adc_continuous_handle_t adc_handle = NULL;
+      |                                             ^~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c: In function 'adc_timer_callback':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:112:29: error: passing argument 1 of 'adc_continuous_read' makes pointer from integer without a cast [-Wint-conversion]
+  112 |     if (adc_continuous_read(adc_handle, (uint8_t*)&raw_val, sizeof(raw_val), &ret_num, 0) == ESP_OK) {
+      |                             ^~~~~~~~~~
+      |                             |
+      |                             int
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:100:
+/home/umesh_adwait/esp-idf/components/esp_adc/include/esp_adc/adc_continuous.h:176:55: note: expected 'adc_continuous_handle_t' {aka 'struct adc_continuous_ctx_t *'} but argument is of type 'int'
+  176 | esp_err_t adc_continuous_read(adc_continuous_handle_t handle, uint8_t *buf, uint32_t length_max, uint32_t *out_length, uint32_t timeout_ms);
+      |                               ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+In file included from /home/umesh_adwait/esp-idf/components/esp_driver_gpio/include/driver/gpio.h:12,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/ledconf.h:6,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:1:
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c: In function 'adc_dma_init':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:137:60: error: passing argument 2 of 'adc_continuous_new_handle' from incompatible pointer type [-Wincompatible-pointer-types]
+  137 |     ESP_ERROR_CHECK(adc_continuous_new_handle(&handle_cfg, &adc_handle));
+      |                                                            ^~~~~~~~~~~
+      |                                                            |
+      |                                                            int *
+/home/umesh_adwait/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/umesh_adwait/esp-idf/components/esp_adc/include/esp_adc/adc_continuous.h:115:109: note: expected 'struct adc_continuous_ctx_t **' but argument is of type 'int *'
+  115 | esp_err_t adc_continuous_new_handle(const adc_continuous_handle_cfg_t *hdl_config, adc_continuous_handle_t *ret_handle);
+      |                                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:158:43: error: passing argument 1 of 'adc_continuous_config' makes pointer from integer without a cast [-Wint-conversion]
+  158 |     ESP_ERROR_CHECK(adc_continuous_config(adc_handle, &config));
+      |                                           ^~~~~~~~~~
+      |                                           |
+      |                                           int
+/home/umesh_adwait/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/umesh_adwait/esp-idf/components/esp_adc/include/esp_adc/adc_continuous.h:128:57: note: expected 'adc_continuous_handle_t' {aka 'struct adc_continuous_ctx_t *'} but argument is of type 'int'
+  128 | esp_err_t adc_continuous_config(adc_continuous_handle_t handle, const adc_continuous_config_t *config);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:159:42: error: passing argument 1 of 'adc_continuous_start' makes pointer from integer without a cast [-Wint-conversion]
+  159 |     ESP_ERROR_CHECK(adc_continuous_start(adc_handle));
+      |                                          ^~~~~~~~~~
+      |                                          |
+      |                                          int
+/home/umesh_adwait/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/umesh_adwait/esp-idf/components/esp_adc/include/esp_adc/adc_continuous.h:159:56: note: expected 'adc_continuous_handle_t' {aka 'struct adc_continuous_ctx_t *'} but argument is of type 'int'
+  159 | esp_err_t adc_continuous_start(adc_continuous_handle_t handle);
+      |                                ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:167: esp-idf/main/CMakeFiles/__idf_main.dir/dvr/interr_event.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

@@ -1,0 +1,208 @@
+Command: /home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/umesh_adwait/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/test.elf /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/bootloader/bootloader.elf -m '/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python' '/home/umesh_adwait/esp-idf/tools/idf.py'
+[0;33m--- esp-idf-monitor 1.7.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x40178eac: [0;33madc_oneshot_read[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_adc/adc_oneshot.c[0m[0m:[1;31m207[0m
+[0m--- 0x4000c2e0: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4000c2f6: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40178ea9: [0;33madc_oneshot_config_channel[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40082eaa: [0;33madc_timer_callback[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c[0m[0m:[1;31m45[0m
+[0m--- 0x40084869: [0;33mtimer_process_alarm[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_timer/src/esp_timer.c[0m[0m:[1;31m435[0m
+[0m--- 0x400848b1: [0;33mtimer_alarm_handler[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_timer/src/esp_timer.c[0m[0m:[1;31m481[0m
+[0m--- 0x40082c39: [0;33mtimer_alarm_isr[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_timer/src/esp_timer_impl_lac.c[0m[0m:[1;31m170[0m
+[0m--- 0x400832c9: [0;33m_xt_lowint1[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4008ecc7: [0;33mcache_ll_l1_disable_cache[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/hal/esp32/include/hal/cache_ll.h[0m[0m:[1;31m57[0m
+[0m--- (inlined by) [0;33mcache_hal_suspend[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/hal/esp32/cache_hal_esp32.c[0m[0m:[1;31m25[0m
+[0m--- 0x40089121: [0;33mesp_cache_suspend_ext_mem_cache[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_mm/esp_cache_utils.c[0m[0m:[1;31m36[0m
+[0m--- 0x4008402f: [0;33mspi_flash_disable_cache[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/cache_utils.c[0m[0m:[1;31m346[0m
+[0m--- 0x40084114: [0;33mspi_flash_disable_interrupts_caches_and_other_cpu[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/cache_utils.c[0m[0m:[1;31m191[0m
+[0m--- 0x4008440b: [0;33mcache_disable[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/spi_flash_os_func_app.c[0m[0m:[1;31m71[0m
+[0m--- 0x40084415: [0;33mspi1_start[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/spi_flash_os_func_app.c[0m[0m:[1;31m123[0m
+[0m--- 0x40098fa5: [0;33mspiflash_start_default[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/esp_flash_api.c[0m[0m:[1;31m191[0m
+[0m--- 0x40098a05: [0;33mesp_flash_read[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/esp_flash_api.c[0m[0m:[1;31m921[0m
+[0m--- 0x4014b843: [0;33mesp_partition_read[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_partition/partition_target.c[0m[0m:[1;31m38[0m
+[0m--- 0x400e3e5b: [0;33mnvs::NVSPartition::read(unsigned int, void*, unsigned int)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_partition.cpp[0m[0m:[1;31m37[0m
+[0m--- 0x40172a62: [0;33mnvs::Page::readEntry(unsigned int, nvs::Item&) const[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m895[0m
+[0m--- 0x400e2945: [0;33mnvs::Page::mLoadEntryTable()[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m761[0m
+[0m--- 0x400e2b10: [0;33mnvs::Page::load(nvs::Partition*, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m88[0m
+[0m--- 0x400e4753: [0;33mnvs::PageManager::load(nvs::Partition*, unsigned long, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_pagemanager.cpp[0m[0m:[1;31m27[0m
+[0m--- 0x400e3573: [0;33mnvs::Storage::init(unsigned long, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_storage.cpp[0m[0m:[1;31m185[0m
+[0m--- 0x400e4034: [0;33mnvs::NVSPartitionManager::init_custom(nvs::Partition*, unsigned long, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_partition_manager.cpp[0m[0m:[1;31m95[0m
+[0m--- 0x400e40aa: [0;33mnvs::NVSPartitionManager::init_partition(char const*)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_partition_manager.cpp[0m[0m:[1;31m57[0m
+[0m--- 0x400e1566: [0;33mnvs_flash_init_partition[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_api.cpp[0m[0m:[1;31m133[0m
+[0m--- 0x400e157a: [0;33mnvs_flash_init[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_api.cpp[0m[0m:[1;31m161[0m
+[0m--- 0x400d9a5c: [0;33mnetwork_app[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/network.c[0m[0m:[1;31m30[0m
+[0m--- 0x400d94f7: [0;33mnetwork_task[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c[0m[0m:[1;31m117[0m
+[0m--- 0x4008aef9: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x40178eac: [0;33madc_oneshot_read[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_adc/adc_oneshot.c[0m[0m:[1;31m207[0m
+[0m--- 0x4000c2e0: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4000c2f6: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40178ea9: [0;33madc_oneshot_config_channel[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40082eaa: [0;33madc_timer_callback[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c[0m[0m:[1;31m45[0m
+[0m--- 0x40084869: [0;33mtimer_process_alarm[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_timer/src/esp_timer.c[0m[0m:[1;31m435[0m
+[0m--- 0x400848b1: [0;33mtimer_alarm_handler[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_timer/src/esp_timer.c[0m[0m:[1;31m481[0m
+[0m--- 0x40082c39: [0;33mtimer_alarm_isr[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_timer/src/esp_timer_impl_lac.c[0m[0m:[1;31m170[0m
+[0m--- 0x400832c9: [0;33m_xt_lowint1[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40082455: [0;33mheap_caps_calloc_base[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/heap/heap_caps_base.c[0m[0m:[1;31m329[0m
+[0m--- 0x40089121: [0;33mesp_cache_suspend_ext_mem_cache[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_mm/esp_cache_utils.c[0m[0m:[1;31m36[0m
+[0m--- 0x4008402f: [0;33mspi_flash_disable_cache[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/cache_utils.c[0m[0m:[1;31m346[0m
+[0m--- 0x40084114: [0;33mspi_flash_disable_interrupts_caches_and_other_cpu[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/cache_utils.c[0m[0m:[1;31m191[0m
+[0m--- 0x4008440b: [0;33mcache_disable[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/spi_flash_os_func_app.c[0m[0m:[1;31m71[0m
+[0m--- 0x40084415: [0;33mspi1_start[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/spi_flash_os_func_app.c[0m[0m:[1;31m123[0m
+[0m--- 0x40098fa5: [0;33mspiflash_start_default[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/esp_flash_api.c[0m[0m:[1;31m191[0m
+[0m--- 0x40098a05: [0;33mesp_flash_read[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/esp_flash_api.c[0m[0m:[1;31m921[0m
+[0m--- 0x4014b843: [0;33mesp_partition_read[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_partition/partition_target.c[0m[0m:[1;31m38[0m
+[0m--- 0x400e3e5b: [0;33mnvs::NVSPartition::read(unsigned int, void*, unsigned int)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_partition.cpp[0m[0m:[1;31m37[0m
+[0m--- 0x40172a62: [0;33mnvs::Page::readEntry(unsigned int, nvs::Item&) const[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m895[0m
+[0m--- 0x400e2945: [0;33mnvs::Page::mLoadEntryTable()[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m761[0m
+[0m--- 0x400e2b10: [0;33mnvs::Page::load(nvs::Partition*, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m88[0m
+[0m--- 0x400e4753: [0;33mnvs::PageManager::load(nvs::Partition*, unsigned long, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_pagemanager.cpp[0m[0m:[1;31m27[0m
+[0m--- 0x400e3573: [0;33mnvs::Storage::init(unsigned long, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_storage.cpp[0m[0m:[1;31m185[0m
+[0m--- 0x400e4034: [0;33mnvs::NVSPartitionManager::init_custom(nvs::Partition*, unsigned long, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_partition_manager.cpp[0m[0m:[1;31m95[0m
+[0m--- 0x400e40aa: [0;33mnvs::NVSPartitionManager::init_partition(char const*)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_partition_manager.cpp[0m[0m:[1;31m57[0m
+[0m--- 0x400e1566: [0;33mnvs_flash_init_partition[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_api.cpp[0m[0m:[1;31m133[0m
+[0m--- 0x400e157a: [0;33mnvs_flash_init[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_api.cpp[0m[0m:[1;31m161[0m
+[0m--- 0x400d9a5c: [0;33mnetwork_app[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/network.c[0m[0m:[1;31m30[0m
+[0m--- 0x400d94f7: [0;33mnetwork_task[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c[0m[0m:[1;31m117[0m
+[0m--- 0x4008aef9: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x40178eac: [0;33madc_oneshot_read[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_adc/adc_oneshot.c[0m[0m:[1;31m207[0m
+[0m--- 0x4000c2e0: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4000c2f6: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40178ea9: [0;33madc_oneshot_config_channel[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40082eaa: [0;33madc_timer_callback[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c[0m[0m:[1;31m45[0m
+[0m--- 0x40084869: [0;33mtimer_process_alarm[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_timer/src/esp_timer.c[0m[0m:[1;31m435[0m
+[0m--- 0x400848b1: [0;33mtimer_alarm_handler[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_timer/src/esp_timer.c[0m[0m:[1;31m481[0m
+[0m--- 0x40082c39: [0;33mtimer_alarm_isr[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_timer/src/esp_timer_impl_lac.c[0m[0m:[1;31m170[0m
+[0m--- 0x400832c9: [0;33m_xt_lowint1[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40082455: [0;33mheap_caps_calloc_base[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/heap/heap_caps_base.c[0m[0m:[1;31m329[0m
+[0m--- 0x40089121: [0;33mesp_cache_suspend_ext_mem_cache[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_mm/esp_cache_utils.c[0m[0m:[1;31m36[0m
+[0m--- 0x4008402f: [0;33mspi_flash_disable_cache[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/cache_utils.c[0m[0m:[1;31m346[0m
+[0m--- 0x40084114: [0;33mspi_flash_disable_interrupts_caches_and_other_cpu[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/cache_utils.c[0m[0m:[1;31m191[0m
+[0m--- 0x4008440b: [0;33mcache_disable[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/spi_flash_os_func_app.c[0m[0m:[1;31m71[0m
+[0m--- 0x40084415: [0;33mspi1_start[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/spi_flash_os_func_app.c[0m[0m:[1;31m123[0m
+[0m--- 0x40098fa5: [0;33mspiflash_start_default[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/esp_flash_api.c[0m[0m:[1;31m191[0m
+[0m--- 0x40098a05: [0;33mesp_flash_read[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/esp_flash_api.c[0m[0m:[1;31m921[0m
+[0m--- 0x4014b843: [0;33mesp_partition_read[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_partition/partition_target.c[0m[0m:[1;31m38[0m
+[0m--- 0x400e3e5b: [0;33mnvs::NVSPartition::read(unsigned int, void*, unsigned int)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_partition.cpp[0m[0m:[1;31m37[0m
+[0m--- 0x40172a62: [0;33mnvs::Page::readEntry(unsigned int, nvs::Item&) const[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m895[0m
+[0m--- 0x400e2945: [0;33mnvs::Page::mLoadEntryTable()[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m761[0m
+[0m--- 0x400e2b10: [0;33mnvs::Page::load(nvs::Partition*, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m88[0m
+[0m--- 0x400e4753: [0;33mnvs::PageManager::load(nvs::Partition*, unsigned long, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_pagemanager.cpp[0m[0m:[1;31m27[0m
+[0m--- 0x400e3573: [0;33mnvs::Storage::init(unsigned long, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_storage.cpp[0m[0m:[1;31m185[0m
+[0m--- 0x400e4034: [0;33mnvs::NVSPartitionManager::init_custom(nvs::Partition*, unsigned long, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_partition_manager.cpp[0m[0m:[1;31m95[0m
+[0m--- 0x400e40aa: [0;33mnvs::NVSPartitionManager::init_partition(char const*)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_partition_manager.cpp[0m[0m:[1;31m57[0m
+[0m--- 0x400e1566: [0;33mnvs_flash_init_partition[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_api.cpp[0m[0m:[1;31m133[0m
+[0m--- 0x400e157a: [0;33mnvs_flash_init[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_api.cpp[0m[0m:[1;31m161[0m
+[0m--- 0x400d9a5c: [0;33mnetwork_app[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/network.c[0m[0m:[1;31m30[0m
+[0m--- 0x400d94f7: [0;33mnetwork_task[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c[0m[0m:[1;31m117[0m
+[0m--- 0x4008aef9: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x40178eac: [0;33madc_oneshot_read[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_adc/adc_oneshot.c[0m[0m:[1;31m207[0m
+[0m--- 0x4000c2e0: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4000c2f6: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40178ea9: [0;33madc_oneshot_config_channel[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40082eaa: [0;33madc_timer_callback[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c[0m[0m:[1;31m45[0m
+[0m--- 0x40084869: [0;33mtimer_process_alarm[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_timer/src/esp_timer.c[0m[0m:[1;31m435[0m
+[0m--- 0x400848b1: [0;33mtimer_alarm_handler[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_timer/src/esp_timer.c[0m[0m:[1;31m481[0m
+[0m--- 0x40082c39: [0;33mtimer_alarm_isr[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_timer/src/esp_timer_impl_lac.c[0m[0m:[1;31m170[0m
+[0m--- 0x400832c9: [0;33m_xt_lowint1[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x4008ecc4: [0;33mcache_ll_l1_disable_cache[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/hal/esp32/include/hal/cache_ll.h[0m[0m:[1;31m57[0m
+[0m--- (inlined by) [0;33mcache_hal_suspend[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/hal/esp32/cache_hal_esp32.c[0m[0m:[1;31m25[0m
+[0m--- 0x40089121: [0;33mesp_cache_suspend_ext_mem_cache[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_mm/esp_cache_utils.c[0m[0m:[1;31m36[0m
+[0m--- 0x4008402f: [0;33mspi_flash_disable_cache[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/cache_utils.c[0m[0m:[1;31m346[0m
+[0m--- 0x40084114: [0;33mspi_flash_disable_interrupts_caches_and_other_cpu[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/cache_utils.c[0m[0m:[1;31m191[0m
+[0m--- 0x4008440b: [0;33mcache_disable[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/spi_flash_os_func_app.c[0m[0m:[1;31m71[0m
+[0m--- 0x40084415: [0;33mspi1_start[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/spi_flash_os_func_app.c[0m[0m:[1;31m123[0m
+[0m--- 0x40098fa5: [0;33mspiflash_start_default[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/esp_flash_api.c[0m[0m:[1;31m191[0m
+[0m--- 0x40098a05: [0;33mesp_flash_read[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/esp_flash_api.c[0m[0m:[1;31m921[0m
+[0m--- 0x4014b843: [0;33mesp_partition_read[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_partition/partition_target.c[0m[0m:[1;31m38[0m
+[0m--- 0x400e3e5b: [0;33mnvs::NVSPartition::read(unsigned int, void*, unsigned int)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_partition.cpp[0m[0m:[1;31m37[0m
+[0m--- 0x40172a62: [0;33mnvs::Page::readEntry(unsigned int, nvs::Item&) const[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m895[0m
+[0m--- 0x400e2945: [0;33mnvs::Page::mLoadEntryTable()[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m761[0m
+[0m--- 0x400e2b10: [0;33mnvs::Page::load(nvs::Partition*, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m88[0m
+[0m--- 0x400e4753: [0;33mnvs::PageManager::load(nvs::Partition*, unsigned long, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_pagemanager.cpp[0m[0m:[1;31m27[0m
+[0m--- 0x400e3573: [0;33mnvs::Storage::init(unsigned long, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_storage.cpp[0m[0m:[1;31m185[0m
+[0m--- 0x400e4034: [0;33mnvs::NVSPartitionManager::init_custom(nvs::Partition*, unsigned long, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_partition_manager.cpp[0m[0m:[1;31m95[0m
+[0m--- 0x400e40aa: [0;33mnvs::NVSPartitionManager::init_partition(char const*)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_partition_manager.cpp[0m[0m:[1;31m57[0m
+[0m--- 0x400e1566: [0;33mnvs_flash_init_partition[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_api.cpp[0m[0m:[1;31m133[0m
+[0m--- 0x400e157a: [0;33mnvs_flash_init[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_api.cpp[0m[0m:[1;31m161[0m
+[0m--- 0x400d9a5c: [0;33mnetwork_app[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/network.c[0m[0m:[1;31m30[0m
+[0m--- 0x400d94f7: [0;33mnetwork_task[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c[0m[0m:[1;31m117[0m
+[0m--- 0x4008aef9: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x40178eac: [0;33madc_oneshot_read[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_adc/adc_oneshot.c[0m[0m:[1;31m207[0m
+[0m--- 0x4000c2e0: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4000c2f6: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40178ea9: [0;33madc_oneshot_config_channel[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40082eaa: [0;33madc_timer_callback[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c[0m[0m:[1;31m45[0m
+[0m--- 0x40084869: [0;33mtimer_process_alarm[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_timer/src/esp_timer.c[0m[0m:[1;31m435[0m
+[0m--- 0x400848b1: [0;33mtimer_alarm_handler[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_timer/src/esp_timer.c[0m[0m:[1;31m481[0m
+[0m--- 0x40082c39: [0;33mtimer_alarm_isr[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_timer/src/esp_timer_impl_lac.c[0m[0m:[1;31m170[0m
+[0m--- 0x400832c9: [0;33m_xt_lowint1[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40082465: [0;33mesp_dport_access_reg_read[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/soc/esp32/dport_access.c[0m[0m:[1;31m20[0m
+[0m--- 0x4008ecbb: [0;33mcache_ll_l1_disable_cache[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/hal/esp32/include/hal/cache_ll.h[0m[0m:[1;31m54[0m
+[0m--- (inlined by) [0;33mcache_hal_suspend[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/hal/esp32/cache_hal_esp32.c[0m[0m:[1;31m25[0m
+[0m--- 0x40089121: [0;33mesp_cache_suspend_ext_mem_cache[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_mm/esp_cache_utils.c[0m[0m:[1;31m36[0m
+[0m--- 0x4008402f: [0;33mspi_flash_disable_cache[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/cache_utils.c[0m[0m:[1;31m346[0m
+[0m--- 0x40084114: [0;33mspi_flash_disable_interrupts_caches_and_other_cpu[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/cache_utils.c[0m[0m:[1;31m191[0m
+[0m--- 0x4008440b: [0;33mcache_disable[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/spi_flash_os_func_app.c[0m[0m:[1;31m71[0m
+[0m--- 0x40084415: [0;33mspi1_start[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/spi_flash_os_func_app.c[0m[0m:[1;31m123[0m
+[0m--- 0x40098fa5: [0;33mspiflash_start_default[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/esp_flash_api.c[0m[0m:[1;31m191[0m
+[0m--- 0x40098a05: [0;33mesp_flash_read[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/esp_flash_api.c[0m[0m:[1;31m921[0m
+[0m--- 0x4014b843: [0;33mesp_partition_read[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_partition/partition_target.c[0m[0m:[1;31m38[0m
+[0m--- 0x400e3e5b: [0;33mnvs::NVSPartition::read(unsigned int, void*, unsigned int)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_partition.cpp[0m[0m:[1;31m37[0m
+[0m--- 0x40172a62: [0;33mnvs::Page::readEntry(unsigned int, nvs::Item&) const[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m895[0m
+[0m--- 0x400e2945: [0;33mnvs::Page::mLoadEntryTable()[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m761[0m
+[0m--- 0x400e2b10: [0;33mnvs::Page::load(nvs::Partition*, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m88[0m
+[0m--- 0x400e4753: [0;33mnvs::PageManager::load(nvs::Partition*, unsigned long, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_pagemanager.cpp[0m[0m:[1;31m27[0m
+[0m--- 0x400e3573: [0;33mnvs::Storage::init(unsigned long, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_storage.cpp[0m[0m:[1;31m185[0m
+[0m--- 0x400e4034: [0;33mnvs::NVSPartitionManager::init_custom(nvs::Partition*, unsigned long, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_partition_manager.cpp[0m[0m:[1;31m95[0m
+[0m--- 0x400e40aa: [0;33mnvs::NVSPartitionManager::init_partition(char const*)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_partition_manager.cpp[0m[0m:[1;31m57[0m
+[0m--- 0x400e1566: [0;33mnvs_flash_init_partition[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_api.cpp[0m[0m:[1;31m133[0m
+[0m--- 0x400e157a: [0;33mnvs_flash_init[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_api.cpp[0m[0m:[1;31m161[0m
+[0m--- 0x400d9a5c: [0;33mnetwork_app[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/network.c[0m[0m:[1;31m30[0m
+[0m--- 0x400d94f7: [0;33mnetwork_task[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c[0m[0m:[1;31m117[0m
+[0m--- 0x4008aef9: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x40178eac: [0;33madc_oneshot_read[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_adc/adc_oneshot.c[0m[0m:[1;31m207[0m
+[0m--- 0x4000c2e0: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4000c2f6: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40178ea9: [0;33madc_oneshot_config_channel[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x40082eaa: [0;33madc_timer_callback[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c[0m[0m:[1;31m45[0m
+[0m--- 0x40084869: [0;33mtimer_process_alarm[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_timer/src/esp_timer.c[0m[0m:[1;31m435[0m
+[0m--- 0x400848b1: [0;33mtimer_alarm_handler[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_timer/src/esp_timer.c[0m[0m:[1;31m481[0m
+[0m--- 0x40082c39: [0;33mtimer_alarm_isr[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_timer/src/esp_timer_impl_lac.c[0m[0m:[1;31m170[0m
+[0m--- 0x400832c9: [0;33m_xt_lowint1[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m1240[0m
+[0m--- 0x40082455: [0;33mheap_caps_calloc_base[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/heap/heap_caps_base.c[0m[0m:[1;31m329[0m
+[0m--- 0x40089121: [0;33mesp_cache_suspend_ext_mem_cache[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_mm/esp_cache_utils.c[0m[0m:[1;31m36[0m
+[0m--- 0x4008402f: [0;33mspi_flash_disable_cache[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/cache_utils.c[0m[0m:[1;31m346[0m
+[0m--- 0x40084114: [0;33mspi_flash_disable_interrupts_caches_and_other_cpu[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/cache_utils.c[0m[0m:[1;31m191[0m
+[0m--- 0x4008440b: [0;33mcache_disable[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/spi_flash_os_func_app.c[0m[0m:[1;31m71[0m
+[0m--- 0x40084415: [0;33mspi1_start[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/spi_flash_os_func_app.c[0m[0m:[1;31m123[0m
+[0m--- 0x40098fa5: [0;33mspiflash_start_default[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/esp_flash_api.c[0m[0m:[1;31m191[0m
+[0m--- 0x40098a05: [0;33mesp_flash_read[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/spi_flash/esp_flash_api.c[0m[0m:[1;31m921[0m
+[0m--- 0x4014b843: [0;33mesp_partition_read[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp_partition/partition_target.c[0m[0m:[1;31m38[0m
+[0m--- 0x400e3e5b: [0;33mnvs::NVSPartition::read(unsigned int, void*, unsigned int)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_partition.cpp[0m[0m:[1;31m37[0m
+[0m--- 0x40172a62: [0;33mnvs::Page::readEntry(unsigned int, nvs::Item&) const[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m895[0m
+[0m--- 0x400e2945: [0;33mnvs::Page::mLoadEntryTable()[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m761[0m
+[0m--- 0x400e2b10: [0;33mnvs::Page::load(nvs::Partition*, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_page.cpp[0m[0m:[1;31m88[0m
+[0m--- 0x400e4753: [0;33mnvs::PageManager::load(nvs::Partition*, unsigned long, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_pagemanager.cpp[0m[0m:[1;31m27[0m
+[0m--- 0x400e3573: [0;33mnvs::Storage::init(unsigned long, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_storage.cpp[0m[0m:[1;31m185[0m
+[0m--- 0x400e4034: [0;33mnvs::NVSPartitionManager::init_custom(nvs::Partition*, unsigned long, unsigned long)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_partition_manager.cpp[0m[0m:[1;31m95[0m
+[0m--- 0x400e40aa: [0;33mnvs::NVSPartitionManager::init_partition(char const*)[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_partition_manager.cpp[0m[0m:[1;31m57[0m
+[0m--- 0x400e1566: [0;33mnvs_flash_init_partition[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_api.cpp[0m[0m:[1;31m133[0m
+[0m--- 0x400e157a: [0;33mnvs_flash_init[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/nvs_flash/src/nvs_api.cpp[0m[0m:[1;31m161[0m
+[0m--- 0x400d9a5c: [0;33mnetwork_app[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/network.c[0m[0m:[1;31m30[0m
+[0m--- 0x400d94f7: [0;33mnetwork_task[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c[0m[0m:[1;31m117[0m
+[0m--- 0x4008aef9: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m

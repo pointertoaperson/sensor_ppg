@@ -1,0 +1,775 @@
+Command: /home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/umesh_adwait/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/test.elf /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/bootloader/bootloader.elf -m '/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python' '/home/umesh_adwait/esp-idf/tools/idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6372
+load:0x40078000,len:15928
+load:0x40080400,len:3880
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v6.0-dev-1002-gbfe5caf58f-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 17 2025 11:03:49[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=22f20h (143136) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00032f48 vaddr=3ff80000 size=00024h (    36) load[0m
+[0;32mI (139) esp_image: segment 2: paddr=00032f74 vaddr=3ffb0000 size=045b0h ( 17840) load[0m
+[0;32mI (150) esp_image: segment 3: paddr=0003752c vaddr=40080000 size=08aech ( 35564) load[0m
+[0;32mI (165) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=ae7b0h (714672) map[0m
+[0;32mI (418) esp_image: segment 5: paddr=000ee7d8 vaddr=40088aec size=1110ch ( 69900) load[0m
+[0;32mI (459) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (459) boot: Disabling RNG early entropy source...[0m
+[0;32mI (470) cpu_start: Multicore app[0m
+[0;32mI (478) cpu_start: Pro cpu start user code[0m
+[0;32mI (478) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (478) app_init: Application information:[0m
+[0;32mI (478) app_init: Project name:     test[0m
+[0;32mI (482) app_init: App version:      v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (488) app_init: Compile time:     Aug 17 2025 11:04:11[0m
+[0;32mI (493) app_init: ELF file SHA256:  b166b8fda...[0m
+[0;32mI (497) app_init: ESP-IDF:          v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (503) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (507) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (511) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (515) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (521) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (526) heap_init: At 3FFBA3C8 len 00025C38 (151 KiB): DRAM[0m
+[0;32mI (532) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (537) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (543) heap_init: At 40099BF8 len 00006408 (25 KiB): IRAM[0m
+[0;32mI (549) spi_flash: detected chip: generic[0m
+[0;32mI (552) spi_flash: flash io: dio[0m
+[0;33mW (554) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (567) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (578) main_task: Started on CPU0[0m
+[0;32mI (588) main_task: Calling app_main()[0m
+[0;32mI (758) networ_main: Starting...[0m
+[1;31mE (758) gpio: gpio_pullup_en(78): GPIO number error (input-only pad has no internal PU)[0m
+[0;32mI (758) ssid_reset:  pin interrupt initialized on GPIO 35 & 0[0m
+[0;32mI (768) main_task: Returned from app_main()[0m
+[0;32mI (808) TIME and MQTT: Read SSID from NVS: 'return2hell'[0m
+[0;32mI (808) TIME and MQTT: Read Password from NVS: '$adhain@dkin6'[0m
+[0;32mI (808) TIME and MQTT: Read device id from NVS: 'DEV01'[0m
+[0;32mI (818) TIME and MQTT: Read broker address from NVS: 'ws://broker.hivemq.com:8000'[0m
+[0;32mI (828) adc_task: adc_val, 1984[0m
+[0;32mI (838) wifi:wifi driver task: 3ffbc390, prio:23, stack:6656, core=0[0m
+[0;32mI (848) wifi:wifi firmware version: 956d811[0m
+[0;32mI (848) wifi:wifi certification version: v7.0[0m
+[0;32mI (848) wifi:config NVS flash: enabled[0m
+[0;32mI (848) wifi:config nano formatting: disabled[0m
+[0;32mI (858) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (858) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (868) wifi:Init management short buffer num: 32[0m
+[0;32mI (868) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (878) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (878) wifi:Init static rx buffer num: 10[0m
+[0;32mI (878) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (888) wifi_init: rx ba win: 6[0m
+[0;32mI (888) wifi_init: accept mbox: 6[0m
+[0;32mI (888) wifi_init: tcpip mbox: 32[0m
+[0;32mI (898) wifi_init: udp mbox: 6[0m
+[0;32mI (898) wifi_init: tcp mbox: 6[0m
+[0;32mI (898) wifi_init: tcp tx win: 5760[0m
+[0;32mI (908) wifi_init: tcp rx win: 5760[0m
+[0;32mI (908) wifi_init: tcp mss: 1440[0m
+[0;32mI (908) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (918) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (918) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (928) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[1;31mE (928) phy_init: load_cal_data_from_nvs_handle: failed to get cal_data(0x1102)[0m
+[0;33mW (938) phy_init: failed to load RF calibration data (0x1102), falling back to full calibration[0m
+[0;32mI (998) adc_task: adc_val, 1963[0m
+[0;32mI (1018) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(2)[0m
+[0;32mI (1068) wifi:mode : sta (08:d1:f9:9b:2e:e8)[0m
+[0;32mI (1068) wifi:enable tsf[0m
+[0;32mI (1068) TIME and MQTT: STA connecting to saved SSID: return2hell[0m
+[0;32mI (1068) TIME and MQTT: STA started, connecting to AP...[0m
+[0;32mI (1078) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1088) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1088) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1098) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1098) wifi:<ba-add>idx:0 (ifx:0, 5c:6a:80:5e:cf:51), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1118) wifi:connected with return2hell, aid = 2, channel 8, BW20, bssid = 5c:6a:80:5e:cf:51[0m
+[0;32mI (1118) wifi:security: WPA2-PSK, phy: bgn, rssi: -39[0m
+[0;32mI (1128) wifi:pm start, type: 1[0m
+
+[0;32mI (1128) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1158) adc_task: adc_val, 1088[0m
+[0;32mI (1208) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (1258) adc_task: adc_val, 2769[0m
+[0;32mI (1358) adc_task: adc_val, 2853[0m
+[0;32mI (1458) adc_task: adc_val, 2999[0m
+[0;32mI (1558) adc_task: adc_val, 0[0m
+[0;32mI (1658) adc_task: adc_val, 0[0m
+[0;32mI (1758) adc_task: adc_val, 1401[0m
+[0;32mI (1858) adc_task: adc_val, 661[0m
+[0;32mI (1958) adc_task: adc_val, 592[0m
+[0;32mI (2058) adc_task: adc_val, 1137[0m
+[0;32mI (2158) adc_task: adc_val, 497[0m
+[0;32mI (2258) adc_task: adc_val, 3204[0m
+[0;32mI (2368) adc_task: adc_val, 4095[0m
+[0;32mI (2468) adc_task: adc_val, 0[0m
+[0;32mI (2568) adc_task: adc_val, 0[0m
+[0;32mI (2668) adc_task: adc_val, 669[0m
+[0;32mI (2768) adc_task: adc_val, 2062[0m
+[0;32mI (2868) adc_task: adc_val, 3098[0m
+[0;32mI (2968) adc_task: adc_val, 2758[0m
+[0;32mI (3068) adc_task: adc_val, 0[0m
+[0;32mI (3168) adc_task: adc_val, 0[0m
+[0;32mI (3268) adc_task: adc_val, 842[0m
+[0;32mI (3368) adc_task: adc_val, 2010[0m
+[0;32mI (3468) adc_task: adc_val, 2295[0m
+[0;32mI (3568) adc_task: adc_val, 1557[0m
+[0;32mI (3668) adc_task: adc_val, 641[0m
+[0;32mI (3768) adc_task: adc_val, 2503[0m
+[0;32mI (3868) adc_task: adc_val, 2128[0m
+[0;32mI (3968) adc_task: adc_val, 720[0m
+[0;32mI (4078) adc_task: adc_val, 460[0m
+[0;32mI (4178) adc_task: adc_val, 1701[0m
+[0;32mI (4278) adc_task: adc_val, 2037[0m
+[0;32mI (4378) adc_task: adc_val, 2448[0m
+[0;32mI (4478) adc_task: adc_val, 0[0m
+[0;32mI (4578) adc_task: adc_val, 2789[0m
+[0;32mI (4678) adc_task: adc_val, 2771[0m
+[0;32mI (4778) adc_task: adc_val, 2973[0m
+[0;32mI (4878) adc_task: adc_val, 0[0m
+[0;32mI (4978) adc_task: adc_val, 665[0m
+[0;32mI (5078) adc_task: adc_val, 2014[0m
+[0;32mI (5178) adc_task: adc_val, 1264[0m
+[0;32mI (5278) adc_task: adc_val, 2143[0m
+maxIDX =47maxval =417
+[0;32mI (5378) adc_task: adc_val, 2009[0m
+[0;32mI (5478) adc_task: adc_val, 2430[0m
+[0;32mI (5578) adc_task: adc_val, 1535[0m
+[0;32mI (5688) adc_task: adc_val, 583[0m
+[0;32mI (5788) adc_task: adc_val, 2355[0m
+[0;32mI (5888) adc_task: adc_val, 1210[0m
+[0;32mI (5988) adc_task: adc_val, 1235[0m
+[0;32mI (6088) adc_task: adc_val, 3295[0m
+[0;32mI (6188) adc_task: adc_val, 3339[0m
+[0;32mI (6288) adc_task: adc_val, 0[0m
+[0;32mI (6388) adc_task: adc_val, 0[0m
+[0;32mI (6488) adc_task: adc_val, 2502[0m
+[0;32mI (6588) adc_task: adc_val, 1535[0m
+[0;32mI (6688) adc_task: adc_val, 459[0m
+[0;32mI (6788) adc_task: adc_val, 432[0m
+[0;32mI (6888) adc_task: adc_val, 1664[0m
+[0;32mI (6988) adc_task: adc_val, 2243[0m
+[0;32mI (7098) adc_task: adc_val, 1853[0m
+[0;32mI (7198) adc_task: adc_val, 1227[0m
+[0;32mI (7298) adc_task: adc_val, 2304[0m
+[0;32mI (7398) adc_task: adc_val, 2127[0m
+[0;32mI (7498) adc_task: adc_val, 976[0m
+[0;32mI (7598) adc_task: adc_val, 361[0m
+[0;32mI (7698) adc_task: adc_val, 838[0m
+[0;32mI (7798) adc_task: adc_val, 1378[0m
+[0;32mI (7898) adc_task: adc_val, 7[0m
+[0;32mI (7998) adc_task: adc_val, 706[0m
+[0;32mI (8098) adc_task: adc_val, 2834[0m
+[0;32mI (8198) adc_task: adc_val, 3251[0m
+[0;32mI (8298) adc_task: adc_val, 0[0m
+[0;32mI (8398) adc_task: adc_val, 0[0m
+[0;32mI (8498) adc_task: adc_val, 0[0m
+[0;32mI (8598) adc_task: adc_val, 529[0m
+[0;32mI (8708) adc_task: adc_val, 915[0m
+[0;32mI (8808) adc_task: adc_val, 1806[0m
+[0;32mI (8908) adc_task: adc_val, 336[0m
+[0;32mI (9008) adc_task: adc_val, 749[0m
+[0;32mI (9108) adc_task: adc_val, 1615[0m
+[0;32mI (9208) adc_task: adc_val, 1889[0m
+[0;32mI (9308) adc_task: adc_val, 93[0m
+[0;32mI (9408) adc_task: adc_val, 2815[0m
+[0;32mI (9508) adc_task: adc_val, 3630[0m
+[0;32mI (9608) adc_task: adc_val, 256[0m
+[0;32mI (9708) adc_task: adc_val, 0[0m
+[0;32mI (9808) adc_task: adc_val, 859[0m
+[0;32mI (9908) adc_task: adc_val, 2557[0m
+maxIDX =8maxval =415
+[0;32mI (10008) adc_task: adc_val, 466[0m
+[0;32mI (10108) adc_task: adc_val, 2371[0m
+[0;32mI (10218) adc_task: adc_val, 1341[0m
+[0;32mI (10318) adc_task: adc_val, 496[0m
+[0;32mI (10418) adc_task: adc_val, 715[0m
+[0;32mI (10518) adc_task: adc_val, 1666[0m
+[0;32mI (10618) adc_task: adc_val, 603[0m
+[0;32mI (10718) adc_task: adc_val, 561[0m
+[0;32mI (10818) adc_task: adc_val, 1348[0m
+[0;32mI (10918) adc_task: adc_val, 2147[0m
+[0;32mI (11018) adc_task: adc_val, 0[0m
+[0;32mI (11118) adc_task: adc_val, 1743[0m
+[0;32mI (11218) adc_task: adc_val, 2724[0m
+[0;32mI (11318) adc_task: adc_val, 742[0m
+[0;32mI (11418) adc_task: adc_val, 0[0m
+[0;32mI (11518) adc_task: adc_val, 1237[0m
+[0;32mI (11618) adc_task: adc_val, 2610[0m
+[0;32mI (11718) adc_task: adc_val, 667[0m
+[0;32mI (11818) adc_task: adc_val, 1591[0m
+[0;32mI (11918) adc_task: adc_val, 2267[0m
+[0;32mI (12018) adc_task: adc_val, 2097[0m
+[0;32mI (12118) adc_task: adc_val, 1162[0m
+[0;32mI (12228) adc_task: adc_val, 2205[0m
+[0;32mI (12328) adc_task: adc_val, 2183[0m
+[0;32mI (12428) adc_task: adc_val, 1079[0m
+[0;32mI (12528) adc_task: adc_val, 1906[0m
+[0;32mI (12628) adc_task: adc_val, 2158[0m
+[0;32mI (12728) adc_task: adc_val, 755[0m
+[0;32mI (12828) adc_task: adc_val, 656[0m
+[0;32mI (12928) adc_task: adc_val, 2514[0m
+[0;32mI (13028) adc_task: adc_val, 4095[0m
+[0;32mI (13128) adc_task: adc_val, 0[0m
+[0;32mI (13228) adc_task: adc_val, 0[0m
+[0;32mI (13328) adc_task: adc_val, 1355[0m
+[0;32mI (13428) adc_task: adc_val, 1449[0m
+[0;32mI (13528) adc_task: adc_val, 144[0m
+[0;32mI (13628) adc_task: adc_val, 1262[0m
+[0;32mI (13728) adc_task: adc_val, 2030[0m
+[0;32mI (13828) adc_task: adc_val, 574[0m
+[0;32mI (13928) adc_task: adc_val, 624[0m
+[0;32mI (14028) adc_task: adc_val, 1578[0m
+[0;32mI (14138) adc_task: adc_val, 2334[0m
+[0;32mI (14238) adc_task: adc_val, 397[0m
+[0;32mI (14338) adc_task: adc_val, 1251[0m
+[0;32mI (14438) adc_task: adc_val, 1961[0m
+[0;32mI (14538) adc_task: adc_val, 0[0m
+maxIDX =8maxval =408
+[0;32mI (14638) adc_task: adc_val, 2794[0m
+[0;32mI (14738) adc_task: adc_val, 3135[0m
+[0;32mI (14838) adc_task: adc_val, 720[0m
+[0;32mI (14938) adc_task: adc_val, 0[0m
+[0;32mI (15038) adc_task: adc_val, 1165[0m
+[0;32mI (15138) adc_task: adc_val, 1056[0m
+[0;32mI (15238) adc_task: adc_val, 2226[0m
+[0;32mI (15338) adc_task: adc_val, 2754[0m
+[0;32mI (15438) adc_task: adc_val, 1618[0m
+[0;32mI (15538) adc_task: adc_val, 528[0m
+[0;32mI (15648) adc_task: adc_val, 631[0m
+[0;32mI (15748) adc_task: adc_val, 1913[0m
+[0;32mI (15848) adc_task: adc_val, 2167[0m
+[0;32mI (15948) adc_task: adc_val, 268[0m
+[0;32mI (16048) adc_task: adc_val, 1086[0m
+[0;32mI (16148) adc_task: adc_val, 2207[0m
+[0;32mI (16248) adc_task: adc_val, 1589[0m
+[0;32mI (16348) adc_task: adc_val, 3191[0m
+[0;32mI (16448) adc_task: adc_val, 3399[0m
+[0;32mI (16548) adc_task: adc_val, 2821[0m
+[0;32mI (16648) adc_task: adc_val, 0[0m
+[0;32mI (16748) adc_task: adc_val, 0[0m
+[0;32mI (16848) adc_task: adc_val, 2656[0m
+[0;32mI (16958) adc_task: adc_val, 2427[0m
+[0;32mI (17058) adc_task: adc_val, 799[0m
+[0;32mI (17158) adc_task: adc_val, 419[0m
+[0;32mI (17258) adc_task: adc_val, 2032[0m
+[0;32mI (17358) adc_task: adc_val, 1163[0m
+[0;32mI (17458) adc_task: adc_val, 343[0m
+[0;32mI (17558) adc_task: adc_val, 673[0m
+[0;32mI (17658) adc_task: adc_val, 1393[0m
+[0;32mI (17758) adc_task: adc_val, 631[0m
+[0;32mI (17858) adc_task: adc_val, 0[0m
+[0;32mI (17958) adc_task: adc_val, 2064[0m
+[0;32mI (18058) adc_task: adc_val, 3319[0m
+[0;32mI (18158) adc_task: adc_val, 2890[0m
+[0;32mI (18258) adc_task: adc_val, 0[0m
+[0;32mI (18358) adc_task: adc_val, 0[0m
+[0;32mI (18458) adc_task: adc_val, 0[0m
+[0;32mI (18568) adc_task: adc_val, 1170[0m
+[0;32mI (18668) adc_task: adc_val, 2021[0m
+[0;32mI (18768) adc_task: adc_val, 2371[0m
+[0;32mI (18868) adc_task: adc_val, 1842[0m
+[0;32mI (18968) adc_task: adc_val, 639[0m
+[0;32mI (19068) adc_task: adc_val, 400[0m
+[0;32mI (19168) adc_task: adc_val, 1968[0m
+maxIDX =47maxval =415
+[0;32mI (19268) adc_task: adc_val, 502[0m
+[0;32mI (19368) adc_task: adc_val, 1846[0m
+[0;32mI (19468) adc_task: adc_val, 651[0m
+[0;32mI (19568) adc_task: adc_val, 0[0m
+[0;32mI (19668) adc_task: adc_val, 1266[0m
+[0;32mI (19768) adc_task: adc_val, 3395[0m
+[0;32mI (19868) adc_task: adc_val, 2829[0m
+[0;32mI (19968) adc_task: adc_val, 0[0m
+[0;32mI (20078) adc_task: adc_val, 0[0m
+[0;32mI (20178) adc_task: adc_val, 0[0m
+[0;32mI (20278) adc_task: adc_val, 789[0m
+[0;32mI (20378) adc_task: adc_val, 2869[0m
+[0;32mI (20478) adc_task: adc_val, 3270[0m
+[0;32mI (20578) adc_task: adc_val, 0[0m
+[0;32mI (20678) adc_task: adc_val, 0[0m
+[0;32mI (20778) adc_task: adc_val, 1427[0m
+[0;32mI (20878) adc_task: adc_val, 575[0m
+[0;32mI (20978) adc_task: adc_val, 858[0m
+[0;32mI (21078) adc_task: adc_val, 1837[0m
+[0;32mI (21178) adc_task: adc_val, 3671[0m
+[0;32mI (21278) adc_task: adc_val, 2985[0m
+[0;32mI (21378) adc_task: adc_val, 64[0m
+[0;32mI (21478) adc_task: adc_val, 124[0m
+[0;32mI (21578) adc_task: adc_val, 1338[0m
+[0;32mI (21678) adc_task: adc_val, 880[0m
+[0;32mI (21778) adc_task: adc_val, 2182[0m
+[0;32mI (21888) adc_task: adc_val, 2000[0m
+[0;32mI (21988) adc_task: adc_val, 1040[0m
+[0;32mI (22088) adc_task: adc_val, 582[0m
+[0;32mI (22188) adc_task: adc_val, 990[0m
+[0;32mI (22288) adc_task: adc_val, 1318[0m
+[0;32mI (22388) adc_task: adc_val, 429[0m
+[0;32mI (22488) adc_task: adc_val, 510[0m
+[0;32mI (22588) adc_task: adc_val, 1602[0m
+[0;32mI (22688) adc_task: adc_val, 508[0m
+[0;32mI (22788) adc_task: adc_val, 0[0m
+[0;32mI (22888) adc_task: adc_val, 1810[0m
+[0;32mI (22988) adc_task: adc_val, 1759[0m
+[0;32mI (23088) adc_task: adc_val, 0[0m
+[0;32mI (23188) adc_task: adc_val, 1259[0m
+[0;32mI (23288) adc_task: adc_val, 2951[0m
+[0;32mI (23388) adc_task: adc_val, 3478[0m
+[0;32mI (23488) adc_task: adc_val, 0[0m
+[0;32mI (23588) adc_task: adc_val, 0[0m
+[0;32mI (23688) adc_task: adc_val, 927[0m
+[0;32mI (23788) adc_task: adc_val, 629[0m
+maxIDX =8maxval =390
+[0;32mI (23888) adc_task: adc_val, 2411[0m
+[0;32mI (23988) adc_task: adc_val, 587[0m
+[0;32mI (24098) adc_task: adc_val, 1427[0m
+[0;32mI (24198) adc_task: adc_val, 2445[0m
+[0;32mI (24298) adc_task: adc_val, 2022[0m
+[0;32mI (24398) adc_task: adc_val, 271[0m
+[0;32mI (24498) adc_task: adc_val, 691[0m
+[0;32mI (24598) adc_task: adc_val, 2768[0m
+[0;32mI (24698) adc_task: adc_val, 2935[0m
+[0;32mI (24798) adc_task: adc_val, 0[0m
+[0;32mI (24898) adc_task: adc_val, 0[0m
+[0;32mI (24998) adc_task: adc_val, 1297[0m
+[0;32mI (25098) adc_task: adc_val, 879[0m
+[0;32mI (25198) adc_task: adc_val, 128[0m
+[0;32mI (25298) adc_task: adc_val, 1195[0m
+[0;32mI (25398) adc_task: adc_val, 950[0m
+[0;32mI (25508) adc_task: adc_val, 431[0m
+[0;32mI (25608) adc_task: adc_val, 954[0m
+[0;32mI (25708) adc_task: adc_val, 1858[0m
+[0;32mI (25808) adc_task: adc_val, 276[0m
+[0;32mI (25908) adc_task: adc_val, 630[0m
+[0;32mI (26008) adc_task: adc_val, 1467[0m
+[0;32mI (26108) adc_task: adc_val, 2077[0m
+[0;32mI (26208) adc_task: adc_val, 288[0m
+[0;32mI (26308) adc_task: adc_val, 3172[0m
+[0;32mI (26408) adc_task: adc_val, 2894[0m
+[0;32mI (26508) adc_task: adc_val, 0[0m
+[0;32mI (26608) adc_task: adc_val, 0[0m
+[0;32mI (26708) adc_task: adc_val, 919[0m
+[0;32mI (26808) adc_task: adc_val, 2766[0m
+[0;32mI (26908) adc_task: adc_val, 1363[0m
+[0;32mI (27008) adc_task: adc_val, 1861[0m
+[0;32mI (27108) adc_task: adc_val, 2334[0m
+[0;32mI (27218) adc_task: adc_val, 1886[0m
+[0;32mI (27318) adc_task: adc_val, 853[0m
+[0;32mI (27418) adc_task: adc_val, 555[0m
+[0;32mI (27518) adc_task: adc_val, 1391[0m
+[0;32mI (27618) adc_task: adc_val, 2142[0m
+[0;32mI (27718) adc_task: adc_val, 304[0m
+[0;32mI (27818) adc_task: adc_val, 1050[0m
+[0;32mI (27918) adc_task: adc_val, 1433[0m
+[0;32mI (28018) adc_task: adc_val, 3390[0m
+[0;32mI (28118) adc_task: adc_val, 2538[0m
+[0;32mI (28218) adc_task: adc_val, 47[0m
+[0;32mI (28318) adc_task: adc_val, 1535[0m
+maxIDX =47maxval =416
+[0;32mI (28418) adc_task: adc_val, 2261[0m
+[0;32mI (28518) adc_task: adc_val, 2448[0m
+[0;32mI (28618) adc_task: adc_val, 531[0m
+[0;32mI (28718) adc_task: adc_val, 1616[0m
+[0;32mI (28818) adc_task: adc_val, 2384[0m
+[0;32mI (28928) adc_task: adc_val, 1810[0m
+[0;32mI (29028) adc_task: adc_val, 1443[0m
+[0;32mI (29128) adc_task: adc_val, 2390[0m
+[0;32mI (29228) adc_task: adc_val, 2114[0m
+[0;32mI (29328) adc_task: adc_val, 957[0m
+[0;32mI (29428) adc_task: adc_val, 2216[0m
+[0;32mI (29528) adc_task: adc_val, 2278[0m
+[0;32mI (29628) adc_task: adc_val, 1245[0m
+[0;32mI (29728) adc_task: adc_val, 415[0m
+[0;32mI (29828) adc_task: adc_val, 607[0m
+[0;32mI (29928) adc_task: adc_val, 895[0m
+[0;32mI (30028) adc_task: adc_val, 875[0m
+[0;32mI (30128) adc_task: adc_val, 2915[0m
+[0;32mI (30228) adc_task: adc_val, 2549[0m
+[0;32mI (30328) adc_task: adc_val, 0[0m
+[0;32mI (30428) adc_task: adc_val, 0[0m
+[0;32mI (30528) adc_task: adc_val, 151[0m
+[0;32mI (30628) adc_task: adc_val, 2185[0m
+[0;32mI (30728) adc_task: adc_val, 557[0m
+[0;32mI (30838) adc_task: adc_val, 742[0m
+[0;32mI (30938) adc_task: adc_val, 1905[0m
+[0;32mI (31038) adc_task: adc_val, 338[0m
+[0;32mI (31138) adc_task: adc_val, 730[0m
+[0;32mI (31238) adc_task: adc_val, 1763[0m
+[0;32mI (31338) adc_task: adc_val, 2336[0m
+[0;32mI (31438) adc_task: adc_val, 433[0m
+[0;32mI (31538) adc_task: adc_val, 1506[0m
+[0;32mI (31638) adc_task: adc_val, 2291[0m
+[0;32mI (31738) adc_task: adc_val, 1759[0m
+[0;32mI (31838) adc_task: adc_val, 1289[0m
+[0;32mI (31938) adc_task: adc_val, 2158[0m
+[0;32mI (32038) adc_task: adc_val, 1865[0m
+[0;32mI (32138) adc_task: adc_val, 942[0m
+[0;32mI (32238) adc_task: adc_val, 2166[0m
+[0;32mI (32338) adc_task: adc_val, 2095[0m
+[0;32mI (32438) adc_task: adc_val, 854[0m
+[0;32mI (32538) adc_task: adc_val, 319[0m
+[0;32mI (32648) adc_task: adc_val, 529[0m
+[0;32mI (32748) adc_task: adc_val, 1990[0m
+[0;32mI (32848) adc_task: adc_val, 2465[0m
+[0;32mI (32948) adc_task: adc_val, 597[0m
+maxIDX =8maxval =405
+[0;32mI (33048) adc_task: adc_val, 2293[0m
+[0;32mI (33148) adc_task: adc_val, 1223[0m
+[0;32mI (33248) adc_task: adc_val, 2064[0m
+[0;32mI (33348) adc_task: adc_val, 2320[0m
+[0;32mI (33448) adc_task: adc_val, 1507[0m
+[0;32mI (33548) adc_task: adc_val, 482[0m
+[0;32mI (33648) adc_task: adc_val, 2393[0m
+[0;32mI (33748) adc_task: adc_val, 1616[0m
+[0;32mI (33848) adc_task: adc_val, 447[0m
+[0;32mI (33958) adc_task: adc_val, 547[0m
+[0;32mI (34058) adc_task: adc_val, 1927[0m
+[0;32mI (34158) adc_task: adc_val, 542[0m
+[0;32mI (34258) adc_task: adc_val, 511[0m
+[0;32mI (34358) adc_task: adc_val, 1360[0m
+[0;32mI (34458) adc_task: adc_val, 622[0m
+[0;32mI (34558) adc_task: adc_val, 400[0m
+[0;32mI (34658) adc_task: adc_val, 1218[0m
+[0;32mI (34758) adc_task: adc_val, 2160[0m
+[0;32mI (34858) adc_task: adc_val, 403[0m
+[0;32mI (34958) adc_task: adc_val, 973[0m
+[0;32mI (35058) adc_task: adc_val, 2139[0m
+[0;32mI (35158) adc_task: adc_val, 2162[0m
+[0;32mI (35258) adc_task: adc_val, 832[0m
+[0;32mI (35358) adc_task: adc_val, 2011[0m
+[0;32mI (35458) adc_task: adc_val, 2075[0m
+[0;32mI (35558) adc_task: adc_val, 1318[0m
+[0;32mI (35668) adc_task: adc_val, 339[0m
+[0;32mI (35768) adc_task: adc_val, 683[0m
+[0;32mI (35868) adc_task: adc_val, 1225[0m
+[0;32mI (35968) adc_task: adc_val, 322[0m
+[0;32mI (36068) adc_task: adc_val, 369[0m
+[0;32mI (36168) adc_task: adc_val, 1655[0m
+[0;32mI (36268) adc_task: adc_val, 2305[0m
+[0;32mI (36368) adc_task: adc_val, 1744[0m
+[0;32mI (36468) adc_task: adc_val, 905[0m
+[0;32mI (36568) adc_task: adc_val, 2494[0m
+[0;32mI (36668) adc_task: adc_val, 2960[0m
+[0;32mI (36768) adc_task: adc_val, 2587[0m
+[0;32mI (36878) adc_task: adc_val, 0[0m
+[0;32mI (36978) adc_task: adc_val, 0[0m
+[0;32mI (37078) adc_task: adc_val, 347[0m
+[0;32mI (37178) adc_task: adc_val, 560[0m
+[0;32mI (37278) adc_task: adc_val, 2055[0m
+[0;32mI (37378) adc_task: adc_val, 880[0m
+[0;32mI (37478) adc_task: adc_val, 118[0m
+[0;32mI (37578) adc_task: adc_val, 909[0m
+maxIDX =8maxval =396
+[0;32mI (37678) adc_task: adc_val, 415[0m
+[0;32mI (37778) adc_task: adc_val, 1584[0m
+[0;32mI (37878) adc_task: adc_val, 563[0m
+[0;32mI (37978) adc_task: adc_val, 90[0m
+[0;32mI (38078) adc_task: adc_val, 2176[0m
+[0;32mI (38178) adc_task: adc_val, 2733[0m
+[0;32mI (38278) adc_task: adc_val, 0[0m
+[0;32mI (38378) adc_task: adc_val, 867[0m
+[0;32mI (38478) adc_task: adc_val, 3066[0m
+[0;32mI (38578) adc_task: adc_val, 2200[0m
+[0;32mI (38678) adc_task: adc_val, 834[0m
+[0;32mI (38788) adc_task: adc_val, 2075[0m
+[0;32mI (38888) adc_task: adc_val, 2136[0m
+[0;32mI (38988) adc_task: adc_val, 1089[0m
+[0;32mI (39088) adc_task: adc_val, 257[0m
+[0;32mI (39188) adc_task: adc_val, 894[0m
+[0;32mI (39288) adc_task: adc_val, 1255[0m
+[0;32mI (39388) adc_task: adc_val, 366[0m
+[0;32mI (39488) adc_task: adc_val, 709[0m
+[0;32mI (39588) adc_task: adc_val, 1255[0m
+[0;32mI (39688) adc_task: adc_val, 291[0m
+[0;32mI (39788) adc_task: adc_val, 721[0m
+[0;32mI (39888) adc_task: adc_val, 1882[0m
+[0;32mI (39988) adc_task: adc_val, 539[0m
+[0;32mI (40088) adc_task: adc_val, 684[0m
+[0;32mI (40188) adc_task: adc_val, 1555[0m
+[0;32mI (40288) adc_task: adc_val, 2155[0m
+[0;32mI (40388) adc_task: adc_val, 586[0m
+[0;32mI (40498) adc_task: adc_val, 1439[0m
+[0;32mI (40598) adc_task: adc_val, 2309[0m
+[0;32mI (40698) adc_task: adc_val, 1984[0m
+[0;32mI (40798) adc_task: adc_val, 1447[0m
+[0;32mI (40898) adc_task: adc_val, 2207[0m
+[0;32mI (40998) adc_task: adc_val, 1968[0m
+[0;32mI (41098) adc_task: adc_val, 701[0m
+[0;32mI (41198) adc_task: adc_val, 2192[0m
+[0;32mI (41298) adc_task: adc_val, 1486[0m
+[0;32mI (41398) adc_task: adc_val, 641[0m
+[0;32mI (41498) adc_task: adc_val, 3020[0m
+[0;32mI (41598) adc_task: adc_val, 3381[0m
+[0;32mI (41698) adc_task: adc_val, 1378[0m
+[0;32mI (41798) adc_task: adc_val, 0[0m
+[0;32mI (41908) adc_task: adc_val, 0[0m
+[0;32mI (42008) adc_task: adc_val, 2045[0m
+[0;32mI (42108) adc_task: adc_val, 2323[0m
+[0;32mI (42208) adc_task: adc_val, 752[0m
+maxIDX =47maxval =414
+[0;32mI (42308) adc_task: adc_val, 2046[0m
+[0;32mI (42408) adc_task: adc_val, 1136[0m
+[0;32mI (42508) adc_task: adc_val, 2068[0m
+[0;32mI (42608) adc_task: adc_val, 2000[0m
+[0;32mI (42708) adc_task: adc_val, 947[0m
+[0;32mI (42808) adc_task: adc_val, 1987[0m
+[0;32mI (42908) adc_task: adc_val, 2170[0m
+[0;32mI (43008) adc_task: adc_val, 1187[0m
+[0;32mI (43108) adc_task: adc_val, 290[0m
+[0;32mI (43208) adc_task: adc_val, 2149[0m
+[0;32mI (43308) adc_task: adc_val, 1191[0m
+[0;32mI (43408) adc_task: adc_val, 210[0m
+[0;32mI (43508) adc_task: adc_val, 2241[0m
+[0;32mI (43608) adc_task: adc_val, 3376[0m
+[0;32mI (43708) adc_task: adc_val, 0[0m
+[0;32mI (43808) adc_task: adc_val, 0[0m
+[0;32mI (43908) adc_task: adc_val, 756[0m
+[0;32mI (44018) adc_task: adc_val, 749[0m
+[0;32mI (44118) adc_task: adc_val, 384[0m
+[0;32mI (44218) adc_task: adc_val, 1314[0m
+[0;32mI (44318) adc_task: adc_val, 2691[0m
+[0;32mI (44418) adc_task: adc_val, 2007[0m
+[0;32mI (44518) adc_task: adc_val, 529[0m
+[0;32mI (44618) adc_task: adc_val, 2190[0m
+[0;32mI (44718) adc_task: adc_val, 2222[0m
+[0;32mI (44818) adc_task: adc_val, 1203[0m
+[0;32mI (44928) adc_task: adc_val, 383[0m
+[0;32mI (45028) adc_task: adc_val, 1066[0m
+[0;32mI (45128) adc_task: adc_val, 1400[0m
+[0;32mI (45228) adc_task: adc_val, 1775[0m
+[0;32mI (45328) adc_task: adc_val, 3363[0m
+[0;32mI (45428) adc_task: adc_val, 2917[0m
+[0;32mI (45528) adc_task: adc_val, 0[0m
+[0;32mI (45628) adc_task: adc_val, 0[0m
+[0;32mI (45728) adc_task: adc_val, 1711[0m
+[0;32mI (45828) adc_task: adc_val, 2608[0m
+[0;32mI (45928) adc_task: adc_val, 687[0m
+[0;32mI (46028) adc_task: adc_val, 1509[0m
+[0;32mI (46128) adc_task: adc_val, 2280[0m
+[0;32mI (46228) adc_task: adc_val, 1808[0m
+[0;32mI (46328) adc_task: adc_val, 1492[0m
+[0;32mI (46428) adc_task: adc_val, 2244[0m
+[0;32mI (46528) adc_task: adc_val, 1829[0m
+[0;32mI (46628) adc_task: adc_val, 747[0m
+[0;32mI (46728) adc_task: adc_val, 2175[0m
+[0;32mI (46828) adc_task: adc_val, 2014[0m
+maxIDX =47maxval =413
+[0;32mI (46928) adc_task: adc_val, 2350[0m
+[0;32mI (47038) adc_task: adc_val, 1815[0m
+[0;32mI (47138) adc_task: adc_val, 629[0m
+[0;32mI (47238) adc_task: adc_val, 432[0m
+[0;32mI (47338) adc_task: adc_val, 1447[0m
+[0;32mI (47438) adc_task: adc_val, 614[0m
+[0;32mI (47538) adc_task: adc_val, 237[0m
+[0;32mI (47638) adc_task: adc_val, 1207[0m
+[0;32mI (47738) adc_task: adc_val, 2354[0m
+[0;32mI (47838) adc_task: adc_val, 2117[0m
+[0;32mI (47938) adc_task: adc_val, 851[0m
+[0;32mI (48038) adc_task: adc_val, 2155[0m
+[0;32mI (48138) adc_task: adc_val, 2224[0m
+[0;32mI (48238) adc_task: adc_val, 560[0m
+[0;32mI (48338) adc_task: adc_val, 2346[0m
+[0;32mI (48448) adc_task: adc_val, 3488[0m
+[0;32mI (48548) adc_task: adc_val, 3184[0m
+[0;32mI (48648) adc_task: adc_val, 694[0m
+[0;32mI (48748) adc_task: adc_val, 0[0m
+[0;32mI (48848) adc_task: adc_val, 0[0m
+[0;32mI (48948) adc_task: adc_val, 262[0m
+[0;32mI (49048) adc_task: adc_val, 859[0m
+[0;32mI (49148) adc_task: adc_val, 1289[0m
+[0;32mI (49248) adc_task: adc_val, 239[0m
+[0;32mI (49348) adc_task: adc_val, 570[0m
+[0;32mI (49448) adc_task: adc_val, 1554[0m
+[0;32mI (49548) adc_task: adc_val, 711[0m
+[0;32mI (49648) adc_task: adc_val, 499[0m
+[0;32mI (49748) adc_task: adc_val, 1329[0m
+[0;32mI (49848) adc_task: adc_val, 2366[0m
+[0;32mI (49948) adc_task: adc_val, 0[0m
+[0;32mI (50048) adc_task: adc_val, 2208[0m
+[0;32mI (50148) adc_task: adc_val, 2864[0m
+[0;32mI (50258) adc_task: adc_val, 3294[0m
+[0;32mI (50358) adc_task: adc_val, 0[0m
+[0;32mI (50458) adc_task: adc_val, 0[0m
+[0;32mI (50558) adc_task: adc_val, 2261[0m
+[0;32mI (50658) adc_task: adc_val, 1399[0m
+[0;32mI (50758) adc_task: adc_val, 240[0m
+[0;32mI (50858) adc_task: adc_val, 849[0m
+[0;32mI (50958) adc_task: adc_val, 2096[0m
+[0;32mI (51058) adc_task: adc_val, 528[0m
+[0;32mI (51158) adc_task: adc_val, 770[0m
+[0;32mI (51258) adc_task: adc_val, 1782[0m
+[0;32mI (51358) adc_task: adc_val, 0[0m
+[0;32mI (51458) adc_task: adc_val, 1095[0m
+maxIDX =8maxval =409
+[0;32mI (51558) adc_task: adc_val, 2768[0m
+[0;32mI (51658) adc_task: adc_val, 1447[0m
+[0;32mI (51758) adc_task: adc_val, 0[0m
+I (51858) adc_task: adc_val, 1739
+[0;32mI (51968) adc_task: adc_val, 1063[0m
+[0;32mI (52068) adc_task: adc_val, 2113[0m
+[0;32mI (52168) adc_task: adc_val, 2438[0m
+[0;32mI (52268) adc_task: adc_val, 1733[0m
+[0;32mI (52368) adc_task: adc_val, 1903[0m
+[0;32mI (52468) adc_task: adc_val, 2410[0m
+[0;32mI (52568) adc_task: adc_val, 1735[0m
+[0;32mI (52668) adc_task: adc_val, 591[0m
+[0;32mI (52768) adc_task: adc_val, 2257[0m
+[0;32mI (52868) adc_task: adc_val, 1847[0m
+[0;32mI (52968) adc_task: adc_val, 875[0m
+[0;32mI (53068) adc_task: adc_val, 0[0m
+[0;32mI (53168) adc_task: adc_val, 2481[0m
+[0;32mI (53268) adc_task: adc_val, 3286[0m
+[0;32mI (53368) adc_task: adc_val, 3411[0m
+[0;32mI (53468) adc_task: adc_val, 0[0m
+[0;32mI (53568) adc_task: adc_val, 0[0m
+[0;32mI (53668) adc_task: adc_val, 0[0m
+[0;32mI (53778) adc_task: adc_val, 1105[0m
+[0;32mI (53878) adc_task: adc_val, 1966[0m
+[0;32mI (53978) adc_task: adc_val, 2148[0m
+[0;32mI (54078) adc_task: adc_val, 586[0m
+[0;32mI (54178) adc_task: adc_val, 2826[0m
+[0;32mI (54278) adc_task: adc_val, 3529[0m
+[0;32mI (54378) adc_task: adc_val, 0[0m
+[0;32mI (54478) adc_task: adc_val, 0[0m
+[0;32mI (54578) adc_task: adc_val, 839[0m
+[0;32mI (54678) adc_task: adc_val, 2047[0m
+[0;32mI (54778) adc_task: adc_val, 1529[0m
+[0;32mI (54878) adc_task: adc_val, 2106[0m
+[0;32mI (54978) adc_task: adc_val, 1872[0m
+[0;32mI (55078) adc_task: adc_val, 646[0m
+[0;32mI (55178) adc_task: adc_val, 1840[0m
+[0;32mI (55278) adc_task: adc_val, 3855[0m
+[0;32mI (55378) adc_task: adc_val, 3152[0m
+[0;32mI (55478) adc_task: adc_val, 2163[0m
+[0;32mI (55578) adc_task: adc_val, 0[0m
+[0;32mI (55678) adc_task: adc_val, 0[0m
+[0;32mI (55788) adc_task: adc_val, 573[0m
+[0;32mI (55888) adc_task: adc_val, 1071[0m
+[0;32mI (55988) adc_task: adc_val, 1845[0m
+maxIDX =8maxval =414
+[0;32mI (56088) adc_task: adc_val, 1100[0m
+[0;32mI (56188) adc_task: adc_val, 2373[0m
+[0;32mI (56288) adc_task: adc_val, 2314[0m
+[0;32mI (56388) adc_task: adc_val, 1269[0m
+[0;32mI (56488) adc_task: adc_val, 370[0m
+[0;32mI (56588) adc_task: adc_val, 2493[0m
+[0;32mI (56688) adc_task: adc_val, 912[0m
+[0;32mI (56788) adc_task: adc_val, 1360[0m
+[0;32mI (56888) adc_task: adc_val, 3344[0m
+[0;32mI (56988) adc_task: adc_val, 458[0m
+[0;32mI (57088) adc_task: adc_val, 0[0m
+[0;32mI (57198) adc_task: adc_val, 297[0m
+[0;32mI (57298) adc_task: adc_val, 1968[0m
+[0;32mI (57398) adc_task: adc_val, 534[0m
+[0;32mI (57498) adc_task: adc_val, 459[0m
+[0;32mI (57598) adc_task: adc_val, 1394[0m
+[0;32mI (57698) adc_task: adc_val, 863[0m
+[0;32mI (57798) adc_task: adc_val, 208[0m
+[0;32mI (57898) adc_task: adc_val, 1056[0m
+[0;32mI (57998) adc_task: adc_val, 915[0m
+[0;32mI (58098) adc_task: adc_val, 274[0m
+[0;32mI (58198) adc_task: adc_val, 1069[0m
+[0;32mI (58298) adc_task: adc_val, 2106[0m
+[0;32mI (58398) adc_task: adc_val, 2047[0m
+[0;32mI (58498) adc_task: adc_val, 785[0m
+[0;32mI (58598) adc_task: adc_val, 2010[0m
+[0;32mI (58708) adc_task: adc_val, 2225[0m
+[0;32mI (58808) adc_task: adc_val, 1360[0m
+[0;32mI (58908) adc_task: adc_val, 417[0m
+[0;32mI (59008) adc_task: adc_val, 705[0m
+[0;32mI (59108) adc_task: adc_val, 1890[0m
+[0;32mI (59208) adc_task: adc_val, 2345[0m
+[0;32mI (59308) adc_task: adc_val, 511[0m
+[0;32mI (59408) adc_task: adc_val, 1859[0m
+[0;32mI (59508) adc_task: adc_val, 2544[0m
+[0;32mI (59608) adc_task: adc_val, 1591[0m
+[0;32mI (59708) adc_task: adc_val, 1377[0m
+[0;32mI (59808) adc_task: adc_val, 2331[0m
+[0;32mI (59908) adc_task: adc_val, 1763[0m
+[0;32mI (60008) adc_task: adc_val, 562[0m
+[0;32mI (60118) adc_task: adc_val, 2223[0m
+[0;32mI (60218) adc_task: adc_val, 1625[0m
+[0;32mI (60318) adc_task: adc_val, 688[0m
+[0;32mI (60418) adc_task: adc_val, 2911[0m
+[0;32mI (60518) adc_task: adc_val, 3033[0m
+[0;32mI (60618) adc_task: adc_val, 0[0m
+maxIDX =8maxval =412
+[0;32mI (60718) adc_task: adc_val, 0[0m
+[0;32mI (60818) adc_task: adc_val, 0[0m
+[0;32mI (60918) adc_task: adc_val, 730[0m
+[0;32mI (61018) adc_task: adc_val, 2041[0m
+[0;32mI (61118) adc_task: adc_val, 650[0m
+[0;32mI (61218) adc_task: adc_val, 384[0m
+[0;32mI (61318) adc_task: adc_val, 1380[0m
+[0;32mI (61418) adc_task: adc_val, 709[0m
+[0;32mI (61518) adc_task: adc_val, 2553[0m
+[0;32mI (61618) adc_task: adc_val, 3427[0m
+[0;32mI (61718) adc_task: adc_val, 678[0m
+[0;32mI (61818) adc_task: adc_val, 0[0m
+[0;32mI (61928) adc_task: adc_val, 144[0m
+[0;32mI (62028) adc_task: adc_val, 1571[0m
+[0;32mI (62128) adc_task: adc_val, 3050[0m
+[0;32mI (62228) adc_task: adc_val, 3583[0m
+[0;32mI (62328) adc_task: adc_val, 958[0m
+[0;32mI (62428) adc_task: adc_val, 0[0m
+[0;32mI (62528) adc_task: adc_val, 0[0m
+[0;32mI (62628) adc_task: adc_val, 604[0m
+[0;32mI (62728) adc_task: adc_val, 2624[0m
+[0;32mI (62828) adc_task: adc_val, 1616[0m
+[0;32mI (62928) adc_task: adc_val, 368[0m
+[0;32mI (63028) adc_task: adc_val, 694[0m
+[0;32mI (63128) adc_task: adc_val, 1751[0m
+[0;32mI (63228) adc_task: adc_val, 550[0m
+[0;32mI (63328) adc_task: adc_val, 559[0m
+[0;32mI (63428) adc_task: adc_val, 1535[0m
+[0;32mI (63528) adc_task: adc_val, 561[0m
+[0;32mI (63628) adc_task: adc_val, 464[0m
+[0;32mI (63728) adc_task: adc_val, 1575[0m
+[0;32mI (63828) adc_task: adc_val, 2412[0m
+[0;32mI (63928) adc_task: adc_val, 430[0m
+[0;32mI (64038) adc_task: adc_val, 1367[0m
+[0;32mI (64138) adc_task: adc_val, 2259[0m
+[0;32mI (64238) adc_task: adc_val, 2229[0m
+[0;32mI (64338) adc_task: adc_val, 1179[0m
+[0;32mI (64438) adc_task: adc_val, 1616[0m
+[0;32mI (64538) adc_task: adc_val, 2615[0m
+[0;32mI (64638) adc_task: adc_val, 2819[0m
+[0;32mI (64738) adc_task: adc_val, 3292[0m
+[0;32mI (64838) adc_task: adc_val, 0[0m
+[0;32mI (64938) adc_task: adc_val, 0[0m
+[0;32mI (65038) adc_task: adc_val, 0[0m
+[0;32mI (65138) adc_task: adc_val, 1213[0m
+[0;32mI (65238) adc_task: adc_val, 3386[0m
+maxIDX =8maxval =400
+[0;32mI (65348) adc_task: adc_val, 2735[0m
+[0;32mI (65448) adc_task: adc_val, 0[0m
+[0;32mI (65548) adc_task: adc_val, 0[0m
+[0;32mI (65648) adc_task: adc_val, 418[0m
+[0;32mI (65748) adc_task: adc_val, 2380[0m
+[0;32mI (65848) adc_task: adc_val, 2213[0m
+[0;32mI (65948) adc_task: adc_val, 631[0m
+[0;32mI (66048) adc_task: adc_val, 1871[0m
+[0;32mI (66148) adc_task: adc_val, 3164[0m
+[0;32mI (66248) adc_task: adc_val, 2749[0m
+[0;32mI (66348) adc_task: adc_val, 357[0m
+[0;32mI (66448) adc_task: adc_val, 0[0m
+[0;32mI (66548) adc_task: adc_val, 0[0m
+[0;32mI (66648) adc_task: adc_val, 423[0m

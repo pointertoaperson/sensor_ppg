@@ -1,0 +1,36 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c: In function 'dsp_process':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:80:7: error: unknown type name 'float32_t'; did you mean 'float_t'?
+   80 |       float32_t delta, refined_freq;
+      |       ^~~~~~~~~
+      |       float_t
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:81:7: error: unknown type name 'float32_t'; did you mean 'float_t'?
+   81 |       float32_t mag_km1 = (mag[maxIndex - 1]);
+      |       ^~~~~~~~~
+      |       float_t
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:81:28: error: 'mag' undeclared (first use in this function)
+   81 |       float32_t mag_km1 = (mag[maxIndex - 1]);
+      |                            ^~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:81:28: note: each undeclared identifier is reported only once for each function it appears in
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:83:7: error: unknown type name 'float32_t'; did you mean 'float_t'?
+   83 |       float32_t mag_k = (mag[maxIndex]);
+      |       ^~~~~~~~~
+      |       float_t
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:85:7: error: unknown type name 'float32_t'; did you mean 'float_t'?
+   85 |       float32_t mag_kp1 = (mag[maxIndex + 1]);
+      |       ^~~~~~~~~
+      |       float_t
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:93:24: error: 'float32_t' undeclared (first use in this function); did you mean 'float_t'?
+   93 |       refined_freq = ((float32_t)maxIndex + delta) * 0.108f;
+      |                        ^~~~~~~~~
+      |                        float_t
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:93:34: error: expected ')' before 'maxIndex'
+   93 |       refined_freq = ((float32_t)maxIndex + delta) * 0.108f;
+      |                      ~           ^~~~~~~~
+      |                                  )
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:80:17: warning: variable 'delta' set but not used [-Wunused-but-set-variable]
+   80 |       float32_t delta, refined_freq;
+      |                 ^~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:180: esp-idf/main/CMakeFiles/__idf_main.dir/process.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

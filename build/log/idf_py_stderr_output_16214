@@ -1,0 +1,27 @@
+Command: make -j 14 all
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:26:
+/home/umesh_adwait/esp-idf/components/spi_flash/include/esp_spi_flash.h:6:2: warning: #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead [-Wcpp]
+    6 | #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead
+      |  ^~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c: In function 'dsp_process':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:128:9: error: 'ppg_val' undeclared (first use in this function)
+  128 |         ppg_val= 0;
+      |         ^~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:128:9: note: each undeclared identifier is reported only once for each function it appears in
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:180: esp-idf/main/CMakeFiles/__idf_main.dir/process.c.obj] Error 1
+make[2]: *** Waiting for unfinished jobs....
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c: In function 'oled_task':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:104:23: error: format '%lu' expects argument of type 'long unsigned int', but argument 3 has type 'double' [-Werror=format=]
+  104 |         sprintf(bstr, "HR:%" PRIu32 "   conf:%" PRIu32,hr_values , confidence);
+      |                       ^~~~~~                           ~~~~~~~~~
+      |                                                        |
+      |                                                        double
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:104:23: error: format '%lu' expects argument of type 'long unsigned int', but argument 4 has type 'int' [-Werror=format=]
+  104 |         sprintf(bstr, "HR:%" PRIu32 "   conf:%" PRIu32,hr_values , confidence);
+      |                       ^~~~~~                                       ~~~~~~~~~~
+      |                                                                    |
+      |                                                                    int
+cc1: some warnings being treated as errors
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:63: esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6398: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

@@ -1,0 +1,11 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c: In function 'wait_for_time_sync':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:480:33: error: format '%d' expects a matching 'int' argument [-Werror=format=]
+  480 |             printf("set time = %d");
+      |                                ~^
+      |                                 |
+      |                                 int
+cc1: some warnings being treated as errors
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:141: esp-idf/main/CMakeFiles/__idf_main.dir/network/wifi_config.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

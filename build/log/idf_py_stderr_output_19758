@@ -1,0 +1,11 @@
+Command: make -j 14 flash
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/ledconf.c: In function 'led_state':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/ledconf.c:87:22: error: 'SAMPLING_INTERVAL_US' undeclared (first use in this function)
+   87 |         ets_delay_us(SAMPLING_INTERVAL_US);
+      |                      ^~~~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/ledconf.c:87:22: note: each undeclared identifier is reported only once for each function it appears in
+make[3]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:154: esp-idf/main/CMakeFiles/__idf_main.dir/dvr/ledconf.c.obj] Error 1
+make[3]: *** Waiting for unfinished jobs....
+make[2]: *** [CMakeFiles/Makefile2:6398: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make[1]: *** [CMakeFiles/Makefile2:2745: CMakeFiles/flash.dir/rule] Error 2
+make: *** [Makefile:216: flash] Error 2

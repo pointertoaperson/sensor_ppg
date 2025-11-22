@@ -1,0 +1,45 @@
+Command: make -j 14 all
+Configuration Report               
+ ───────────────────────────────── 
+   Parser Version: 1               
+   Verbosity: default              
+   Status: Finished successfully   
+                                   
+ ───────────────────────────────── 
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:26:
+/home/umesh_adwait/esp-idf/components/spi_flash/include/esp_spi_flash.h:6:2: warning: #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead [-Wcpp]
+    6 | #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead
+      |  ^~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c: In function 'mqtt_event_handler':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:28:29: warning: unused variable 'event' [-Wunused-variable]
+   28 |     esp_mqtt_event_handle_t event = event_data;
+      |                             ^~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/per_intr.c:81:23: warning: 'disp_isr_handler' defined but not used [-Wunused-function]
+   81 | static void IRAM_ATTR disp_isr_handler(void *arg)
+      |                       ^~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c: In function 'set_time_from_http':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:562:4: error: 'ptr' undeclared (first use in this function)
+  562 | if(ptr != NULL) {
+      |    ^~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:562:4: note: each undeclared identifier is reported only once for each function it appears in
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:569:29: error: 'timestamp_string' undeclared (first use in this function); did you mean 'ptimestamp_string'?
+  569 |     time_t t = (time_t)atoi(timestamp_string);
+      |                             ^~~~~~~~~~~~~~~~
+      |                             ptimestamp_string
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:578:42: error: format '%ld' expects argument of type 'long int', but argument 2 has type 'time_t' {aka 'long long int'} [-Werror=format=]
+  578 |         printf("Time set successfully: %ld\n", t);
+      |                                        ~~^     ~
+      |                                          |     |
+      |                                          |     time_t {aka long long int}
+      |                                          long int
+      |                                        %lld
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:561:7: warning: unused variable 'ptimestamp_string' [-Wunused-variable]
+  561 | char *ptimestamp_string = strstr(buffer, "unixtime:");
+      |       ^~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:555:11: warning: unused variable 'err' [-Wunused-variable]
+  555 | esp_err_t err = esp_http_client_perform(client);
+      |           ^~~
+cc1: some warnings being treated as errors
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:141: esp-idf/main/CMakeFiles/__idf_main.dir/network/wifi_config.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6398: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

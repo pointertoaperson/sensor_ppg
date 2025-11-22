@@ -1,0 +1,160 @@
+Command: /home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/umesh_adwait/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB1 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/test.elf /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/bootloader/bootloader.elf -m '/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python' '/home/umesh_adwait/esp-idf/tools/idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6372
+load:0x40078000,len:15928
+load:0x40080400,len:3880
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v6.0-dev-1002-gbfe5caf58f-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 19 2025 14:14:05[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=22e38h (142904) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00032e60 vaddr=3ff80000 size=00024h (    36) load[0m
+[0;32mI (139) esp_image: segment 2: paddr=00032e8c vaddr=3ffb0000 size=04684h ( 18052) load[0m
+[0;32mI (150) esp_image: segment 3: paddr=00037518 vaddr=40080000 size=08b00h ( 35584) load[0m
+[0;32mI (165) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=adb20h (711456) map[0m
+[0;32mI (417) esp_image: segment 5: paddr=000edb48 vaddr=40088b00 size=11c88h ( 72840) load[0m
+[0;32mI (460) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (460) boot: Disabling RNG early entropy source...[0m
+[0;32mI (470) cpu_start: Multicore app[0m
+[0;32mI (479) cpu_start: Pro cpu start user code[0m
+[0;32mI (479) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (479) app_init: Application information:[0m
+[0;32mI (479) app_init: Project name:     test[0m
+[0;32mI (482) app_init: App version:      v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (488) app_init: Compile time:     Aug 19 2025 14:14:31[0m
+[0;32mI (493) app_init: ELF file SHA256:  c965b337d...[0m
+[0;32mI (498) app_init: ESP-IDF:          v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (504) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (508) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (512) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (516) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (522) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (527) heap_init: At 3FFB9CA8 len 00026358 (152 KiB): DRAM[0m
+[0;32mI (532) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (537) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (543) heap_init: At 4009A788 len 00005878 (22 KiB): IRAM[0m
+[0;32mI (549) spi_flash: detected chip: generic[0m
+[0;32mI (552) spi_flash: flash io: dio[0m
+[0;33mW (555) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (567) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (578) main_task: Started on CPU0[0m
+[0;32mI (588) main_task: Calling app_main()[0m
+[0;32mI (768) networ_main: Starting...[0m
+[1;31mE (768) gpio: gpio_pullup_en(78): GPIO number error (input-only pad has no internal PU)[0m
+[0;32mI (768) ssid_reset:  pin interrupt initialized on GPIO 35 & 0[0m
+[0;32mI (798) TIME and MQTT: Read SSID from NVS: 'return2hell'[0m
+[0;32mI (798) TIME and MQTT: Read Password from NVS: '$adhain@dkin6'[0m
+[0;32mI (798) TIME and MQTT: Read device id from NVS: 'DEV01'[0m
+[0;32mI (808) TIME and MQTT: Read broker address from NVS: 'ws://broker.hivemq.com:8000'[0m
+[0;32mI (818) main_task: Returned from app_main()[0m
+[0;32mI (828) wifi:wifi driver task: 3ffcb3b8, prio:23, stack:6656, core=0[0m
+[0;32mI (838) wifi:wifi firmware version: 956d811[0m
+[0;32mI (838) wifi:wifi certification version: v7.0[0m
+[0;32mI (838) wifi:config NVS flash: enabled[0m
+[0;32mI (838) wifi:config nano formatting: disabled[0m
+[0;32mI (838) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (848) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (848) wifi:Init management short buffer num: 32[0m
+[0;32mI (858) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (858) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (858) wifi:Init static rx buffer num: 10[0m
+[0;32mI (868) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (868) wifi_init: rx ba win: 6[0m
+[0;32mI (878) wifi_init: accept mbox: 6[0m
+[0;32mI (878) wifi_init: tcpip mbox: 32[0m
+[0;32mI (878) wifi_init: udp mbox: 6[0m
+[0;32mI (878) wifi_init: tcp mbox: 6[0m
+[0;32mI (888) wifi_init: tcp tx win: 5760[0m
+[0;32mI (888) wifi_init: tcp rx win: 5760[0m
+[0;32mI (888) wifi_init: tcp mss: 1440[0m
+[0;32mI (898) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (898) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (908) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (908) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (988) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (998) wifi:mode : sta (08:d1:f9:9b:2e:e8)[0m
+[0;32mI (1008) wifi:enable tsf[0m
+[0;32mI (1008) TIME and MQTT: STA connecting to saved SSID: return2hell[0m
+[0;32mI (1008) TIME and MQTT: STA started, connecting to AP...[0m
+[0;32mI (1028) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1028) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1028) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1038) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1048) wifi:<ba-add>idx:0 (ifx:0, 5c:6a:80:5e:cf:51), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1078) wifi:connected with return2hell, aid = 3, channel 8, BW20, bssid = 5c:6a:80:5e:cf:51[0m
+[0;32mI (1078) wifi:security: WPA2-PSK, phy: bgn, rssi: -49[0m
+[0;32mI (1088) wifi:pm start, type: 1[0m
+
+[0;32mI (1088) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1138) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+maxIDX =6maxval =797
+maxIDX =5maxval =1229
+maxIDX =5maxval =517
+maxIDX =4maxval =1134
+HR float =  288.727661maxIDX =4maxval =399
+maxIDX =4maxval =388
+maxIDX =6maxval =478
+maxIDX =6maxval =1443
+maxIDX =11maxval =930
+maxIDX =7maxval =854
+maxIDX =7maxval =1292
+maxIDX =13maxval =823
+HR float =  864.320923maxIDX =7maxval =1404
+maxIDX =6maxval =1190
+HR float =  417.920624maxIDX =6maxval =1037
+maxIDX =7maxval =1422
+HR float =  443.214050maxIDX =7maxval =1468
+maxIDX =6maxval =1302
+HR float =  410.854767maxIDX =4maxval =209
+maxIDX =4maxval =937
+HR float =  289.565308maxIDX =5maxval =359
+maxIDX =4maxval =444
+maxIDX =4maxval =422
+maxIDX =4maxval =446
+maxIDX =4maxval =472
+maxIDX =4maxval =485
+maxIDX =4maxval =454
+maxIDX =4maxval =417
+maxIDX =4maxval =468
+maxIDX =4maxval =1101
+maxIDX =4maxval =1719
+maxIDX =7maxval =968
+maxIDX =7maxval =674
+maxIDX =4maxval =818
+HR float =  291.494263maxIDX =4maxval =788
+HR float =  291.145905maxIDX =4maxval =1490
+maxIDX =20maxval =1310
+HR float =  1305.519287maxIDX =8maxval =648
+maxIDX =7maxval =238
+maxIDX =7maxval =338
+maxIDX =13maxval =621
+maxIDX =7maxval =1063
+maxIDX =4maxval =148
+maxIDX =4maxval =30
+maxIDX =13maxval =767
+maxIDX =5maxval =1566
+maxIDX =45maxval =1531
+HR float =  2910.515625maxIDX =6maxval =516
+maxIDX =6maxval =1151
+maxIDX =13maxval =401
+maxIDX =7maxval =556
+maxIDX =0maxval =0
+maxIDX =6maxval =346
+maxIDX =13maxval =730
+maxIDX =14maxval =767

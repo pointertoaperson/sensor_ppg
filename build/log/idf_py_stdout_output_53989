@@ -1,0 +1,811 @@
+Command: /home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/umesh_adwait/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB1 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/test.elf /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/bootloader/bootloader.elf -m '/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python' '/home/umesh_adwait/esp-idf/tools/idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6372
+load:0x40078000,len:15928
+load:0x40080400,len:3880
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v6.0-dev-1002-gbfe5caf58f-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 19 2025 14:14:05[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=23058h (143448) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00033080 vaddr=3ff80000 size=00024h (    36) load[0m
+[0;32mI (139) esp_image: segment 2: paddr=000330ac vaddr=3ffb0000 size=05284h ( 21124) load[0m
+[0;32mI (151) esp_image: segment 3: paddr=00038338 vaddr=40080000 size=07ce0h ( 31968) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=ae000h (712704) map[0m
+[0;32mI (417) esp_image: segment 5: paddr=000ee028 vaddr=40087ce0 size=12acch ( 76492) load[0m
+[0;32mI (461) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (461) boot: Disabling RNG early entropy source...[0m
+[0;32mI (472) cpu_start: Multicore app[0m
+[0;32mI (480) cpu_start: Pro cpu start user code[0m
+[0;32mI (480) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (480) app_init: Application information:[0m
+[0;32mI (480) app_init: Project name:     test[0m
+[0;32mI (484) app_init: App version:      v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (490) app_init: Compile time:     Aug 21 2025 16:19:45[0m
+[0;32mI (495) app_init: ELF file SHA256:  03dad81eb...[0m
+[0;32mI (499) app_init: ESP-IDF:          v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (505) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (509) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (513) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (517) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (523) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (528) heap_init: At 3FFBC6B0 len 00023950 (142 KiB): DRAM[0m
+[0;32mI (534) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (539) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (545) heap_init: At 4009A7AC len 00005854 (22 KiB): IRAM[0m
+[0;32mI (551) spi_flash: detected chip: generic[0m
+[0;32mI (553) spi_flash: flash io: dio[0m
+[0;33mW (556) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (569) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (579) main_task: Started on CPU0[0m
+[0;32mI (589) main_task: Calling app_main()[0m
+[0;32mI (699) networ_main: Starting...[0m
+[0;32mI (699) ssid_reset:  pin interrupt initialized on GPIO 32 & 0[0m
+[0;33mW (729) TIME and MQTT: Failed to read dev_id from NVS: ESP_ERR_NVS_NOT_FOUND[0m
+[0;33mW (739) TIME and MQTT: Failed to read broker address from NVS: ESP_ERR_NVS_NOT_FOUND[0m
+[0;32mI (739) TIME and MQTT: Read SSID from NVS: 'return2hell'[0m
+[0;32mI (739) TIME and MQTT: Read Password from NVS: '$adhain@dkin6'[0m
+[0;32mI (749) TIME and MQTT: Read device id from NVS: ''[0m
+[0;32mI (749) TIME and MQTT: Read broker address from NVS: ''[0m
+[0;32mI (769) wifi:wifi driver task: 3ffce228, prio:23, stack:6656, core=0[0m
+[0;32mI (779) wifi:wifi firmware version: 956d811[0m
+[0;32mI (779) wifi:wifi certification version: v7.0[0m
+[0;32mI (779) wifi:config NVS flash: enabled[0m
+[0;32mI (779) wifi:config nano formatting: disabled[0m
+[0;32mI (789) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (789) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (789) wifi:Init management short buffer num: 32[0m
+[0;32mI (799) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (799) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (809) wifi:Init static rx buffer num: 10[0m
+[0;32mI (809) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (819) wifi_init: rx ba win: 6[0m
+[0;32mI (819) wifi_init: accept mbox: 6[0m
+[0;32mI (819) wifi_init: tcpip mbox: 32[0m
+[0;32mI (819) wifi_init: udp mbox: 6[0m
+[0;32mI (829) wifi_init: tcp mbox: 6[0m
+[0;32mI (829) wifi_init: tcp tx win: 5760[0m
+[0;32mI (829) wifi_init: tcp rx win: 5760[0m
+[0;32mI (839) wifi_init: tcp mss: 1440[0m
+[0;32mI (839) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (839) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (849) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (859) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (929) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (949) wifi:mode : sta (08:d1:f9:9b:2e:e8)[0m
+[0;32mI (949) wifi:enable tsf[0m
+[0;32mI (949) TIME and MQTT: STA connecting to saved SSID: return2hell[0m
+[0;32mI (969) TIME and MQTT: STA started, connecting to AP...[0m
+[0;32mI (979) main_task: Returned from app_main()[0m
+[0;32mI (989) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (989) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (989) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (999) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1009) wifi:<ba-add>idx:0 (ifx:0, 5c:6a:80:5e:cf:51), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1019) wifi:connected with return2hell, aid = 2, channel 8, BW20, bssid = 5c:6a:80:5e:cf:51[0m
+[0;32mI (1019) wifi:security: WPA2-PSK, phy: bgn, rssi: -49[0m
+[0;32mI (1029) wifi:pm start, type: 1[0m
+
+[0;32mI (1029) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1089) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2399) esp_netif_handlers: sta ip: 192.168.10.176, mask: 255.255.255.0, gw: 192.168.10.1[0m
+[0;32mI (2399) TIME and MQTT: Connected, got IP: 192.168.10.176[0m
+[0;32mI (2399) alert: got IP and reached to the time sync[0m
+[0;32mI (2399) alert! :  time sync task entered[0m
+[0;32mI (2409) time: Initializig SNTP[0m
+[0;32mI (2409) ime: Waiting for system time to be et... (1/10)[0m
+[0;32mI (4409) time: Waiting for system time to be set... (2/10)[0m
+maxIDX =0maxval =0
+[0;32mI (6409) time: Waiting for system time to be set... (3/10)[0m
+[0;32mI (6759) wifi:<ba-add>idx:1 (ifx:0, 5c:6a:80:5e:cf:51), tid:1, ssn:0, winSize:64[0m
+[0;32mI (8409) time: System time is set 125[0m
+[0;32mI (8409) TIME and MQTT: Starting MQTT (time sync done)[0m
+[0;32mI (8409) alert! :  reached mqtt start[0m
+[1;31mE (8719) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (8719) esp-tls-mbedtls: Failed to set client configurations, returned [0x801 (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (8729) esp-tls: create_ssl_handle failed[0m
+[1;31mE (8729) esp-tls: Failed to open new connection[0m
+[1;31mE (8729)ransport_base: Failed to open a new connection[0m
+[1;31mE (8739) mqtt_client: Error transport connect[0m
+[1;31mE (8739) mqtt_example: MQTT error occurred[0m
+[0;33mW (8749) mqtt_example: MQTT disconected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (23799) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (23799) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (23809) esp-tls: create_ssl_handle failed[0m
+[1;31mE (23809) esp-tls: Failed to open new connection[0m
+[1;31mE (23819) transport_base: Failed to open a nw connection[0m
+[1;31mE (23819) mqtt_client: Error transport connect[0m
+[1;31mE (23829) mqtt_example: MQTT error occurred[0m
+[0;33mW (23829) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (38869) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (38869) esp-tls-mbedtls: Failed to setlient configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (38879) esp-tls: create_ssl_handle failed[0m
+[1;31mE (38889) esp-tls: Failed to open new connection[0m
+[1;31mE (38889) transport_base: Failed to open a new connection[0m
+[1;31mE (38899) mqtt_client: Error transport connect[0m
+[1;31mE (38899) mqtt_example: MQTT error occurred[0m
+[0;33mW (38899) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (48949) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (48949) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (48959) esp-tls: create_ssl_handle failed[0m
+[1;31mE (48959) esp-tls: Failed to open new connection[0m
+[1;31mE (48969) transport_base: Failed to open a new connection[0m
+[1;31mE (48979) mqtt_client: Error transport connect[0m
+[1;31mE (48979) mqtt_example: MQTT error occurred[0m
+[0;33mW (48979) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (59029) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (59029) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (59039) esp-tls: create_ssl_handle failed[0m
+[1;31mE (59039) estls: Failed to open new connection[0m
+[1;31mE (59049) transport_base: Failed to open a new connection[0m
+[1;31mE (59059) mqtt_client: Error transport connect[0m
+[1;31mE (59059) mqtt_example: MQTT error occurred[0m
+[0;33mW (59059) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (69159) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (69159) esp-tls-mbedtls: Failed to set client confirations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (69169) esp-tls: create_ssl_handle failed[0m
+[1;31mE (69179) esp-tls: Failed to open new connection[0m
+[1;31mE (69179) transrt_base: Failed to open a new connection[0m
+[1;31mE (69189) mqtt_client: Error transport connect[0m
+[1;31mE (69189) mqtt_example: MQTT error occurred[0m
+[0;33mW (69189) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (79239) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (79239) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (79249) esp-tls: create_ssl_handle failed[0m
+[1;31mE (79259) esp-tls: Failed to open new connection[0m
+[1;31mE (79259) transport_base: Failed to open a new connection[0m
+[1;31mE (79269) mqtt_client: Error transport connect[0m
+[1;31mE (79269) mqtt_example: MQTT error occurred[0m
+[0;33mW (79269) mqtt_example: MQTT disconneed[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (89319) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (89319) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (89329) esp-tls: create_ssl_handle failed[0m
+[1;31mE (89339) esp-tls: Failed to open new connection[0m
+[1;31mE (89339) transport_base: Faid to open a new connection[0m
+[1;31mE (89349) mqtt_client: Error transport connect[0m
+[1;31mE (89349) mqtt_example: MQTT error occurred[0m
+[0;33mW (89349) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (99399) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (99399) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+E (99409 esp-tls: create_ssl_handle failed
+[1;31mE (99419) esp-tl: Failed to open new connection[0m
+[1;31mE (99419) transport_base: Failed to open a new connection[0m
+[1;31mE (99429) mqtt_client: Error transport connect[0m
+[1;31mE (99429) mqtt_example: MQTT error occurred[0m
+[0;33mW (99429) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (109479) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (109489) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (109499) esp-tls: create_ssl_handle failed[0m
+[1;31mE (109499) esp-tls: Failed to open new connection[0m
+[1;31mE (109499) transport_base: Failed to open a new connection[0m
+[1;31mE (109509) mqtt_client: Error transport connect[0m
+[1;31mE (109509) mqtt_example: MQTT error occurred[0m
+[0;33mW (109519) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (124559) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (124559) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDLS_SSL_SETUP_FAILED)[0m
+[1;31mE (124569) esp-tls: create_sslandle failed[0m
+[1;31mE (124579) esp-tls: Failed to open new connection[0m
+[1;31mE (124579) transport_base: Failed to open a new connecti[0m
+[1;31mE (124589) mqtt_client: Error transport connect[0m
+[1;31mE (124589) mqtt_example: MQTT error occurred[0m
+[0;33mW (124599) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (140099) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (140099) esp-tls-mbedtls: Failed to set client confgurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (140109) esp-tls: create_ssl_handle failed[0m
+[1;31mE (140119) esp-tls: Failed to open new connection[0m
+[1;31mE (140119) transport_base: Failed to open a new connection[0m
+[1;31mE (140129) mqtt_client: Error transport connect[0m
+[1;31mE (140129) mqtt_example: MQTT error occurred[0m
+[0;33mW (140129) mqtt_example: MQTT disconnected[0m
+maxIDX =4maxval =1
+maxIDX =0maxval =0
+[1;31mE (150189) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (150189) esp-tls-mbedtls:ailed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (150199) esp-tls: create_ssl_handle failed[0m
+[1;31mE (150199) esp-tls: Failed to open new connection[0m
+[1;31mE (150209) transport_base: Failed to open a new connection[0m
+[1;31mE (150209) mqtt_client: Error transport connect[0m
+[1;31mE (150219) mqtt_ample: MQTT error occurred[0m
+[0;33mW (150219) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (165259) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (165259) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (165269) esp-tls: create_ssl_handle failed[0m
+[1;31mE (165279) esp-tls: Failed to open new connection[0m
+[1;31mE (165279) transport_base: Failed to open a new connection[0m
+[1;31mE (165289) mqtt_client: Error transport connect[0m
+[1;31mE (165289) mqtt_example: MQTT error occurred[0m
+[0;33mW (165289) mqtt_example: MQTT disconnected[0m
+maxIDX =11maxval =1
+maxIDX =0maxval =0
+[1;31mE (175339) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (175339) esp-tls-mbedtls: Failed to set client cnfigurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (175349) esp-tls: create_ssl_handle failed[0m
+[1;31mE (1753) esp-tls: Failed to open new connection[0m
+[1;31mE (175359) transport_base: Failed to open a new connection[0m
+[1;31mE (175369) mqtt_client: Error transport connect[0m
+[1;31mE (175369) mqtt_example: MQTT error occurred[0m
+[0;33mW (175379) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (190419) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (190419) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (190429) esp-tls: create_ssl_handle failed[0m
+[1;31mE (190439) esp-tls: Failed to open new connection[0m
+[1;31mE (190439) transport_base: Failed to open a new connection[0m
+[1;31mE (190449) mqtt_client: Error transport connect[0m
+[1;31mE (190449) mqtt_example: MQTT error occurred[0m
+[0;33mW (190459) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+reset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedmaxIDX =0maxval =0
+reset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedmaxIDX =0maxval =0
+reset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedE (205549) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference
+[1;31mE (205549) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (205559)sp-tls: create_ssl_handle failed[0m
+[1;31mE (205569) esp-tls: Failed to open new connection[0m
+[1;31mE (205569) transport_base: Failed to open a new connection[0m
+[1;31mE (205579) mqtt_client: Error transport conne[0m
+[1;31mE (205579) mqtt_example: MQTT error occurred[0m
+[0;33mW (2579) mqtt_example: MQTT disconnected[0m
+reset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedmaxIDX =0maxval =0
+reset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedmaxIDX =0maxval =0
+[0;32mI (214629) ssid_reset: Reset pin held low for 20s. Restarting in SoftAP mode...[0m
+[0;32mI (214639) NVS: SSID erased[0m
+[0;32mI (214639) NVS: Password erased[0m
+[0;33mW (214639) NVS: dev_id not found or failed to erase: ESP_ERR_NVS_NOT_FOUND[0m
+[0;33mW (214639) NVS: broker not found or failed to erase: ESP_ERR_NVS_NOT_FOUND[0m
+[0;33mW (214639) NVS: username not found or failed to erase: ESP_ERR_NVS_NOT_FOUND[0m
+[0;33mW (214649) NVS: psdconn not found or failed to erase: ESP_ERR_NVS_NOT_FOUND[0m
+[0;33mW (214659) NVS: group not found or failed to erase: ESP_ERR_NVS_NOT_FOUND[0m
+[0;32mI (214659) NVS: WiFi credentials cleared successfully[0m
+[0;32mI (214669) wifi:state: run -> init (0x0)[0m
+[0;32mI (214679) wifi:pm stop, total sleep time: 180906911 us / 213649261 us[0m
+
+[0;32mI (214679) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (214679) wifi:<ba-del>idx:1, tid:1[0m
+[0;32mI (214679) wifi:new:<8,0>, old:<8,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (214699) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (214729) wifi:flush txq[0m
+[0;32mI (214729) wifi:stop sw txq[0m
+[0;32mI (214729) wifi:lmac stop hw txq[0m
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6372
+load:0x40078000,len:15928
+load:0x40080400,len:3880
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v6.0-dev-1002-gbfe5caf58f-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 19 2025 14:14:05[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=23058h (143448) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00033080 vaddr=3ff80000 size=00024h (    36) load[0m
+[0;32mI (139) esp_image: segment 2: paddr=000330ac vaddr=3ffb0000 size=05284h ( 21124) load[0m
+[0;32mI (151) esp_image: segment 3: paddr=00038338 vaddr=40080000 size=07ce0h ( 31968) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=ae000h (712704) map[0m
+[0;32mI (416) esp_image: segment 5: paddr=000ee028 vaddr=40087ce0 size=12acch ( 76492) load[0m
+[0;32mI (461) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (461) boot: Disabling RNG early entropy source...[0m
+[0;32mI (472) cpu_start: Multicore app[0m
+[0;32mI (480) cpu_start: Pro cpu start user code[0m
+[0;32mI (480) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (480) app_init: Application information:[0m
+[0;32mI (480) app_init: Project name:     test[0m
+[0;32mI (484) app_init: App version:      v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (490) app_init: Compile time:     Aug 21 2025 16:19:45[0m
+[0;32mI (495) app_init: ELF file SHA256:  03dad81eb...[0m
+[0;32mI (499) app_init: ESP-IDF:          v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (505) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (509) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (513) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (517) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (523) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (528) heap_init: At 3FFBC6B0 len 00023950 (142 KiB): DRAM[0m
+[0;32mI (533) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (539) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (544) heap_init: At 4009A7AC len 00005854 (22 KiB): IRAM[0m
+[0;32mI (551) spi_flash: detected chip: generic[0m
+[0;32mI (553) spi_flash: flash io: dio[0m
+[0;33mW (556) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (568) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (579) main_task: Started on CPU0[0m
+[0;32mI (589) main_task: Calling app_main()[0m
+[0;32mI (699) networ_main: Starting...[0m
+[0;32mI (699) ssid_reset:  pin interrupt initialized on GPIO 32 & 0[0m
+[0;32mI (739) main_task: Returned from app_main()[0m
+[0;32mI (749) wifi:wifi driver task: 3ffce268, prio:23, stack:6656, core=0[0m
+[0;32mI (759) wifi:wifi firmware version: 956d811[0m
+[0;32mI (759) wifi:wifi certification version: v7.0[0m
+[0;32mI (759) wifi:config NVS flash: enabled[0m
+[0;32mI (759) wifi:config nano formatting: disabled[0m
+[0;32mI (769) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (769) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (769) wifi:Init management short buffer num: 32[0m
+[0;32mI (779) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (779) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (789) wifi:Init static rx buffer num: 10[0m
+[0;32mI (789) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (799) wifi_init: rx ba win: 6[0m
+[0;32mI (799) wifi_init: accept mbox: 6[0m
+[0;32mI (799) wifi_init: tcpip mbox: 32[0m
+[0;32mI (799) wifi_init: udp mbox: 6[0m
+[0;32mI (809) wifi_init: tcp mbox: 6[0m
+[0;32mI (809) wifi_init: tcp tx win: 5760[0m
+[0;32mI (809) wifi_init: tcp rx win: 5760[0m
+[0;32mI (819) wifi_init: tcp mss: 1440[0m
+[0;32mI (819) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (819) wifi_init: WiFi RX IRAM OP enabled[0m
+reset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedreset button pressedI (849) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07
+[0;32mI (919) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (959) wifi:mode : softAP (08:d1:f9:9b:2e:e9)[0m
+[0;32mI (969) wifi:Total power save buffer number: 16[0m
+[0;32mI (969) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (969) wifi:Init max length of beacon: 752/752[0m
+[0;32mI (969) TIME and MQTT: Wi-Fi SoftAP started. SSID:connectHeart password:password123[0m
+[0;32mI (969) TIME and MQTT: SoftAP IP address: 192.168.4.1[0m
+[0;32mI (989) esp_netif_lwip: DHCP server started on interface WIFI_AP_DEF with IP: 192.168.4.1[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[0;32mI (17159) wifi:new:<1,0>, old:<1,1>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (17159) wifi:station: 36:a2:56:dd:02:31 join, AID=1, bgn, 20[0m
+[0;32mI (17209) wifi:<ba-add>idx:2 (ifx:1, 36:a2:56:dd:02:31), tid:0, ssn:0, winSize:64[0m
+[0;32mI (17489) esp_netif_lwip: DHCP server assigned IP to a client, IP is: 192.168.4.2[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[0;32mI (49899) buf: buff = ssid=return2hell&password=$adhain@dkin6&broker=ws://broker.hivemq.com:8000/mqtt&device_id=DEV01&username=null&psdconn=null&group=TEST&[0m
+[0;32mI (49899) TIME and MQTT: Received SSID: return2hell, Password: $adhain@dkin6, Device ID: DEV01, Broker: ws://broker.hivemq.com:8000/mqtt, Username = null, PASDCON = null, GROUP =TEST[0m
+maxIDX =0maxval =0
+[0;32mI (51929) wifi:station: 36:a2:56:dd:02:31 leave, AID = 1, reason = 2, bss_flags is 691299, bss:0x3ffc7da0[0m
+[0;32mI (51929) wifi:new:<1,0>, old:<1,0>, ap:<1,1>, sta:<255,255>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (51929) wifi:<ba-del>idx:2, tid:0[0m
+[0;32mI (52009) wifi:flush txq[0m
+[0;32mI (52009) wifi:stop sw txq[0m
+[0;32mI (52009) wifi:lmac stop hw txq[0m
+ets Jul 29 2019 12:21:46
+
+rst:0xc (SW_CPU_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6372
+load:0x40078000,len:15928
+load:0x40080400,len:3880
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v6.0-dev-1002-gbfe5caf58f-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 19 2025 14:14:05[0m
+[0;32mI (27) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=23058h (143448) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00033080 vaddr=3ff80000 size=00024h (    36) load[0m
+[0;32mI (139) esp_image: segment 2: paddr=000330ac vaddr=3ffb0000 size=05284h ( 21124) load[0m
+[0;32mI (151) esp_image: segment 3: paddr=00038338 vaddr=40080000 size=07ce0h ( 31968) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=ae000h (712704) map[0m
+[0;32mI (416) esp_image: segment 5: paddr=000ee028 vaddr=40087ce0 size=12acch ( 76492) load[0m
+[0;32mI (461) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (461) boot: Disabling RNG early entropy source...[0m
+[0;32mI (472) cpu_start: Multicore app[0m
+[0;32mI (480) cpu_start: Pro cpu start user code[0m
+[0;32mI (480) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (480) app_init: Application information:[0m
+[0;32mI (480) app_init: Project name:     test[0m
+[0;32mI (484) app_init: App version:      v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (490) app_init: Compile time:     Aug 21 2025 16:19:45[0m
+[0;32mI (495) app_init: ELF file SHA256:  03dad81eb...[0m
+[0;32mI (499) app_init: ESP-IDF:          v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (505) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (509) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (513) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (517) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (523) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (528) heap_init: At 3FFBC6B0 len 00023950 (142 KiB): DRAM[0m
+[0;32mI (534) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (539) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (544) heap_init: At 4009A7AC len 00005854 (22 KiB): IRAM[0m
+[0;32mI (551) spi_flash: detected chip: generic[0m
+[0;32mI (553) spi_flash: flash io: dio[0m
+[0;33mW (556) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (569) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (579) main_task: Started on CPU0[0m
+[0;32mI (589) main_task: Calling app_main()[0m
+[0;32mI (699) networ_main: Starting...[0m
+[0;32mI (699) ssid_reset:  pin interrupt initialized on GPIO 32 & 0[0m
+[0;32mI (739) TIME and MQTT: Read SSID from NVS: 'return2hell'[0m
+[0;32mI (739) TIME and MQTT: Read Password from NVS: '$adhain@dkin6'[0m
+[0;32mI (739) TIME and MQTT: Read device id from NVS: 'DEV01'[0m
+[0;32mI (739) TIME and MQTT: Read broker address from NVS: 'ws://broker.hivemq.com:8000/mqtt'[0m
+[0;32mI (759) main_task: Returned from app_main()[0m
+[0;32mI (769) wifi:wifi driver task: 3ffce21c, prio:23, stack:6656, core=0[0m
+[0;32mI (779) wifi:wifi firmware version: 956d811[0m
+[0;32mI (779) wifi:wifi certification version: v7.0[0m
+[0;32mI (779) wifi:config NVS flash: enabled[0m
+[0;32mI (779) wifi:config nano formatting: disabled[0m
+[0;32mI (789) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (789) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (789) wifi:Init management short buffer num: 32[0m
+[0;32mI (799) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (799) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (809) wifi:Init static rx buffer num: 10[0m
+[0;32mI (809) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (819) wifi_init: rx ba win: 6[0m
+[0;32mI (819) wifi_init: accept mbox: 6[0m
+[0;32mI (819) wifi_init: tcpip mbox: 32[0m
+[0;32mI (819) wifi_init: udp mbox: 6[0m
+[0;32mI (829) wifi_init: tcp mbox: 6[0m
+[0;32mI (829) wifi_init: tcp tx win: 5760[0m
+[0;32mI (829) wifi_init: tcp rx win: 5760[0m
+[0;32mI (839) wifi_init: tcp mss: 1440[0m
+[0;32mI (839) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (839) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (859) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (859) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (929) wifi:mode : sta (08:d1:f9:9b:2e:e8)[0m
+[0;32mI (929) wifi:enable tsf[0m
+[0;32mI (929) TIME and MQTT: STA connecting to saved SSID: return2hell[0m
+[0;32mI (949) TIME and MQTT: STA started, connecting to AP...[0m
+[0;32mI (959) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (959) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (969) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (979) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (989) wifi:<ba-add>idx:0 (ifx:0, 5c:6a:80:5e:cf:51), tid:0, ssn:0, winSize:64[0m
+[0;32mI (999) wifi:connected with return2hell, aid = 2, channel 8, BW20, bssid = 5c:6a:80:5e:cf:51[0m
+[0;32mI (999) wifi:security: WPA2-PSK, phy: bgn, rssi: -46[0m
+[0;32mI (999) wifi:pm start, type: 1[0m
+
+[0;32mI (999) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1079) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2399) esp_netif_handlers: sta ip: 192.168.10.176, mask: 255.255.255.0, gw: 192.168.10.1[0m
+[0;32mI (2399) TIME and MQTT: Connected, got IP: 192.168.10.176[0m
+[0;32mI (2399) alert: got IP and reached to the time sync[0m
+[0;32mI (2399) alert! :  time sync task entered[0m
+[0;32mI (2409) time: Initializing SNTP[0m
+[0;32mI (2409) time: Waiting fosystem time to be set... (1/10)[0m
+[0;32mI (4419) time: System time is set 125[0m
+[0;32mI (4419) TIME and MQTT: Starting MQTT (time sync done)[0m
+[0;32mI (4419) alert! :  reached mqtt start[0m
+[1;31mE (4559) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (4559) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (4569) esp-tls: create_ssl_handle failed[0m
+[1;31mE (4569) esp-tls: Failed to open new connection[0m
+[1;31mE (4579) transport_base: Failed to open a new connection[0m
+[1;31mE (4589) mqtt_client: Error transport connect[0m
+[1;31mE (4589) tt_example: MQTT error occurred[0m
+[0;33mW (4589) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+[0;32mI (5319) wifi:<ba-add>idx:1 (ifx:0, 5c:6a:80:5e:cf:51), tid:1, ssn:0, winSize:64[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (14649) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (14649) esp-tls-mbedtls: Failed to set client configurations, returned [S_SSL_SETUP_FAILED)[0m
+[1;31mE (14659) esp-tls: create_ssl_handle failedopen new connection[0m
+[1;31mE (14669) transport_base: Failed to open a ne connection[0m
+[1;31mE (14669) mqtt_client: Error transport connect[0m
+[1;31mE (14669) mqtt_example: MQTT error occurred[0m
+[0;33mW (14679) mqtt_example: MQTT disconnected[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6372
+load:0x40078000,len:15928
+load:0x40080400,len:3880
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v6.0-dev-1002-gbfe5caf58f-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 19 2025 14:14:05[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=23058h (143448) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00033080 vaddr=3ff80000 size=00024h (    36) load[0m
+[0;32mI (139) esp_image: segment 2: paddr=000330ac vaddr=3ffb0000 size=05284h ( 21124) load[0m
+[0;32mI (151) esp_image: segment 3: paddr=00038338 vaddr=40080000 size=07ce0h ( 31968) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=ae000h (712704) map[0m
+[0;32mI (417) esp_image: segment 5: paddr=000ee028 vaddr=40087ce0 size=12acch ( 76492) load[0m
+[0;32mI (461) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (461) boot: Disabling RNG early entropy source...[0m
+[0;32mI (472) cpu_start: Multicore app[0m
+[0;32mI (480) cpu_start: Pro cpu start user code[0m
+[0;32mI (480) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (480) app_init: Application information:[0m
+[0;32mI (480) app_init: Project name:     test[0m
+[0;32mI (484) app_init: App version:      v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (490) app_init: Compile time:     Aug 21 2025 16:19:45[0m
+[0;32mI (495) app_init: ELF file SHA256:  03dad81eb...[0m
+[0;32mI (499) app_init: ESP-IDF:          v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (505) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (509) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (513) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (517) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (523) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (528) heap_init: At 3FFBC6B0 len 00023950 (142 KiB): DRAM[0m
+[0;32mI (534) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (539) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (545) heap_init: At 4009A7AC len 00005854 (22 KiB): IRAM[0m
+[0;32mI (551) spi_flash: detected chip: generic[0m
+[0;32mI (553) spi_flash: flash io: dio[0m
+[0;33mW (556) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (569) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (579) main_task: Started on CPU0[0m
+[0;32mI (589) main_task: Calling app_main()[0m
+[0;32mI (699) networ_main: Starting...[0m
+[0;32mI (699) ssid_reset:  pin interrupt initialized on GPIO 32 & 0[0m
+[0;32mI (739) TIME and MQTT: Read SSID from NVS: 'return2hell'[0m
+[0;32mI (739) TIME and MQTT: Read Password from NVS: '$adhain@dkin6'[0m
+[0;32mI (739) TIME and MQTT: Read device id from NVS: 'DEV01'[0m
+[0;32mI (739) TIME and MQTT: Read broker address from NVS: 'ws://broker.hivemq.com:8000/mqtt'[0m
+[0;32mI (759) main_task: Returned from app_main()[0m
+[0;32mI (769) wifi:wifi driver task: 3ffce228, prio:23, stack:6656, core=0[0m
+[0;32mI (779) wifi:wifi firmware version: 956d811[0m
+[0;32mI (779) wifi:wifi certification version: v7.0[0m
+[0;32mI (779) wifi:config NVS flash: enabled[0m
+[0;32mI (779) wifi:config nano formatting: disabled[0m
+[0;32mI (789) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (789) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (789) wifi:Init management short buffer num: 32[0m
+[0;32mI (799) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (799) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (809) wifi:Init static rx buffer num: 10[0m
+[0;32mI (809) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (819) wifi_init: rx ba win: 6[0m
+[0;32mI (819) wifi_init: accept mbox: 6[0m
+[0;32mI (819) wifi_init: tcpip mbox: 32[0m
+[0;32mI (819) wifi_init: udp mbox: 6[0m
+[0;32mI (829) wifi_init: tcp mbox: 6[0m
+[0;32mI (829) wifi_init: tcp tx win: 5760[0m
+[0;32mI (829) wifi_init: tcp rx win: 5760[0m
+[0;32mI (839) wifi_init: tcp mss: 1440[0m
+[0;32mI (839) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (839) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (849) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (859) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (939) wifi:mode : sta (08:d1:f9:9b:2e:e8)[0m
+[0;32mI (939) wifi:enable tsf[0m
+[0;32mI (939) TIME and MQTT: STA connecting to saved SSID: return2hell[0m
+[0;32mI (959) TIME and MQTT: STA started, connecting to AP...[0m
+[0;32mI (979) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (979) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (979) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (989) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (989) wifi:<ba-add>idx:0 (ifx:0, 5c:6a:80:5e:cf:51), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1009) wifi:connected with return2hell, aid = 2, channel 8, BW20, bssid = 5c:6a:80:5e:cf:51[0m
+[0;32mI (1009) wifi:security: WPA2-PSK, phy: bgn, rssi: -45[0m
+[0;32mI (1009) wifi:pm start, type: 1[0m
+
+[0;32mI (1009) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1089) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (2519) esp_netif_handlers: sta ip: 192.168.10.176, mask: 255.255.255.0, gw: 192.168.10.1[0m
+[0;32mI (2519) TIME and MQTT: Connected, got IP: 192.168.10.176[0m
+[0;32mI (2519) alert: got IP and reached to the time sync[0m
+[0;32mI (2519) alert! :  time sync task entered[0m
+[0;32mI (2529) time: Initializing SNTP[0m
+[0;32mI (2529) me: Waiting for system time to be set... (1/10)[0m
+[0;32mI (3879) wifi:<ba-add>idx:1 (ifx:0, 5c:6a:80:5e:cf:51), tid:1, ssn:0, winSize:64[0m
+[0;32mI (4529) time: System time is set 125[0m
+[0;32mI (4529) TIME and MQTT: Starting MQTT (time sync done)[0m
+[0;32mI (4529) alert! :  reached mqtt start[0m
+[1;31mE (4579) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (4589) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (4589) esp-tls: create_ssl_handle failed[0m
+[1;31mE (4599) esp-tls: Failed to open new connection[0m
+[1;31mE (4599) transport_base: Failed to open a new connection[0m
+[1;31mE (4609) mqtt_client: Error transport connect[0m
+[1;31mE (4609) mqtt_example: MQTT error occurred[0m
+[0;33mW (4619) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (19669) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (19669) esp-tls-edtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (19679) esp-tls: create_ssl_handle failed[0m
+[1;31mE (19689) esp-tls: Failed to open new connectio[0m
+[1;31mE (19689) transport_base: Failed to open a new conection[0m
+[1;31mE (19699) mqtt_client: Error transport connect[0m
+[1;31mE (19699) mqtt_example: MQTT error occurred[0m
+[0;33mW (19709) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (34759) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (34759) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (34769) esp-tls: create_ssl_handle failed[0m
+[1;31mE (34769) esp-tls: Failed topen new connection[0m
+[1;31mE (34769) transport_base: Failed to open a new coection[0m
+[1;31mE (34779) mqtt_client: Error transport connect[0m
+[1;31mE (34779) mqtt_example: MQTT error occurred[0m
+[0;33mW (34789) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (49879) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (49879) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (49889) esp-tls: create_ssl_handle failed[0m
+[1;31mE (49899) esp-tls: Failed to open new conection[0m
+[1;31mE (49899) transport_base: Failed to open a new connection[0m
+[1;31mE (49909) mqtt_client: Error transport connect[0m
+[1;31mE (499) mqtt_example: MQTT error occurred[0m
+[0;33mW (49909) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (60079) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (60079) esp-tls-mbedtl: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (60089) esp-tls: create_ssl_handle failed[0m
+[1;31mE (60099) esp-tls: Failed to open new connection[0m
+[1;31mE (60099) transport_base: Failed to open a new connection[0m
+[1;31mE (60109) mqtt_client: Error transport connect[0m[1;31mE (60109) mqtt_example: MQTT error occurred[0m
+[0;33mW (60109) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (70159) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (70159) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (70169) esp-tls: create_ssl_handle failed[0m
+[1;31mE (70179) esptls: Failed to open new connection[0m
+[1;31mE (70179) transport_base: Failed to open a new connection[0m
+[1;31mE (70189) mqtt_client: Error transport connt[0m
+[1;31mE (70189) mqtt_example: MQTT error occurred[0m
+[0;33mW (70189) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (80239) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (80239) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (80249) esp-tls: create_ssl_handle failed[0m
+[1;31mE (80259) esp-tls: Failed to open new connection[0m
+[1;31mE (80259) transport_base: Failed to open a new connection[0m
+[1;31mE (80269) mqtt_client: Error transport connect[0m
+[1;31mE (80269) mqtt_example: MQTT error occurred[0m
+[0;33mW (80269) mqt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (90329) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (90329) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (90339) esp-tls: create_ssl_handle failed[0m
+[1;31mE (90339) esp-tls: Failed to open new connecion[0m
+[1;31mE (90349) transport_base: Failed to open a new connection[0m
+[1;31mE (90359) mqtt_client: Error transport connect[0m
+[1;31mE (90359) mqtt_example: MQTT error occurred[0m
+[0;33mW (90359) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (105399) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (105399) esp-tls-mbedtls: Failed to set client confgurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (105409) esp-tls: create_ssl_handle failed[0m
+[1;31mE (105419) esp-tls: Failed to open new connection[0m
+[1;31mE (105419) transport_base: Fled to open a new connection[0m
+[1;31mE (105429) mqtt_client: Error transport connect[0m
+[1;31mE (105429) mqtt_example: TT error occurred[0m
+[0;33mW (105429) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (115529) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (115529) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (115539) esp-tls: create_ssl_handle failed[0m
+[1;31mE (115549) esp-tls: Failed to open new connection[0m
+[1;31mE (115549) transport_base: Failed to open a new connection[0m
+[1;31mE (115559) mqtt_client: Error transport connect[0m
+[1;31mE (115559) mqtt_example: MQTT error occurred[0m
+[0;33mW (115559) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (125619) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (125619) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (125629) esp-tls: create_ssl_handle failed[0m
+[1;31mE (125629) esp-tls: Failed to open new connection[0m
+[1;31mE (125629) trnsport_base: Failed to open a new connection[0m
+[1;31mE (125639) mqtt_client: Error transport connect[0m
+[1;31mE (125639) mqtt_example: MT error occurred[0m
+[0;33mW (125649) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (140689) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (140689) esp-tls-mbedtls: Failed to set client configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (140699) esp-tls: create_ssl_handle failed[0m
+[1;31mE (140709) espls: Failed to open new connection[0m
+[1;31mE (140709) transport_base: Failed  open a new connection[0m
+[1;31mE (140719) mqtt_client: Error transport connect[0m
+[1;31mE (140719) mqtt_example: MQTT error occurred[0m
+[0;33mW (140719) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (155769) esp-tls-mbedtls: No server verification option set in esp_tls_cfg_t structure. Check esp_tls API reference[0m
+[1;31mE (155769) esp-tls-mbedtls: Failed to seclient configurations, returned [0x8017] (ESP_ERR_MBEDTLS_SSL_SETUP_FAILED)[0m
+[1;31mE (155779) esp-tls: create_ssl_handle failedE (155789) esp-tls: Failed to open new connection[0m
+[1;31mE (155789) transport_base: Failed to open a new connection[0m
+[1;31mE (155799) mqtt_client: Error transport connect[0m
+[1;31mE (155799) mqtt_example: MQTT error occurred[0m
+[0;33mW (155809) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0

@@ -1,0 +1,30 @@
+Command: /home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/umesh_adwait/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/test.elf /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/bootloader/bootloader.elf -m '/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python' '/home/umesh_adwait/esp-idf/tools/idf.py'
+[0;33m--- esp-idf-monitor 1.7.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/__main__.py", line 4, in <module>
+    main()
+  File "/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/idf_monitor.py", line 457, in main
+    monitor.main_loop()
+  File "/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/idf_monitor.py", line 201, in main_loop
+    self._main_loop()
+  File "/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/idf_monitor.py", line 317, in _main_loop
+    super()._main_loop()
+  File "/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/idf_monitor.py", line 249, in _main_loop
+    self.serial_handler.handle_serial_input(data, self.console_parser, self.coredump,  # type: ignore
+  File "/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/base/serial_handler.py", line 167, in handle_serial_input
+    text_lines, self._last_line_part = self.binlog.convert_to_text(sp[0])
+  File "/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/base/binlog.py", line 251, in convert_to_text
+    messages.append(self.format_message(msg))
+  File "/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/base/binlog.py", line 256, in format_message
+    level_name = {1: 'E', 2: 'W', 3: 'I', 4: 'D', 5: 'V'}[message.control.level]
+KeyError: 0

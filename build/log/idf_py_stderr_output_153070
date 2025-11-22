@@ -1,0 +1,41 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c: In function 'event_handler':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:62:9: error: unknown type name 'tcpip_adapter_ip_info_t'
+   62 |         tcpip_adapter_ip_info_t ipInfo;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/umesh_adwait/esp-idf/components/lwip/lwip/src/include/lwip/ip_addr.h:43,
+                 from /home/umesh_adwait/esp-idf/components/lwip/lwip/src/include/lwip/ip.h:44,
+                 from /home/umesh_adwait/esp-idf/components/lwip/include/apps/esp_sntp.h:11,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.h:34,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:16:
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:63:17: error: request for member 'ip' in something not a structure or union
+   63 | IP4_ADDR(&ipInfo.ip, 192,168,43,50);     // choose an unused IP
+      |                 ^
+/home/umesh_adwait/esp-idf/components/lwip/lwip/src/include/lwip/ip4_addr.h:104:37: note: in definition of macro 'IP4_ADDR'
+  104 | #define IP4_ADDR(ipaddr, a,b,c,d)  (ipaddr)->addr = PP_HTONL(LWIP_MAKEU32(a,b,c,d))
+      |                                     ^~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:64:17: error: request for member 'gw' in something not a structure or union
+   64 | IP4_ADDR(&ipInfo.gw, 192,168,43,1);      // phone hotspot gateway
+      |                 ^
+/home/umesh_adwait/esp-idf/components/lwip/lwip/src/include/lwip/ip4_addr.h:104:37: note: in definition of macro 'IP4_ADDR'
+  104 | #define IP4_ADDR(ipaddr, a,b,c,d)  (ipaddr)->addr = PP_HTONL(LWIP_MAKEU32(a,b,c,d))
+      |                                     ^~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:65:17: error: request for member 'netmask' in something not a structure or union
+   65 | IP4_ADDR(&ipInfo.netmask, 255,255,255,0);
+      |                 ^
+/home/umesh_adwait/esp-idf/components/lwip/lwip/src/include/lwip/ip4_addr.h:104:37: note: in definition of macro 'IP4_ADDR'
+  104 | #define IP4_ADDR(ipaddr, a,b,c,d)  (ipaddr)->addr = PP_HTONL(LWIP_MAKEU32(a,b,c,d))
+      |                                     ^~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:67:1: error: implicit declaration of function 'tcpip_adapter_dhcpc_stop' [-Wimplicit-function-declaration]
+   67 | tcpip_adapter_dhcpc_stop(TCPIP_ADAPTER_IF_STA);
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:67:26: error: 'TCPIP_ADAPTER_IF_STA' undeclared (first use in this function)
+   67 | tcpip_adapter_dhcpc_stop(TCPIP_ADAPTER_IF_STA);
+      |                          ^~~~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:67:26: note: each undeclared identifier is reported only once for each function it appears in
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:68:1: error: implicit declaration of function 'tcpip_adapter_set_ip_info' [-Wimplicit-function-declaration]
+   68 | tcpip_adapter_set_ip_info(TCPIP_ADAPTER_IF_STA, &ipInfo);
+      | ^~~~~~~~~~~~~~~~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:141: esp-idf/main/CMakeFiles/__idf_main.dir/network/wifi_config.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

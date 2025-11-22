@@ -1,0 +1,39 @@
+Command: make -j 14 all
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:26:
+/home/umesh_adwait/esp-idf/components/spi_flash/include/esp_spi_flash.h:6:2: warning: #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead [-Wcpp]
+    6 | #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead
+      |  ^~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c: In function 'read_adc':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:32:5: error: this 'if' clause does not guard... [-Werror=misleading-indentation]
+   32 |     if (ifPPGled == 0x01)
+      |     ^~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:34:9: note: ...this statement, but the latter is misleadingly indented as if it were guarded by the 'if'
+   34 |         if(disp_toggle)  display_callback(void arg);
+      |         ^~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:34:26: error: implicit declaration of function 'display_callback' [-Wimplicit-function-declaration]
+   34 |         if(disp_toggle)  display_callback(void arg);
+      |                          ^~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:34:43: error: expected expression before 'void'
+   34 |         if(disp_toggle)  display_callback(void arg);
+      |                                           ^~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c: At top level:
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:97:23: warning: conflicting types for 'display_callback'; have 'void(void *)'
+   97 | static void IRAM_ATTR display_callback(void *arg)
+      |                       ^~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:97:23: error: static declaration of 'display_callback' follows non-static declaration
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:34:26: note: previous implicit declaration of 'display_callback' with type 'void(void *)'
+   34 |         if(disp_toggle)  display_callback(void arg);
+      |                          ^~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:97:23: warning: 'display_callback' defined but not used [-Wunused-function]
+   97 | static void IRAM_ATTR display_callback(void *arg)
+      |                       ^~~~~~~~~~~~~~~~
+cc1: some warnings being treated as errors
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:167: esp-idf/main/CMakeFiles/__idf_main.dir/dvr/interr_event.c.obj] Error 1
+make[2]: *** Waiting for unfinished jobs....
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c: In function 'app_main':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:83:5: error: implicit declaration of function 'start_20ms_timer' [-Wimplicit-function-declaration]
+   83 |     start_20ms_timer();
+      |     ^~~~~~~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:63: esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

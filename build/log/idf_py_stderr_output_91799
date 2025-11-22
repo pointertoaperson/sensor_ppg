@@ -1,0 +1,62 @@
+Command: /home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/umesh_adwait/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/test.elf /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/bootloader/bootloader.elf -m '/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python' '/home/umesh_adwait/esp-idf/tools/idf.py'
+[0;33m--- esp-idf-monitor 1.7.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0;33m--- Warning: Failed to decode multiple lines in a row. Try checking the baud rate and XTAL frequency setting in menuconfig[0m
+[0m--- 0x400803c0: [0;33m_DoubleExceptionVector[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m564[0m
+[0m--- 0x4009a63a: [0;33m_xt_context_save[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_context.S[0m[0m:[1;31m191[0m
+[0m--- 0x4000c2e0: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4000c2f6: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x400803bd: [0;33m_UserExceptionVector[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x4009a637: [0;33m_xt_context_save[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_context.S[0m[0m:[1;31m167[0m
+[0m--- 0x4008acdd: [0;33mxQueueReceive[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/freertos/FreeRTOS-Kernel/queue.c[0m[0m:[1;31m1632[0m
+[0m--- 0x400ff97e: [0;33mi2c_master_cmd_begin[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/driver/i2c/i2c.c[0m[0m:[1;31m1621[0m
+[0m--- 0x400d960e: [0;33mssd1306_write_data[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/display.c[0m[0m:[1;31m155[0m
+[0m--- 0x400d976a: [0;33mssd1306_update[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/display.c[0m[0m:[1;31m237[0m
+[0m--- 0x400d98be: [0;33manimate[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/display.c[0m[0m:[1;31m302[0m
+[0m--- 0x400d94e3: [0;33moled_task[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c[0m[0m:[1;31m109[0m
+[0m--- 0x4008af3d: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/__main__.py", line 4, in <module>
+    main()
+  File "/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/idf_monitor.py", line 457, in main
+    monitor.main_loop()
+  File "/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/idf_monitor.py", line 201, in main_loop
+    self._main_loop()
+  File "/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/idf_monitor.py", line 317, in _main_loop
+    super()._main_loop()
+  File "/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/idf_monitor.py", line 249, in _main_loop
+    self.serial_handler.handle_serial_input(data, self.console_parser, self.coredump,  # type: ignore
+  File "/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/base/serial_handler.py", line 167, in handle_serial_input
+    text_lines, self._last_line_part = self.binlog.convert_to_text(sp[0])
+  File "/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/base/binlog.py", line 251, in convert_to_text
+    messages.append(self.format_message(msg))
+  File "/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/lib/python3.10/site-packages/esp_idf_monitor/base/binlog.py", line 256, in format_message
+    level_name = {1: 'E', 2: 'W', 3: 'I', 4: 'D', 5: 'V'}[message.control.level]
+KeyError: 0

@@ -1,0 +1,10 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c: In function 'DSP_process':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:58:9: error: 'fft_buffer' undeclared (first use in this function); did you mean 'adc_buffer'?
+   58 |         fft_buffer = (int16_t *)heap_caps_malloc(FFT_SIZE * 2 * sizeof(int16_t), MALLOC_CAP_8BIT);
+      |         ^~~~~~~~~~
+      |         adc_buffer
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:58:9: note: each undeclared identifier is reported only once for each function it appears in
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:180: esp-idf/main/CMakeFiles/__idf_main.dir/process.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

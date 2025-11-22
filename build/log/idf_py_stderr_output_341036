@@ -1,0 +1,11 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c: In function 'dsp_process':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:96:13: error: redeclaration of 'refined_freq' with no linkage
+   96 |       float refined_freq = ((float)maxIndex + delta) * 0.108f;
+      |             ^~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:83:20: note: previous declaration of 'refined_freq' with type 'float'
+   83 |       float delta, refined_freq;
+      |                    ^~~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:180: esp-idf/main/CMakeFiles/__idf_main.dir/process.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

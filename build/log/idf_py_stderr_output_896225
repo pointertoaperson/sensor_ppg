@@ -1,0 +1,15 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c: In function 'read_adc':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:34:38: error: 'adc_handle' undeclared (first use in this function); did you mean 'adc_val'?
+   34 |     esp_err_t ret = adc_oneshot_read(adc_handle, ADC_CHANNEL_0, &adc_val);
+      |                                      ^~~~~~~~~~
+      |                                      adc_val
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:34:38: note: each undeclared identifier is reported only once for each function it appears in
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c: In function 'adc_dma_init':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:78:38: error: 'adc_handle' undeclared (first use in this function); did you mean 'adc_val'?
+   78 |     adc_oneshot_new_unit(&unit_cfg, &adc_handle);
+      |                                      ^~~~~~~~~~
+      |                                      adc_val
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:167: esp-idf/main/CMakeFiles/__idf_main.dir/dvr/interr_event.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

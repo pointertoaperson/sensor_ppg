@@ -1,0 +1,37 @@
+Command: make -j 14 all
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:26:
+/home/umesh_adwait/esp-idf/components/spi_flash/include/esp_spi_flash.h:6:2: warning: #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead [-Wcpp]
+    6 | #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead
+      |  ^~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c: In function 'mqtt_event_handler':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:36:25: warning: variable 'task_created' set but not used [-Wunused-but-set-variable]
+   36 |             static bool task_created = false;
+      |                         ^~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:27:29: warning: unused variable 'event' [-Wunused-variable]
+   27 |     esp_mqtt_event_handle_t event = event_data;
+      |                             ^~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c: In function 'wifi_start_sta_mode':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:179:18: warning: unused variable 'sta_netif' [-Wunused-variable]
+  179 |     esp_netif_t *sta_netif = esp_netif_create_default_wifi_sta();
+      |                  ^~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c: In function 'initialize_sntp':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:465:5: warning: 'sntp_setoperatingmode' is deprecated: use esp_sntp_setoperatingmode() instead [-Wdeprecated-declarations]
+  465 |     sntp_setoperatingmode(SNTP_OPMODE_POLL);
+      |     ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.h:76,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:16:
+/home/umesh_adwait/esp-idf/components/lwip/include/apps/esp_sntp.h:249:6: note: declared here
+  249 | void sntp_setoperatingmode(u8_t operating_mode)
+      |      ^~~~~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:466:5: warning: 'sntp_setservername' is deprecated: use esp_sntp_setservername() instead [-Wdeprecated-declarations]
+  466 |     sntp_setservername(0, "pool.ntp.org");
+      |     ^~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/components/lwip/include/apps/esp_sntp.h:263:6: note: declared here
+  263 | void sntp_setservername(u8_t idx, const char *server)
+      |      ^~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:468:5: warning: 'sntp_init' is deprecated: use esp_sntp_init() instead [-Wdeprecated-declarations]
+  468 |     sntp_init();
+      |     ^~~~~~~~~
+/home/umesh_adwait/esp-idf/components/lwip/include/apps/esp_sntp.h:269:6: note: declared here
+  269 | void sntp_init(void)
+      |      ^~~~~~~~~

@@ -1,0 +1,39 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c: In function 'mqtt_event_handler':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:28:29: warning: unused variable 'event' [-Wunused-variable]
+   28 |     esp_mqtt_event_handle_t event = event_data;
+      |                             ^~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c: In function 'mqtt_app_start':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:53:10: error: 'esp_mqtt_client_config_t' has no member named 'uri'
+   53 |         .uri = BROKER,             // Use something like "mqtt://broker.hivemq.com:1883"
+      |          ^~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:54:10: error: 'esp_mqtt_client_config_t' has no member named 'client_id'
+   54 |         .client_id = Edev_id,
+      |          ^~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:55:10: error: 'esp_mqtt_client_config_t' has no member named 'username'
+   55 |         .username = Eusername,     // optional
+      |          ^~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:56:10: error: 'esp_mqtt_client_config_t' has no member named 'password'
+   56 |         .password = Epsdconn,      // optional
+      |          ^~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:56:21: error: initialization of 'int' from 'char *' makes integer from pointer without a cast [-Wint-conversion]
+   56 |         .password = Epsdconn,      // optional
+      |                     ^~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:56:21: note: (near initialization for 'mqtt_cfg.network.reconnect_timeout_ms')
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:57:10: error: 'esp_mqtt_client_config_t' has no member named 'disable_auto_reconnect'
+   57 |         .disable_auto_reconnect = false,  // allow auto reconnect
+      |          ^~~~~~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:58:10: error: 'esp_mqtt_client_config_t' has no member named 'cert_pem'
+   58 |         .cert_pem = NULL,          // no CA cert for testing
+      |          ^~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:58:21: error: initialization of 'int' from 'void *' makes integer from pointer without a cast [-Wint-conversion]
+   58 |         .cert_pem = NULL,          // no CA cert for testing
+      |                     ^~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:58:21: note: (near initialization for 'mqtt_cfg.buffer.size')
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:52:41: error: missing braces around initializer [-Werror=missing-braces]
+   52 |     esp_mqtt_client_config_t mqtt_cfg = {
+      |                                         ^
+cc1: some warnings being treated as errors
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:115: esp-idf/main/CMakeFiles/__idf_main.dir/network/mqtt_app.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6398: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

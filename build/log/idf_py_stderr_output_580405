@@ -1,0 +1,5 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c: In function 'dsp_process':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:63:21: warning: variable 'fft_buffer' set but not used [-Wunused-but-set-variable]
+   63 |     static int16_t *fft_buffer;
+      |                     ^~~~~~~~~~

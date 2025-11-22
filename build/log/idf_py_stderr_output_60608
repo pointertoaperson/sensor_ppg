@@ -1,0 +1,28 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c: In function 'mqtt_event_handler':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:28:29: warning: unused variable 'event' [-Wunused-variable]
+   28 |     esp_mqtt_event_handle_t event = event_data;
+      |                             ^~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c: In function 'mqtt_app_start':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:55:19: error: 'esp_mqtt_client_config_t' has no member named 'cert_pem'
+   55 |           mqtt_cfg.cert_pem = NULL,  // no cert
+      |                   ^
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:56:13: error: 'esp_mqtt_client_config_t' has no member named 'client_cert_pem'
+   56 |     mqtt_cfg.client_cert_pem = NULL,
+      |             ^
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:55:35: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+   55 |           mqtt_cfg.cert_pem = NULL,  // no cert
+      |                                   ^
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:57:13: error: 'esp_mqtt_client_config_t' has no member named 'client_key_pem'
+   57 |     mqtt_cfg.client_key_pem = NULL,
+      |             ^
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:56:36: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+   56 |     mqtt_cfg.client_cert_pem = NULL,
+      |                                    ^
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:57:35: error: left-hand operand of comma expression has no effect [-Werror=unused-value]
+   57 |     mqtt_cfg.client_key_pem = NULL,
+      |                                   ^
+cc1: some warnings being treated as errors
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:115: esp-idf/main/CMakeFiles/__idf_main.dir/network/mqtt_app.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6398: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

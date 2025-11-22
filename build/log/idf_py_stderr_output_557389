@@ -1,0 +1,19 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c: In function 'dsp_process':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:119:16: error: format '%d' expects argument of type 'int', but argument 2 has type 'uint32_t' {aka 'long unsigned int'} [-Werror=format=]
+  119 |         printf("maxIDX =%d maxval =%"PRIu32"\n", maxIndex, maxVal);
+      |                ^~~~~~~~~~~~~~~~~~~~~~            ~~~~~~~~
+      |                                                  |
+      |                                                  uint32_t {aka long unsigned int}
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:119:16: error: format '%lu' expects argument of type 'long unsigned int', but argument 3 has type 'int' [-Werror=format=]
+  119 |         printf("maxIDX =%d maxval =%"PRIu32"\n", maxIndex, maxVal);
+      |                ^~~~~~~~~~~~~~~~~~~~~~                      ~~~~~~
+      |                                                            |
+      |                                                            int
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:56:21: warning: variable 'fft_buffer' set but not used [-Wunused-but-set-variable]
+   56 |     static int16_t *fft_buffer;
+      |                     ^~~~~~~~~~
+cc1: some warnings being treated as errors
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:180: esp-idf/main/CMakeFiles/__idf_main.dir/process.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

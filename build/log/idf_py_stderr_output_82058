@@ -1,0 +1,20 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c: In function 'event_handler':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:89:9: error: unknown type name 'ip_event_assigned_ip_t'; did you mean 'ip_event_add_ip6_t'?
+   89 |         ip_event_assigned_ip_t *event = (ip_event_assigned_ip_t *)event_data;
+      |         ^~~~~~~~~~~~~~~~~~~~~~
+      |         ip_event_add_ip6_t
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:89:42: error: 'ip_event_assigned_ip_t' undeclared (first use in this function); did you mean 'ip_event_add_ip6_t'?
+   89 |         ip_event_assigned_ip_t *event = (ip_event_assigned_ip_t *)event_data;
+      |                                          ^~~~~~~~~~~~~~~~~~~~~~
+      |                                          ip_event_add_ip6_t
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:89:42: note: each undeclared identifier is reported only once for each function it appears in
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:89:66: error: expected expression before ')' token
+   89 |         ip_event_assigned_ip_t *event = (ip_event_assigned_ip_t *)event_data;
+      |                                                                  ^
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:90:32: error: request for member 'ip' in something not a structure or union
+   90 |         esp_ip4addr_ntoa(&event->ip, ip_str, sizeof(ip_str));
+      |                                ^~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:141: esp-idf/main/CMakeFiles/__idf_main.dir/network/wifi_config.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6398: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

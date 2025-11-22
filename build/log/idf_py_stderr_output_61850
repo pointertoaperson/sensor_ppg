@@ -1,0 +1,14 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c: In function 'event_handler':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:132:22: error: 'set_time_task' undeclared (first use in this function)
+  132 |          xTaskCreate(set_time_task, "set_time_task", 4096, NULL, tskIDLE_PRIORITY + 1, NULL);
+      |                      ^~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:132:22: note: each undeclared identifier is reported only once for each function it appears in
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c: In function 'set_time_from_http':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:556:18: error: implicit declaration of function 'esp_http_client_perform_async'; did you mean 'esp_http_client_perform'? [-Wimplicit-function-declaration]
+  556 |  esp_err_t err = esp_http_client_perform_async(client);
+      |                  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                  esp_http_client_perform
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:141: esp-idf/main/CMakeFiles/__idf_main.dir/network/wifi_config.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6398: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

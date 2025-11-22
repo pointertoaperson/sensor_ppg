@@ -1,0 +1,27 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c: In function 'DSP_process':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:41:5: error: implicit declaration of function 'dsps_wind_hamming_q15'; did you mean 'dsps_wind_hann_f32'? [-Wimplicit-function-declaration]
+   41 |     dsps_wind_hamming_q15(hamming, FFT_SIZE);
+      |     ^~~~~~~~~~~~~~~~~~~~~
+      |     dsps_wind_hann_f32
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:45:34: error: implicit declaration of function '__SSAT' [-Wimplicit-function-declaration]
+   45 |         input[i << 1] = (int16_t)__SSAT(temp >> 15, 16);                            // Q30 -> Q15
+      |                                  ^~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:54:9: error: implicit declaration of function 'dsps_fft2r_init_q15'; did you mean 'dsps_fft2r_init_sc16'? [-Wimplicit-function-declaration]
+   54 |         dsps_fft2r_init_q15(NULL, FFT_SIZE);
+      |         ^~~~~~~~~~~~~~~~~~~
+      |         dsps_fft2r_init_sc16
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:58:5: error: implicit declaration of function 'dsps_fft2r_q15'; did you mean 'dsps_fft2r_sc16'? [-Wimplicit-function-declaration]
+   58 |     dsps_fft2r_q15(input, FFT_SIZE);
+      |     ^~~~~~~~~~~~~~
+      |     dsps_fft2r_sc16
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:59:5: error: implicit declaration of function 'dsps_bit_rev_q15'; did you mean 'dsps_bit_rev_fc32'? [-Wimplicit-function-declaration]
+   59 |     dsps_bit_rev_q15(input, FFT_SIZE);
+      |     ^~~~~~~~~~~~~~~~
+      |     dsps_bit_rev_fc32
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:51:21: warning: variable 'fft_buffer' set but not used [-Wunused-but-set-variable]
+   51 |     static int16_t *fft_buffer;
+      |                     ^~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:180: esp-idf/main/CMakeFiles/__idf_main.dir/process.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

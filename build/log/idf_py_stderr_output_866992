@@ -1,0 +1,28 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c: In function 'adc_timer_callback':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:111:29: error: 'adc_handle' undeclared (first use in this function); did you mean 'adc1_handle'?
+  111 |     if (adc_continuous_read(adc_handle, (uint8_t*)&raw_val, sizeof(raw_val), &ret_num, 0) == ESP_OK) {
+      |                             ^~~~~~~~~~
+      |                             adc1_handle
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:111:29: note: each undeclared identifier is reported only once for each function it appears in
+In file included from /home/umesh_adwait/esp-idf/components/esp_driver_gpio/include/driver/gpio.h:12,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/ledconf.h:6,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:1:
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c: In function 'adc_dma_init':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:136:61: error: 'adc_handle' undeclared (first use in this function); did you mean 'adc1_handle'?
+  136 |     ESP_ERROR_CHECK(adc_continuous_new_handle(&handle_cfg, &adc_handle));
+      |                                                             ^~~~~~~~~~
+/home/umesh_adwait/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:147:22: error: 'ADC_ATTEN_DB_11' undeclared (first use in this function); did you mean 'ADC_ATTEN_DB_12'?
+  147 |             .atten = ADC_ATTEN_DB_11,
+      |                      ^~~~~~~~~~~~~~~
+      |                      ADC_ATTEN_DB_12
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c: At top level:
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:18:34: warning: 'adc1_handle' defined but not used [-Wunused-variable]
+   18 | static adc_oneshot_unit_handle_t adc1_handle;
+      |                                  ^~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:167: esp-idf/main/CMakeFiles/__idf_main.dir/dvr/interr_event.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

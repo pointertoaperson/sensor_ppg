@@ -1,0 +1,150 @@
+Command: /home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/umesh_adwait/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/test.elf /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/bootloader/bootloader.elf -m '/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python' '/home/umesh_adwait/esp-idf/tools/idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6372
+load:0x40078000,len:15928
+load:0x40080400,len:3880
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v6.0-dev-1002-gbfe5caf58f-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 17 2025 11:03:49[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=22f00h (143104) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00032f28 vaddr=3ff80000 size=00024h (    36) load[0m
+[0;32mI (139) esp_image: segment 2: paddr=00032f54 vaddr=3ffb0000 size=045b0h ( 17840) load[0m
+[0;32mI (150) esp_image: segment 3: paddr=0003750c vaddr=40080000 size=08b0ch ( 35596) load[0m
+[0;32mI (165) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=ae6f4h (714484) map[0m
+[0;32mI (418) esp_image: segment 5: paddr=000ee71c vaddr=40088b0c size=110ech ( 69868) load[0m
+[0;32mI (459) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (459) boot: Disabling RNG early entropy source...[0m
+[0;32mI (470) cpu_start: Multicore app[0m
+[0;32mI (478) cpu_start: Pro cpu start user code[0m
+[0;32mI (478) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (478) app_init: Application information:[0m
+[0;32mI (478) app_init: Project name:     test[0m
+[0;32mI (482) app_init: App version:      v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (488) app_init: Compile time:     Aug 17 2025 11:04:11[0m
+[0;32mI (493) app_init: ELF file SHA256:  e2ab6fc82...[0m
+[0;32mI (497) app_init: ESP-IDF:          v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (503) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (507) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (511) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (515) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (521) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (526) heap_init: At 3FFBA3C8 len 00025C38 (151 KiB): DRAM[0m
+[0;32mI (532) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (537) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (543) heap_init: At 40099BF8 len 00006408 (25 KiB): IRAM[0m
+[0;32mI (549) spi_flash: detected chip: generic[0m
+[0;32mI (551) spi_flash: flash io: dio[0m
+[0;33mW (554) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (567) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (578) main_task: Started on CPU0[0m
+[0;32mI (588) main_task: Calling app_main()[0m
+[0;32mI (758) networ_main: Starting...[0m
+[1;31mE (758) gpio: gpio_pullup_en(78): GPIO number error (input-only pad has no internal PU)[0m
+[0;32mI (758) ssid_reset:  pin interrupt initialized on GPIO 35 & 0[0m
+[0;32mI (798) main_task: Returned from app_main()[0m
+[0;32mI (808) TIME and MQTT: Read SSID from NVS: 'return2hell'[0m
+[0;32mI (808) TIME and MQTT: Read Password from NVS: '$adhain@dkin6'[0m
+[0;32mI (808) TIME and MQTT: Read device id from NVS: 'DEV01'[0m
+[0;32mI (808) TIME and MQTT: Read broker address from NVS: 'ws://broker.hivemq.com:8000'[0m
+[0;32mI (828) wifi:wifi driver task: 3ffc8a2c, prio:23, stack:6656, core=0[0m
+[0;32mI (838) wifi:wifi firmware version: 956d811[0m
+[0;32mI (838) wifi:wifi certification version: v7.0[0m
+[0;32mI (838) wifi:config NVS flash: enabled[0m
+[0;32mI (838) wifi:config nano formatting: disabled[0m
+[0;32mI (848) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (848) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (858) wifi:Init management short buffer num: 32[0m
+[0;32mI (858) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (868) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (868) wifi:Init static rx buffer num: 10[0m
+[0;32mI (868) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (878) wifi_init: rx ba win: 6[0m
+[0;32mI (878) wifi_init: accept mbox: 6[0m
+[0;32mI (878) wifi_init: tcpip mbox: 32[0m
+[0;32mI (888) wifi_init: udp mbox: 6[0m
+[0;32mI (888) wifi_init: tcp mbox: 6[0m
+[0;32mI (888) wifi_init: tcp tx win: 5760[0m
+[0;32mI (898) wifi_init: tcp rx win: 5760[0m
+[0;32mI (898) wifi_init: tcp mss: 1440[0m
+[0;32mI (898) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (908) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (908) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (918) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (998) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1048) wifi:mode : sta (08:d1:f9:9b:2e:e8)[0m
+[0;32mI (1048) wifi:enable tsf[0m
+[0;32mI (1058) TIME and MQTT: STA connecting to saved SSID: return2hell[0m
+[0;32mI (1058) TIME and MQTT: STA started, connecting to AP...[0m
+[0;32mI (1078) wifi:new:<8,0>, old:<1,0>, ap:<255,255>, sta:<8,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1078) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1088) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1088) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1108) wifi:<ba-add>idx:0 (ifx:0, 5c:6a:80:5e:cf:51), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1118) wifi:connected with return2hell, aid = 2, channel 8, BW20, bssid = 5c:6a:80:5e:cf:51[0m
+[0;32mI (1118) wifi:security: WPA2-PSK, phy: bgn, rssi: -42[0m
+[0;32mI (1128) wifi:pm start, type: 1[0m
+
+[0;32mI (1128) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1178) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+maxIDX =5maxval =51
+maxIDX =15maxval =65
+maxIDX =27maxval =56
+maxIDX =4maxval =52
+maxIDX =5maxval =111
+maxIDX =4maxval =98
+maxIDX =4maxval =240
+HR float =  29.244539maxIDX =5maxval =269
+HR float =  32.251110maxIDX =6maxval =264
+HR float =  42.104328maxIDX =7maxval =292
+HR float =  42.782745maxIDX =6maxval =274
+HR float =  40.869217maxIDX =9maxval =34
+maxIDX =4maxval =7
+maxIDX =17maxval =128
+maxIDX =13maxval =60
+maxIDX =4maxval =52
+maxIDX =6maxval =174
+maxIDX =4maxval =50
+maxIDX =4maxval =63
+maxIDX =19maxval =55
+maxIDX =4maxval =54
+maxIDX =4maxval =48
+maxIDX =4maxval =41
+maxIDX =15maxval =84
+maxIDX =5maxval =47
+maxIDX =4maxval =46
+maxIDX =21maxval =98
+maxIDX =4maxval =48
+maxIDX =4maxval =50
+maxIDX =4maxval =48
+maxIDX =5maxval =56
+maxIDX =4maxval =60
+maxIDX =4maxval =49
+maxIDX =21maxval =63
+maxIDX =4maxval =54
+maxIDX =4maxval =48
+maxIDX =15maxval =76
+maxIDX =20maxval =67
+maxIDX =4maxval =55
+maxIDX =4maxval =67
+maxIDX =4maxval =56
+maxIDX =4maxval =52
+maxIDX =4maxval =53
+maxIDX =19maxval =79
+maxIDX =16maxval =62

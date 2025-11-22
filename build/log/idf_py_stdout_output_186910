@@ -1,0 +1,1284 @@
+Command: /home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/umesh_adwait/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/test.elf /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/bootloader/bootloader.elf -m '/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python' '/home/umesh_adwait/esp-idf/tools/idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6372
+load:0x40078000,len:15928
+load:0x40080400,len:3880
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v6.0-dev-1002-gbfe5caf58f-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 19 2025 14:14:05[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=22e58h (142936) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00032e80 vaddr=3ff80000 size=00024h (    36) load[0m
+[0;32mI (139) esp_image: segment 2: paddr=00032eac vaddr=3ffb0000 size=05284h ( 21124) load[0m
+[0;32mI (151) esp_image: segment 3: paddr=00038138 vaddr=40080000 size=07ee0h ( 32480) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=adb84h (711556) map[0m
+[0;32mI (416) esp_image: segment 5: paddr=000edbac vaddr=40087ee0 size=128cch ( 75980) load[0m
+[0;32mI (461) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (461) boot: Disabling RNG early entropy source...[0m
+[0;32mI (471) cpu_start: Multicore app[0m
+[0;32mI (480) cpu_start: Pro cpu start user code[0m
+[0;32mI (480) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (480) app_init: Application information:[0m
+[0;32mI (480) app_init: Project name:     test[0m
+[0;32mI (483) app_init: App version:      v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (489) app_init: Compile time:     Aug 19 2025 14:14:31[0m
+[0;32mI (494) app_init: ELF file SHA256:  b7702b5cf...[0m
+[0;32mI (499) app_init: ESP-IDF:          v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (505) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (509) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (513) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (517) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (523) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (528) heap_init: At 3FFBC6A8 len 00023958 (142 KiB): DRAM[0m
+[0;32mI (533) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (538) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (544) heap_init: At 4009A7AC len 00005854 (22 KiB): IRAM[0m
+[0;32mI (550) spi_flash: detected chip: generic[0m
+[0;32mI (553) spi_flash: flash io: dio[0m
+[0;33mW (556) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (568) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (579) main_task: Started on CPU0[0m
+[0;32mI (589) main_task: Calling app_main()[0m
+[0;32mI (769) networ_main: Starting...[0m
+[0;32mI (769) ssid_reset:  pin interrupt initialized on GPIO 32 & 0[0m
+[0;32mI (799) TIME and MQTT: Read SSID from NVS: 'mutu_test'[0m
+[0;32mI (799) TIME and MQTT: Read Password from NVS: '12a12@12'[0m
+[0;32mI (799) TIME and MQTT: Read device id from NVS: 'DEV01'[0m
+[0;32mI (799) TIME and MQTT: Read broker address from NVS: 'ws://broker.hivemq.com:8000/mqtt'[0m
+[0;32mI (819) wifi:wifi driver task: 3ffcddb8, prio:23, stack:6656, core=0[0m
+[0;32mI (829) wifi:wifi firmware version: 956d811[0m
+[0;32mI (829) wifi:wifi certification version: v7.0[0m
+[0;32mI (829) wifi:config NVS flash: enabled[0m
+[0;32mI (829) wifi:config nano formatting: disabled[0m
+[0;32mI (829) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (839) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (839) wifi:Init management short buffer num: 32[0m
+[0;32mI (849) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (849) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (859) wifi:Init static rx buffer num: 10[0m
+[0;32mI (859) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (859) wifi_init: rx ba win: 6[0m
+[0;32mI (869) wifi_init: accept mbox: 6[0m
+[0;32mI (869) wifi_init: tcpip mbox: 32[0m
+[0;32mI (869) wifi_init: udp mbox: 6[0m
+[0;32mI (879) wifi_init: tcp mbox: 6[0m
+[0;32mI (879) wifi_init: tcp tx win: 5760[0m
+[0;32mI (879) wifi_init: tcp rx win: 5760[0m
+[0;32mI (879) wifi_init: tcp mss: 1440[0m
+[0;32mI (889) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (889) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (899) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (899) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (979) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (999) wifi:mode : sta (08:d1:f9:9b:2e:e8)[0m
+[0;32mI (1009) wifi:enable tsf[0m
+[0;32mI (1009) TIME and MQTT: STA connecting to saved SSID: mutu_test[0m
+[0;32mI (1029) TIME and MQTT: STA started, connecting to AP...[0m
+[0;32mI (1039) main_task: Returned from app_main()[0m
+[0;32mI (1049) wifi:new:<11,0>, old:<1,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1049) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1049) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1069) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1079) wifi:connected with mutu_test, aid = 1, channel 11, BW20, bssid = 7a:85:7d:f5:f9:dd[0m
+[0;32mI (1079) wifi:security: WPA2-PSK, phy: bgn, rssi: -22[0m
+[0;32mI (1089) wifi:pm start, type: 1[0m
+
+[0;32mI (1089) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1099) wifi:<ba-add>idx:0 (ifx:0, 7a:85:7d:f5:f9:dd), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1109) TIME and MQTT: Connected, got IP: 95.116.101.115[0m
+[0;32mI (1109) time: Initializing SNTP[0m
+[0;32mI (1109) time: Waiting fr system time to be set... (1/10)[0m
+[0;32mI (1139) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1139) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (3119) time: SNTP sync status: 0[0m
+[0;32mI (3119) time: Waiting for system time to be set... (2/10)[0m
+[0;32mI (5119) time: SNTP sync status: 0[0m
+[0;32mI (5119) time: Waiting for system time to be set... (3/10)[0m
+maxIDX =4maxval =15
+[0;32mI (7119) time: SNTP sync status: 0[0m
+[0;32mI (7119) time: Waiting for system time to be set... (4/10)[0m
+[0;32mI (9119) time: SNTP sync status: 0[0m
+[0;32mI (9119) time: Waiting for system time to be set... (5/10)[0m
+maxIDX =4maxval =15
+[0;32mI (11119) time: SNTP sync status: 0[0m
+[0;32mI (11119) time: Waiting for system time to be set... (6/10)[0m
+[0;32mI (13119) time: SNTP sync status: 0[0m
+[0;32mI (13119) time: Waiting for system time to be set... (7/10)[0m
+maxIDX =4maxval =15
+[0;32mI (15119) time: SNTP sync status: 0[0m
+[0;32mI (15119) time: Waiting for system time to be set... (8/10)[0m
+[0;32mI (17119) time: SNTP sync status: 0[0m
+[0;32mI (17119) time: Waiting for system time to be set... (9/10)[0m
+[0;32mI (19119) time: SNTP sync status: 0[0m
+[0;33mW (19119) time: System time not set correctly!  70[0m
+[0;32mI (19119) TIME and MQTT: Starting MQTT (time sync done)[0m
+[1;31mE (19119) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() return 202, addrinfo=0x0[0m
+[1;31mE (19129) esp-tls: Failed to openew connection[0m
+[1;31mE (19129) transport_base: Failed to open a new connecon[0m
+[1;31mE (19139) mqtt_client: Error transport connect[0m
+[1;31mE (19139) mqtt_example: MQTT error occurred[0m
+[0;33mW (19139) mqtt_example: MQTT disconnected[0m
+maxIDX =4maxval =10
+maxIDX =4maxval =11
+maxIDX =4maxval =11
+[1;31mE (29149) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (29149) esp-tls: Failed to open new connection[0m
+[1;31mE (29149) transport_base: Failed to open a new connection[0m
+[1;31mE (29149) mqtt_client: Error transport connect[0m
+[1;31mE (29159) mqtt_example: MQTT error occurred[0m
+[0;33mW (29159) mqtt_example: MQTT disconnected[0m
+maxIDX =4maxval =12
+maxIDX =5maxval =12
+[1;31mE (39169) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (39169) esp-tls: Failed to open new connection[0m
+[1;31mE (39169) transport_base: Failed to open a new connection[0m
+[1;31mE (39169) mqtt_client: Error transport connect[0m
+[1;31mE (39179) mqtt_examle: MQTT error occurred[0m
+[0;33mW (39179) mqtt_example: MQTT disconnected[0m
+maxIDX =4maxval =11
+[0;32mI (45179) wifi:state: run -> init (0x1c0)[0m
+[0;32mI (45189) wifi:pm stop, total sleep time: 37137120 us / 44097124 us[0m
+
+[0;32mI (45189) wifi:<ba-del>idx:0, tid:0[0m
+[0;32mI (45189) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (45189) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (45209) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (45209) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (45579) wifi:state: auth -> init (0x3c0)[0m
+[0;32mI (45599) wifi:new:<11,0>, old:<11,0>, ap:<255,255>, sta:<11,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (45599) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =5maxval =12
+[0;32mI (48009) TIME and MQTT: Disconnected from AP, retrying...[0m
+[1;31mE (49189) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (49189) esp-tls: Failed to open new connection[0m
+[1;31mE (49189) transport_base: Failed to open a new connection[0m
+[1;31mE (49189) mqtt_client: Error transport connect[0m
+[1;31mE (49199) mqt_example: MQTT error occurred[0m
+[0;33mW (49199) mqtt_example: MQTT disconnecd[0m
+[0;32mI (50429) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =7
+[0;32mI (52839) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (55259) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =5maxval =9
+[0;32mI (57669) TIME and MQTT: Disconnected from AP, retrying...[0m
+[1;31mE (59209) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (59209) esp-tls: Failed to open new connection[0m
+[1;31mE (59209) transport_base: Failed to open a new connection[0m
+[1;31mE (59209) mqtt_client: Error transport connect[0m
+[1;31mE (59219) mqtt_example: MQTT error occurred[0m
+[0;33mW (59219) mqtt_example: MQTT disconnected[0m
+[0;32mI (60089) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =8
+[0;32mI (62499) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (64919) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =9
+[0;32mI (67329) TIME and MQTT: Disconnected from AP, retrying...[0m
+[1;31mE (69229) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (69229) esp-tls: Failed to open new connection[0m
+[1;31mE (69229) transport_base: Failed to open a new connection[0m
+[1;31mE (69229) mqtt_client: Error transport connect[0m
+[1;31mE (69239) mqtt_example: MQTT error occurred[0m
+[0;33mW (69239) mqtt_example: MQTT disconnected[0m
+[0;32mI (69749) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =11
+[0;32mI (72159) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =9
+[0;32mI (74579) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (76989) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =10
+[1;31mE (79249) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (79249) esp-tls: Failed to open new connection[0m
+[1;31mE (79249) transport_bas: Failed to open a new connection[0m
+[1;31mE (79249) mqtt_client: Error transport connect[0m
+[1;31mE (79259) mqtt_example: MQTT error occurred[0m
+[0;33mW (79259) mqtt_example: MQTT disconnected[0m
+[0;32mI (79409) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (81819) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =10
+[0;32mI (84239) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (86649) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =5maxval =10
+[0;32mI (89059) TIME and MQTT: Disconnected from AP, retrying...[0m
+[1;31mE (89269) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (89269) esp-tls: Failed to open new connection[0m
+[1;31mE (89269) transport_base: Failed to open a new connection[0m
+[1;31mE (89269) mqtt_client: Error transport connect[0m
+[1;31mE (89279) mqtt_example: MQTT error occurred[0m
+[0;33mW (89279) mqtt_example: MQTT disconnected[0m
+[0;32mI (91479) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =11
+[0;32mI (93899) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (96309) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =11
+[0;32mI (98729) TIME and MQTT: Disconnected from AP, retrying...[0m
+[1;31mE (99289) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (99289) esp-tls: Failed to open new connecton[0m
+[1;31mE (99289) transport_base: Failed to open a new cnection[0m
+[1;31mE (99289) mqtt_client: Error transport connect[0m
+[1;31mE (99299) mq_example: MQTT error occurred[0m
+[0;33mW (99299) mqtt_example: MQTT disconnecd[0m
+[0;32mI (101139) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =10
+[0;32mI (103559) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (105969) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =5
+[0;32mI (108379) TIME and MQTT: Disconnected from AP, retrying...[0m
+[1;31mE (109309) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (109309) esp-tls: Failed to open new connection[0m
+[1;31mE (109309) transport_base: Failed to open a new connection[0m
+[1;31mE (109309) mqtt_client: Error transport connect[0m
+[1;31mE (109319) mqtt_example: MQTT error occurred[0m
+[0;33mW (109319) mqtt_exple: MQTT disconnected[0m
+[0;32mI (110799) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =7
+[0;32mI (113219) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (115629) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =6
+[0;32mI (118039) TIME and MQTT: Disconnected from AP, retrying...[0m
+[1;31mE (119329) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (119329) esp-tls: Failed to openew connection[0m
+[1;31mE (119329) transport_base: Failed to open a new connection[0m
+[1;31mE (119329) mqtt_client: Error transport conne[0m
+[1;31mE (119339) mqtt_example: MQTT error occurred[0m
+[0;33mW (119339) mqtt_example: MQTT disconnected[0m
+[0;32mI (120459) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =5
+[0;32mI (122869) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (125289) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =5
+[0;32mI (127699) TIME and MQTT: Disconnected from AP, retrying...[0m
+[1;31mE (129349) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (129349) esp-tls: Failed to open new connection[0m
+[1;31mE (129349) transport_base: Failed to open a new connection[0m
+[1;31mE (129359) mqtt_client: Error transport connect[0m
+[1;31mE (129359) mqtt_example: MQTT error occurred[0m
+[0;33mW (129359) mqtt_example: MQTT disconnected[0m
+maxIDX =4maxval =7
+[0;32mI (130119) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (132529) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =6
+[0;32mI (134949) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (137359) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =7
+[1;31mE (139369) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (139369) esp-tls: Failed to open new connection[0m
+[1;31mE (139369) transport_base: Failed to open a new connection[0m
+[1;31mE (139369) mqtt_client: Error transport connect[0m
+[1;31mE (139379) mqtt_example: MQTT error occurred[0m
+[0;33mW (139379) mqtt_example: MQTT disconnected[0m
+[0;32mI (139779) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (142189) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =7
+[0;32mI (144609) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (147019) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =6
+[1;31mE (149389) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (149389) esp-tls: Failed to open new cnection[0m
+[1;31mE (149389) transport_base: Failed to open a new connection[0m
+[1;31mE (149389) mqtt_client: Error transport connect[0m
+[1;31mE (149399) mqtt_example: MQTT error occurred[0m
+W (149399qtt_example: MQTT disconnected
+[0;32mI (149439) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (151849) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =7
+[0;32mI (154269) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (156679) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =7
+[0;32mI (159099) TIME and MQTT: Disconnected from AP, retrying...[0m
+[1;31mE (159409) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (159409) esp-tls: Failed to open new connection[0m
+[1;31mE (159409) transport_base: Failed to open a new connection[0m
+[1;31mE (159409) mqtt_client: Error transport connect[0m
+[1;31mE (159419) mqtt_example: MQTT error occurr[0m
+[0;33mW (159419) mqtt_example: MQTT disconnected[0m
+[0;32mI (161509) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =5
+[0;32mI (163929) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (166339) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =6
+[0;32mI (168749) TIME and MQTT: Disconnected from AP, retrying...[0m
+[1;31mE (169429) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (169429) esp-tls: Failed to open new connection[0m
+[1;31mE (169429) transport_base: Failed to open a new connection[0m
+[1;31mE (169439) mqtt_client: Error transport connec[0m
+[1;31mE (169439) mqtt_example: MQTT error occurred[0m
+[0;33mW (169439) mqtt_example: MQTT disconnected[0m
+[0;32mI (171169) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =5maxval =5
+[0;32mI (173579) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (175999) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =4
+[0;32mI (178409) TIME and MQTT: Disconnected from AP, retrying...[0m
+[1;31mE (179449) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (179449) esp-tls: Failed to open new connection[0m
+[1;31mE (179449) transport_base: Failed to open a new connection[0m
+[1;31mE (179449) mqtt_client: Error transport connect[0m
+[1;31mE (179459) mqtt_example: MQTT error occurred[0m
+[0;33mW (179459) mqttxample: MQTT disconnected[0m
+maxIDX =4maxval =5
+[0;32mI (180829) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (183239) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =5
+[0;32mI (185659) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (188069) TIME and MQTT: Disconnected from AP, retrying...[0m
+[1;31mE (189469) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (189469) esp-tls: Failed to open new connection[0m
+[1;31mE (189469) transport_base: Failed to open a new connection[0m
+[1;31mE (189469) mqtt_client: Error transport connect[0m
+[1;31mE (189479) mqtt_example: MQTT error occurred[0m
+[0;33mW (189479) mqtt_example: MQTT disconnected[0m
+maxIDX =4maxval =5
+[0;32mI (190489) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (192899) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =4
+[0;32mI (195319) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (197729) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =5
+[1;31mE (199489) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (199489) esp-tls: Failed to open new connection[0m
+[1;31mE (199489) transport_base: Failed to open a new connection[0m
+[1;31mE (199499) mqtt_client: Error ansport connect[0m
+[1;31mE (199499) mqtt_example: MQTT error occurred[0m
+[0;33mW (1999) mqtt_example: MQTT disconnected[0m
+[0;32mI (200149) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (202559) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =5
+[0;32mI (204979) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (207389) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =6
+[1;31mE (209509) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (209509) esp-tls: Failed to open new connection[0m
+[1;31mE (209509) transport_base: Failed to open a new connection[0m
+[1;31mE (209509) mqtt_client: Error transport connect[0m
+[1;31mE (209519) mqtt_example: MQTT error occurred[0m
+[0;33mW (209519) mqtt_example: MQTT disconnected[0m
+[0;32mI (209809) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (212219) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =5
+[0;32mI (214639) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (217049) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =5
+[0;32mI (219469) TIME and MQTT: Disconnected from AP, retrying...[0m
+[1;31mE (219529) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (219529) esp-tls: Failed to open new connection[0m
+[1;31mE (219529) transrt_base: Failed to open a new connection[0m
+[1;31mE (219529)mqtt_client: Erro transport connect[0m
+[1;31mE (219539) mqtt_example: MQTT error occurred[0m
+[0;33mW (219539) mqtt_example: MQTT disconnected[0m
+[0;32mI (221879) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =5
+[0;32mI (224299) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (226709) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =6
+[0;32mI (229119) TIME and MQTT: Disconnected from AP, retrying...[0m
+[1;31mE (229549) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (229549) esp-tls: Failed to open new connection[0m
+[1;31mE (229549) transport_base: Failed to open a new connection[0m
+[1;31mE (229549) mqtt_client: Error transport connect[0m
+[1;31mE (229559) mqtt_example: MQTT err occurred[0m
+[0;33mW (229559) mqtt_example: MQTT disconnecte[0m
+maxIDX =4maxval =5
+[0;32mI (231539) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (233949) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =6
+[0;32mI (236369) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (238779) TIME and MQTT: Disconnected from AP, retrying...[0m
+[1;31mE (239569) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (239569) esp-tls: Failed to open new connection[0m
+[1;31mE (239569) transport_base: Failed to open a new connection[0m
+[1;31mE (239569) mqtt_client: Error transport connect[0m
+[1;31mE (239579) mqtt_example: MQTT error occurred[0m
+[0;33mW (239579) mqtt_example: MQTT disconnected[0m
+maxIDX =4maxval =4
+[0;32mI (241199) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (243609) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =6
+[0;32mI (246029) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (248439) TIME and MQTT: Disconnected from AP, retrying...[0m
+[1;31mE (249589) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (249589) esp-tls: Failed to open new connection[0m
+[1;31mE (249589) transport_base: Failed to open a new connection[0m
+[1;31mE (249589) mqtt_client: Error transport connect[0m
+[1;31mE (249599) mqtt_example: MQTT error occurred[0m
+[0;33mW (249599) mqtt_example: MQTT disconnected[0m
+maxIDX =4maxval =6
+[0;32mI (250859) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (253269) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =1
+[0;32mI (255689) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (258099) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =9maxval =2
+[1;31mE (259609) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (259609) esp-tls: Failed to open new connection[0m
+[1;31mE (259609) transport_base: Failed to open a new connection[0m
+[1;31mE (259619) mqtt_client: Errotransport connect[0m
+[1;31mE (259619) mqtt_example: MQTT err occurred[0m
+[0;33mW (259619) mqtt_example: MQTT disconnected[0m
+[0;32mI (260519) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (262929) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =1
+[0;32mI (265349) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (267759) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =6
+[1;31mE (269629) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (269629) esp-tls: Failed to open new connection[0m
+[1;31mE (269629) transport_base: Failed to open a new connection[0m
+[1;31mE (269629) mqtt_client: ror transport connect[0m
+[1;31mE (269639) mqtt_example: MQTT error occurred[0m
+[0;33mW (269639) mqtt_example: MQTT disconnected[0m
+[0;32mI (270179) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (272589) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =5maxval =1
+[0;32mI (275009) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (277419) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =1
+[1;31mE (279649) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (279649) esp-tls: Failed to open new connection[0m
+[1;31mE (279649) transport_base: Failed to open a new connection[0m
+[1;31mE (279649) mqtt_client: Error transport connect[0m
+[1;31mE (279659) mqtt_example: MQTT error occurred[0m
+[0;33mW (279659) mqtt_example: MQTT disconnecI (279839) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =5maxval =1
+[0;32mI (282249) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (284669) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =1
+[0;32mI (287079) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (289489) TIME and MQTT: Disconnected from AP, retrying...[0m
+[1;31mE (289669) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (289669) esp-tls: Failed to open new connection[0m
+[1;31mE (289669) transport_base: Failed to open a new connection[0m
+[1;31mE (289679) mqtt_client: Error transport connect[0m
+[1;31mE (289679) mqtt_example: MQTT error occurred[0m
+[0;33mW (289679) mqtt_example: MQTT disconnected[0m
+maxIDX =4maxval =1
+[0;32mI (291909) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (294329) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =5maxval =2
+[0;32mI (296739) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (299149) TIME and MQTT: Disconnected from AP, retrying...[0m
+[1;31mE (299689) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (299689) esp-tls: Failed to open new connection[0m
+[1;31mE (299689) transport_base: Failed to open a new connection[0m
+[1;31mE (299699) mqtt_client: Error transport connect[0m
+[1;31mE (299699) mqtt_example: MQTT error occurred[0m
+[0;33mW (299699) mqtt_example: MQTT disconnected[0m
+maxIDX =4maxval =1
+[0;32mI (301569) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (303989) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =7maxval =2
+[0;32mI (306399) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (308809) TIME and MQTT: Disconnected from AP, retrying...[0m
+[1;31mE (309709) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (309709) esp-tls: Failed to open new connection[0m
+[1;31mE (309709) transport_base: Failed to open a new connection[0m
+[1;31mE (309719) mqtt_client: Error transport connect[0m
+[1;31mE (309719) mqt_example: MQTT error occurred[0m
+[0;33mW (309719) mqtt_example: MQTT disconneed[0m
+maxIDX =4maxval =1
+[0;32mI (311229) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (313639) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =1
+[0;32mI (316059) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (318469) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =1
+[1;31mE (319729) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (319729) esp-tls: Failed to open new connection[0m
+[1;31mE (319729) transport_base: Failed to open a new connection[0m
+[1;31mE (319729) mqtt_client: Error transport connect[0m
+[1;31mE (319739) mqtt_example: MQTT error occurred[0m
+[0;33mW (319739) mqtt_example: MQTT disconnected[0m
+[0;32mI (320889) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (323299) TIME and MQTT: Dionnected from AP, retrying...[0m
+maxIDX =4maxval =2
+�I (325719) TIME and MQTT: DisconnX,W2ɽ��AP, retrying...
+[0;32mI (328129) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =5maxval =2
+[1;31mE (329749) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (329749) esp-tls: Failed to open new connection[0m
+[1;31mE (329749) transport_base: Failed to open a new connection[0m
+[1;31mE (329749) mqtt_client: Error transport connect[0m
+[1;31mE (329759) mqtt_example: MQTT error occurred[0m
+[0;33mW (329759) mqtt_example: MQTT disconnected[0m
+[0;32mI (330549) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =1
+[0;32mI (332959) TIME and MQTT: Disconnected from AP, retrying...[0m
+           �  � ����      I (335379) TIME and MQTT: D ��Y,W2ɽ��AP, retrying...
+   maxIDX =4maxval =2
+[0;32mI (337789) TIME and MQTT: D ���ѕ��from AP, retrying...[0m
+   E (339769) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0
+[1;31mE (339769) esp-tls: Failed to open new connection[0m
+[1;31mE (339769) transport_base: Failed to open a new connection[0m
+[1;31mE (339779) mqtt_client: Error transport connect[0m
+[1;31mE (339779) mqtt_example: MQTT error occurred[0m
+[0;33mW (339779) mqtt_exampl MQTT disconnected[0m
+[0;32mI (340209) TIME and MQTT: Dis ���from AP, retrying...[0m
+   maxIDX =4maxval =2
+[0;32mI (342619) TIME and MQTT: Da   �ѕ��from AP, retrying...[0m
+ I (345039) TIME and MQTT: D�ѕ��from AP, retrying...
+    maxIDX =5maxval =2
+[0;32mI (347449) TIME and MQTT: Disco pd from AP, retrying...[0m
+  �  E (349789) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0
+[1;31mE (349789) esp-tls: Failed to open new connection[0m
+[1;31mE (349789) transport_base: Failed to open a new connection[0m
+[1;31mE (349789) mqtt_client: Error transport connect[0m
+[1;31mE (349799) mqtt_example: MQTT error occurred[0m
+W (3497t_example: MQTT disconnected
+[0;32mI (349869) TIME and MQTT: Disc W2ɽ��AP, retrying...[0m
+  maxIDX =4maxval =1
+[0;32mI (352279) TIME and MQTT: Dis  @,W2ɽ��AP, retrying...[0m
+� I (354699) TIME and MQTT: Disc na ped from AP, retrying...
+  maxIDX =4maxval =2
+[0;32mI (357109) TIME and MQTT: D ��ѕ��from AP, retrying...[0m
+ I (359529) TIME and MQTT: DisЕ��from AP, retrying...
+[1;31mE (359809) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (359809) esp-tls: Failed to open new connection[0m
+[1;31mE (359809) transport_base: Failed to open a new connection[0m
+[1;31mE (359819) mqtt_client: Error transport connec[0m
+[1;31mE (359819) mqtt_example: MQTT error occurred[0m
+[0;33mW (359819) mqtt_example: MQTT disconnected[0m
+maxIDX =4maxval =2
+�I (361939) TIME and MQTT: DiscO  G2ɽ��AP, retrying...
+  I (364359) TIME and MQTT: Disconnected from AP, rY�ॹ��..
+ maxIDX =4maxval =2
+  I (366769) TIME and MQTT: Dis �ted from AP, retrying...
+  I (369189) TIME and MQTT: Dis � W2ɽ��AP, retrying...
+ �maxIDX =5maxval =2
+[1;31mE (369829) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (369829) esp-tls: Failed to en new connection[0m
+[1;31mE (369829) transport_base: Failed to open a new connection[0m
+[1;31mE (369829) mqtt_client: Error transport connect[0m
+[1;31mE (369839) mqtt_example: MQTT error occurred[0m
+[0;33mW (369839) mqtt_example: MQTT disconnected[0m
+ I (371609) TIME and MQTT: Discofn��2ɽ��AP, retrying...
+ I (374019) TIME and MQTT: Di cted from AP, retrying...
+maxIDX =4maxval =1
+  I (376439) TIME and MQTT:  Y,W2ɽ��AP, retrying...
+    I (378849) TIME and MQTT: Dis�W2ɽ��AP, retrying...
+maxIDX =4maxval =2
+   E (379849) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0
+[1;31mE (379849) esp-tls: Failed to open new connection[0m
+[1;31mE (379849) transport_base: Failed to open a new connection[0m
+[1;31mE (379849) mqtt_client: Error transport connect[0m
+[1;31mE (379859) mqtt_example: MQTT error occurred[0m
+[0;33mW (379859) mqtt_example: MQTT disconnected[0m
+[0;32mI (381269) TIME and MQTT: DisAted from AP, retrying...[0m
+   maxIDX =4maxval =1
+[0;32mI (383679) TIME and MQTT: Disconnected from AP, re�ing...[0m
+       I (386099) TIME and MQTT: D�������ѕ��from AP, retrying...
+     maxIDX =4maxval =2
+[0;32mI (388509) TIME and MQTT: D ��ѕ��from AP, retrying...[0m
+     E (389869) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0
+[1;31mE (389869) esp-tls: Failed to open new connection[0m
+[1;31mE (389869) transport_base: Failed to open a new connection[0m
+E (38986 mqtt_client: Error transport connect
+[1;31mE (389879) mqtt_example: MQTT error occurred[0m
+W (389879xample: MQTT disconected
+[0;32mI (390929) TIME and MQTT: D	 �ѕ��from AP, retrying...[0m
+     maxIDX =4maxval =1
+[0;32mI (393339) TIME and MQTT: Dis`��������from AP, retrying...[0m
+   I (395759) TIME and MQTT: Di���ѕ��from AP, retrying...
+�                   �    � ets Jul 29 2019 12:21:46
+
+rst:0x8 (TG1WDT_SYS_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6372
+load:0x40078000,len:15928
+load:0x40080400,len:3880
+entry 0x40080638
+[0;32mI (161) boot: ESP-IDF v6.0-dev-1002-gbfe5caf58f-dirty 2nd stage bootloader[0m
+[0;32mI (161) boot: compile time Aug 19 2025 14:14:05[0m
+[0;32mI (161) boot: Multicore bootloader[0m
+[0;32mI (165) boot: chip revision: v3.1[0m
+[0;32mI (168) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (172) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (176) boot.esp32: SPI Flash Size : 2MB[0m
+[0;33mW (179) boot.esp32: PRO CPU has been reset by WDT[0m
+[0;33mW (184) boot.esp32: WDT rst info: PRO CPU PC=0x400c85b0[0m
+[0;33mW (189) boot.esp32: WDT rst info: APP CPU PC=0x400803c3[0m
+[0;32mI (194) boot: Enabling RNG early entropy source...[0m
+[0;32mI (198) boot: Partition Table:[0m
+[0;32mI (201) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (207) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (214) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (221) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (227) boot: End of partition table[0m
+[0;32mI (231) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=22e58h (142936) map[0m
+[0;32mI (289) esp_image: segment 1: paddr=00032e80 vaddr=3ff80000 size=00024h (    36) load[0m
+[0;32mI (289) esp_image: segment 2: paddr=00032eac vaddr=3ffb0000 size=05284h ( 21124) load[0m
+[0;32mI (301) esp_image: segment 3: paddr=00038138 vaddr=40080000 size=07ee0h ( 32480) load[0m
+[0;32mI (314) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=adb84h (711556) map[0m
+[0;32mI (566) esp_image: segment 5: paddr=000edbac vaddr=40087ee0 size=128cch ( 75980) load[0m
+[0;32mI (610) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (611) boot: Disabling RNG early entropy source...[0m
+[0;32mI (621) cpu_start: Multicore app[0m
+[0;32mI (630) cpu_start: Pro cpu start user code[0m
+[0;32mI (630) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (630) app_init: Application information:[0m
+[0;32mI (630) app_init: Project name:     test[0m
+[0;32mI (633) app_init: App version:      v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (639) app_init: Compile time:     Aug 19 2025 14:14:31[0m
+[0;32mI (644) app_init: ELF file SHA256:  b7702b5cf...[0m
+[0;32mI (649) app_init: ESP-IDF:          v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (655) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (658) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (662) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (667) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (673) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (678) heap_init: At 3FFBC6A8 len 00023958 (142 KiB): DRAM[0m
+[0;32mI (683) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (688) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (694) heap_init: At 4009A7AC len 00005854 (22 KiB): IRAM[0m
+[0;32mI (700) spi_flash: detected chip: generic[0m
+[0;32mI (703) spi_flash: flash io: dio[0m
+[0;33mW (706) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (718) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (729) main_task: Started on CPU0[0m
+[0;32mI (739) main_task: Calling app_main()[0m
+[0;32mI (919) networ_main: Starting...[0m
+[0;32mI (919) ssid_reset:  pin interrupt initialized on GPIO 32 & 0[0m
+[0;32mI (949) TIME and MQTT: Read SSID from NVS: 'mutu_test'[0m
+[0;32mI (949) TIME and MQTT: Read Password from NVS: '12a12@12'[0m
+[0;32mI (949) TIME and MQTT: Read device id from NVS: 'DEV01'[0m
+[0;32mI (949) TIME and MQTT: Read broker address from NVS: 'ws://broker.hivemq.com:8000/mqtt'[0m
+[0;32mI (969) wifi:wifi driver task: 3ffcddb8, prio:23, stack:6656, core=0[0m
+[0;32mI (979) wifi:wifi firmware version: 956d811[0m
+[0;32mI (979) wifi:wifi certification version: v7.0[0m
+[0;32mI (979) wifi:config NVS flash: enabled[0m
+[0;32mI (979) wifi:config nano formatting: disabled[0m
+[0;32mI (979) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (989) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (989) wifi:Init management short buffer num: 32[0m
+[0;32mI (999) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (999) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (1009) wifi:Init static rx buffer num: 10[0m
+[0;32mI (1009) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (1009) wifi_init: rx ba win: 6[0m
+[0;32mI (1019) wifi_init: accept mbox: 6[0m
+[0;32mI (1019) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1019) wifi_init: udp mbox: 6[0m
+[0;32mI (1029) wifi_init: tcp mbox: 6[0m
+[0;32mI (1029) wifi_init: tcp tx win: 5760[0m
+[0;32mI (1029) wifi_init: tcp rx win: 5760[0m
+[0;32mI (1039) wifi_init: tcp mss: 1440[0m
+[0;32mI (1039) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1039) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (1049) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (1059) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1129) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1139) wifi:mode : sta (08:d1:f9:9b:2e:e8)[0m
+[0;32mI (1149) wifi:enable tsf[0m
+[0;32mI (1149) TIME and MQTT: STA connecting to saved SSID: mutu_test[0m
+[0;32mI (1169) TIME and MQTT: STA started, connecting to AP...[0m
+[0;32mI (1169) main_task: Returned from app_main()[0m
+[0;32mI (3579) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =22maxval =1
+[0;32mI (5999) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (8409) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =2
+[0;32mI (10829) TIME and MQTT: Disconnected from AP, retrying...[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6372
+load:0x40078000,len:15928
+load:0x40080400,len:3880
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v6.0-dev-1002-gbfe5caf58f-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 19 2025 14:14:05[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=22e58h (142936) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00032e80 vaddr=3ff80000 size=00024h (    36) load[0m
+[0;32mI (139) esp_image: segment 2: paddr=00032eac vaddr=3ffb0000 size=05284h ( 21124) load[0m
+[0;32mI (151) esp_image: segment 3: paddr=00038138 vaddr=40080000 size=07ee0h ( 32480) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=adb84h (711556) map[0m
+[0;32mI (416) esp_image: segment 5: paddr=000edbac vaddr=40087ee0 size=128cch ( 75980) load[0m
+[0;32mI (461) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (461) boot: Disabling RNG early entropy source...[0m
+[0;32mI (471) cpu_start: Multicore app[0m
+[0;32mI (480) cpu_start: Pro cpu start user code[0m
+[0;32mI (480) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (480) app_init: Application information:[0m
+[0;32mI (480) app_init: Project name:     test[0m
+[0;32mI (483) app_init: App version:      v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (489) app_init: Compile time:     Aug 19 2025 14:14:31[0m
+[0;32mI (494) app_init: ELF file SHA256:  b7702b5cf...[0m
+[0;32mI (499) app_init: ESP-IDF:          v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (505) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (509) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (513) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (517) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (523) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (528) heap_init: At 3FFBC6A8 len 00023958 (142 KiB): DRAM[0m
+[0;32mI (533) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (538) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (544) heap_init: At 4009A7AC len 00005854 (22 KiB): IRAM[0m
+[0;32mI (550) spi_flash: detected chip: generic[0m
+[0;32mI (553) spi_flash: flash io: dio[0m
+[0;33mW (556) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (568) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (579) main_task: Started on CPU0[0m
+[0;32mI (589) main_task: Calling app_main()[0m
+[0;32mI (769) networ_main: Starting...[0m
+[0;32mI (769) ssid_reset:  pin interrupt initialized on GPIO 32 & 0[0m
+[0;32mI (799) TIME and MQTT: Read SSID from NVS: 'mutu_test'[0m
+[0;32mI (799) TIME and MQTT: Read Password from NVS: '12a12@12'[0m
+[0;32mI (799) TIME and MQTT: Read device id from NVS: 'DEV01'[0m
+[0;32mI (799) TIME and MQTT: Read broker address from NVS: 'ws://broker.hivemq.com:8000/mqtt'[0m
+[0;32mI (819) wifi:wifi driver task: 3ffcddb8, prio:23, stack:6656, core=0[0m
+[0;32mI (829) wifi:wifi firmware version: 956d811[0m
+[0;32mI (829) wifi:wifi certification version: v7.0[0m
+[0;32mI (829) wifi:config NVS flash: enabled[0m
+[0;32mI (829) wifi:config nano formatting: disabled[0m
+[0;32mI (829) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (839) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (839) wifi:Init management short buffer num: 32[0m
+[0;32mI (849) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (849) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (859) wifi:Init static rx buffer num: 10[0m
+[0;32mI (859) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (859) wifi_init: rx ba win: 6[0m
+[0;32mI (869) wifi_init: accept mbox: 6[0m
+[0;32mI (869) wifi_init: tcpip mbox: 32[0m
+[0;32mI (869) wifi_init: udp mbox: 6[0m
+[0;32mI (869) wifi_init: tcp mbox: 6[0m
+[0;32mI (879) wifi_init: tcp tx win: 5760[0m
+[0;32mI (879) wifi_init: tcp rx win: 5760[0m
+[0;32mI (879) wifi_init: tcp mss: 1440[0m
+[0;32mI (889) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (889) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (899) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (899) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (979) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (1019) wifi:mode : sta (08:d1:f9:9b:2e:e8)[0m
+[0;32mI (1019) wifi:enable tsf[0m
+[0;32mI (1019) TIME and MQTT: STA connecting to saved SSID: mutu_test[0m
+[0;32mI (1029) TIME and MQTT: STA started, connecting to AP...[0m
+[0;32mI (1039) main_task: Returned from app_main()[0m
+[0;32mI (3449) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =1
+[0;32mI (5869) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (8279) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =7maxval =2
+[0;32mI (10699) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (13109) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =3
+[0;32mI (15529) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (17939) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =3
+[0;32mI (20359) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (22769) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =4
+[0;32mI (25189) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (27599) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =5maxval =3
+[0;32mI (30019) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (32429) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =6maxval =1
+[0;32mI (34849) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (37259) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =22maxval =1
+[0;32mI (39679) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (42089) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (44509) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (46929) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (49339) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (51759) TIME and MQTT: Disconnected from AP, retrying...[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6372
+load:0x40078000,len:15928
+load:0x40080400,len:3880
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v6.0-dev-1002-gbfe5caf58f-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 19 2025 14:14:05[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip ision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=22e58h (142936) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00032e80 vaddr=3ff80000 size=00024h (    36) load[0m
+[0;32mI (139) esp_image: segment 2: paddr=00032eac vaddr=3ffb0000 size=05284h ( 21124) load[0m
+[0;32mI (151) esp_image: segment 3: paddr=00038138 vaddr=40080000 size=07ee0h ( 32480) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=adb84h (711556) map[0m
+[0;32mI (416) esp_image: segment 5: paddr=000edbac vaddr=40087ee0 size=128cch ( 75980) load[0m
+[0;32mI (461) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (461) boot: Disabling RNG early entropy source...[0m
+[0;32mI (471) cpu_start: Multicore app[0m
+[0;32mI (480) cpu_start: Pro cpu start user code[0m
+[0;32mI (480) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (480) app_init: Application information:[0m
+[0;32mI (480) app_init: Project name:     test[0m
+[0;32mI (483) app_init: App version:      v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (489) app_init: Compile time:     Aug 19 2025 14:14:31[0m
+[0;32mI (494) app_init: ELF file SHA256:  b7702b5cf...[0m
+[0;32mI (499) app_init: ESP-IDF:          v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (505) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (509) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (513) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (517) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (523) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (528) heap_init: At 3FFBC6A8 len 00023958 (142 KiB): DRAM[0m
+[0;32mI (533) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (538) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (544) heap_init: At 4009A7AC len 00005854 (22 KiB): IRAM[0m
+[0;32mI (550) spi_flash: detected chip: generic[0m
+[0;32mI (553) spi_flash: flash io: dio[0m
+[0;33mW (556) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (568) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (579) main_task: Started on CPU0[0m
+[0;32mI (589) main_task: Calling app_main()[0m
+[0;32mI (769) networ_main: Starting...[0m
+[0;32mI (769) ssid_reset:  pin interrupt initialized on GPIO 32 & 0[0m
+[0;32mI (799) TIME and MQTT: Read SSID from NVS: 'mutu_test'[0m
+[0;32mI (799) TIME and MQTT: Read Password from NVS: '12a12@12'[0m
+[0;32mI (799) TIME and MQTT: Read device id from NVS: 'DEV01'[0m
+[0;32mI (799) TIME and MQTT: Read broker address from NVS: 'ws://broker.hivemq.com:8000/mqtt'[0m
+[0;32mI (819) wifi:wifi driver task: 3ffcddb8, prio:23, stack:6656, core=0[0m
+[0;32mI (829) wifi:wifi firmware version: 956d811[0m
+[0;32mI (829) wifi:wifi certification version: v7.0[0m
+[0;32mI (829) wifi:config NVS flash: enabled[0m
+[0;32mI (829) wifi:config nano formatting: disabled[0m
+[0;32mI (829) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (839) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (839) wifi:Init management short buffer num: 32[0m
+[0;32mI (849) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (849) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (859) wifi:Init static rx buffer num: 10[0m
+[0;32mI (859) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (869) wifi_init: rx ba win: 6[0m
+[0;32mI (869) wifi_init: accept mbox: 6[0m
+[0;32mI (869) wifi_init: tcpip mbox: 32[0m
+[0;32mI (869) wifi_init: udp mbox: 6[0m
+[0;32mI (879) wifi_init: tcp mbox: 6[0m
+[0;32mI (879) wifi_init: tcp tx win: 5760[0m
+[0;32mI (879) wifi_init: tcp rx win: 5760[0m
+[0;32mI (879) wifi_init: tcp mss: 1440[0m
+[0;32mI (889) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (889) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (899) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (899) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (979) wifi:mode : sta (08:d1:f9:9b:2e:e8)[0m
+[0;32mI (979) wifi:enable tsf[0m
+[0;32mI (979) TIME and MQTT: STA connecting to saved SSID: mutu_test[0m
+[0;32mI (1009) TIME and MQTT: STA started, connecting to AP...[0m
+[0;32mI (1009) main_task: Returned from app_main()[0m
+[0;32mI (3419) TIME and MQTT: Disconnected from AP, retrying...[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6372
+load:0x40078000,len:15928
+load:0x40080400,len:3880
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v6.0-dev-1002-gbfe5caf58f-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 19 2025 14:14:05[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=22e58h (142936) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00032e80 vaddr=3ff80000 size=00024h (    36) load[0m
+[0;32mI (139) esp_image: segment 2: paddr=00032eac vaddr=3ffb0000 size=05284h ( 21124) load[0m
+[0;32mI (151) esp_image: segment 3: paddr=00038138 vaddr=40080000 size=07ee0h ( 32480) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=adb84h (711556) map[0m
+[0;32mI (416) esp_image: segment 5: paddr=000edbac vaddr=40087ee0 size=128cch ( 75980) load[0m
+[0;32mI (461) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (461) boot: Disabling RNG early entropy source...[0m
+[0;32mI (471) cpu_start: Multicore app[0m
+[0;32mI (480) cpu_start: Pro cpu start user code[0m
+[0;32mI (480) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (480) app_init: Application information:[0m
+[0;32mI (480) app_init: Project name:     test[0m
+[0;32mI (483) app_init: App version:      v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (489) app_init: Compile time:     Aug 19 2025 14:14:31[0m
+[0;32mI (494) app_init: ELF file SHA256:  b7702b5cf...[0m
+[0;32mI (499) app_init: ESP-IDF:          v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (505) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (509) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (513) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (517) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (523) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (528) heap_init: At 3FFBC6A8 len 00023958 (142 KiB): DRAM[0m
+[0;32mI (533) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (538) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (544) heap_init: At 4009A7AC len 00005854 (22 KiB): IRAM[0m
+[0;32mI (550) spi_flash: detected chip: generic[0m
+[0;32mI (553) spi_flash: flash io: dio[0m
+[0;33mW (556) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (568) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (579) main_task: Started on CPU0[0m
+[0;32mI (589) main_task: Calling app_main()[0m
+[0;32mI (769) networ_main: Starting...[0m
+[0;32mI (769) ssid_reset:  pin interrupt initialized on GPIO 32 & 0[0m
+[0;32mI (799) TIME and MQTT: Read SSID from NVS: 'mutu_test'[0m
+[0;32mI (799) TIME and MQTT: Read Password from NVS: '12a12@12'[0m
+[0;32mI (799) TIME and MQTT: Read device id from NVS: 'DEV01'[0m
+[0;32mI (799) TIME and MQTT: Read broker address from NVS: 'ws://broker.hivemq.com:8000/mqtt'[0m
+[0;32mI (819) wifi:wifi driver task: 3ffcddb8, prio:23, stack:6656, core=0[0m
+[0;32mI (829) wifi:wifi firsion: 956d811[0m
+[0;32mI (829) wifi:wifi certification version: v7.0[0m
+[0;32mI (829) wifi:config NVS flash: enabled[0m
+[0;32mI (829) wifi:config nano formatting: disabled[0m
+[0;32mI (829) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (839) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (839) wifi:Init management short buffer num: 32[0m
+[0;32mI (849) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (849) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (859) wifi:Init static rx buffer num: 10[0m
+[0;32mI (859) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (859) wifi_init: rx ba win: 6[0m
+[0;32mI (869) wifi_init: accept mbox: 6[0m
+[0;32mI (869) wifi_init: tcpip mbox: 32[0m
+[0;32mI (869) wifi_init: udp mbox: 6[0m
+[0;32mI (879) wifi_init: tcp mbox: 6[0m
+[0;32mI (879) wifi_init: tcp tx win: 5760[0m
+[0;32mI (879) wifi_init: tcp rx win: 5760[0m
+[0;32mI (879) wifi_init: tcp mss: 1440[0m
+[0;32mI (889) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (889) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (899) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (899) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (979) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (989) wifi:mode : sta (08:d1:f9:9b:2e:e8)[0m
+[0;32mI (999) wifi:enable tsf[0m
+[0;32mI (999) TIME and MQTT: STA connecting to saved SSID: mutu_test[0m
+[0;32mI (1019) TIME and MQTT: STA started, connecting to AP...[0m
+[0;32mI (1019) main_task: Returned from app_main()[0m
+[0;32mI (3429) TIME and MQTT: Disconnected from AP, retrying...[0m
+ ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6372
+load:0x40078000,len:15928
+load:0x40080400,len:3880
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v6.0-dev-1002-gbfe5caf58f-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 19 2025 14:14:05[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=22e58h (142936) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00032e80 vaddr=3ff80000 size=00024h (    36) load[0m
+[0;32mI (139) esp_image: segment 2: paddr=00032eac vaddr=3ffb0000 size=05284h ( 21124) load[0m
+[0;32mI (151) esp_image: segment 3: paddr=00038138 vaddr=40080000 size=07ee0h ( 32480) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=adb84h (711556) map[0m
+[0;32mI (416) esp_image: segment 5: paddr=000edbac vaddr=40087ee0 size=128cch ( 75980) load[0m
+[0;32mI (461) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (461) boot: Disabling RNG early entropy source...[0m
+[0;32mI (471) cpu_start: Multicore app[0m
+[0;32mI (480) cpu_start: Pro cpu start user code[0m
+[0;32mI (480) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (480) app_init: Application information:[0m
+[0;32mI (480) app_init: Project name:     test[0m
+[0;32mI (483) app_init: App version:      v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (489) app_init: Compile time:     Aug 19 2025 14:14:31[0m
+[0;32mI (494) app_init: ELF file SHA256:  b7702b5cf...[0m
+[0;32mI (499) app_init: ESP-IDF:          v6.0-dev-1002-gbfe5caf58f-dirt (505) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (509) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (513) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (517) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (523) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (528) heap_init: At 3FFBC6A8 len 00023958 (142 KiB): DRAM[0m
+[0;32mI (533) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (538) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (544) heap_init: At 4009A7AC len 00005854 (22 KiB): IRAM[0m
+[0;32mI (550) spi_flash: detected chip: generic[0m
+[0;32mI (553) spi_flash: flash io: dio[0m
+[0;33mW (556) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (568) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (579) main_task: Started on CPU0[0m
+[0;32mI (589) main_task: Calling app_main()[0m
+[0;32mI (769) networ_main: Starting...[0m
+[0;32mI (769) ssid_reset:  pin interrupt initialized on GPIO 32 & 0[0m
+[0;32mI (799) TIME and MQTT: Read SSID from NVS: 'mutu_test'[0m
+[0;32mI (799) TIME and MQTT: Read Password from NVS: '12a12@12'[0m
+[0;32mI (799) TIME and MQTT: Read device id from NVS: 'DEV01'[0m
+[0;32mI (799) TIME and MQTT: Read broker address from NVS: 'ws://broker.hivemq.com:8000/mqtt'[0m
+[0;32mI (819) wifi:wifi driver task: 3ffcddb8, prio:23, stack:6656, core=0[0m
+[0;32mI (829) wifi:wifi firmware version: 956d811[0m
+[0;32mI (829) wifi:wifi certification version: v7.0[0m
+[0;32mI (829) wifi:config NVS flash: enabled[0m
+[0;32mI (829) wifi:config nano formatting: disabled[0m
+[0;32mI (829) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (839) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (839) wifi:Init management short buffer num: 32[0m
+[0;32mI (849) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (849) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (859) wifi:Init static rx buffer num: 10[0m
+[0;32mI (859) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (859) wifi_init: rx ba win: 6[0m
+[0;32mI (869) wifi_init: accept mbox: 6[0m
+[0;32mI (869) wifi_init: tcpip mbox: 32[0m
+[0;32mI (869) wifi_init: udp mbox: 6[0m
+[0;32mI (879) wifi_init: tcp mbox: 6[0m
+[0;32mI (879) wifi_init: tcp tx win: 5760[0m
+[0;32mI (879) wifi_init: tcp rx win: 5760[0m
+[0;32mI (879) wifi_init: tcp mss: 1440[0m
+[0;32mI (889) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (889) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (899) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (899) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (979) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (999) wifi:mode : sta (08:d1:f9:9b:2e:e8)[0m
+[0;32mI (1009) wifi:enable tsf[0m
+[0;32mI (1009) TIME and MQTT: STA connecting to saved SSID: mutu_test[0m
+[0;32mI (1029) TIME and MQTT: STA started, connecting to AP...[0m
+[0;32mI (1029) main_task: Returned from app_main()[0m
+[0;32mI (3439) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =1
+[0;32mI (5859) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (8269) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =6
+[0;32mI (10689) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (13099) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =1
+[0;32mI (15519) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (17929) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =5maxval =2
+[0;32mI (20349) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (22759) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =6maxval =1
+[0;32mI (25179) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (27599) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =5maxval =2
+[0;32mI (30009) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (32429) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =31maxval =1
+[0;32mI (34839) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (37259) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =2
+[0;32mI (39669) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (42089) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =6maxval =3
+[0;32mI (44499) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =2
+[0;32mI (46919) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (49329) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =2
+[0;32mI (51749) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (54159) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =2
+[0;32mI (56579) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (58989) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =2
+[0;32mI (61409) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (63819) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =2
+[0;32mI (66239) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (68649) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =5maxval =1
+[0;32mI (71069) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (73479) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =5maxval =1
+[0;32mI (75899) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (78309) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =5maxval =1
+[0;32mI (80729) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (83149) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =47maxval =1
+[0;32mI (85559) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (87979) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =11maxval =1
+[0;32mI (90389) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (92809) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =21maxval =1
+[0;32mI (95219) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =2
+[0;32mI (97639) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (100049) TIME and MQTT: Disconnected from AP, retrying...[0m
+              maxIDX =0maxval =0
+[0;32mI (102469) TIME and MQTT: Disconnected from AP, retrying...[0m
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6372
+load:0x40078000,len:15928
+load:0x40080400,len:3880
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v6.0-dev-1002-gbfe5caf58f-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 19 2025 14:14:05[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=22e58h (142936) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00032e80 vaddr=3ff80000 size=00024h (    36) load[0m
+[0;32mI (139) esp_image: segment 2: paddr=00032eac vaddr=3ffb0000 size=05284h ( 21124) load[0m
+[0;32mI (151) esp_image: segment 3: paddr=00038138 vaddr=40080000 size=07ee0h ( 32480) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=adb84h (711556) map[0m
+[0;32mI (416) esp_image: segment 5: paddr=000edbac vaddr=40087ee0 size=128cch ( 75980) load[0m
+[0;32mI (461) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (461) boot: Disabling RNG early entropy source...[0m
+[0;32mI (471) cpu_start: Multicore app[0m
+[0;32mI (480) cpu_start: Pro cpu start user code[0m
+[0;32mI (480) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (480) app_init: Application information:[0m
+[0;32mI (480) app_init: Project name:     test[0m
+[0;32mI (483) app_init: App version:      v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (489) app_init: Compile time:     Aug 19 2025 14:14:31[0m
+[0;32mI (494) app_init: ELF file SHA256:  b7702b5cf...[0m
+[0;32mI (499) app_init: ESP-IDF:          v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (505) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (509) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (513) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (517) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (523) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (528) heap_init: At 3FFBC6A8 len 00023958 (142 KiB): DRAM[0m
+[0;32mI (533) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (538) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (544) heap_init: At 4009A7AC len 00005854 (22 KiB): IRAM[0m
+[0;32mI (550) spi_flash: detected chip: generic[0m
+[0;32mI (553) spi_flash: flash io: dio[0m
+[0;33mW (556) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (568) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (579) main_task: Started on CPU0[0m
+[0;32mI (589) main_task: Calling app_main()[0m
+[0;32mI (769) networ_main: Starting...[0m
+[0;32mI (769) ssid_reset:  pin interrupt initialized on GPIO 32 & 0[0m
+[0;32mI (799) TIME and MQTT: Read SSID from NVS: 'mutu_test'[0m
+[0;32mI (799) TIME and MQTT: Read Password from NVS: '12a12@12'[0m
+[0;32mI (799) TIME and MQTT: Read device id from NVS: 'DEV01'[0m
+[0;32mI (799) TIME and MQTT: Read broker address from NVS: 'ws://broker.hivemq.com:8000/mqtt'[0m
+[0;32mI (819) wifi:wifi driver task: 3ffcddb8, prio:23, stack:6656, core=0[0m
+[0;32mI (829) wifi:wifi firmware version: 956d811[0m
+[0;32mI (829) wifi:wifi certification version: v7.0[0m
+[0;32mI (829) wifi:config NVS flash: enabled[0m
+[0;32mI (829) wifi:config nano formatting: disabled[0m
+[0;32mI (829) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (839) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (839) wifi:Init management short buffer num: 32[0m
+[0;32mI (849) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (849) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (859) wifi:Init static rx buffer num: 10[0m
+[0;32mI (859) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (859) wifi_init: rx ba win: 6[0m
+[0;32mI (869) wifi_init: accept mbox: 6[0m
+[0;32mI (869) wifi_init: tcpip mbox: 32[0m
+[0;32mI (869) wifi_init: udp mbox: 6[0m
+[0;32mI (869) wifi_init: tcp mbox: 6[0m
+[0;32mI (879) wifi_init: tcp tx win: 5760[0m
+[0;32mI (879) wifi_init: tcp rx win: 5760[0m
+[0;32mI (879) wifi_init: tcp mss: 1440[0m
+[0;32mI (889) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (889) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (899) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (899) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (979) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (989) wifi:mode : sta (08:d1:f9:9b:2e:e8)[0m
+[0;32mI (999) wifi:enable tsf[0m
+[0;32mI (999) TIME and MQTT: STA connecting to saved SSID: mutu_test[0m
+[0;32mI (1009) TIME and MQTT: STA started, connecting to AP...[0m
+[0;32mI (1019) main_task: Returned from app_main()[0m
+[0;32mI (3429) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (5849) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (8259) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (10679) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (13089) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (15509) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (17919) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (20339) TIME and MQTT: Disconnected from AP, retrying...[0m
+*r�ƨ����E���8�r�$R	^&屧Fdp�������d�I%n�$�`�f�ȫ��r��	�VF�dN8|�t�X���t�X���'p�,P	��t�X����B�-��n��P��+vjS@��)!�X[!�(X���P����m �ɪ�.��	�alˁ�ɪ.���,��a-��+p(���ˁI (53) boot: ESP-IDF v6.0-dev-1002-gbfe5caf58f-dirty 2nd stage bootloader
+[0;32mI (54) boot: compile time Aug 19 2025 14:14:05[0m
+[0;32mI (54) boot: Multicore bootloader[0m
+[0;32mI (58) boot: chip revision: v3.1[0m
+[0;32mI (61) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (64) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (68) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (71) boot: Enabling RNG early entropy source...[0m
+[0;32mI (76) boot: Partition Table:[0m
+[0;32mI (79) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (85) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (91) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (98) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (104) boot: End of partition table[0m
+[0;32mI (108) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=22e58h (142936) map[0m
+[0;32mI (166) esp_image: segment 1: paddr=00032e80 vaddr=3ff80000 size=00024h (    36) load[0m
+[0;32mI (166) esp_image: segment 2: paddr=00032eac vaddr=3ffb0000 size=05284h ( 21124) load[0m
+[0;32mI (178) esp_image: segment 3: paddr=00038138 vaddr=40080000 size=07ee0h ( 32480) load[0m
+[0;32mI (191) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=adb84h (711556) map[0m
+                                

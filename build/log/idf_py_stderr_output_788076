@@ -1,0 +1,15 @@
+Command: /home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/umesh_adwait/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/test.elf /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/bootloader/bootloader.elf -m '/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python' '/home/umesh_adwait/esp-idf/tools/idf.py'
+[0;33m--- esp-idf-monitor 1.7.0 on /dev/ttyUSB0 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m--- 0x401730fd: [0;33mdsps_fft2r_sc16_ae32_[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp-dsp/modules/fft/fixed/dsps_fft2r_sc16_ae32.S[0m[0m:[1;31m94[0m
+[0m--- 0x4000c46c: [0;33mmemset[0m[0m in [0;32mROM[0m
+[0m--- 0x4000c477: [0;33mmemset[0m[0m in [0;32mROM[0m
+[0m--- 0x401730fa: [0;33mdsps_fft2r_sc16_ae32_[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/esp-dsp/modules/fft/fixed/dsps_fft2r_sc16_ae32.S[0m[0m:[1;31m92[0m
+[0m--- 0x400daa9e: [0;33mdsp_process[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c[0m[0m:[1;31m88[0m
+[0m--- 0x400d95a7: [0;33mprocessing_task[0m[0m at [0;32m/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c[0m[0m:[1;31m158[0m
+[0m--- 0x4008ab89: [0;33mvPortTaskWrapper[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m139[0m
+[0m--- 0x40080400: [0;33m_invalid_pc_placeholder[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/xtensa/xtensa_vectors.S[0m[0m:[1;31m2235[0m
+[0m--- 0x40080638: [0;33mcall_start_cpu0[0m[0m at [0;32m/home/umesh_adwait/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m25[0m
+[0m

@@ -1,0 +1,10 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:548:10: error: conflicting types for 'set_time_from_http'; have 'void(void)'
+  548 |     void set_time_from_http(void) {
+      |          ^~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:19:7: note: previous declaration of 'set_time_from_http' with type 'void(void *)'
+   19 |  void set_time_from_http(void *pV) ;
+      |       ^~~~~~~~~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:141: esp-idf/main/CMakeFiles/__idf_main.dir/network/wifi_config.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6398: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

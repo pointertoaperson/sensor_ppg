@@ -1,0 +1,53 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c: In function 'read_adc':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:24:66: error: passing argument 3 of 'adc_oneshot_read' from incompatible pointer type [-Wincompatible-pointer-types]
+   24 |     esp_err_t ret = adc_oneshot_read(adc1_handle, ADC_CHANNEL_0, &adc_val);
+      |                                                                  ^~~~~~~~
+      |                                                                  |
+      |                                                                  int16_t * {aka short int *}
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.h:5,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:2:
+/home/umesh_adwait/esp-idf/components/esp_adc/include/esp_adc/adc_oneshot.h:89:87: note: expected 'int *' but argument is of type 'int16_t *' {aka 'short int *'}
+   89 | esp_err_t adc_oneshot_read(adc_oneshot_unit_handle_t handle, adc_channel_t chan, int *out_raw);
+      |                                                                                  ~~~~~^~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:167: esp-idf/main/CMakeFiles/__idf_main.dir/dvr/interr_event.c.obj] Error 1
+make[2]: *** Waiting for unfinished jobs....
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:26:
+/home/umesh_adwait/esp-idf/components/spi_flash/include/esp_spi_flash.h:6:2: warning: #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead [-Wcpp]
+    6 | #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead
+      |  ^~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:53:5: error: conflicting types for 'adc_val'; have 'int'
+   53 | int adc_val;
+      |     ^~~~~~~
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:35:
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.h:14:16: note: previous declaration of 'adc_val' with type 'int16_t' {aka 'short int'}
+   14 | extern int16_t adc_val;
+      |                ^~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c: In function 'app_main':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:80:29: error: 'delay_task' undeclared (first use in this function)
+   80 |     xTaskCreatePinnedToCore(delay_task, "delay_task", 2048, NULL, 5, &delay_task_handle, 1);
+      |                             ^~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:80:29: note: each undeclared identifier is reported only once for each function it appears in
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:28:
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/display.h: At top level:
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/display.h:58:18: warning: 'ssd1306_write_cmd' declared 'static' but never defined [-Wunused-function]
+   58 | static esp_err_t ssd1306_write_cmd(uint8_t cmd);
+      |                  ^~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/display.h:59:18: warning: 'ssd1306_write_data' declared 'static' but never defined [-Wunused-function]
+   59 | static esp_err_t ssd1306_write_data(uint8_t* data, size_t len);
+      |                  ^~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.h:15:23: warning: 'read_adc' declared 'static' but never defined [-Wunused-function]
+   15 | static inline int16_t read_adc(void);
+      |                       ^~~~~~~~
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.h:33,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/network.h:25,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:38:
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.h:33:13: warning: 'mqtt_event_handler' declared 'static' but never defined [-Wunused-function]
+   33 | static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data);
+      |             ^~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:51:34: warning: 'adc1_handle' defined but not used [-Wunused-variable]
+   51 | static adc_oneshot_unit_handle_t adc1_handle = NULL;
+      |                                  ^~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:63: esp-idf/main/CMakeFiles/__idf_main.dir/main.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

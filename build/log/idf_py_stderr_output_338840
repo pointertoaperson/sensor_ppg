@@ -1,0 +1,122 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:10:1: error: unknown type name 'float32_t'; did you mean 'float_t'?
+   10 | float32_t buf_f32[FFT_SIZE * 2]; // float32_t FFT buffer
+      | ^~~~~~~~~
+      | float_t
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:11:1: error: unknown type name 'float32_t'; did you mean 'float_t'?
+   11 | float32_t window_f32[FFT_SIZE];  // Hann window
+      | ^~~~~~~~~
+      | float_t
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:12:1: error: unknown type name 'float32_t'; did you mean 'float_t'?
+   12 | float32_t mag_dB[FFT_SIZE / 2];
+      | ^~~~~~~~~
+      | float_t
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c: In function 'dsp_process':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:21:24: error: passing argument 1 of 'dsps_wind_hann_f32' from incompatible pointer type [-Wincompatible-pointer-types]
+   21 |     dsps_wind_hann_f32(window_f32, FFT_SIZE);
+      |                        ^~~~~~~~~~
+      |                        |
+      |                        int *
+In file included from /home/umesh_adwait/esp-idf/components/esp-dsp/modules/windows/include/dsps_wind.h:19,
+                 from /home/umesh_adwait/esp-idf/components/esp-dsp/modules/common/include/esp_dsp.h:34,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.h:13,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:2:
+/home/umesh_adwait/esp-idf/components/esp-dsp/modules/windows/hann/include/dsps_wind_hann.h:33:32: note: expected 'float *' but argument is of type 'int *'
+   33 | void dsps_wind_hann_f32(float *window, int len);
+      |                         ~~~~~~~^~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:28:13: error: unknown type name 'float32_t'; did you mean 'float_t'?
+   28 |             float32_t x = (float32_t)adc_buffer[i * 3] ;
+      |             ^~~~~~~~~
+      |             float_t
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:28:28: error: 'float32_t' undeclared (first use in this function); did you mean 'float_t'?
+   28 |             float32_t x = (float32_t)adc_buffer[i * 3] ;
+      |                            ^~~~~~~~~
+      |                            float_t
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:28:28: note: each undeclared identifier is reported only once for each function it appears in
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:28:38: error: expected ',' or ';' before 'adc_buffer'
+   28 |             float32_t x = (float32_t)adc_buffer[i * 3] ;
+      |                                      ^~~~~~~~~~
+In file included from /home/umesh_adwait/esp-idf/components/esp-dsp/modules/common/include/esp_dsp.h:44:
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:34:25: error: passing argument 1 of 'dsps_fft2r_fc32_ae32_' from incompatible pointer type [-Wincompatible-pointer-types]
+   34 |         dsps_fft2r_fc32(buf_f32, FFT_SIZE);
+      |                         ^~~~~~~
+      |                         |
+      |                         int *
+/home/umesh_adwait/esp-idf/components/esp-dsp/modules/fft/include/dsps_fft2r.h:107:61: note: in definition of macro 'dsps_fft2r_fc32_ae32'
+  107 | #define dsps_fft2r_fc32_ae32(data, N) dsps_fft2r_fc32_ae32_(data, N, dsps_fft_w_table_fc32)
+      |                                                             ^~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:34:9: note: in expansion of macro 'dsps_fft2r_fc32'
+   34 |         dsps_fft2r_fc32(buf_f32, FFT_SIZE);
+      |         ^~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/components/esp-dsp/modules/fft/include/dsps_fft2r.h:95:40: note: expected 'float *' but argument is of type 'int *'
+   95 | esp_err_t dsps_fft2r_fc32_ae32_(float *data, int N, float *w);
+      |                                 ~~~~~~~^~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:35:27: error: passing argument 1 of 'dsps_bit_rev_fc32_ansi' from incompatible pointer type [-Wincompatible-pointer-types]
+   35 |         dsps_bit_rev_fc32(buf_f32, FFT_SIZE);
+      |                           ^~~~~~~
+      |                           |
+      |                           int *
+/home/umesh_adwait/esp-idf/components/esp-dsp/modules/fft/include/dsps_fft2r.h:132:41: note: expected 'float *' but argument is of type 'int *'
+  132 | esp_err_t dsps_bit_rev_fc32_ansi(float *data, int N);
+      |                                  ~~~~~~~^~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:40:22: error: expected ';' before 're'
+   40 |             float32_t re = buf_f32[2 * i];
+      |                      ^~~
+      |                      ;
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:41:22: error: expected ';' before 'im'
+   41 |             float32_t im = buf_f32[2 * i + 1];
+      |                      ^~~
+      |                      ;
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:42:22: error: expected ';' before 'mag'
+   42 |             float32_t mag = sqrtf(re * re + im * im);
+      |                      ^~~~
+      |                      ;
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:43:25: error: 'mag' undeclared (first use in this function)
+   43 |             mag_dB[i] = mag ;//20.0f * log10f(mag + 1e-9f);
+      |                         ^~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:54:18: error: expected ';' before 'maxVal'
+   54 |         float32_t maxVal = mag_dB[bin_min];
+      |                  ^~~~~~~
+      |                  ;
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:57:29: error: 'maxVal' undeclared (first use in this function)
+   57 |             if (mag_dB[i] > maxVal)
+      |                             ^~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:82:16: error: expected ';' before 'delta'
+   82 |       float32_t delta, refined_freq;
+      |                ^~~~~~
+      |                ;
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:83:16: error: expected ';' before 'mag_km1'
+   83 |       float32_t mag_km1 = (mag[maxIndex - 1]);
+      |                ^~~~~~~~
+      |                ;
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:84:7: error: 'mag_km1' undeclared (first use in this function)
+   84 |       mag_km1 = (mag_km1 <= 0) ? 0.001f : mag_km1;
+      |       ^~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:85:16: error: expected ';' before 'mag_k'
+   85 |       float32_t mag_k = (mag[maxIndex]);
+      |                ^~~~~~
+      |                ;
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:86:7: error: 'mag_k' undeclared (first use in this function); did you mean 'mag_dB'?
+   86 |       mag_k = (mag_k <= 0) ? 0.001f : mag_k;
+      |       ^~~~~
+      |       mag_dB
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:87:16: error: expected ';' before 'mag_kp1'
+   87 |       float32_t mag_kp1 = (mag[maxIndex + 1]);
+      |                ^~~~~~~~
+      |                ;
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:88:7: error: 'mag_kp1' undeclared (first use in this function)
+   88 |       mag_kp1 = (mag_kp1 <= 0) ? 0.001f : mag_kp1;
+      |       ^~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:93:7: error: 'delta' undeclared (first use in this function)
+   93 |       delta = 0.5f * (logf(mag_km1) - logf(mag_kp1)) / (logf(mag_km1) - 2 * logf(mag_k) + logf(mag_kp1));
+      |       ^~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:95:16: error: expected ';' before 'refined_freq'
+   95 |       float32_t refined_freq = ((float32_t)maxIndex + delta) * 0.108f;
+      |                ^~~~~~~~~~~~~
+      |                ;
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:96:28: error: 'refined_freq' undeclared (first use in this function)
+   96 |       ppg_val = (60.00f) * refined_freq;
+      |                            ^~~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:180: esp-idf/main/CMakeFiles/__idf_main.dir/process.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

@@ -1,0 +1,4 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/per_intr.c:81:23: warning: 'disp_isr_handler' defined but not used [-Wunused-function]
+   81 | static void IRAM_ATTR disp_isr_handler(void *arg)
+      |                       ^~~~~~~~~~~~~~~~

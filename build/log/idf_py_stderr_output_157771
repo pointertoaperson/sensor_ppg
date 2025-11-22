@@ -1,0 +1,14 @@
+Command: make -j 14 all
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:26:
+/home/umesh_adwait/esp-idf/components/spi_flash/include/esp_spi_flash.h:6:2: warning: #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead [-Wcpp]
+    6 | #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead
+      |  ^~~~~~~
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.h:33,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/network.h:25,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:38:
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.h:33:13: warning: 'mqtt_event_handler' declared 'static' but never defined [-Wunused-function]
+   33 | static void mqtt_event_handler(void *handler_args, esp_event_base_t base, int32_t event_id, void *event_data);
+      |             ^~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:51:34: warning: 'adc1_handle' defined but not used [-Wunused-variable]
+   51 | static adc_oneshot_unit_handle_t adc1_handle = NULL;
+      |                                  ^~~~~~~~~~~

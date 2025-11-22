@@ -1,0 +1,8 @@
+Command: make -j 14 all
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:26:
+/home/umesh_adwait/esp-idf/components/spi_flash/include/esp_spi_flash.h:6:2: warning: #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead [-Wcpp]
+    6 | #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead
+      |  ^~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:44:16: warning: 'array_max_abs_int16' defined but not used [-Wunused-function]
+   44 | static int16_t array_max_abs_int16(const int16_t arr[], int n) {
+      |                ^~~~~~~~~~~~~~~~~~~

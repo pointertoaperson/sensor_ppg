@@ -1,0 +1,71 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c: In function 'adc_timer_callback':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:111:29: error: passing argument 1 of 'adc_continuous_read' from incompatible pointer type [-Wincompatible-pointer-types]
+  111 |     if (adc_continuous_read(adc_handle, (uint8_t*)&raw_val, sizeof(raw_val), &ret_num, 0) == ESP_OK) {
+      |                             ^~~~~~~~~~
+      |                             |
+      |                             adc_oneshot_unit_handle_t {aka struct adc_oneshot_unit_ctx_t *}
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:99:
+/home/umesh_adwait/esp-idf/components/esp_adc/include/esp_adc/adc_continuous.h:176:55: note: expected 'adc_continuous_handle_t' {aka 'struct adc_continuous_ctx_t *'} but argument is of type 'adc_oneshot_unit_handle_t' {aka 'struct adc_oneshot_unit_ctx_t *'}
+  176 | esp_err_t adc_continuous_read(adc_continuous_handle_t handle, uint8_t *buf, uint32_t length_max, uint32_t *out_length, uint32_t timeout_ms);
+      |                               ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/umesh_adwait/esp-idf/components/esp_adc/include/esp_adc/adc_continuous.h:47:38: note: 'adc_continuous_handle_t' declared here
+   47 | typedef struct adc_continuous_ctx_t *adc_continuous_handle_t;
+      |                                      ^~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.h:5,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:2:
+/home/umesh_adwait/esp-idf/components/esp_adc/include/esp_adc/adc_oneshot.h:23:40: note: 'adc_oneshot_unit_handle_t' declared here
+   23 | typedef struct adc_oneshot_unit_ctx_t *adc_oneshot_unit_handle_t;
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/umesh_adwait/esp-idf/components/esp_driver_gpio/include/driver/gpio.h:12,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/ledconf.h:6,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:1:
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c: In function 'adc_dma_init':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:136:60: error: passing argument 2 of 'adc_continuous_new_handle' from incompatible pointer type [-Wincompatible-pointer-types]
+  136 |     ESP_ERROR_CHECK(adc_continuous_new_handle(&handle_cfg, &adc_handle));
+      |                                                            ^~~~~~~~~~~
+      |                                                            |
+      |                                                            struct adc_oneshot_unit_ctx_t **
+/home/umesh_adwait/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/umesh_adwait/esp-idf/components/esp_adc/include/esp_adc/adc_continuous.h:115:109: note: expected 'struct adc_continuous_ctx_t **' but argument is of type 'struct adc_oneshot_unit_ctx_t **'
+  115 | esp_err_t adc_continuous_new_handle(const adc_continuous_handle_cfg_t *hdl_config, adc_continuous_handle_t *ret_handle);
+      |                                                                                    ~~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:157:43: error: passing argument 1 of 'adc_continuous_config' from incompatible pointer type [-Wincompatible-pointer-types]
+  157 |     ESP_ERROR_CHECK(adc_continuous_config(adc_handle, &config));
+      |                                           ^~~~~~~~~~
+      |                                           |
+      |                                           adc_oneshot_unit_handle_t {aka struct adc_oneshot_unit_ctx_t *}
+/home/umesh_adwait/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/umesh_adwait/esp-idf/components/esp_adc/include/esp_adc/adc_continuous.h:128:57: note: expected 'adc_continuous_handle_t' {aka 'struct adc_continuous_ctx_t *'} but argument is of type 'adc_oneshot_unit_handle_t' {aka 'struct adc_oneshot_unit_ctx_t *'}
+  128 | esp_err_t adc_continuous_config(adc_continuous_handle_t handle, const adc_continuous_config_t *config);
+      |                                 ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/umesh_adwait/esp-idf/components/esp_adc/include/esp_adc/adc_continuous.h:47:38: note: 'adc_continuous_handle_t' declared here
+   47 | typedef struct adc_continuous_ctx_t *adc_continuous_handle_t;
+      |                                      ^~~~~~~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/components/esp_adc/include/esp_adc/adc_oneshot.h:23:40: note: 'adc_oneshot_unit_handle_t' declared here
+   23 | typedef struct adc_oneshot_unit_ctx_t *adc_oneshot_unit_handle_t;
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:158:42: error: passing argument 1 of 'adc_continuous_start' from incompatible pointer type [-Wincompatible-pointer-types]
+  158 |     ESP_ERROR_CHECK(adc_continuous_start(adc_handle));
+      |                                          ^~~~~~~~~~
+      |                                          |
+      |                                          adc_oneshot_unit_handle_t {aka struct adc_oneshot_unit_ctx_t *}
+/home/umesh_adwait/esp-idf/components/esp_common/include/esp_err.h:116:30: note: in definition of macro 'ESP_ERROR_CHECK'
+  116 |         esp_err_t err_rc_ = (x);                                        \
+      |                              ^
+/home/umesh_adwait/esp-idf/components/esp_adc/include/esp_adc/adc_continuous.h:159:56: note: expected 'adc_continuous_handle_t' {aka 'struct adc_continuous_ctx_t *'} but argument is of type 'adc_oneshot_unit_handle_t' {aka 'struct adc_oneshot_unit_ctx_t *'}
+  159 | esp_err_t adc_continuous_start(adc_continuous_handle_t handle);
+      |                                ~~~~~~~~~~~~~~~~~~~~~~~~^~~~~~
+/home/umesh_adwait/esp-idf/components/esp_adc/include/esp_adc/adc_continuous.h:47:38: note: 'adc_continuous_handle_t' declared here
+   47 | typedef struct adc_continuous_ctx_t *adc_continuous_handle_t;
+      |                                      ^~~~~~~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/components/esp_adc/include/esp_adc/adc_oneshot.h:23:40: note: 'adc_oneshot_unit_handle_t' declared here
+   23 | typedef struct adc_oneshot_unit_ctx_t *adc_oneshot_unit_handle_t;
+      |                                        ^~~~~~~~~~~~~~~~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:167: esp-idf/main/CMakeFiles/__idf_main.dir/dvr/interr_event.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

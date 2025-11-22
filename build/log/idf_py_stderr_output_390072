@@ -1,0 +1,11 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c: In function 'dsp_process':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:106:1: error: expected expression before '/' token
+  106 | / Print HR -> estimated HR
+      | ^
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:115:4: error: expected expression before '/' token
+  115 |    /
+      |    ^
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:180: esp-idf/main/CMakeFiles/__idf_main.dir/process.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

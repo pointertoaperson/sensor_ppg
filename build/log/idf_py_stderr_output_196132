@@ -1,0 +1,8 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c: In function 'mqtt_event_handler':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:36:25: warning: variable 'task_created' set but not used [-Wunused-but-set-variable]
+   36 |             static bool task_created = false;
+      |                         ^~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:27:29: warning: unused variable 'event' [-Wunused-variable]
+   27 |     esp_mqtt_event_handle_t event = event_data;
+      |                             ^~~~~

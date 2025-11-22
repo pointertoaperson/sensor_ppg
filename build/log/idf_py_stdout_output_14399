@@ -1,0 +1,3140 @@
+Command: /home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/umesh_adwait/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/test.elf /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/bootloader/bootloader.elf -m '/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python' '/home/umesh_adwait/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6372
+load:0x40078000,len:15928
+load:0x40080400,len:3880
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v6.0-dev-1002-gbfe5caf58f-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 19 2025 14:14:05[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=23038h (143416) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00033060 vaddr=3ff80000 size=00024h (    36) load[0m
+[0;32mI (139) esp_image: segment 2: paddr=0003308c vaddr=3ffb0000 size=04a84h ( 19076) load[0m
+[0;32mI (150) esp_image: segment 3: paddr=00037b18 vaddr=40080000 size=08500h ( 34048) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=adf48h (712520) map[0m
+[0;32mI (417) esp_image: segment 5: paddr=000edf70 vaddr=40088500 size=12268h ( 74344) load[0m
+[0;32mI (460) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (460) boot: Disabling RNG early entropy source...[0m
+[0;32mI (471) cpu_start: Multicore app[0m
+[0;32mI (479) cpu_start: Pro cpu start user code[0m
+[0;32mI (479) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (479) app_init: Application information:[0m
+[0;32mI (479) app_init: Project name:     test[0m
+[0;32mI (483) app_init: App version:      v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (489) app_init: Compile time:     Sep 14 2025 09:30:42[0m
+[0;32mI (494) app_init: ELF file SHA256:  ea1fd8466...[0m
+[0;32mI (498) app_init: ESP-IDF:          v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (504) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (508) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (512) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (516) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (523) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (527) heap_init: At 3FFBBEB8 len 00024148 (144 KiB): DRAM[0m
+[0;32mI (533) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (538) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (544) heap_init: At 4009A768 len 00005898 (22 KiB): IRAM[0m
+[0;32mI (550) spi_flash: detected chip: generic[0m
+[0;32mI (553) spi_flash: flash io: dio[0m
+[0;33mW (556) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (568) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (579) main_task: Started on CPU0[0m
+[0;32mI (589) main_task: Calling app_main()[0m
+[0;32mI (759) networ_main: Starting...[0m
+[0;32mI (759) ssid_reset:  pin interrupt initialized on GPIO 32 & 0[0m
+[0;32mI (789) TIME and MQTT: Read SSID from NVS: 'mutu_test'[0m
+[0;32mI (789) TIME and MQTT: Read Password from NVS: '12a12@12'[0m
+[0;32mI (789) TIME and MQTT: Read device id from NVV01'[0m
+[0;32mI (789) TIME and MQTT: Reaer address from NVS: 'ws://broket'[0m
+[0;32mI (799) TIME and MQTT: Read  ID from NVS: 'TEST'[0m
+[0;32mI (819) wiffcc184, prio:23, stack:6656, core=0[0m
+[0;32mI (829) wifi:wifi firmware version: 956d811[0m
+[0;32mI (829) wifi:wifi certification version: v7.0[0m
+[0;32mI (829) wifi:config NVS flash: enabled[0m
+[0;32mI (829) wifi:config nano formatting: disabled[0m
+[0;32mI (839) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (839) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (839) wifi:Init management short buffer num: 32[0m
+[0;32mI (849) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (849) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (859) wifi:Init static rx buffer num: 10[0m
+[0;32mI (859) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (869) wifi_init: rx ba win: 6[0m
+[0;32mI (869) wifi_init: accept mbox: 6[0m
+[0;32mI (869) wifi_init: tcpip mbox: 32[0m
+[0;32mI (869) wifi_init: udp mbox: 6[0m
+[0;32mI (879) wifi_init: tcp mbox: 6[0m
+[0;32mI (879) wifi_init: tcp tx win: 5760[0m
+[0;32mI (879) wifi_init: tcp rx win: 5760[0m
+[0;32mI (889) wifi_init: tcp mss: 1440[0m
+[0;32mI (889) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (889) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (899) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (899) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (979) wifi:mode : sta (08:d1:f9:9b:2e:e8)[0m
+[0;32mI (979) wifi:enable tsf[0m
+[0;32mI (979) TIME and MQTT: STA connecting to saved SSID: mutu_test[0m
+[0;32mI (809) main_task: Returned from app_main()[0m
+[0;32mI (999) TIME and MQTT: STA started, connecting to AP...[0m
+[0;32mI (1009) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1009) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1019) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1039) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1059) wifi:connected with mutu_test, aid = 1, channel 6, BW20, bssid = 7a:85:7d:f5:f9:dd[0m
+[0;32mI (1059) wifi:security: WPA2-PSK, phy: bgn, rssi: -8[0m
+[0;32mI (1069) wifi:pm start, type: 1[0m
+
+[0;32mI (1069) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1079) wifi:<ba-add>idx:0 (ifx:0, 7a:85:7d:f5:f9:dd), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1119) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1119) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (2119) esp_netif_handlers: sta ip: 10.249.45.131, mask: 255.255.255.0, gw: 10.249.45.121[0m
+[0;32mI (2119) TIME and MQTT: Connected, got IP: 10.249.45.131[0m
+[0;32mI (2119) alert: got IP and reached to the time sync[0m
+[0;32mI (2129) alert! :  time sync task entered[0m
+[0;32mI (2129) time: Initializing SNTP[0m
+[0;32mI (2129) time: Waiting for system time to be set... (1/5)[0m
+[0;32mI (4139) time: Waiting for system time to be set... (2/5)[0m
+maxIDX =7maxval =1
+[0;32mI (6139) time: System time is set 125[0m
+[0;32mI (6139) TIME and MQTT: Starting MQTT (time sync done)[0m
+[0;32mI (6139) alert! :  reached mqtt start[0m
+[0;32mI (8709) mqtt_example: MQTT connected[0m
+[0;32mI (8709) mqtt_example: Group: TEST[0m
+[0;32mI (8709) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (8709) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (8709) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (9719) mqtt_example: Group: TEST[0m
+[0;32mI (9719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (9719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (9719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (10719) mqtt_example: Group: TEST[0m
+[0;32mI (10719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (10719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (10719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (11719) mqtt_example: Group: TEST[0m
+[0;32mI (11719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (11719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (11719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (12719) mqtt_example: Group: TEST[0m
+[0;32mI (12719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (12719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (12719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (13719) mqtt_example: Group: TEST[0m
+[0;32mI (13719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (13719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (13719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =2
+[0;32mI (14719) mqtt_example: Group: TEST[0m
+[0;32mI (14719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (14719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (14719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (15719) mqtt_example: Group: TEST[0m
+[0;32mI (15719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (15719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (15719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (16719) mqtt_example: Group: TEST[0m
+[0;32mI (16719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (16719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (16719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (17719) mqtt_example: Group: TEST[0m
+[0;32mI (17719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (17719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (17719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (18719) mqtt_example: Group: TEST[0m
+[0;32mI (18719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (18719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (18719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =4
+[0;32mI (19719) mqtt_example: Group: TEST[0m
+[0;32mI (19719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (19719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (19719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (20719) mqtt_example: Group: TEST[0m
+[0;32mI (20719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (20719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (20719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (21719) mqtt_example: Group: TEST[0m
+[0;32mI (21719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (21719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (21719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (22719) mqtt_example: Group: TEST[0m
+[0;32mI (22719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (22719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (22719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (23719) mqtt_example: Group: TEST[0m
+[0;32mI (23719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (23719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (23719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =3
+[0;32mI (24719) mqtt_example: Group: TEST[0m
+[0;32mI (24719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (24719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (24719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (25719) mqtt_example: Group: TEST[0m
+[0;32mI (25719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (25719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (25719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (26719) mqtt_example: Group: TEST[0m
+[0;32mI (26719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (26719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (26719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (27719) mqtt_example: Group: TEST[0m
+[0;32mI (27719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (27719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (27719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =4
+[0;32mI (28719) mqtt_example: Group: TEST[0m
+[0;32mI (28719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (28719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (28719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (29719) mqtt_example: Group: TEST[0m
+[0;32mI (29719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (29719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (29719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (30719) mqtt_example: Group: TEST[0m
+[0;32mI (30719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (30719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (30719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (31719) mqtt_example: Group: TEST[0m
+[0;32mI (31719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (31719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (31719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (32719) mqtt_example: Group: TEST[0m
+[0;32mI (32719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (32719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (32719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =4maxval =45
+HR float =  28.942186I (33719) mqtt_example: Group: TEST
+[0;32mI (33719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (33719) mqtt_example: payload Heart Rate  : 29[0m
+[0;32mI (33719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (34719) mqtt_example: Group: TEST[0m
+[0;32mI (34719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (34719) mqtt_example: payload Heart Rate  : 29[0m
+[0;32mI (34719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (35719) mqtt_example: Group: TEST[0m
+[0;32mI (35719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (35719) mqtt_example: payload Heart Rate  : 29[0m
+[0;32mI (35719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (36719) mqtt_example: Group: TEST[0m
+[0;32mI (36719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (36719) mqtt_example: payload Heart Rate  : 29[0m
+[0;32mI (36719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =13maxval =45
+HR float =  85.289902I (37719) mqtt_example: Group: TEST
+[0;32mI (37719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (37719) mqtt_example: payload Heart Rate  : 29[0m
+[0;32mI (37719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (38719) mqtt_example: Group: TEST[0m
+[0;32mI (38719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (38719) mqtt_example: payload Heart Rate  : 85[0m
+[0;32mI (38719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (39719) mqtt_example: Group: TEST[0m
+[0;32mI (39719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (39719) mqtt_example: payload Heart Rate  : 85[0m
+[0;32mI (39719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (40719) mqtt_example: Group: TEST[0m
+[0;32mI (40719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (40719) mqtt_example: payload Heart Rate  : 85[0m
+[0;32mI (40719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (41719) mqtt_example: Group: TEST[0m
+[0;32mI (41719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (41719) mqtt_example: payload Heart Rate  : 85[0m
+[0;32mI (41719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =13maxval =46
+HR float =  83.666191I (42719) mqtt_example: Group: TEST
+[0;32mI (42719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (42719) mqtt_example: payload Heart Rate  : 84[0m
+[0;32mI (42719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (43719) mqtt_example: Group: TEST[0m
+[0;32mI (43719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (43719) mqtt_example: payload Heart Rate  : 84[0m
+[0;32mI (43719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (44719) mqtt_example: Group: TEST[0m
+[0;32mI (44719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (44719) mqtt_example: payload Heart Rate  : 84[0m
+[0;32mI (44719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (45719) mqtt_example: Group: TEST[0m
+[0;32mI (45719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (45719) mqtt_example: payload Heart Rate  : 84[0m
+[0;32mI (45719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (46719) mqtt_example: Group: TEST[0m
+[0;32mI (46719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (46719) mqtt_example: payload Heart Rate  : 84[0m
+[0;32mI (46719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =14maxval =65
+HR float =  87.742157I (47719) mqtt_example: Group: TEST
+[0;32mI (47719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (47719) mqtt_example: payload Heart Rate  : 88[0m
+[0;32mI (47719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (48719) mqtt_example: Group: TEST[0m
+[0;32mI (48719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (48719) mqtt_example: payload Heart Rate  : 88[0m
+[0;32mI (48719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (49719) mqtt_example: Group: TEST[0m
+[0;32mI (49719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (49719) mqtt_example: payload Heart Rate  : 88[0m
+[0;32mI (49719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (50719) mqtt_example: Group: TEST[0m
+[0;32mI (50719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (50719) mqtt_example: payload Heart Rate  : 88[0m
+[0;32mI (50719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =13maxval =66
+HR float =  87.480003I (51719) mqtt_example: Group: TEST
+[0;32mI (51719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (51719) mqtt_example: payload Heart Rate  : 87[0m
+[0;32mI (51719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (52719) mqtt_example: Group: TEST[0m
+[0;32mI (52719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (52719) mqtt_example: payload Heart Rate  : 87[0m
+[0;32mI (52719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (53719) mqtt_example: Group: TEST[0m
+[0;32mI (53719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (53719) mqtt_example: payload Heart Rate  : 87[0m
+[0;32mI (53719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (54719) mqtt_example: Group: TEST[0m
+[0;32mI (54719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (54719) mqtt_example: payload Heart Rate  : 87[0m
+[0;32mI (54719) mqtt_example: I (55719) mqtt_example: Group: TEST[0m
+[0;32mI (55719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (55719) mqtt_example: payload Heart Rate  : 87[0m
+[0;32mI (55719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =13maxval =57
+HR float =  81.330360I (56719) mqtt_example: Group: TEST
+[0;32mI (56719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (56719) mqtt_example: payload Heart Rate  : 81[0m
+[0;32mI (56719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (57719) mqtt_example: Group: TEST[0m
+[0;32mI (57719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (57719) mqtt_example: payload Heart Rate  : 81[0m
+[0;32mI (57719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (58719) mqtt_example: Group: TEST[0m
+[0;32mI (58719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (58719) mqtt_example: payload Heart Rate  : 81[0m
+[0;32mI (58719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (59719) mqtt_example: Group: TEST[0m
+[0;32mI (59719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (59719) mqtt_example: payload Heart Rate  : 81[0m
+[0;32mI (59719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (60719) mqtt_example: Group: TEST[0m
+[0;32mI (60719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (60719) mqtt_example: payload Heart Rate  : 81[0m
+[0;32mI (60719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =13maxval =60
+HR float =  82.947090I (61719) mqtt_example: Group: TEST
+[0;32mI (61719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (61719) mqtt_example: payload Heart Rate  : 83[0m
+[0;32mI (61719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (62719) mqtt_example: Group: TEST[0m
+[0;32mI (62719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (62719) mqtt_example: payload Heart Rate  : 83[0m
+[0;32mI (62719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (63719) mqtt_example: Group: TEST[0m
+[0;32mI (63719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (63719) mqtt_example: payload Heart Rate  : 83[0m
+[0;32mI (63719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (64719) mqtt_example: Group: TEST[0m
+[0;32mI (64719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (64719) mqtt_example: payload Heart Rate  : 83[0m
+[0;32mI (64719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =6maxval =35
+HR float =  41.151718I (65719) mqtt_example: Group: TEST
+[0;32mI (65719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (65719) mqtt_example: payload Heart Rate  : 41[0m
+[0;32mI (65719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (66719) mqtt_example: Group: TEST[0m
+[0;32mI (66719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (66719) mqtt_example: payload Heart Rate  : 41[0m
+[0;32mI (66719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (67719) mqtt_example: Group: TEST[0m
+[0;32mI (67719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (67719) mqtt_example: payload Heart Rate  : 41[0m
+[0;32mI (67719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (68719) mqtt_example: Group: TEST[0m
+[0;32mI (68719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (68719) mqtt_example: payload Heart Rate  : 41[0m
+[0;32mI (68719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (69719) mqtt_example: Group: TEST[0m
+[0;32mI (69719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (69719) mqtt_example: payload Heart Rate  : 41[0m
+[0;32mI (69719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =13maxval =44
+HR float =  84.875504I (70719) mqtt_example: Group: TEST
+[0;32mI (70719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (70719) mqtt_example: payload Heart Rate  : 85[0m
+[0;32mI (70719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (71719) mqtt_example: Group: TEST[0m
+[0;32mI (71719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (71719) mqtt_example: payload Heart Rate  : 85[0m
+[0;32mI (71719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (72719) mqtt_example: Group: TEST[0m
+[0;32mI (72719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (72719) mqtt_example: payload Heart Rate  : 85[0m
+[0;32mI (72719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (73719) mqtt_example: Group: TEST[0m
+[0;32mI (73719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (73719) mqtt_example: payload Heart Rate  : 85[0m
+[0;32mI (73719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =13maxval =35
+HR float =  85.816734I (74719) mqtt_example: Group: TEST
+[0;32mI (74719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (74719) mqtt_example: payload Heart Rate  : 86[0m
+[0;32mI (74719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (75719) mqtt_example: Group: TEST[0m
+[0;32mI (75719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (75719) mqtt_example: payload Heart Rate  : 86[0m
+[0;32mI (75719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (76719) mqtt_example: Group: TEST[0m
+[0;32mI (76719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (76719) mqtt_example: payload Heart Rate  : 86[0m
+[0;32mI (76719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (77719) mqtt_example: Group: TEST[0m
+[0;32mI (77719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (77719) mqtt_example: payload Heart Rate  : 86[0m
+[0;32mI (77719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (78719) mqtt_example: Group: TEST[0m
+[0;32mI (78719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (78719) mqtt_example: payload Heart Rate  : 86[0m
+[0;32mI (78719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =14maxval =38
+HR float =  87.905472I (79719) mqtt_example: Group: TEST
+[0;32mI (79719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (79719) mqtt_example: payload Heart Rate  : 88[0m
+[0;32mI (79719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (80719) mqtt_example: Group: TEST[0m
+[0;32mI (80719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (80719) mqtt_example: payload Heart Rate  : 88[0m
+[0;32mI (80719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (81719) mqtt_example: Group: TEST[0m
+[0;32mI (81719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (81719) mqtt_example: payload Heart Rate  : 88[0m
+[0;32mI (81719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (82719) mqtt_example: Group: TEST[0m
+[0;32mI (82719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (82719) mqtt_example: payload Heart Rate  : 88[0m
+[0;32mI (82719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (83719) mqtt_example: Group: TEST[0m
+[0;32mI (83719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (83719) mqtt_example: payload Heart Rate  : 88[0m
+[0;32mI (83719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =14maxval =37
+HR float =  91.740631I (84719) mqtt_example: Group: TEST
+[0;32mI (84719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (84719) mqtt_example: payload Heart Rate  : 92[0m
+[0;32mI (84719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (85719) mqtt_example: Group: TEST[0m
+[0;32mI (85719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (85719) mqtt_example: payload Heart Rate  : 92[0m
+[0;32mI (85719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (86719) mqtt_example: Group: TEST[0m
+[0;32mI (86719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (86719) mqtt_example: payload Heart Rate  : 92[0m
+[0;32mI (86719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (87719) mqtt_example: Group: TEST[0m
+[0;32mI (87719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (87719) mqtt_example: payload Heart Rate  : 92[0m
+[0;32mI (87719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =13maxval =44
+HR float =  84.062698I (88719) mqtt_example: Group: TEST
+[0;32mI (88719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (88719) mqtt_example: payload Heart Rate  : 84[0m
+[0;32mI (88719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (89719) mqtt_example: Group: TEST[0m
+[0;32mI (89719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (89719) mqtt_example: payload Heart Rate  : 84[0m
+[0;32mI (89719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (90719) mqtt_example: Group: TEST[0m
+[0;32mI (90719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (90719) mqtt_example: payload Heart Rate  : 84[0m
+[0;32mI (90719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (91719) mqtt_example: Group: TEST[0m
+[0;32mI (91719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (91719) mqtt_example: payload Heart Rate  : 84[0m
+[0;32mI (91719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (92719) mqtt_example: Group: TEST[0m
+[0;32mI (92719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (92719) mqtt_example: payload Heart Rate  : 84[0m
+[0;32mI (92719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =0maxval =0
+[0;32mI (93719) mqtt_example: Group: TEST[0m
+[0;32mI (93719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (93719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (93719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (94719) mqtt_example: Group: TEST[0m
+[0;32mI (94719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (94719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (94719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (95719) mqtt_example: Group: TEST[0m
+[0;32mI (95719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (95719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (95719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (96719) mqtt_example: Group: TEST[0m
+[0;32mI (96719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (96719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (96719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =0maxval =0
+[0;32mI (97719) mqtt_example: Group: TEST[0m
+[0;32mI (97719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (97719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (97719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (98719) mqtt_example: Group: TEST[0m
+[0;32mI (98719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (98719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (98719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (99719) mqtt_example: Group: TEST[0m
+[0;32mI (99719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (99719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (99719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (100719) mqtt_example: Group: TEST[0m
+[0;32mI (100719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (100719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (100719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (101719) mqtt_example: Group: TEST[0m
+[0;32mI (101719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (101719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (101719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =12maxval =3
+[0;32mI (102719) mqtt_example: Group: TEST[0m
+[0;32mI (102719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (102719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (102719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (103719) mqtt_example: Group: TEST[0m
+[0;32mI (103719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (103719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (103719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (104719) mqtt_example: Group: TEST[0m
+[0;32mI (104719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (104719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (104719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (105719) mqtt_example: Group: TEST[0m
+[0;32mI (105719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (105719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (105719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (106719) mqtt_example: Group: TEST[0m
+[0;32mI (106719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (106719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (106719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =15maxval =2
+[0;32mI (107719) mqtt_example: Group: TEST[0m
+[0;32mI (107719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (107719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (107719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (108719) mqtt_example: Group: TEST[0m
+[0;32mI (108719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (108719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (108719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (109719) mqtt_example: Group: TEST[0m
+[0;32mI (109719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (109719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (109719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (110719) mqtt_example: Group: TEST[0m
+[0;32mI (110719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (110719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (110719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =13maxval =2
+[0;32mI (111719) mqtt_example: Group: TEST[0m
+[0;32mI (111719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (111719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (111719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (112719) mqtt_example: Group: TEST[0m
+[0;32mI (112719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (112719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (112719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (113719) mqtt_example: Group: TEST[0m
+[0;32mI (113719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (113719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (113719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (114719) mqtt_example: Group: TEST[0m
+[0;32mI (114719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (114719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (114719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (115719) mqtt_example: Group: TEST[0m
+[0;32mI (115719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (115719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (115719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (116719) mqtt_example: Group: TEST[0m
+[0;32mI (116719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (116719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (116719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (117719) mqtt_example: Group: TEST[0m
+[0;32mI (117719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (117719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (117719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (118719) mqtt_example: Group: TEST[0m
+[0;32mI (118719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (118719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (118719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (119719) mqtt_example: Group: TEST[0m
+[0;32mI (119719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (119719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (119719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (120719) mqtt_example: Group: TEST[0m
+[0;32mI (120719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (120719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (120719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (121719) mqtt_example: Group: TEST[0m
+[0;32mI (121719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (121719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (121719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (122719) mqtt_example: Group: TEST[0m
+[0;32mI (122719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (122719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (122719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (123719) mqtt_example: Group: TEST[0m
+[0;32mI (123719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (123719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (123719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (124719) mqtt_example: Group: TEST[0m
+[0;32mI (124719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (124719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (124719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (125719) mqtt_example: Group: TEST[0m
+[0;32mI (125719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (125719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (125719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (126719) mqtt_example: Group: TEST[0m
+[0;32mI (126719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (126719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (126719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (127719) mqtt_example: Group: TEST[0m
+[0;32mI (127719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (127719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (127719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (128719) mqtt_example: Group: TEST[0m
+[0;32mI (128719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (128719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (128719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (129719) mqtt_example: Group: TEST[0m
+[0;32mI (129719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (129719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (129719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (130719) mqtt_example: Group: TEST[0m
+[0;32mI (130719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (130719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (130719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (131719) mqtt_example: Group: TEST[0m
+[0;32mI (131719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (131719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (131719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (132719) mqtt_example: Group: TEST[0m
+[0;32mI (132719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (132719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (132719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (133719) mqtt_example: Group: TEST[0m
+[0;32mI (133719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (133719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (133719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (134719) mqtt_example: Group: TEST[0m
+[0;32mI (134719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (134719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (134719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (135719) mqtt_example: Group: TEST[0m
+[0;32mI (135719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (135719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (135719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (136719) mqtt_example: Group: TEST[0m
+[0;32mI (136719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (136719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (136719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (137719) mqtt_example: Group: TEST[0m
+[0;32mI (137719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (137719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (137719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (138719) mqtt_example: Group: TEST[0m
+[0;32mI (138719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (138719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (138719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (139719) mqtt_example: Group: TEST[0m
+[0;32mI (139719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (139719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (139719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (140719) mqtt_example: Group: TEST[0m
+[0;32mI (140719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (140719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (140719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (141719) mqtt_example: Group: TEST[0m
+[0;32mI (141719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (141719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (141719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (142719) mqtt_example: Group: TEST[0m
+[0;32mI (142719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (142719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (142719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (143719) mqtt_example: Group: TEST[0m
+[0;32mI (143719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (143719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (143719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (144719) mqtt_example: Group: TEST[0m
+[0;32mI (144719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (144719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (144719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (145719) mqtt_example: Group: TEST[0m
+[0;32mI (145719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (145719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (145719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (146719) mqtt_example: Group: TEST[0m
+[0;32mI (146719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (146719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (146719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (147719) mqtt_example: Group: TEST[0m
+[0;32mI (147719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (147719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (147719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =2
+[0;32mI (148719) mqtt_example: Group: TEST[0m
+[0;32mI (148719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (148719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (148719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (149719) mqtt_example: Group: TEST[0m
+[0;32mI (149719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (149719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (149719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (150719) mqtt_example: Group: TEST[0m
+[0;32mI (150719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (150719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (150719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (151719) mqtt_example: Group: TEST[0m
+[0;32mI (151719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (151719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (151719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (152719) mqtt_example: Group: TEST[0m
+[0;32mI (152719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (152719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (152719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (153719) mqtt_example: Group: TEST[0m
+[0;32mI (153719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (153719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (153719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (154719) mqtt_example: Group: TEST[0m
+[0;32mI (154719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (154719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (154719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (155719) mqtt_example: Group: TEST[0m
+[0;32mI (155719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (155719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (155719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (156719) mqtt_example: Group: TEST[0m
+[0;32mI (156719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (156719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (156719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (157719) mqtt_example: Group: TEST[0m
+[0;32mI (157719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (157719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (157719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (158719) mqtt_example: Group: TEST[0m
+[0;32mI (158719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (158719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (158719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (159719) mqtt_example: Group: TEST[0m
+[0;32mI (159719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (159719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (159719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (160719) mqtt_example: Group: TEST[0m
+[0;32mI (160719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (160719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (160719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (161719) mqtt_example: Group: TEST[0m
+[0;32mI (161719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (161719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (161719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (162719) mqtt_example: Group: TEST[0m
+[0;32mI (162719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (162719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (162719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (163719) mqtt_example: Group: TEST[0m
+[0;32mI (163719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (163719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (163719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (164719) mqtt_example: Group: TEST[0m
+[0;32mI (164719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (164719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (164719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (165719) mqtt_example: Group: TEST[0m
+[0;32mI (165719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (165719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (165719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (166719) mqtt_example: Group: TEST[0m
+[0;32mI (166719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (166719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (166719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (167719) mqtt_example: Group: TEST[0m
+[0;32mI (167719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (167719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (167719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (168719) mqtt_example: Group: TEST[0m
+[0;32mI (168719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (168719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (168719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (169719) mqtt_example: Group: TEST[0m
+[0;32mI (169719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (169719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (169719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (170719) mqtt_example: Group: TEST[0m
+[0;32mI (170719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (170719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (170719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (171719) mqtt_example: Group: TEST[0m
+[0;32mI (171719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (171719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (171719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (172719) mqtt_example: Group: TEST[0m
+[0;32mI (172719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (172719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (172719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (173719) mqtt_example: Group: TEST[0m
+[0;32mI (173719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (173719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (173719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (174719) mqtt_example: Group: TEST[0m
+[0;32mI (174719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (174719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (174719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (175719) mqtt_example: Group: TEST[0m
+[0;32mI (175719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (175719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (175719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (176719) mqtt_example: Group: TEST[0m
+[0;32mI (176719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (176719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (176719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (177719) mqtt_example: Group: TEST[0m
+[0;32mI (177719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (177719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (177719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (178719) mqtt_example: Group: TEST[0m
+[0;32mI (178719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (178719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (178719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (179719) mqtt_example: Group: TEST[0m
+[0;32mI (179719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (179719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (179719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =2
+[0;32mI (180719) mqtt_example: Group: TEST[0m
+[0;32mI (180719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (180719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (180719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (181719) mqtt_example: Group: TEST[0m
+[0;32mI (181719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (181719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (181719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (182719) mqtt_example: Group: TEST[0m
+[0;32mI (182719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (182719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (182719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (183719) mqtt_example: Group: TEST[0m
+[0;32mI (183719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (183719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (183719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (184719) mqtt_example: Group: TEST[0m
+[0;32mI (184719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (184719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (184719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (185719) mqtt_example: Group: TEST[0m
+[0;32mI (185719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (185719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (185719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (186719) mqtt_example: Group: TEST[0m
+[0;32mI (186719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (186719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (186719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (187719) mqtt_example: Group: TEST[0m
+[0;32mI (187719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (187719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (187719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (188719) mqtt_example: Group: TEST[0m
+[0;32mI (188719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (188719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (188719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (189719) mqtt_example: Group: TEST[0m
+[0;32mI (189719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (189719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (189719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (190719) mqtt_example: Group: TEST[0m
+[0;32mI (190719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (190719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (190719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (191719) mqtt_example: Group: TEST[0m
+[0;32mI (191719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (191719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (191719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (192719) mqtt_example: Group: TEST[0m
+[0;32mI (192719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (192719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (192719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (193719) mqtt_example: Group: TEST[0m
+[0;32mI (193719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (193719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (193719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (194719) mqtt_example: Group: TEST[0m
+[0;32mI (194719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (194719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (194719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (195719) mqtt_example: Group: TEST[0m
+[0;32mI (195719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (195719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (195719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (196719) mqtt_example: Group: TEST[0m
+[0;32mI (196719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (196719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (196719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (197719) mqtt_example: Group: TEST[0m
+[0;32mI (197719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (197719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (197719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (198719) mqtt_example: Group: TEST[0m
+[0;32mI (198719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (198719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (198719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (199719) mqtt_example: Group: TEST[0m
+[0;32mI (199719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (199719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (199719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (200719) mqtt_example: Group: TEST[0m
+[0;32mI (200719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (200719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (200719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (201719) mqtt_example: Group: TEST[0m
+[0;32mI (201719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (201719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (201719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (202719) mqtt_example: Group: TEST[0m
+[0;32mI (202719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (202719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (202719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (203719) mqtt_example: Group: TEST[0m
+[0;32mI (203719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (203719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (203719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =13maxval =2
+[0;32mI (204719) mqtt_example: Group: TEST[0m
+[0;32mI (204719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (204719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (204719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (205719) mqtt_example: Group: TEST[0m
+[0;32mI (205719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (205719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (205719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (206719) mqtt_example: Group: TEST[0m
+[0;32mI (206719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (206719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (206719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (207719) mqtt_example: Group: TEST[0m
+[0;32mI (207719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (207719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (207719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (208719) mqtt_example: Group: TEST[0m
+[0;32mI (208719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (208719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (208719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (209719) mqtt_example: Group: TEST[0m
+[0;32mI (209719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (209719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (209719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (210719) mqtt_example: Group: TEST[0m
+[0;32mI (210719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (210719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (210719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (211719) mqtt_example: Group: TEST[0m
+[0;32mI (211719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (211719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (211719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (212719) mqtt_example: Group: TEST[0m
+[0;32mI (212719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (212719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (212719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (213719) mqtt_example: Group: TEST[0m
+[0;32mI (213719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (213719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (213719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (214719) mqtt_example: Group: TEST[0m
+[0;32mI (214719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (214719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (214719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (215719) mqtt_example: Group: TEST[0m
+[0;32mI (215719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (215719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (215719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (216719) mqtt_example: Group: TEST[0m
+[0;32mI (216719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (216719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (216719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (217719) mqtt_example: Group: TEST[0m
+[0;32mI (217719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (217719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (217719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (218719) mqtt_example: Group: TEST[0m
+[0;32mI (218719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (218719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (218719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (219719) mqtt_example: Group: TEST[0m
+[0;32mI (219719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (219719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (219719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (220719) mqtt_example: Group: TEST[0m
+[0;32mI (220719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (220719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (220719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (221719) mqtt_example: Group: TEST[0m
+[0;32mI (221719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (221719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (221719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (222719) mqtt_example: Group: TEST[0m
+[0;32mI (222719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (222719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (222719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (223719) mqtt_example: Group: TEST[0m
+[0;32mI (223719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (223719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (223719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (224719) mqtt_example: Group: TEST[0m
+[0;32mI (224719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (224719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (224719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (225719) mqtt_example: Group: TEST[0m
+[0;32mI (225719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (225719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (225719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (226719) mqtt_example: Group: TEST[0m
+[0;32mI (226719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (226719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (226719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (227719) mqtt_example: Group: TEST[0m
+[0;32mI (227719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (227719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (227719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (228719) mqtt_example: Group: TEST[0m
+[0;32mI (228719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (228719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (228719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (229719) mqtt_example: Group: TEST[0m
+[0;32mI (229719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (229719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (229719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (230719) mqtt_example: Group: TEST[0m
+[0;32mI (230719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (230719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (230719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (231719) mqtt_example: Group: TEST[0m
+[0;32mI (231719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (231719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (231719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (232719) mqtt_example: Group: TEST[0m
+[0;32mI (232719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (232719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (232719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (233719) mqtt_example: Group: TEST[0m
+[0;32mI (233719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (233719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (233719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (234719) mqtt_example: Group: TEST[0m
+[0;32mI (234719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (234719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (234719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (235719) mqtt_example: Group: TEST[0m
+[0;32mI (235719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (235719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (235719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (236719) mqtt_example: Group: TEST[0m
+[0;32mI (236719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (236719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (236719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (237719) mqtt_example: Group: TEST[0m
+[0;32mI (237719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (237719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (237719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (238719) mqtt_example: Group: TEST[0m
+[0;32mI (238719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (238719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (238719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (239719) mqtt_example: Group: TEST[0m
+[0;32mI (239719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (239719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (239719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (240719) mqtt_example: Group: TEST[0m
+[0;32mI (240719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (240719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (240719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (241719) mqtt_example: Group: TEST[0m
+[0;32mI (241719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (241719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (241719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (242719) mqtt_example: Group: TEST[0m
+[0;32mI (242719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (242719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (242719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (243719) mqtt_example: Group: TEST[0m
+[0;32mI (243719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (243719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (243719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (244719) mqtt_example: Group: TEST[0m
+[0;32mI (244719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (244719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (244719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (245719) mqtt_example: Group: TEST[0m
+[0;32mI (245719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (245719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (245719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (246719) mqtt_example: Group: TEST[0m
+[0;32mI (246719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (246719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (246719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (247719) mqtt_example: Group: TEST[0m
+[0;32mI (247719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (247719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (247719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (248719) mqtt_example: Group: TEST[0m
+[0;32mI (248719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (248719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (248719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (249719) mqtt_example: Group: TEST[0m
+[0;32mI (249719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (249719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (249719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (250719) mqtt_example: Group: TEST[0m
+[0;32mI (250719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (250719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (250719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (251719) mqtt_example: Group: TEST[0m
+[0;32mI (251719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (251719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (251719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (252719) mqtt_example: Group: TEST[0m
+[0;32mI (252719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (252719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (252719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (253719) mqtt_example: Group: TEST[0m
+[0;32mI (253719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (253719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (253719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (254719) mqtt_example: Group: TEST[0m
+[0;32mI (254719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (254719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (254719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (255719) mqtt_example: Group: TEST[0m
+[0;32mI (255719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (255719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (255719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (256719) mqtt_example: Group: TEST[0m
+[0;32mI (256719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (256719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (256719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (257719) mqtt_example: Group: TEST[0m
+[0;32mI (257719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (257719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (257719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (258719) mqtt_example: Group: TEST[0m
+[0;32mI (258719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (258719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (258719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (259719) mqtt_example: Group: TEST[0m
+[0;32mI (259719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (259719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (259719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (260719) mqtt_example: Group: TEST[0m
+[0;32mI (260719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (260719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (260719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (261719) mqtt_example: Group: TEST[0m
+[0;32mI (261719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (261719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (261719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (262719) mqtt_example: Group: TEST[0m
+[0;32mI (262719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (262719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (262719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (263719) mqtt_example: Group: TEST[0m
+[0;32mI (263719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (263719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (263719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (264719) mqtt_example: Group: TEST[0m
+[0;32mI (264719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (264719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (264719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (265719) mqtt_example: Group: TEST[0m
+[0;32mI (265719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (265719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (265719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (266719) mqtt_example: Group: TEST[0m
+[0;32mI (266719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (266719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (266719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (267719) mqtt_example: Group: TEST[0m
+[0;32mI (267719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (267719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (267719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =2
+[0;32mI (268719) mqtt_example: Group: TEST[0m
+[0;32mI (268719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (268719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (268719) mqtt_examplnt pointer 0x3ffbd7fc[0m
+[0;32mI (269719) mqtt_example: Group: TEST[0m
+[0;32mI (269719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (269719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (269719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (270719) mqtt_example: Group: TEST[0m
+[0;32mI (270719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (270719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (270719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (271719) mqtt_example: Group: TEST[0m
+[0;32mI (271719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (271719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (271719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (272719) mqtt_example: Group: TEST[0m
+[0;32mI (272719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (272719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (272719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (273719) mqtt_example: Group: TEST[0m
+[0;32mI (273719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (273719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (273719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (274719) mqtt_example: Group: TEST[0m
+[0;32mI (274719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (274719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (274719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (275719) mqtt_example: Group: TEST[0m
+[0;32mI (275719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (275719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (275719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (276719) mqtt_example: Group: TEST[0m
+[0;32mI (276719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (276719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (276719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (277719) mqtt_example: Group: TEST[0m
+[0;32mI (277719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (277719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (277719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (278719) mqtt_example: Group: TEST[0m
+[0;32mI (278719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (278719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (278719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (279719) mqtt_example: Group: TEST[0m
+[0;32mI (279719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (279719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (279719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (280719) mqtt_example: Group: TEST[0m
+[0;32mI (280719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (280719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (280719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (281719) mqtt_example: Group: TEST[0m
+[0;32mI (281719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (281719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (281719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (282719) mqtt_example: Group: TEST[0m
+[0;32mI (282719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (282719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (282719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (283719) mqtt_example: Group: TEST[0m
+[0;32mI (283719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (283719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (283719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (284719) mqtt_example: Group: TEST[0m
+[0;32mI (284719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (284719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (284719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (285719) mqtt_example: Group: TEST[0m
+[0;32mI (285719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (285719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (285719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (286719) mqtt_example: Group: TEST[0m
+[0;32mI (286719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (286719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (286719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (287719) mqtt_example: Group: TEST[0m
+[0;32mI (287719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (287719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (287719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (288719) mqtt_example: Group: TEST[0m
+[0;32mI (288719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (288719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (288719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (289719) mqtt_example: Group: TEST[0m
+[0;32mI (289719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (289719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (289719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (290719) mqtt_example: Group: TEST[0m
+[0;32mI (290719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (290719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (290719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (291719) mqtt_example: Group: TEST[0m
+[0;32mI (291719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (291719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (291719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (292719) mqtt_example: Group: TEST[0m
+[0;32mI (292719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (292719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (292719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (293719) mqtt_example: Group: TEST[0m
+[0;32mI (293719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (293719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (293719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (294719) mqtt_example: Group: TEST[0m
+[0;32mI (294719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (294719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (294719) mqtt_examplI (295719) mqtt_example: Group: TEST[0m
+[0;32mI (295719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (295719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (295719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (296719) mqtt_example: Group: TEST[0m
+[0;32mI (296719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (296719) mqtt_example: payload Heart RI (297719) mqtt_example: Group: TEST[0m
+[0;32mI (297719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (297719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (297719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (298719) mqtt_example: Group: TEST[0m
+[0;32mI (298719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (298719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (298719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (299719) mqtt_example: Group: TEST[0m
+[0;32mI (299719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (299719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (299719) mqtt_examplmaxIDX =7maxval =1[0m
+[0;32mI (300719) mqtt_example: Group: TEST[0m
+[0;32mI (300719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (300719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (300719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (301719) mqtt_example: Group: TEST[0m
+[0;32mI (301719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (301719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (301719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (302719) mqtt_example: Group: TEST[0m
+[0;32mI (302719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (302719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (302719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (303719) mqtt_example: Group: TEST[0m
+[0;32mI (303719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (303719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (303719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (304719) mqtt_example: Group: TEST[0m
+[0;32mI (304719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (304719) mqtt_example: payload Heart RmaxIDX =7maxval =1[0m
+[0;32mI (305719) mqtt_example: Group: TEST[0m
+[0;32mI (305719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (305719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (305719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (306719) mqtt_example: Group: TEST[0m
+[0;32mI (306719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (306719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (306719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (307719) mqtt_example: Group: TEST[0m
+[0;32mI (307719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (307719) mqtt_example: payload Heart R[0m
+[0;32mI (307719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (308719) mqtt_example: Group: TEST[0m
+[0;32mI (308719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (308719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (308719) mqtt_examplI (309719) mqtt_example: Group: TEST[0m
+[0;32mI (309719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (309719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (309719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (310719) mqtt_example: Group: TEST[0m
+[0;32mI (310719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (310719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (310719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (311719) mqtt_example: Group: TEST[0m
+[0;32mI (311719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (311719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (311719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (312719) mqtt_example: Group: TEST[0m
+[0;32mI (312719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (312719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (312719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (313719) mqtt_example: Group: TEST[0m
+[0;32mI (313719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (313719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (313719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (314719) mqtt_example: Group: TEST[0m
+[0;32mI (314719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (314719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (314719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (315719) mqtt_example: Group: TEST[0m
+[0;32mI (315719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (315719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (315719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (316719) mqtt_example: Group: TEST[0m
+[0;32mI (316719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (316719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (316719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (317719) mqtt_example: Group: TEST[0m
+[0;32mI (317719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (317719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (317719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (318719) mqtt_example: Group: TEST[0m
+[0;32mI (318719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (318719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (318719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =11maxval =2
+[0;32mI (319719) mqtt_example: Group: TEST[0m
+[0;32mI (319719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (319719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (319719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (320719) mqtt_example: Group: TEST[0m
+[0;32mI (320719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (320719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (320719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (321719) mqtt_example: Group: TEST[0m
+[0;32mI (321719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (321719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (321719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (322719) mqtt_example: Group: TEST[0m
+[0;32mI (322719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (322719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (322719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (323719) mqtt_example: Group: TEST[0m
+[0;32mI (323719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (323719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (323719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (324719) mqtt_example: Group: TEST[0m
+[0;32mI (324719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (324719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (324719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (325719) mqtt_example: Group: TEST[0m
+[0;32mI (325719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (325719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (325719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (326719) mqtt_example: Group: TEST[0m
+[0;32mI (326719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (326719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (326719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (327719) mqtt_example: Group: TEST[0m
+[0;32mI (327719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (327719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (327719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (328719) mqtt_example: Group: TEST[0m
+[0;32mI (328719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (328719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (328719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (329719) mqtt_example: Group: TEST[0m
+[0;32mI (329719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (329719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (329719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (330719) mqtt_example: Group: TEST[0m
+[0;32mI (330719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (330719) mqtt_example: payload Heart RI (331719) mqtt_example: Group: TEST[0m
+[0;32mI (331719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (331719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (331719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (332719) mqtt_example: Group: TEST[0m
+[0;32mI (332719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (332719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (332719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (333719) mqtt_example: Group: TEST[0m
+[0;32mI (333719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (333719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (333719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (334719) mqtt_example: Group: TEST[0m
+[0;32mI (334719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (334719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (334719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (335719) mqtt_example: Group: TEST[0m
+[0;32mI (335719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (335719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (335719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (336719) mqtt_example: Group: TEST[0m
+[0;32mI (336719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (336719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (336719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (337719) mqtt_example: Group: TEST[0m
+[0;32mI (337719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (337719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (337719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (338719) mqtt_example: Group: TEST[0m
+[0;32mI (338719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (338719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (338719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (339719) mqtt_example: Group: TEST[0m
+[0;32mI (339719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (339719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (339719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (340719) mqtt_example: Group: TEST[0m
+[0;32mI (340719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (340719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (340719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (341719) mqtt_example: Group: TEST[0m
+[0;32mI (341719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (341719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (341719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (342719) mqtt_example: Group: TEST[0m
+[0;32mI (342719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (342719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (342719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (343719) mqtt_example: Group: TEST[0m
+[0;32mI (343719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (343719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (343719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (344719) mqtt_example: Group: TEST[0m
+[0;32mI (344719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (344719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (344719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (345719) mqtt_example: Group: TEST[0m
+[0;32mI (345719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (345719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (345719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (346719) mqtt_example: Group: TEST[0m
+[0;32mI (346719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (346719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (346719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (347719) mqtt_example: Group: TEST[0m
+[0;32mI (347719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (347719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (347719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (348719) mqtt_example: Group: TEST[0m
+[0;32mI (348719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (348719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (348719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (349719) mqtt_example: Group: TEST[0m
+[0;32mI (349719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (349719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (349719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (350719) mqtt_example: Group: TEST[0m
+[0;32mI (350719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (350719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (350719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (351719) mqtt_example: Group: TEST[0m
+[0;32mI (351719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (351719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (351719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (352719) mqtt_example: Group: TEST[0m
+[0;32mI (352719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (352719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (352719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (353719) mqtt_example: Group: TEST[0m
+[0;32mI (353719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (353719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (353719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (354719) mqtt_example: Group: TEST[0m
+[0;32mI (354719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (354719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (354719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (355719) mqtt_example: Group: TEST[0m
+[0;32mI (355719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (355719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (355719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (356719) mqtt_example: Group: TEST[0m
+[0;32mI (356719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (356719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (356719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (357719) mqtt_example: Group: TEST[0m
+[0;32mI (357719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (357719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (357719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (358719) mqtt_example: Group: TEST[0m
+[0;32mI (358719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (358719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (358719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (359719) mqtt_example: Group: TEST[0m
+[0;32mI (359719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (359719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (359719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (360719) mqtt_example: Group: TEST[0m
+[0;32mI (360719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (360719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (360719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (361719) mqtt_example: Group: TEST[0m
+[0;32mI (361719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (361719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (361719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (362719) mqtt_example: Group: TEST[0m
+[0;32mI (362719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (362719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (362719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (363719) mqtt_example: Group: TEST[0m
+[0;32mI (363719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (363719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (363719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (364719) mqtt_example: Group: TEST[0m
+[0;32mI (364719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (364719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (364719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (365719) mqtt_example: Group: TEST[0m
+[0;32mI (365719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (365719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (365719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (366719) mqtt_example: Group: TEST[0m
+[0;32mI (366719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (366719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (366719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (367719) mqtt_example: Group: TEST[0m
+[0;32mI (367719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (367719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (367719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (368719) mqtt_example: Group: TEST[0m
+[0;32mI (368719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (368719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (368719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (369719) mqtt_example: Group: TEST[0m
+[0;32mI (369719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (369719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (369719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (370719) mqtt_example: Group: TEST[0m
+[0;32mI (370719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (370719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (370719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (371719) mqtt_example: Group: TEST[0m
+[0;32mI (371719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (371719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (371719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (372719) mqtt_example: Group: TEST[0m
+[0;32mI (372719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (372719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (372719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (373719) mqtt_example: Group: TEST[0m
+[0;32mI (373719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (373719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (373719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (374719) mqtt_example: Group: TEST[0m
+[0;32mI (374719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (374719) mqtt_example: payload Heart RI (375719) mqtt_example: Group: TEST[0m
+[0;32mI (375719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (375719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (375719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (376719) mqtt_example: Group: TEST[0m
+[0;32mI (376719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (376719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (376719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (377719) mqtt_example: Group: TEST[0m
+[0;32mI (377719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (377719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (377719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (378719) mqtt_example: Group: TEST[0m
+[0;32mI (378719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (378719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (378719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (379719) mqtt_example: Group: TEST[0m
+[0;32mI (379719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (379719) mqtt_example: payload Heart R19) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (380719) mqtt_example: Group: TEST[0m
+[0;32mI (380719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (380719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (380719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (381719) mqtt_example: Group: TEST[0m
+[0;32mI (381719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (381719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (381719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (382719) mqtt_example: Group: TEST[0m
+[0;32mI (382719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (382719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (382719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (383719) mqtt_example: Group: TEST[0m
+[0;32mI (383719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (383719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (383719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (384719) mqtt_example: Group: TEST[0m
+[0;32mI (384719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (384719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (384719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (385719) mqtt_example: Group: TEST[0m
+[0;32mI (385719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (385719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (385719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (386719) mqtt_example: Group: TEST[0m
+[0;32mI (386719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (386719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (386719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (387719) mqtt_example: Group: TEST[0m
+[0;32mI (387719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (387719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (387719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (388719) mqtt_example: Group: TEST[0m
+[0;32mI (388719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (388719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (388719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (389719) mqtt_example: Group: TEST[0m
+[0;32mI (389719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (389719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (389719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (390719) mqtt_example: Group: TEST[0m
+[0;32mI (390719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (390719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (390719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (391719) mqtt_example: Group: TEST[0m
+[0;32mI (391719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (391719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (391719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (392719) mqtt_example: Group: TEST[0m
+[0;32mI (392719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (392719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (392719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (393719) mqtt_example: Group: TEST[0m
+[0;32mI (393719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (393719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (393719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (394719) mqtt_example: Group: TEST[0m
+[0;32mI (394719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (394719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (394719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (395719) mqtt_example: Group: TEST[0m
+[0;32mI (395719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (395719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (395719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (396719) mqtt_example: Group: TEST[0m
+[0;32mI (396719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (396719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (396719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (397719) mqtt_example: Group: TEST[0m
+[0;32mI (397719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (397719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (397719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (398719) mqtt_example: Group: TEST[0m
+[0;32mI (398719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (398719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (398719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (399719) mqtt_example: Group: TEST[0m
+[0;32mI (399719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (399719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (399719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (400719) mqtt_example: Group: TEST[0m
+[0;32mI (400719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (400719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (400719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (401719) mqtt_example: Group: TEST[0m
+[0;32mI (401719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (401719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (401719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (402719) mqtt_example: Group: TEST[0m
+[0;32mI (402719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (402719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (402719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (403719) mqtt_example: Group: TEST[0m
+[0;32mI (403719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (403719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (403719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (404719) mqtt_example: Group: TEST[0m
+[0;32mI (404719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (404719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (404719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (405719) mqtt_example: Group: TEST[0m
+[0;32mI (405719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (405719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (405719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (406719) mqtt_example: Group: TEST[0m
+[0;32mI (406719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (406719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (406719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (407719) mqtt_example: Group: TEST[0m
+[0;32mI (407719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (407719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (407719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (408719) mqtt_example: Group: TEST[0m
+[0;32mI (408719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (408719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (408719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (409719) mqtt_example: Group: TEST[0m
+[0;32mI (409719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (409719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (409719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (410719) mqtt_example: Group: TEST[0m
+[0;32mI (410719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (410719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (410719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (411719) mqtt_example: Group: TEST[0m
+[0;32mI (411719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (411719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (411719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (412719) mqtt_example: Group: TEST[0m
+[0;32mI (412719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (412719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (412719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (413719) mqtt_example: Group: TEST[0m
+[0;32mI (413719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (413719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (413719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (414719) mqtt_example: Group: TEST[0m
+[0;32mI (414719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (414719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (414719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (415719) mqtt_example: Group: TEST[0m
+[0;32mI (415719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (415719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (415719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (416719) mqtt_example: Group: TEST[0m
+[0;32mI (416719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (416719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (416719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (417719) mqtt_example: Group: TEST[0m
+[0;32mI (417719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (417719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (417719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (418719) mqtt_example: Group: TEST[0m
+[0;32mI (418719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (418719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (418719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (419719) mqtt_example: Group: TEST[0m
+[0;32mI (419719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (419719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (419719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (420719) mqtt_example: Group: TEST[0m
+[0;32mI (420719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (420719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (420719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (421719) mqtt_example: Group: TEST[0m
+[0;32mI (421719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (421719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (421719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (422719) mqtt_example: Group: TEST[0m
+[0;32mI (422719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (422719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (422719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (423719) mqtt_example: Group: TEST[0m
+[0;32mI (423719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (423719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (423719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (424719) mqtt_example: Group: TEST[0m
+[0;32mI (424719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (424719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (424719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (425719) mqtt_example: Group: TEST[0m
+[0;32mI (425719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (425719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (425719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (426719) mqtt_example: Group: TEST[0m
+[0;32mI (426719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (426719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (426719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (427719) mqtt_example: Group: TEST[0m
+[0;32mI (427719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (427719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (427719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (428719) mqtt_example: Group: TEST[0m
+[0;32mI (428719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (428719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (428719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (429719) mqtt_example: Group: TEST[0m
+[0;32mI (429719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (429719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (429719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =4maxval =33
+[0;32mI (430719) mqtt_example: Group: TEST[0m
+[0;32mI (430719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (430719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (430719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (431719) mqtt_example: Group: TEST[0m
+[0;32mI (431719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (431719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (431719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (432719) mqtt_example: Group: TEST[0m
+[0;32mI (432719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (432719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (432719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (433719) mqtt_example: Group: TEST[0m
+[0;32mI (433719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (433719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (433719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =3
+[0;32mI (434719) mqtt_example: Group: TEST[0m
+[0;32mI (434719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (434719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (434719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (435719) mqtt_example: Group: TEST[0m
+[0;32mI (435719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (435719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (435719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (436719) mqtt_example: Group: TEST[0m
+[0;32mI (436719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (436719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (436719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (437719) mqtt_example: Group: TEST[0m
+[0;32mI (437719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (437719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (437719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (438719) mqtt_example: Group: TEST[0m
+[0;32mI (438719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (438719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (438719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =4
+[0;32mI (439719) mqtt_example: Group: TEST[0m
+[0;32mI (439719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (439719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (439719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (440719) mqtt_example: Group: TEST[0m
+[0;32mI (440719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (440719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (440719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (441719) mqtt_example: Group: TEST[0m
+[0;32mI (441719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (441719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (441719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (442719) mqtt_example: Group: TEST[0m
+[0;32mI (442719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (442719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (442719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =13maxval =42
+HR float =  86.389610I (443719) mqtt_example: Group: TEST
+[0;32mI (443719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (443719) mqtt_example: payload Heart Rate  : 86[0m
+[0;32mI (443719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (444719) mqtt_example: Group: TEST[0m
+[0;32mI (444719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (444719) mqtt_example: payload Heart Rate  : 86[0m
+[0;32mI (444719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (445719) mqtt_example: Group: TEST[0m
+[0;32mI (445719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (445719) mqtt_example: payload Heart Rate  : 86[0m
+[0;32mI (445719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (446719) mqtt_example: Group: TEST[0m
+[0;32mI (446719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (446719) mqtt_example: payload Heart Rate  : 86[0m
+[0;32mI (446719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (447719) mqtt_example: Group: TEST[0m
+[0;32mI (447719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (447719) mqtt_example: payload Heart Rate  : 86[0m
+[0;32mI (447719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =13maxval =52
+HR float =  82.932091I (448719) mqtt_example: Group: TEST
+[0;32mI (448719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (448719) mqtt_example: payload Heart Rate  : 83[0m
+[0;32mI (448719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (449719) mqtt_example: Group: TEST[0m
+[0;32mI (449719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (449719) mqtt_example: payload Heart Rate  : 83[0m
+[0;32mI (449719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (450719) mqtt_example: Group: TEST[0m
+[0;32mI (450719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (450719) mqtt_example: payload Heart Rate  : 83[0m
+[0;32mI (450719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (451719) mqtt_example: Group: TEST[0m
+[0;32mI (451719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (451719) mqtt_example: payload Heart Rate  : 83[0m
+[0;32mI (451719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (452719) mqtt_example: Group: TEST[0m
+[0;32mI (452719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (452719) mqtt_example: payload Heart Rate  : 83[0m
+[0;32mI (452719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =13maxval =49
+HR float =  83.056801I (453719) mqtt_example: Group: TEST
+[0;32mI (453719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (453719) mqtt_example: payload Heart Rate  : 83[0m
+[0;32mI (453719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (454719) mqtt_example: Group: TEST[0m
+[0;32mI (454719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (454719) mqtt_example: payload Heart Rate  : 83[0m
+[0;32mI (454719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (455719) mqtt_example: Group: TEST[0m
+[0;32mI (455719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (455719) mqtt_example: payload Heart Rate  : 83[0m
+[0;32mI (455719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (456719) mqtt_example: Group: TEST[0m
+[0;32mI (456719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (456719) mqtt_example: payload Heart Rate  : 83[0m
+[0;32mI (456719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =13maxval =60
+HR float =  86.209206I (457719) mqtt_example: Group: TEST
+[0;32mI (457719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (457719) mqtt_example: payload Heart Rate  : 86[0m
+[0;32mI (457719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (458719) mqtt_example: Group: TEST[0m
+[0;32mI (458719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (458719) mqtt_example: payload Heart Rate  : 86[0m
+[0;32mI (458719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (459719) mqtt_example: Group: TEST[0m
+[0;32mI (459719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (459719) mqtt_example: payload Heart Rate  : 86[0m
+[0;32mI (459719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (460719) mqtt_example: Group: TEST[0m
+[0;32mI (460719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (460719) mqtt_example: payload Heart Rate  : 86[0m
+[0;32mI (460719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (461719) mqtt_example: Group: TEST[0m
+[0;32mI (461719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (461719) mqtt_example: payload Heart Rate  : 86[0m
+[0;32mI (461719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =13maxval =62
+HR float =  83.939003I (462719) mqtt_example: Group: TEST
+[0;32mI (462719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (462719) mqtt_example: payload Heart Rate  : 84[0m
+[0;32mI (462719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (463719) mqtt_example: Group: TEST[0m
+[0;32mI (463719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (463719) mqtt_example: payload Heart Rate  : 84[0m
+[0;32mI (463719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (464719) mqtt_example: Group: TEST[0m
+[0;32mI (464719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (464719) mqtt_example: payload Heart Rate  : 84[0m
+[0;32mI (464719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (465719) mqtt_example: Group: TEST[0m
+[0;32mI (465719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (465719) mqtt_example: payload Heart Rate  : 84[0m
+[0;32mI (465719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =12maxval =67
+HR float =  77.760002I (466719) mqtt_example: Group: TEST
+[0;32mI (466719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (466719) mqtt_example: payload Heart Rate  : 84[0m
+[0;32mI (466719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (467719) mqtt_example: Group: TEST[0m
+[0;32mI (467719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (467719) mqtt_example: payload Heart Rate  : 78[0m
+[0;32mI (467719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (468719) mqtt_example: Group: TEST[0m
+[0;32mI (468719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (468719) mqtt_example: payload Heart Rate  : 78[0m
+[0;32mI (468719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (469719) mqtt_example: Group: TEST[0m
+[0;32mI (469719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (469719) mqtt_example: payload Heart Rate  : 78[0m
+[0;32mI (469719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (470719) mqtt_example: Group: TEST[0m
+[0;32mI (470719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (470719) mqtt_example: payload Heart Rate  : 78[0m
+[0;32mI (470719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =49maxval =2
+[0;32mI (471719) mqtt_example: Group: TEST[0m
+[0;32mI (471719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (471719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (471719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (472719) mqtt_example: Group: TEST[0m
+[0;32mI (472719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (472719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (472719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (473719) mqtt_example: Group: TEST[0m
+[0;32mI (473719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (473719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (473719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (474719) mqtt_example: Group: TEST[0m
+[0;32mI (474719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (474719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (474719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (475719) mqtt_example: Group: TEST[0m
+[0;32mI (475719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (475719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (475719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =4maxval =10
+[0;32mI (476719) mqtt_example: Group: TEST[0m
+[0;32mI (476719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (476719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (476719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (477719) mqtt_example: Group: TEST[0m
+[0;32mI (477719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (477719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (477719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (478719) mqtt_example: Group: TEST[0m
+[0;32mI (478719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (478719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (478719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (479719) mqtt_example: Group: TEST[0m
+[0;32mI (479719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (479719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (479719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (480719) mqtt_example: Group: TEST[0m
+[0;32mI (480719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (480719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (480719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (481719) mqtt_example: Group: TEST[0m
+[0;32mI (481719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (481719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (481719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (482719) mqtt_example: Group: TEST[0m
+[0;32mI (482719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (482719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (482719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (483719) mqtt_example: Group: TEST[0m
+[0;32mI (483719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (483719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (483719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (484719) mqtt_example: Group: TEST[0m
+[0;32mI (484719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (484719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (484719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =2
+[0;32mI (485719) mqtt_example: Group: TEST[0m
+[0;32mI (485719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (485719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (485719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (486719) mqtt_example: Group: TEST[0m
+[0;32mI (486719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (486719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (486719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (487719) mqtt_example: Group: TEST[0m
+[0;32mI (487719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (487719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (487719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (488719) mqtt_example: Group: TEST[0m
+[0;32mI (488719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (488719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (488719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (489719) mqtt_example: Group: TEST[0m
+[0;32mI (489719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (489719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (489719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (490719) mqtt_example: Group: TEST[0m
+[0;32mI (490719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (490719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (490719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (491719) mqtt_example: Group: TEST[0m
+[0;32mI (491719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (491719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (491719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (492719) mqtt_example: Group: TEST[0m
+[0;32mI (492719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (492719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (492719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (493719) mqtt_example: Group: TEST[0m
+[0;32mI (493719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (493719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (493719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =2
+[0;32mI (494719) mqtt_example: Group: TEST[0m
+[0;32mI (494719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (494719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (494719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (495719) mqtt_example: Group: TEST[0m
+[0;32mI (495719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (495719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (495719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (496719) mqtt_example: Group: TEST[0m
+[0;32mI (496719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (496719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (496719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (497719) mqtt_example: Group: TEST[0m
+[0;32mI (497719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (497719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (497719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (498719) mqtt_example: Group: TEST[0m
+[0;32mI (498719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (498719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (498719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (499719) mqtt_example: Group: TEST[0m
+[0;32mI (499719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (499719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (499719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (500719) mqtt_example: Group: TEST[0m
+[0;32mI (500719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (500719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (500719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (501719) mqtt_example: Group: TEST[0m
+[0;32mI (501719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (501719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (501719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (502719) mqtt_example: Group: TEST[0m
+[0;32mI (502719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (502719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (502719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =2
+[0;32mI (503719) mqtt_example: Group: TEST[0m
+[0;32mI (503719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (503719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (503719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (504719) mqtt_example: Group: TEST[0m
+[0;32mI (504719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (504719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (504719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (505719) mqtt_example: Group: TEST[0m
+[0;32mI (505719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (505719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (505719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (506719) mqtt_example: Group: TEST[0m
+[0;32mI (506719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (506719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (506719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (507719) mqtt_example: Group: TEST[0m
+[0;32mI (507719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (507719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (507719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =2
+[0;32mI (508719) mqtt_example: Group: TEST[0m
+[0;32mI (508719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (508719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (508719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (509719) mqtt_example: Group: TEST[0m
+[0;32mI (509719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (509719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (509719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (510719) mqtt_example: Group: TEST[0m
+[0;32mI (510719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (510719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (510719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (511719) mqtt_example: Group: TEST[0m
+[0;32mI (511719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (511719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (511719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (512719) mqtt_example: Group: TEST[0m
+[0;32mI (512719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (512719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (512719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =11maxval =2
+[0;32mI (513719) mqtt_example: Group: TEST[0m
+[0;32mI (513719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (513719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (513719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (514719) mqtt_example: Group: TEST[0m
+[0;32mI (514719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (514719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (514719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (515719) mqtt_example: Group: TEST[0m
+[0;32mI (515719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (515719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (515719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (516719) mqtt_example: Group: TEST[0m
+[0;32mI (516719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (516719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (516719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (517719) mqtt_example: Group: TEST[0m
+[0;32mI (517719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (517719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (517719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (518719) mqtt_example: Group: TEST[0m
+[0;32mI (518719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (518719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (518719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (519719) mqtt_example: Group: TEST[0m
+[0;32mI (519719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (519719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (519719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (520719) mqtt_example: Group: TEST[0m
+[0;32mI (520719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (520719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (520719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (521719) mqtt_example: Group: TEST[0m
+[0;32mI (521719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (521719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (521719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (522719) mqtt_example: Group: TEST[0m
+[0;32mI (522719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (522719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (522719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (523719) mqtt_example: Group: TEST[0m
+[0;32mI (523719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (523719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (523719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (524719) mqtt_example: Group: TEST[0m
+[0;32mI (524719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (524719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (524719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (525719) mqtt_example: Group: TEST[0m
+[0;32mI (525719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (525719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (525719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (526719) mqtt_example: Group: TEST[0m
+[0;32mI (526719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (526719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (526719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (527719) mqtt_example: Group: TEST[0m
+[0;32mI (527719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (527719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (527719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (528719) mqtt_example: Group: TEST[0m
+[0;32mI (528719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (528719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (528719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (529719) mqtt_example: Group: TEST[0m
+[0;32mI (529719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (529719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (529719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (530719) mqtt_example: Group: TEST[0m
+[0;32mI (530719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (530719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (530719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =2
+[0;32mI (531719) mqtt_example: Group: TEST[0m
+[0;32mI (531719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (531719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (531719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (532719) mqtt_example: Group: TEST[0m
+[0;32mI (532719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (532719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (532719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (533719) mqtt_example: Group: TEST[0m
+[0;32mI (533719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (533719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (533719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (534719) mqtt_example: Group: TEST[0m
+[0;32mI (534719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (534719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (534719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (535719) mqtt_example: Group: TEST[0m
+[0;32mI (535719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (535719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (535719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (536719) mqtt_example: Group: TEST[0m
+[0;32mI (536719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (536719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (536719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (537719) mqtt_example: Group: TEST[0m
+[0;32mI (537719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (537719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (537719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (538719) mqtt_example: Group: TEST[0m
+[0;32mI (538719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (538719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (538719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (539719) mqtt_example: Group: TEST[0m
+[0;32mI (539719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (539719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (539719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (540719) mqtt_example: Group: TEST[0m
+[0;32mI (540719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (540719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (540719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (541719) mqtt_example: Group: TEST[0m
+[0;32mI (541719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (541719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (541719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (542719) mqtt_example: Group: TEST[0m
+[0;32mI (542719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (542719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (542719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (543719) mqtt_example: Group: TEST[0m
+[0;32mI (543719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (543719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (543719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (544719) mqtt_example: Group: TEST[0m
+[0;32mI (544719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (544719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (544719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =19maxval =2
+[0;32mI (545719) mqtt_example: Group: TEST[0m
+[0;32mI (545719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (545719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (545719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (546719) mqtt_example: Group: TEST[0m
+[0;32mI (546719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (546719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (546719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (547719) mqtt_example: Group: TEST[0m
+[0;32mI (547719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (547719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (547719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (548719) mqtt_example: Group: TEST[0m
+[0;32mI (548719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (548719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (548719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =2
+[0;32mI (549719) mqtt_example: Group: TEST[0m
+[0;32mI (549719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (549719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (549719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (550719) mqtt_example: Group: TEST[0m
+[0;32mI (550719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (550719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (550719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (551719) mqtt_example: Group: TEST[0m
+[0;32mI (551719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (551719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (551719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (552719) mqtt_example: Group: TEST[0m
+[0;32mI (552719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (552719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (552719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (553719) mqtt_example: Group: TEST[0m
+[0;32mI (553719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (553719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (553719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (554719) mqtt_example: Group: TEST[0m
+[0;32mI (554719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (554719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (554719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (555719) mqtt_example: Group: TEST[0m
+[0;32mI (555719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (555719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (555719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (556719) mqtt_example: Group: TEST[0m
+[0;32mI (556719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (556719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (556719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (557719) mqtt_example: Group: TEST[0m
+[0;32mI (557719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (557719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (557719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (558719) mqtt_example: Group: TEST[0m
+[0;32mI (558719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (558719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (558719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (559719) mqtt_example: Group: TEST[0m
+[0;32mI (559719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (559719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (559719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (560719) mqtt_example: Group: TEST[0m
+[0;32mI (560719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (560719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (560719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (561719) mqtt_example: Group: TEST[0m
+[0;32mI (561719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (561719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (561719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (562719) mqtt_example: Group: TEST[0m
+[0;32mI (562719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (562719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (562719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =2
+[0;32mI (563719) mqtt_example: Group: TEST[0m
+[0;32mI (563719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (563719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (563719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (564719) mqtt_example: Group: TEST[0m
+[0;32mI (564719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (564719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (564719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (565719) mqtt_example: Group: TEST[0m
+[0;32mI (565719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (565719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (565719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (566719) mqtt_example: Group: TEST[0m
+[0;32mI (566719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (566719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (566719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (567719) mqtt_example: Group: TEST[0m
+[0;32mI (567719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (567719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (567719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (568719) mqtt_example: Group: TEST[0m
+[0;32mI (568719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (568719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (568719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (569719) mqtt_example: Group: TEST[0m
+[0;32mI (569719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (569719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (569719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (570719) mqtt_example: Group: TEST[0m
+[0;32mI (570719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (570719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (570719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (571719) mqtt_example: Group: TEST[0m
+[0;32mI (571719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (571719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (571719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (572719) mqtt_example: Group: TEST[0m
+[0;32mI (572719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (572719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (572719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =2
+[0;32mI (573719) mqtt_example: Group: TEST[0m
+[0;32mI (573719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (573719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (573719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (574719) mqtt_example: Group: TEST[0m
+[0;32mI (574719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (574719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (574719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (575719) mqtt_example: Group: TEST[0m
+[0;32mI (575719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (575719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (575719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (576719) mqtt_example: Group: TEST[0m
+[0;32mI (576719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (576719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (576719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =2
+[0;32mI (577719) mqtt_example: Group: TEST[0m
+[0;32mI (577719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (577719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (577719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (578719) mqtt_example: Group: TEST[0m
+[0;32mI (578719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (578719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (578719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (579719) mqtt_example: Group: TEST[0m
+[0;32mI (579719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (579719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (579719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (580719) mqtt_example: Group: TEST[0m
+[0;32mI (580719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (580719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (580719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (581719) mqtt_example: Group: TEST[0m
+[0;32mI (581719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (581719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (581719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (582719) mqtt_example: Group: TEST[0m
+[0;32mI (582719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (582719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (582719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (583719) mqtt_example: Group: TEST[0m
+[0;32mI (583719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (583719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (583719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (584719) mqtt_example: Group: TEST[0m
+[0;32mI (584719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (584719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (584719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (585719) mqtt_example: Group: TEST[0m
+[0;32mI (585719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (585719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (585719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (586719) mqtt_example: Group: TEST[0m
+[0;32mI (586719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (586719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (586719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (587719) mqtt_example: Group: TEST[0m
+[0;32mI (587719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (587719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (587719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (588719) mqtt_example: Group: TEST[0m
+[0;32mI (588719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (588719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (588719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (589719) mqtt_example: Group: TEST[0m
+[0;32mI (589719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (589719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (589719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (590719) mqtt_example: Group: TEST[0m
+[0;32mI (590719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (590719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (590719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (591719) mqtt_example: Group: TEST[0m
+[0;32mI (591719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (591719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (591719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (592719) mqtt_example: Group: TEST[0m
+[0;32mI (592719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (592719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (592719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (593719) mqtt_example: Group: TEST[0m
+[0;32mI (593719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (593719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (593719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (594719) mqtt_example: Group: TEST[0m
+[0;32mI (594719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (594719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (594719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (595719) mqtt_example: Group: TEST[0m
+[0;32mI (595719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (595719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (595719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (596719) mqtt_example: Group: TEST[0m
+[0;32mI (596719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (596719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (596719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (597719) mqtt_example: Group: TEST[0m
+[0;32mI (597719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (597719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (597719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (598719) mqtt_example: Group: TEST[0m
+[0;32mI (598719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (598719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (598719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (599719) mqtt_example: Group: TEST[0m
+[0;32mI (599719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (599719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (599719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (600719) mqtt_example: Group: TEST[0m
+[0;32mI (600719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (600719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (600719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (601719) mqtt_example: Group: TEST[0m
+[0;32mI (601719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (601719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (601719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (602719) mqtt_example: Group: TEST[0m
+[0;32mI (602719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (602719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (602719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (603719) mqtt_example: Group: TEST[0m
+[0;32mI (603719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (603719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (603719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (604719) mqtt_example: Group: TEST[0m
+[0;32mI (604719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (604719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (604719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (605719) mqtt_example: Group: TEST[0m
+[0;32mI (605719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (605719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (605719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (606719) mqtt_example: Group: TEST[0m
+[0;32mI (606719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (606719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (606719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (607719) mqtt_example: Group: TEST[0m
+[0;32mI (607719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (607719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (607719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (608719) mqtt_example: Group: TEST[0m
+[0;32mI (608719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (608719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (608719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =13maxval =2
+[0;32mI (609719) mqtt_example: Group: TEST[0m
+[0;32mI (609719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (609719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (609719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (610719) mqtt_example: Group: TEST[0m
+[0;32mI (610719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (610719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (610719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (611719) mqtt_example: Group: TEST[0m
+[0;32mI (611719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (611719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (611719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (612719) mqtt_example: Group: TEST[0m
+[0;32mI (612719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (612719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (612719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (613719) mqtt_example: Group: TEST[0m
+[0;32mI (613719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (613719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (613719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (614719) mqtt_example: Group: TEST[0m
+[0;32mI (614719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (614719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (614719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (615719) mqtt_example: Group: TEST[0m
+[0;32mI (615719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (615719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (615719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (616719) mqtt_example: Group: TEST[0m
+[0;32mI (616719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (616719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (616719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (617719) mqtt_example: Group: TEST[0m
+[0;32mI (617719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (617719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (617719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (618719) mqtt_example: Group: TEST[0m
+[0;32mI (618719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (618719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (618719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =2
+[0;32mI (619719) mqtt_example: Group: TEST[0m
+[0;32mI (619719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (619719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (619719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (620719) mqtt_example: Group: TEST[0m
+[0;32mI (620719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (620719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (620719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (621719) mqtt_example: Group: TEST[0m
+[0;32mI (621719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (621719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (621719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (622719) mqtt_example: Group: TEST[0m
+[0;32mI (622719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (622719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (622719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (623719) mqtt_example: Group: TEST[0m
+[0;32mI (623719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (623719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (623719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (624719) mqtt_example: Group: TEST[0m
+[0;32mI (624719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (624719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (624719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (625719) mqtt_example: Group: TEST[0m
+[0;32mI (625719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (625719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (625719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (626719) mqtt_example: Group: TEST[0m
+[0;32mI (626719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (626719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (626719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (627719) mqtt_example: Group: TEST[0m
+[0;32mI (627719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (627719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (627719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (628719) mqtt_example: Group: TEST[0m
+[0;32mI (628719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (628719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (628719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (629719) mqtt_example: Group: TEST[0m
+[0;32mI (629719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (629719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (629719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (630719) mqtt_example: Group: TEST[0m
+[0;32mI (630719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (630719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (630719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (631719) mqtt_example: Group: TEST[0m
+[0;32mI (631719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (631719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (631719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (632719) mqtt_example: Group: TEST[0m
+[0;32mI (632719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (632719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (632719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (633719) mqtt_example: Group: TEST[0m
+[0;32mI (633719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (633719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (633719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (634719) mqtt_example: Group: TEST[0m
+[0;32mI (634719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (634719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (634719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (635719) mqtt_example: Group: TEST[0m
+[0;32mI (635719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (635719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (635719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (636719) mqtt_example: Group: TEST[0m
+[0;32mI (636719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (636719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (636719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (637719) mqtt_example: Group: TEST[0m
+[0;32mI (637719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (637719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (637719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (638719) mqtt_example: Group: TEST[0m
+[0;32mI (638719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (638719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (638719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (639719) mqtt_example: Group: TEST[0m
+[0;32mI (639719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (639719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (639719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (640719) mqtt_example: Group: TEST[0m
+[0;32mI (640719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (640719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (640719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (641719) mqtt_example: Group: TEST[0m
+[0;32mI (641719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (641719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (641719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (642719) mqtt_example: Group: TEST[0m
+[0;32mI (642719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (642719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (642719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (643719) mqtt_example: Group: TEST[0m
+[0;32mI (643719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (643719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (643719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (644719) mqtt_example: Group: TEST[0m
+[0;32mI (644719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (644719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (644719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (645719) mqtt_example: Group: TEST[0m
+[0;32mI (645719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (645719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (645719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (646719) mqtt_example: Group: TEST[0m
+[0;32mI (646719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (646719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (646719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (647719) mqtt_example: Group: TEST[0m
+[0;32mI (647719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (647719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (647719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (648719) mqtt_example: Group: TEST[0m
+[0;32mI (648719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (648719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (648719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (649719) mqtt_example: Group: TEST[0m
+[0;32mI (649719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (649719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (649719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (650719) mqtt_example: Group: TEST[0m
+[0;32mI (650719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (650719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (650719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (651719) mqtt_example: Group: TEST[0m
+[0;32mI (651719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (651719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (651719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (652719) mqtt_example: Group: TEST[0m
+[0;32mI (652719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (652719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (652719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (653719) mqtt_example: Group: TEST[0m
+[0;32mI (653719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (653719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (653719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (654719) mqtt_example: Group: TEST[0m
+[0;32mI (654719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (654719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (654719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (655719) mqtt_example: Group: TEST[0m
+[0;32mI (655719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (655719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (655719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (656719) mqtt_example: Group: TEST[0m
+[0;32mI (656719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (656719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (656719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (657719) mqtt_example: Group: TEST[0m
+[0;32mI (657719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (657719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (657719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (658719) mqtt_example: Group: TEST[0m
+[0;32mI (658719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (658719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (658719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (659719) mqtt_example: Group: TEST[0m
+[0;32mI (659719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (659719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (659719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (660719) mqtt_example: Group: TEST[0m
+[0;32mI (660719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (660719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (660719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (661719) mqtt_example: Group: TEST[0m
+[0;32mI (661719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (661719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (661719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (662719) mqtt_example: Group: TEST[0m
+[0;32mI (662719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (662719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (662719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (663719) mqtt_example: Group: TEST[0m
+[0;32mI (663719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (663719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (663719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (664719) mqtt_example: Group: TEST[0m
+[0;32mI (664719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (664719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (664719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =2
+[0;32mI (665719) mqtt_example: Group: TEST[0m
+[0;32mI (665719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (665719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (665719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (666719) mqtt_example: Group: TEST[0m
+[0;32mI (666719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (666719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (666719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (667719) mqtt_example: Group: TEST[0m
+[0;32mI (667719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (667719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (667719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (668719) mqtt_example: Group: TEST[0m
+[0;32mI (668719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (668719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (668719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (669719) mqtt_example: Group: TEST[0m
+[0;32mI (669719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (669719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (669719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (670719) mqtt_example: Group: TEST[0m
+[0;32mI (670719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (670719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (670719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (671719) mqtt_example: Group: TEST[0m
+[0;32mI (671719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (671719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (671719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (672719) mqtt_example: Group: TEST[0m
+[0;32mI (672719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (672719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (672719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (673719) mqtt_example: Group: TEST[0m
+[0;32mI (673719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (673719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (673719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =11maxval =2
+[0;32mI (674719) mqtt_example: Group: TEST[0m
+[0;32mI (674719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (674719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (674719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (675719) mqtt_example: Group: TEST[0m
+[0;32mI (675719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (675719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (675719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (676719) mqtt_example: Group: TEST[0m
+[0;32mI (676719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (676719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (676719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (677719) mqtt_example: Group: TEST[0m
+[0;32mI (677719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (677719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (677719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (678719) mqtt_example: Group: TEST[0m
+[0;32mI (678719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (678719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (678719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (679719) mqtt_example: Group: TEST[0m
+[0;32mI (679719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (679719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (679719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (680719) mqtt_example: Group: TEST[0m
+[0;32mI (680719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (680719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (680719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (681719) mqtt_example: Group: TEST[0m
+[0;32mI (681719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (681719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (681719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (682719) mqtt_example: Group: TEST[0m
+[0;32mI (682719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (682719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (682719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (683719) mqtt_example: Group: TEST[0m
+[0;32mI (683719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (683719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (683719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (684719) mqtt_example: Group: TEST[0m
+[0;32mI (684719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (684719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (684719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (685719) mqtt_example: Group: TEST[0m
+[0;32mI (685719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (685719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (685719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (686719) mqtt_example: Group: TEST[0m
+[0;32mI (686719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (686719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (686719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (687719) mqtt_example: Group: TEST[0m
+[0;32mI (687719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (687719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (687719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =2
+[0;32mI (688719) mqtt_example: Group: TEST[0m
+[0;32mI (688719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (688719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (688719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (689719) mqtt_example: Group: TEST[0m
+[0;32mI (689719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (689719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (689719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (690719) mqtt_example: Group: TEST[0m
+[0;32mI (690719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (690719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (690719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (691719) mqtt_example: Group: TEST[0m
+[0;32mI (691719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (691719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (691719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (692719) mqtt_example: Group: TEST[0m
+[0;32mI (692719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (692719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (692719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (693719) mqtt_example: Group: TEST[0m
+[0;32mI (693719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (693719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (693719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (694719) mqtt_example: Group: TEST[0m
+[0;32mI (694719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (694719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (694719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (695719) mqtt_example: Group: TEST[0m
+[0;32mI (695719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (695719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (695719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (696719) mqtt_example: Group: TEST[0m
+[0;32mI (696719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (696719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (696719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =11maxval =2
+[0;32mI (697719) mqtt_example: Group: TEST[0m
+[0;32mI (697719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (697719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (697719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (698719) mqtt_example: Group: TEST[0m
+[0;32mI (698719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (698719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (698719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (699719) mqtt_example: Group: TEST[0m
+[0;32mI (699719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (699719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (699719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (700719) mqtt_example: Group: TEST[0m
+[0;32mI (700719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (700719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (700719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (701719) mqtt_example: Group: TEST[0m
+[0;32mI (701719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (701719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (701719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (702719) mqtt_example: Group: TEST[0m
+[0;32mI (702719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (702719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (702719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (703719) mqtt_example: Group: TEST[0m
+[0;32mI (703719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (703719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (703719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (704719) mqtt_example: Group: TEST[0m
+[0;32mI (704719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (704719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (704719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (705719) mqtt_example: Group: TEST[0m
+[0;32mI (705719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (705719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (705719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (706719) mqtt_example: Group: TEST[0m
+[0;32mI (706719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (706719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (706719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (707719) mqtt_example: Group: TEST[0m
+[0;32mI (707719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (707719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (707719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (708719) mqtt_example: Group: TEST[0m
+[0;32mI (708719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (708719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (708719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (709719) mqtt_example: Group: TEST[0m
+[0;32mI (709719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (709719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (709719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (710719) mqtt_example: Group: TEST[0m
+[0;32mI (710719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (710719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (710719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =2
+[0;32mI (711719) mqtt_example: Group: TEST[0m
+[0;32mI (711719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (711719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (711719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (712719) mqtt_example: Group: TEST[0m
+[0;32mI (712719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (712719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (712719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (713719) mqtt_example: Group: TEST[0m
+[0;32mI (713719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (713719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (713719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (714719) mqtt_example: Group: TEST[0m
+[0;32mI (714719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (714719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (714719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (715719) mqtt_example: Group: TEST[0m
+[0;32mI (715719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (715719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (715719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =7maxval =1
+[0;32mI (716719) mqtt_example: Group: TEST[0m
+[0;32mI (716719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (716719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (716719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (717719) mqtt_example: Group: TEST[0m
+[0;32mI (717719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (717719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (717719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (718719) mqtt_example: Group: TEST[0m
+[0;32mI (718719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (718719) mqtt_example: payload Heart Re  : 0[0m
+[0;32mI (718719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (719719) mqtt_example: Group: TEST[0m
+[0;32mI (719719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (719719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (719719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (720719) mqtt_example: Group: TEST[0m
+[0;32mI (720719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (720719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (720719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (721719) mqtt_example: Group: TEST[0m
+[0;32mI (721719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (721719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (721719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (722719) mqtt_example: Group: TEST[0m
+[0;32mI (722719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (722719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (722719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (723719) mqtt_example: Group: TEST[0m
+[0;32mI (723719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (723719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (723719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (724719) mqtt_example: Group: TEST[0m
+[0;32mI (724719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (724719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (724719) mqtt_example: client pointer 0x3ffbd7fc[0m
+maxIDX =9maxval =1
+[0;32mI (725719) mqtt_example: Group: TEST[0m
+[0;32mI (725719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (725719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (725719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (726719) mqtt_example: Group: TEST[0m
+[0;32mI (726719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (726719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (726719) mqtt_example: client pointer 0x3ffbd7fc[0m
+[0;32mI (727719) mqtt_example: Group: TEST[0m
+[0;32mI (727719) mqtt_example: TOPIC: TEST/DEV01/heart[0m
+[0;32mI (727719) mqtt_example: payload Heart Rate  : 0[0m
+[0;32mI (727719) mqtt_example: client pointer 0x3ffbd7fc[0m

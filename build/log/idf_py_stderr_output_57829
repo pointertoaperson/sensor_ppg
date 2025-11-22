@@ -1,0 +1,34 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c: In function 'initialize_sntp':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:461:9: warning: 'sntp_setoperatingmode' is deprecated: use esp_sntp_setoperatingmode() instead [-Wdeprecated-declarations]
+  461 |         sntp_setoperatingmode(SNTP_OPMODE_POLL);
+      |         ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.h:34,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:16:
+/home/umesh_adwait/esp-idf/components/lwip/include/apps/esp_sntp.h:249:6: note: declared here
+  249 | void sntp_setoperatingmode(u8_t operating_mode)
+      |      ^~~~~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:462:8: warning: 'sntp_setservername' is deprecated: use esp_sntp_setservername() instead [-Wdeprecated-declarations]
+  462 |        sntp_setservername(0, "pool.ntp.org");
+      |        ^~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/components/lwip/include/apps/esp_sntp.h:263:6: note: declared here
+  263 | void sntp_setservername(u8_t idx, const char *server)
+      |      ^~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:463:1: warning: 'sntp_setservername' is deprecated: use esp_sntp_setservername() instead [-Wdeprecated-declarations]
+  463 | sntp_setservername(1, "time.google.com");
+      | ^~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/components/lwip/include/apps/esp_sntp.h:263:6: note: declared here
+  263 | void sntp_setservername(u8_t idx, const char *server)
+      |      ^~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:464:1: warning: 'sntp_setservername' is deprecated: use esp_sntp_setservername() instead [-Wdeprecated-declarations]
+  464 | sntp_setservername(2, "time.cloudflare.com");
+      | ^~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/components/lwip/include/apps/esp_sntp.h:263:6: note: declared here
+  263 | void sntp_setservername(u8_t idx, const char *server)
+      |      ^~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:466:9: warning: 'sntp_init' is deprecated: use esp_sntp_init() instead [-Wdeprecated-declarations]
+  466 |         sntp_init();
+      |         ^~~~~~~~~
+/home/umesh_adwait/esp-idf/components/lwip/include/apps/esp_sntp.h:269:6: note: declared here
+  269 | void sntp_init(void)
+      |      ^~~~~~~~~

@@ -1,0 +1,5 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c: In function 'set_time_from_http':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:556:11: warning: unused variable 'err' [-Wunused-variable]
+  556 | esp_err_t err = esp_http_client_perform(client);
+      |           ^~~

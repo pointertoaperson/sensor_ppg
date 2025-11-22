@@ -1,0 +1,7 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/ledconf.c:100:13: warning: 'led_off' defined but not used [-Wunused-function]
+  100 | static void led_off( void )
+      |             ^~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:44:16: warning: 'array_max_abs_int16' defined but not used [-Wunused-function]
+   44 | static int16_t array_max_abs_int16(const int16_t arr[], int n) {
+      |                ^~~~~~~~~~~~~~~~~~~

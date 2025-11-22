@@ -1,0 +1,273 @@
+Command: /home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/umesh_adwait/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/test.elf /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/bootloader/bootloader.elf -m '/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python' '/home/umesh_adwait/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6372
+load:0x40078000,len:15928
+load:0x40080400,len:3880
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v6.0-dev-1002-gbfe5caf58f-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 19 2025 14:14:05[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=23048h (143432) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00033070 vaddr=3ff80000 size=00024h (    36) load[0m
+[0;32mI (139) esp_image: segment 2: paddr=0003309c vaddr=3ffb0000 size=05284h ( 21124) load[0m
+[0;32mI (151) esp_image: segment 3: paddr=00038328 vaddr=40080000 size=07cf0h ( 31984) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=adfach (712620) map[0m
+[0;32mI (416) esp_image: segment 5: paddr=000edfd4 vaddr=40087cf0 size=12abch ( 76476) load[0m
+[0;32mI (461) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (461) boot: Disabling RNG early entropy source...[0m
+[0;32mI (472) cpu_start: Multicore app[0m
+[0;32mI (480) cpu_start: Pro cpu start user code[0m
+[0;32mI (480) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (480) app_init: Application information:[0m
+[0;32mI (480) app_init: Project name:     test[0m
+[0;32mI (484) app_init: App version:      v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (490) app_init: Compile time:     Sep 14 2025 09:30:42[0m
+[0;32mI (495) app_init: ELF file SHA256:  23fd4caea...[0m
+[0;32mI (499) app_init: ESP-IDF:          v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (505) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (509) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (513) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (517) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (524) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (528) heap_init: At 3FFBC6B8 len 00023948 (142 KiB): DRAM[0m
+[0;32mI (534) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (539) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (545) heap_init: At 4009A7AC len 00005854 (22 KiB): IRAM[0m
+[0;32mI (551) spi_flash: detected chip: generic[0m
+[0;32mI (554) spi_flash: flash io: dio[0m
+[0;33mW (556) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (569) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (580) main_task: Started on CPU0[0m
+[0;32mI (590) main_task: Calling app_main()[0m
+[0;32mI (760) networ_main: Starting...[0m
+[0;32mI (760) ssid_reset:  pin interrupt initialized on GPIO 32 & 0[0m
+[0;32mI (790) TIME and MQTT: Read SSID from NVS: 'return2hell'[0m
+[0;32mI (790) TIME and MQTT: Read Password from NVS: '$adhain@dkin6'[0m
+[0;32mI (790) TIME and MQTT: Read device id from NVS: 'DEV01'[0m
+[0;32mI (790) TIME and MQTT: Read broker address from NVS: 'ws://broker.hivemq.com:8000/mqtt'[0m
+[0;32mI (800) TIME and MQTT: Read group ID from NVS: 'TEST'[0m
+[0;32mI (820) wifi:wifi driver task: 3ffcca24, prio:23, stack:6656, core=0[0m
+[0;32mI (830) wifi:wifi firmware version: 956d811[0m
+[0;32mI (830) wifi:wifi certification version: v7.0[0m
+[0;32mI (830) wifi:config NVS flash: enabled[0m
+[0;32mI (830) wifi:config nano formatting: disabled[0m
+[0;32mI (830) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (840) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (840) wifi:Init management short buffer num: 32[0m
+[0;32mI (850) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (850) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (860) wifi:Init static rx buffer num: 10[0m
+[0;32mI (860) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (860) wifi_init: rx ba win: 6[0m
+[0;32mI (870) wifi_init: accept mbox: 6[0m
+[0;32mI (870) wifi_init: tcpip mbox: 32[0m
+[0;32mI (870) wifi_init: udp mbox: 6[0m
+[0;32mI (880) wifi_init: tcp mbox: 6[0m
+[0;32mI (880) wifi_init: tcp tx win: 5760[0m
+[0;32mI (880) wifi_init: tcp rx win: 5760[0m
+[0;32mI (880) wifi_init: tcp mss: 1440[0m
+[0;32mI (890) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (890) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (900) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (900) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (980) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (990) wifi:mode : sta (08:d1:f9:9b:2e:e8)[0m
+[0;32mI (1000) wifi:enable tsf[0m
+[0;32mI (1000) TIME and MQTT: STA connecting to saved SSID: return2hell[0m
+[0;32mI (1020) main_task: Returned from app_main()[0m
+[0;32mI (1020) TIME and MQTT: STA started, connecting to AP...[0m
+[0;32mI (3430) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (5850) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (8260) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =6maxval =7
+[0;32mI (10670) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (13090) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =5maxval =41
+[0;32mI (15500) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (17920) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (20330) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (22740) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =10maxval =14
+[0;32mI (25160) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (27570) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =9maxval =147
+HR float =  57.102917I (29990) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (32400) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =32maxval =145
+HR float =  207.415314I (34810) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (37230) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =27maxval =162
+HR float =  177.407318I (39640) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (42050) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =27maxval =156
+HR float =  176.695221I (44470) TIME and MQTT: Disconnected from AP, retrying...
+maxIDX =27maxval =137
+HR float =  172.273361I (46880) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (49300) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =27maxval =160
+HR float =  172.121979I (51710) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (54120) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =27maxval =175
+HR float =  174.960007I (56540) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (58950) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =29maxval =189
+HR float =  187.033417I (61370) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (63780) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =31maxval =31
+[0;32mI (66190) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (68610) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =25maxval =26
+[0;32mI (71020) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (73430) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =7maxval =21
+[0;32mI (75850) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (78260) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =9maxval =44
+[0;32mI (80680) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (83090) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =22maxval =45
+[0;32mI (85500) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (87920) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =9maxval =37
+[0;32mI (90330) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (92740) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =29maxval =48
+[0;32mI (95160) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (97570) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =21maxval =34
+[0;32mI (99990) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =9maxval =56
+HR float =  60.192017I (102400) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (104810) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =32maxval =41
+[0;32mI (107230) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (109640) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =23maxval =61
+HR float =  146.818024I (112050) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (114470) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =8maxval =48
+[0;32mI (116880) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (119300) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =31maxval =53
+HR float =  198.226181I (121710) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (124120) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =10maxval =37
+[0;32mI (126540) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (128950) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =26maxval =40
+[0;32mI (131370) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (133780) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =21maxval =52
+HR float =  136.621765I (136190) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (138610) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =29maxval =51
+HR float =  185.640671I (141020) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (143440) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =31maxval =61
+HR float =  200.990128I (145850) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (148260) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =28maxval =47
+[0;32mI (150680) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =29maxval =55
+HR float =  187.781418I (153090) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (155500) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =5maxval =142
+HR float =  30.997223I (157920) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (160330) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =23maxval =52
+HR float =  147.915451I (162750) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (165160) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =116
+HR float =  28.868700I (167570) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (169990) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =13maxval =33
+[0;32mI (172400) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (174810) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =13maxval =46
+[0;32mI (177230) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (179640) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =30maxval =109
+HR float =  193.321457I (182060) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (184470) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =13maxval =64
+HR float =  81.735977I (186880) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (189300) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =12maxval =108
+HR float =  78.486305I (191710) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (194120) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =29maxval =99
+HR float =  190.796371I (196540) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (198950) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =14maxval =81
+HR float =  87.619217I (201370) TIME and MQTT: Disconnected from AP, retrying...
+maxIDX =14maxval =83
+HR float =  92.679413I (203780) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (206190) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =29maxval =81
+HR float =  190.329117I (208610) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (211020) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =14maxval =34
+[0;32mI (213440) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (215850) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (218260) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (220680) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =4maxval =75
+HR float =  29.144434I (223090) TIME and MQTT: Disconnected from AP, retrying...
+[0;32mI (225510) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (227920) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (230330) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (232750) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (235160) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (237570) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (239990) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (242400) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (244810) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (247230) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (249640) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (252060) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (254470) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (256880) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (259300) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (261710) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (264130) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (266540) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (268950) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (271370) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (273780) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (276190) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (278610) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (281020) TIME and MQTT: Disconnected from AP, retrying...[0m
+maxIDX =0maxval =0
+[0;32mI (283440) TIME and MQTT: Disconnected from AP, retrying...[0m
+[0;32mI (285850) TIME and MQTT: Disconnected from AP, retrying..

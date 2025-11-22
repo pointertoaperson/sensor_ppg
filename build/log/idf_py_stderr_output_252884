@@ -1,0 +1,53 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c: In function 'set_time_from_http':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:548:9: error: unknown type name 'esp_http_client_config_t'; did you mean 'esp_mqtt_client_config_t'?
+  548 |         esp_http_client_config_t config = {
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~
+      |         esp_mqtt_client_config_t
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:549:5: error: field name not in record or union initializer
+  549 |     .url = "http://worldtimeapi.org/api/timezone/Etc/UTC.txt",
+      |     ^
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:549:5: note: (near initialization for 'config')
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:549:12: error: initialization of 'int' from 'char *' makes integer from pointer without a cast [-Wint-conversion]
+  549 |     .url = "http://worldtimeapi.org/api/timezone/Etc/UTC.txt",
+      |            ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:549:12: note: (near initialization for 'config')
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:553:1: error: unknown type name 'esp_http_client_handle_t'; did you mean 'esp_mqtt_client_handle_t'?
+  553 | esp_http_client_handle_t client = esp_http_client_init(&config);
+      | ^~~~~~~~~~~~~~~~~~~~~~~~
+      | esp_mqtt_client_handle_t
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:553:35: error: implicit declaration of function 'esp_http_client_init'; did you mean 'esp_mqtt_client_init'? [-Wimplicit-function-declaration]
+  553 | esp_http_client_handle_t client = esp_http_client_init(&config);
+      |                                   ^~~~~~~~~~~~~~~~~~~~
+      |                                   esp_mqtt_client_init
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:554:17: error: implicit declaration of function 'esp_http_client_perform' [-Wimplicit-function-declaration]
+  554 | esp_err_t err = esp_http_client_perform(client);
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:557:22: error: implicit declaration of function 'esp_http_client_read_response' [-Wimplicit-function-declaration]
+  557 | int content_length = esp_http_client_read_response(client, buffer, sizeof(buffer));
+      |                      ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:561:4: error: 'ptr' undeclared (first use in this function)
+  561 | if(ptr != NULL) {
+      |    ^~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:561:4: note: each undeclared identifier is reported only once for each function it appears in
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:568:29: error: 'timestamp_string' undeclared (first use in this function); did you mean 'ptimestamp_string'?
+  568 |     time_t t = (time_t)atoi(timestamp_string);
+      |                             ^~~~~~~~~~~~~~~~
+      |                             ptimestamp_string
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:577:42: error: format '%ld' expects argument of type 'long int', but argument 2 has type 'time_t' {aka 'long long int'} [-Werror=format=]
+  577 |         printf("Time set successfully: %ld\n", t);
+      |                                        ~~^     ~
+      |                                          |     |
+      |                                          |     time_t {aka long long int}
+      |                                          long int
+      |                                        %lld
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:560:7: warning: unused variable 'ptimestamp_string' [-Wunused-variable]
+  560 | char *ptimestamp_string = strstr(buffer, "unixtime:");
+      |       ^~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:554:11: warning: unused variable 'err' [-Wunused-variable]
+  554 | esp_err_t err = esp_http_client_perform(client);
+      |           ^~~
+cc1: some warnings being treated as errors
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:141: esp-idf/main/CMakeFiles/__idf_main.dir/network/wifi_config.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6398: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

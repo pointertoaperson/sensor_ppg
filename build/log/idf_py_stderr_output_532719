@@ -1,0 +1,17 @@
+Command: make -j 14 all
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:26:
+/home/umesh_adwait/esp-idf/components/spi_flash/include/esp_spi_flash.h:6:2: warning: #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead [-Wcpp]
+    6 | #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead
+      |  ^~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c: In function 'DSP_process':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:64:5: error: implicit declaration of function 'dsps_bit_rev_sc16'; did you mean 'dsps_bit_rev_fc32'? [-Wimplicit-function-declaration]
+   64 |     dsps_bit_rev_sc16(input, FFT_SIZE);
+      |     ^~~~~~~~~~~~~~~~~
+      |     dsps_bit_rev_fc32
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:56:21: warning: variable 'fft_buffer' set but not used [-Wunused-but-set-variable]
+   56 |     static int16_t *fft_buffer;
+      |                     ^~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:180: esp-idf/main/CMakeFiles/__idf_main.dir/process.c.obj] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

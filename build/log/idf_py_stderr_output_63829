@@ -1,0 +1,24 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c: In function 'event_handler':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:132:22: error: passing argument 1 of 'xTaskCreate' from incompatible pointer type [-Wincompatible-pointer-types]
+  132 |          xTaskCreate(set_time_from_http, "set_time_task", 4096, NULL, tskIDLE_PRIORITY + 1, NULL);
+      |                      ^~~~~~~~~~~~~~~~~~
+      |                      |
+      |                      void (*)(void)
+In file included from /home/umesh_adwait/esp-idf/components/freertos/esp_additions/include/freertos/idf_additions.h:20,
+                 from /home/umesh_adwait/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h:1533,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.h:21,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:16:
+/home/umesh_adwait/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/task.h:371:44: note: expected 'TaskFunction_t' {aka 'void (*)(void *)'} but argument is of type 'void (*)(void)'
+  371 |     BaseType_t xTaskCreate( TaskFunction_t pxTaskCode,
+      |                             ~~~~~~~~~~~~~~~^~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:19:7: note: 'set_time_from_http' declared here
+   19 |  void set_time_from_http(void) ;
+      |       ^~~~~~~~~~~~~~~~~~
+In file included from /home/umesh_adwait/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/FreeRTOS.h:66:
+/home/umesh_adwait/esp-idf/components/freertos/FreeRTOS-Kernel/include/freertos/projdefs.h:40:17: note: 'TaskFunction_t' declared here
+   40 | typedef void (* TaskFunction_t)( void * );
+      |                 ^~~~~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:141: esp-idf/main/CMakeFiles/__idf_main.dir/network/wifi_config.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6398: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

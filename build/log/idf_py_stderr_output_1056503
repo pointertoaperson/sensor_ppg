@@ -1,0 +1,19 @@
+Command: make -j 14 all
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:26:
+/home/umesh_adwait/esp-idf/components/spi_flash/include/esp_spi_flash.h:6:2: warning: #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead [-Wcpp]
+    6 | #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead
+      |  ^~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c: In function 'dsp_process':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:96:47: error: 'hamming4096' undeclared (first use in this function); did you mean 'hamming8192'?
+   96 |       int32_t temp = (int32_t)input[i << 1] * hamming4096[i];                         // Q15 * Q15 = Q30
+      |                                               ^~~~~~~~~~~
+      |                                               hamming8192
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:96:47: note: each undeclared identifier is reported only once for each function it appears in
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c: At top level:
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:44:16: warning: 'array_max_abs_int16' defined but not used [-Wunused-function]
+   44 | static int16_t array_max_abs_int16(const int16_t arr[], int n) {
+      |                ^~~~~~~~~~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:180: esp-idf/main/CMakeFiles/__idf_main.dir/process.c.obj] Error 1
+make[2]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

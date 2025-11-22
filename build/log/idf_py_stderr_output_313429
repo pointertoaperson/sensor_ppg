@@ -1,0 +1,12 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c: In function 'dsp_process':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:40:19: warning: unused variable 'mag' [-Wunused-variable]
+   40 |             float mag = sqrtf(re * re + im * im);
+      |                   ^~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:54:17: error: 'mag' undeclared (first use in this function)
+   54 |             if (mag > maxVal)
+      |                 ^~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/process.c:54:17: note: each undeclared identifier is reported only once for each function it appears in
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:180: esp-idf/main/CMakeFiles/__idf_main.dir/process.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

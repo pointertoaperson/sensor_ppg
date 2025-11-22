@@ -1,0 +1,70 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c: In function 'event_handler':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:77:29: error: 'time_sync_and_start_mqtt_task' undeclared (first use in this function)
+   77 |                 xTaskCreate(time_sync_and_start_mqtt_task, "time_sync_task", 4096, NULL, tskIDLE_PRIORITY + 5, NULL);
+      |                             ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:77:29: note: each undeclared identifier is reported only once for each function it appears in
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:79:9: warning: 'IP_EVENT_AP_STAIPASSIGNED' is deprecated: Use IP_EVENT_ASSIGNED_IP_TO_CLIENT instead [-Wdeprecated-declarations]
+   79 |         } else if (event_id == IP_EVENT_AP_STAIPASSIGNED) {
+      |         ^
+In file included from /home/umesh_adwait/esp-idf/components/esp_netif/include/esp_netif.h:13,
+                 from /home/umesh_adwait/esp-idf/components/esp_wifi/include/esp_wifi_default.h:10,
+                 from /home/umesh_adwait/esp-idf/components/esp_wifi/include/esp_wifi.h:57,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.h:23,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:11:
+/home/umesh_adwait/esp-idf/components/esp_netif/include/esp_netif_types.h:102:5: note: declared here
+  102 |     IP_EVENT_AP_STAIPASSIGNED __attribute__((deprecated("Use IP_EVENT_ASSIGNED_IP_TO_CLIENT instead")))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:80:13: warning: 'ip_event_ap_staipassigned_t' is deprecated: Use ip_event_assigned_ip_to_client_t instead of ip_event_ap_staipassigned_t [-Wdeprecated-declarations]
+   80 |             ip_event_ap_staipassigned_t *event = (ip_event_ap_staipassigned_t *)event_data;
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/components/esp_netif/include/esp_netif_types.h:156:9: note: declared here
+  156 | typedef struct {
+      |         ^~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:80:13: warning: 'ip_event_ap_staipassigned_t' is deprecated: Use ip_event_assigned_ip_to_client_t instead of ip_event_ap_staipassigned_t [-Wdeprecated-declarations]
+   80 |             ip_event_ap_staipassigned_t *event = (ip_event_ap_staipassigned_t *)event_data;
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/components/esp_netif/include/esp_netif_types.h:156:9: note: declared here
+  156 | typedef struct {
+      |         ^~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c: In function 'wifi_start_softap_mode':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:148:5: warning: 'IP_EVENT_AP_STAIPASSIGNED' is deprecated: Use IP_EVENT_ASSIGNED_IP_TO_CLIENT instead [-Wdeprecated-declarations]
+  148 |     ESP_ERROR_CHECK(esp_event_handler_instance_register(IP_EVENT, IP_EVENT_AP_STAIPASSIGNED, &event_handler, NULL, NULL));
+      |     ^~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/components/esp_netif/include/esp_netif_types.h:102:5: note: declared here
+  102 |     IP_EVENT_AP_STAIPASSIGNED __attribute__((deprecated("Use IP_EVENT_ASSIGNED_IP_TO_CLIENT instead")))
+      |     ^~~~~~~~~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:180:73: error: 'root_get_handler' undeclared (first use in this function); did you mean 'xt_exc_handler'?
+  180 |         httpd_uri_t root = { .uri = "/", .method = HTTP_GET, .handler = root_get_handler };
+      |                                                                         ^~~~~~~~~~~~~~~~
+      |                                                                         xt_exc_handler
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:181:86: error: 'setwifi_post_handler' undeclared (first use in this function)
+  181 |         httpd_uri_t setwifi = { .uri = "/SetConfig", .method = HTTP_POST, .handler = setwifi_post_handler };
+      |                                                                                      ^~~~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c: In function 'setwifi_post_handler':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:202:40: error: implicit declaration of function 'MIN' [-Wimplicit-function-declaration]
+  202 |         ret = httpd_req_recv(req, buf, MIN(remaining, sizeof(buf)));
+      |                                        ^~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c: In function 'initialize_sntp':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:228:5: warning: 'sntp_setoperatingmode' is deprecated: use esp_sntp_setoperatingmode() instead [-Wdeprecated-declarations]
+  228 |     sntp_setoperatingmode(SNTP_OPMODE_POLL);
+      |     ^~~~~~~~~~~~~~~~~~~~~
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.h:34:
+/home/umesh_adwait/esp-idf/components/lwip/include/apps/esp_sntp.h:249:6: note: declared here
+  249 | void sntp_setoperatingmode(u8_t operating_mode)
+      |      ^~~~~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:229:5: warning: 'sntp_setservername' is deprecated: use esp_sntp_setservername() instead [-Wdeprecated-declarations]
+  229 |     sntp_setservername(0, "pool.ntp.org");
+      |     ^~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/components/lwip/include/apps/esp_sntp.h:263:6: note: declared here
+  263 | void sntp_setservername(u8_t idx, const char *server)
+      |      ^~~~~~~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:230:5: warning: 'sntp_init' is deprecated: use esp_sntp_init() instead [-Wdeprecated-declarations]
+  230 |     sntp_init();
+      |     ^~~~~~~~~
+/home/umesh_adwait/esp-idf/components/lwip/include/apps/esp_sntp.h:269:6: note: declared here
+  269 | void sntp_init(void)
+      |      ^~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:141: esp-idf/main/CMakeFiles/__idf_main.dir/network/wifi_config.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6398: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

@@ -1,0 +1,20 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c: In function 'set_time_from_http':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:563:31: error: 'ptr' undeclared (first use in this function)
+  563 |     unsigned long t = strtoul(ptr + 9, NULL, 10); // skip "unixtime:" and convert to integer
+      |                               ^~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:563:31: note: each undeclared identifier is reported only once for each function it appears in
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:578:42: error: format '%ld' expects argument of type 'long int', but argument 2 has type 'time_t' {aka 'long long int'} [-Werror=format=]
+  578 |         printf("Time set successfully: %ld\n", t);
+      |                                        ~~^     ~
+      |                                          |     |
+      |                                          |     time_t {aka long long int}
+      |                                          long int
+      |                                        %lld
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/wifi_config.c:555:11: warning: unused variable 'err' [-Wunused-variable]
+  555 | esp_err_t err = esp_http_client_perform(client);
+      |           ^~~
+cc1: some warnings being treated as errors
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:141: esp-idf/main/CMakeFiles/__idf_main.dir/network/wifi_config.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6398: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

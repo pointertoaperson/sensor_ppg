@@ -1,0 +1,15 @@
+idf_component_register(SRCS "main.c"
+                            "dvr/display.c"
+                            "dvr/per_intr.c"
+                            "dvr/i2c_helper.c"
+                            "network/mqtt_app.c"
+                            "network/network.c"
+                            "network/wifi_config.c"
+                            "dvr/ledconf.c" 
+                            "dvr/interr_event.c"
+                            "process.c"
+                       INCLUDE_DIRS "."
+                                    "dvr"
+                                    "network"
+    REQUIRES esp_adc esp_timer driver 
+                       REQUIRES esp-dsp nvs_flash driver esp_wifi esp_netif spi_flash esp_http_server esp_adc mqtt esp_http_client)

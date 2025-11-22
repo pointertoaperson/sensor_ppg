@@ -1,0 +1,36 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/ledconf.c: In function 'led_init':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/ledconf.c:10:34: error: 'RED_LED_PIN' undeclared (first use in this function)
+   10 |         .pin_bit_mask = (1ULL << RED_LED_PIN) | (1ULL << IR_LED_PIN) | (1ULL << GREEN_LED_PIN),
+      |                                  ^~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/ledconf.c:10:34: note: each undeclared identifier is reported only once for each function it appears in
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/ledconf.c:10:58: error: 'IR_LED_PIN' undeclared (first use in this function)
+   10 |         .pin_bit_mask = (1ULL << RED_LED_PIN) | (1ULL << IR_LED_PIN) | (1ULL << GREEN_LED_PIN),
+      |                                                          ^~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/ledconf.c:10:81: error: 'GREEN_LED_PIN' undeclared (first use in this function)
+   10 |         .pin_bit_mask = (1ULL << RED_LED_PIN) | (1ULL << IR_LED_PIN) | (1ULL << GREEN_LED_PIN),
+      |                                                                                 ^~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/ledconf.c: In function 'led_state':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/ledconf.c:29:28: error: 'GREEN_LED_PIN' undeclared (first use in this function)
+   29 |             gpio_set_level(GREEN_LED_PIN, 0);
+      |                            ^~~~~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/ledconf.c:30:28: error: 'IR_LED_PIN' undeclared (first use in this function)
+   30 |             gpio_set_level(IR_LED_PIN, 1);
+      |                            ^~~~~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/ledconf.c:31:28: error: 'RED_LED_PIN' undeclared (first use in this function)
+   31 |             gpio_set_level(RED_LED_PIN, 0);
+      |                            ^~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:154: esp-idf/main/CMakeFiles/__idf_main.dir/dvr/ledconf.c.obj] Error 1
+make[2]: *** Waiting for unfinished jobs....
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/main.c:26:
+/home/umesh_adwait/esp-idf/components/spi_flash/include/esp_spi_flash.h:6:2: warning: #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead [-Wcpp]
+    6 | #warning esp_spi_flash.h is deprecated, please use spi_flash_mmap.h instead
+      |  ^~~~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c: In function 'adc_timer_callback':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:50:11: error: 'count' undeclared (first use in this function)
+   50 |         { count = 0;
+      |           ^~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/dvr/interr_event.c:50:11: note: each undeclared identifier is reported only once for each function it appears in
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:167: esp-idf/main/CMakeFiles/__idf_main.dir/dvr/interr_event.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6314: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

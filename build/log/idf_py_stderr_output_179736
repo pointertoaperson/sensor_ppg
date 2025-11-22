@@ -1,0 +1,17 @@
+Command: make -j 14 all
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c: In function 'mqtt_event_handler':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:27:29: warning: unused variable 'event' [-Wunused-variable]
+   27 |     esp_mqtt_event_handle_t event = event_data;
+      |                             ^~~~~
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c: In function 'mqtt_publish_value':
+/home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:82:5: error: too few arguments to function 'esp_mqtt_client_enqueue'; expected 7, have 6
+   82 |     esp_mqtt_client_enqueue(client, TOPIC, payload, 0, 1, 0);
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+In file included from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.h:20,
+                 from /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/main/network/mqtt_app.c:16:
+/home/umesh_adwait/esp-idf/components/mqtt/esp-mqtt/include/mqtt_client.h:593:5: note: declared here
+  593 | int esp_mqtt_client_enqueue(esp_mqtt_client_handle_t client, const char *topic,
+      |     ^~~~~~~~~~~~~~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:115: esp-idf/main/CMakeFiles/__idf_main.dir/network/mqtt_app.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:6398: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:130: all] Error 2

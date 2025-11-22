@@ -1,0 +1,329 @@
+Command: /home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python /home/umesh_adwait/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/test.elf /home/umesh_adwait/esp-idf/examples/get-started/test_phase2/build/bootloader/bootloader.elf -m '/home/umesh_adwait/.espressif/python_env/idf6.0_py3.10_env/bin/python' '/home/umesh_adwait/esp-idf/tools/idf.py'
+ets Jul 29 2019 12:21:46
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6372
+load:0x40078000,len:15928
+load:0x40080400,len:3880
+entry 0x40080638
+[0;32mI (27) boot: ESP-IDF v6.0-dev-1002-gbfe5caf58f-dirty 2nd stage bootloader[0m
+[0;32mI (27) boot: compile time Aug 19 2025 14:14:05[0m
+[0;32mI (28) boot: Multicore bootloader[0m
+[0;32mI (31) boot: chip revision: v3.1[0m
+[0;32mI (34) boot.esp32: SPI Speed      : 40MHz[0m
+[0;32mI (37) boot.esp32: SPI Mode       : DIO[0m
+[0;32mI (41) boot.esp32: SPI Flash Size : 2MB[0m
+[0;32mI (45) boot: Enabling RNG early entropy source...[0m
+[0;32mI (49) boot: Partition Table:[0m
+[0;32mI (52) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (58) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (71) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (78) boot: End of partition table[0m
+[0;32mI (81) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=22f78h (143224) map[0m
+[0;32mI (139) esp_image: segment 1: paddr=00032fa0 vaddr=3ff80000 size=00024h (    36) load[0m
+[0;32mI (139) esp_image: segment 2: paddr=00032fcc vaddr=3ffb0000 size=05284h ( 21124) load[0m
+[0;32mI (151) esp_image: segment 3: paddr=00038258 vaddr=40080000 size=07dc0h ( 32192) load[0m
+[0;32mI (164) esp_image: segment 4: paddr=00040020 vaddr=400d0020 size=ae178h (713080) map[0m
+[0;32mI (417) esp_image: segment 5: paddr=000ee1a0 vaddr=40087dc0 size=129ech ( 76268) load[0m
+[0;32mI (461) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (461) boot: Disabling RNG early entropy source...[0m
+[0;32mI (472) cpu_start: Multicore app[0m
+[0;32mI (480) cpu_start: Pro cpu start user code[0m
+[0;32mI (480) cpu_start: cpu freq: 240000000 Hz[0m
+[0;32mI (480) app_init: Application information:[0m
+[0;32mI (480) app_init: Project name:     test[0m
+[0;32mI (484) app_init: App version:      v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (490) app_init: Compile time:     Aug 21 2025 16:19:45[0m
+[0;32mI (495) app_init: ELF file SHA256:  d064b597b...[0m
+[0;32mI (499) app_init: ESP-IDF:          v6.0-dev-1002-gbfe5caf58f-dirty[0m
+[0;32mI (505) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (509) efuse_init: Max chip rev:     v3.99 [0m
+[0;32mI (513) efuse_init: Chip rev:         v3.1[0m
+[0;32mI (517) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (523) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM[0m
+[0;32mI (528) heap_init: At 3FFBC6B0 len 00023950 (142 KiB): DRAM[0m
+[0;32mI (534) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM[0m
+[0;32mI (539) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM[0m
+[0;32mI (545) heap_init: At 4009A7AC len 00005854 (22 KiB): IRAM[0m
+[0;32mI (551) spi_flash: detected chip: generic[0m
+[0;32mI (553) spi_flash: flash io: dio[0m
+[0;33mW (556) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;33mW (569) i2c: This driver is an old driver, please migrate your application code to adapt `driver/i2c_master.h`[0m
+[0;32mI (580) main_task: Started on CPU0[0m
+[0;32mI (590) main_task: Calling app_main()[0m
+[0;32mI (780) networ_main: Starting...[0m
+[0;32mI (780) ssid_reset:  pin interrupt initialized on GPIO 32 & 0[0m
+[0;32mI (820) TIME and MQTT: Read SSID from NVS: 'mutu_test'[0m
+[0;32mI (820) TIME and MQTT: Read Password from NVS: '12a12@12'[0m
+[0;32mI (820) TIME and MQTT: Read device id from NVS: 'DEV01'[0m
+[0;32mI (820) TIME and MQTT: Read broker address from NVS: 'ws://broker.hivemq.com:8000/mqtt'[0m
+[0;32mI (840) wifi:wifi driver task: 3ffcddc8, prio:23, stack:6656, core=0[0m
+[0;32mI (850) wifi:wifi firmware version: 956d811[0m
+[0;32mI (850) wifi:wifi certification version: v7.0[0m
+[0;32mI (850) wifi:config NVS flash: enabled[0m
+[0;32mI (850) wifi:config nano formatting: disabled[0m
+[0;32mI (850) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (860) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (860) wifi:Init management short buffer num: 32[0m
+[0;32mI (870) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (870) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (880) wifi:Init static rx buffer num: 10[0m
+[0;32mI (880) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (880) wifi_init: rx ba win: 6[0m
+[0;32mI (890) wifi_init: accept mbox: 6[0m
+[0;32mI (890) wifi_init: tcpip mbox: 32[0m
+[0;32mI (890) wifi_init: udp mbox: 6[0m
+[0;32mI (900) wifi_init: tcp mbox: 6[0m
+[0;32mI (900) wifi_init: tcp tx win: 5760[0m
+[0;32mI (900) wifi_init: tcp rx win: 5760[0m
+[0;32mI (900) wifi_init: tcp mss: 1440[0m
+[0;32mI (910) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (910) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;33mW (920) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (920) phy_init: phy_version 4860,6b7a6e5,Feb  6 2025,14:47:07[0m
+[0;32mI (1000) wifi:mode : sta (18:fe:34:12:34:56)[0m
+[0;32mI (1000) wifi:enable tsf[0m
+[0;32mI (1000) TIME and MQTT: STA connecting to saved SSID: mutu_test[0m
+[0;32mI (1030) TIME and MQTT: STA started, connecting to AP...[0m
+[0;32mI (1030) main_task: Returned from app_main()[0m
+[0;32mI (1130) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (1130) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (1140) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (1150) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (1180) wifi:connected with mutu_test, aid = 1, channel 6, BW20, bssid = 7a:85:7d:f5:f9:dd[0m
+[0;32mI (1190) wifi:security: WPA2-PSK, phy: bgn, rssi: -14[0m
+[0;32mI (1190) wifi:pm start, type: 1[0m
+
+[0;32mI (1190) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (1200) wifi:<ba-add>idx:0 (ifx:0, 7a:85:7d:f5:f9:dd), tid:0, ssn:0, winSize:64[0m
+[0;32mI (1210) TIME and MQTT: Connected, got IP: 95.116.101.115[0m
+[0;32mI (1210) time: Initializing SNTP[0m
+[0;32mI (1210) time: Waing for system time to be set... (1/10)[0m
+[0;32mI (1540) wifi:dp: 2, bi: 102400, li: 4, scale listen interval from 307200 us to 409600 us[0m
+[0;32mI (1540) wifi:AP's beacon interval = 102400 us, DTIM period = 2[0m
+[0;32mI (3220) time: SNTP sync status: 0[0m
+[0;32mI (3220) time: Waiting for system time to be set... (2/10)[0m
+[0;32mI (5220) time: SNTP sync status: 0[0m
+[0;32mI (5220) time: Waiting for system time to be set... (3/10)[0m
+maxIDX =22maxval =4
+[0;32mI (7220) time: SNTP sync status: 0[0m
+[0;32mI (7220) time: Waiting for system time to be set... (4/10)[0m
+[0;32mI (9220) time: SNTP sync status: 0[0m
+[0;32mI (9220) time: Waiting for system time to be set... (5/10)[0m
+maxIDX =5maxval =1
+[0;32mI (11220) time: SNTP sync status: 0[0m
+[0;32mI (11220) time: Waiting for system time to be set... (6/10)[0m
+[0;32mI (13220) time: SNTP sync status: 0[0m
+[0;32mI (13220) time: Waiting for system time to be set... (7/10)[0m
+maxIDX =4maxval =1
+[0;32mI (15220) time: SNTP sync status: 0[0m
+[0;32mI (15220) time: Waiting for system time to be set... (8/10)[0m
+[0;32mI (17220) time: SNTP sync status: 0[0m
+[0;32mI (17220) time: Waiting for system time to be set... (9/10)[0m
+maxIDX =4maxval =1
+[0;32mI (19220) time: SNTP sync status: 0[0m
+[0;33mW (19220) time: System time not set correctly!  70[0m
+[0;32mI (19220) TIME and MQTT: Starting MQTT (time sync done)[0m
+[1;31mE (19220) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (19230) p-tls: Failed to open new connection[0m
+[1;31mE (19230) transport_base: Faile to open a new connection[0m
+[1;31mE (19240) mqtt_client: Error transport connect[0m
+[1;31mE (19240) mqtt_example: MQTT error occurred[0m
+[0;33mW (19240) mqtt_example: MQTT disconnected[0m
+maxIDX =5maxval =3
+maxIDX =4maxval =2
+[1;31mE (29250) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (29250) esp-tls: Failed to open new connection[0m
+[1;31mE (29250) transpor_base: Failed to open a new connection[0m
+[1;31mE (29250) mq_client: Error transport connect[0m
+[1;31mE (29260) mqtt_example: MQTT error occurred[0m
+[0;33mW (29260) mqtt_example: MQTT disconnected[0mmaxIDX =4maxval =1
+maxIDX =4maxval =2
+[1;31mE (39270) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (39270) esp-tls: Failed to open new connection[0m
+[1;31mE (390) transport_baseFailed to open a new connection[0m
+[1;31mE (39270) mqtt_cliet: Error transport connect[0m
+[1;31mE (39280) mqtt_example: MQTT error occurr[0m
+[0;33mW (39280) mqtt_example: MQTT disconnected[0m
+maxIDX =23maxval =2
+maxIDX =6maxval =1
+[1;31mE (49290) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (49290) esp-tls: Failed to open new connection[0m
+[1;31mE (49290) transpor_base: Failed to open a new connection[0m
+[1;31mE (49290) mq_client: Error transport connect[0m
+[1;31mE (49300) mqtt_example: MQTT error occurred[0m
+[0;33mW (49300) mqtt_example: MQTT disconnected[0mmaxIDX =5maxval =3
+maxIDX =4maxval =1
+[1;31mE (59310) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (59310) esp-tls: Failed to open new connection[0m
+[1;31mE (59310) transport_base: Failed to open a new connection[0m
+[1;31mE (59310) mqtt_client: Error transport connect[0m
+[1;31mE (59320) mqtt_exale: MQTT error occurred[0m
+[0;33mW (59320) mqtt_example: MQTT disconnected[0m
+maxIDX =4maxval =2
+maxIDX =4maxval =3
+[1;31mE (69330) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (69330) esp-tls: Failed to open new connection[0m
+[1;31mE (69330) transport_base: Failed to open a new connection[0m
+[1;31mE (69330) mqtt_client: Error transport connect[0m
+[1;31mE (69340) mqtt_example: MQTT error occurred[0m
+[0;33mW (69340) mqtt_examp: MQTT disconnected[0m
+maxIDX =4maxval =3
+maxIDX =4maxval =2
+maxIDX =4maxval =2
+[1;31mE (79350) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (79350) esp-tls: Failed to open new connection[0m
+[1;31mE (79350) transport_base: Failed to open a new connection[0m
+[1;31mE (79350) mqtt_client: Error transport connect[0m
+[1;31mE (79360) mqtt_example: MQTT error occurred[0m
+[0;33mW (7360) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =5maxval =1
+[1;31mE (89370) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (89370) esp-tls: Failed to open new connection[0m
+[1;31mE (89370) transport_base: Failed to open a new connection[0m
+[1;31mE (89370) mqt_client: Error transport connect[0m
+[1;31mE (89380) mqtt_example: MQTT error occurred[0m
+[0;33mW (89380) mqtt_example: MQTT disconnected[0m
+maxIDX =4maxval =3
+maxIDX =4maxval =1
+[1;31mE (99390) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (99390) esp-tls: Failed to open new connection[0m
+[1;31mE (99390) transport_base: Failed to open a new connection[0m
+[1;31mE (99390) mqtt_client: Error transport connect[0m
+[1;31mE (99400) mqtt_example: MQTT error occurred[0m
+[0;33mW (99400) mqtt_example: MQTT disconnected[0m
+maxIDX =5maxval =1
+maxIDX =0maxval =0
+[1;31mE (109410) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (109410) esp-tls: Failed to open new connection[0m
+[1;31mE (109410) transport_base: Failed to open a new connection[0m
+[1;31mE (109410) mqtt_client: Error transport connect[0m
+[1;31mE (109420) mqtt_example: MQTT error occurred[0m
+[0;33mW (109420) mqtt_example: MQTT disconnected[0m
+maxIDX =8maxval =1
+maxIDX =0maxval =0
+[1;31mE (119430) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (119430) esp-tls: Failed to open new connection[0m
+[1;31mE (119430) transport_base: Failed to open a new connection[0m
+[1;31mE (119430) mqtt_client: Error transport connect[0m
+[1;31mE (119440) mqtt_example: MQTT error occurred[0m
+[0;33mW (119440) mqtt_example: MQTT disconnected[0m
+maxIDX =23maxval =2
+maxIDX =0maxval =0
+[1;31mE (129450) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (129450) esp-tls: Failed to open new connection[0m
+[1;31mE (129450) transport_base: Failed to open a new connection[0m
+[1;31mE (129460) mqtt_client: Error transport connet[0m
+[1;31mE (129460) mqtt_example: MQTT error occurred[0m
+[0;33mW (9460) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =49maxval =1
+[1;31mE (139470) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (139470) esp-tls: Failed to open new connection[0m
+[1;31mE (139470) transport_base: Failed to open a new connection[0m
+[1;31mE (139470) mqtt_client: Error transport connect[0m
+[1;31mE (139480) mqtt_example: MQTT error occurred[0m
+[0;33mW (139480) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (149490) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (149490) esp-tls: Failed to open new connection[0m
+[1;31mE (149490) transport_base: Failed to open a new connection[0m
+[1;31mE (149490) mqtt_client: Error transport connect[0m
+[1;31mE (149500) mqtt_example: MQTT error occurred[0m
+[0;33mW (149500) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (159510) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (159510) esp-tls: Failed to open new connection[0m
+[1;31mE (159510) transport_base: Failed to open a new connection[0m
+[1;31mE (159510) mqtt_client: Error transport connect[0m
+[1;31mE (159520) mqtt_example: MQT error occurred[0m
+[0;33mW (159520) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (169530) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (169530) esp-tls: Failed to open new connection[0m
+[1;31mE (169530) transport_base: Failed to open a new connection[0m
+[1;31mE (169540) mqtt_client: Error transport connect[0m
+[1;31mE (169540) mqtt_example: MQTT error occurred[0m
+[0;33mW (169540) mqtt_exale: MQTT disconnectemaxIDX =0maxval =0[0m
+maxIDX =0maxval =0
+[1;31mE (179550) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (179550) esp-tls: Failed to open new connection[0m
+[1;31mE (179550) transport_base: Failed to open a new connection[0m
+[1;31mE (1790) mqtt_client: Error transport connect[0m
+[1;31mE (179560) mqtt_example: MQT error occurred[0m
+[0;33mW (179560) mqtt_example: MQTT discoected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (189570) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (189570) esp-tls: Failed to open new connection[0m
+[1;31mE (189570) transport_base: Failed to open a new connection[0m
+[1;31mE (189570) mqtt_client: Error transrt connect[0m
+[1;31mE (189580) mqtt_example: MQTT error occurred[0m
+[0;33mW (189580) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (199590) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (199590) esp-tls: Failed to open new connection[0m
+[1;31mE (199590) transport_base: Failed to open a new connection[0m
+[1;31mE (199590) mqtt_client: Error transport connect[0m
+[1;31mE (199600) mqtt_example: MQTT error occurred[0m
+[0;33mW (199600) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (209610) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (209610) esp-tls: Failed to open neconnection[0m
+[1;31mE (209610) transport_base: Failed to open a new connection[0m
+[1;31mE (209610) mqtt_client: Error transport connect[0m
+[1;31mE (209620) mqtt_example: MQTT error occurred[0m
+[0;33mW (209620) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (219630) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (219630) esp-tls: Failed to open new connection[0m
+[1;31mE (219630) transport_base: Failed to open a new connection[0m
+[1;31mE (219630) mqtt_client: Error transport connect[0m
+[1;31mE (219640) mqtt_example: MQTT error occurred[0m
+[0;33mW (219640) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (229650) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (229650) esp-tls: Failed to open new connection[0m
+[1;31mE (229650) transport_base: Failed to open a new connection[0m
+[1;31mE (229650) mqtt_client: Error transport connect[0m
+[1;31mE (229660) mqtt_example: MQTT error occurred[0m
+[0;33mW (229660) mqtt_example: MQTT disconnectedmaxIDX =0maxval =0[0m
+maxIDX =0maxval =0
+[1;31mE (239670) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (239670) esp-tls: Failed to open new connection[0m
+[1;31mE (239670) transport_base: Failed o open a new connection[0m
+[1;31mE (239670) mqtt_client: Error transport connect[0m
+[1;31mE (239680) mqtt_example: MQTT error occurred[0m
+[0;33mW (239680) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (249690) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (249690) esp-tls: Failed to open new connection[0m
+[1;31mE (249690) transport_base: Faild to open a new connection[0m
+[1;31mE (249690) mqtt_client: Error transport connect[0m
+[1;31mE (249700) mqtt_example: MQTT error occurred[0m
+[0;33mW (249700) mqtt_ample: MQTT disconnected[0m
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+maxIDX =0maxval =0
+[1;31mE (259710) esp-tls: couldn't get hostname for :broker.hivemq.com: getaddrinfo() returns 202, addrinfo=0x0[0m
+[1;31mE (259710) esp-tls: Failed to open new connection[0m
+[1;31mE (259710) transport_base: Failed to open a new connection[0m
+[1;31mE (259710) mqtt_client: Error transport connect[0m
+[1;31mE (259720) mqtt_example: MQTT error occurred[0m
+[0;33mW (259720) mqtt_example: MQTT disconnected[0m
+maxIDX =0maxval =0
