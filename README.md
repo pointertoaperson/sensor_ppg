@@ -37,6 +37,6 @@ Originally implemented with **STM32 + ESP8266**, the system has been fully migra
 
 1. Clone the repository:  
    ```bash
-   git clone https://github.com/your-username/PPG-HeartRate-Monitor.git
+   git clone https://github.com/pointertoaperson/sensor_ppg.git
 
 
