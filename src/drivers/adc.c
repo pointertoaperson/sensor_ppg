@@ -76,7 +76,7 @@ void adc_init_cont(void)
 
 	// TIM3 Setup for ADC Trigger
 	TIM3->PSC = 36000 - 1; // 0.5 ms tick
-	TIM3->ARR = 12 - 1;	   // 12 x 0.5 = 6ms
+	TIM3->ARR = 12 - 1;	   // 6 x 0.5 = 3ms
 
 	TIM3->CR2 &= ~TIM_CR2_MMS;
 	TIM3->CR2 |= TIM_CR2_MMS_1; // MMS = 010: UEV as TRGO

@@ -19,7 +19,8 @@
 #include "stm32f1xx.h"
 #include "stdbool.h"
 
-#define ADC_BUFFER (256*3)
+#define ADC_BUFFER (512*2)
+
 
 extern volatile int16_t adc_buffer[ADC_BUFFER];
 extern volatile int16_t adc_val;

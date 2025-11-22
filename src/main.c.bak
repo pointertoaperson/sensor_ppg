@@ -1,0 +1,162 @@
+/**
+ * @file    main.c
+ * @brief   Test application entry point for connectHeart peripheral and DSP library STM32 project
+ * @author  Umesh Puri
+ * @date    2025-06-02
+ * @version 1.0
+ *
+ * This is a simple test main file for initial development and verification
+ * of connectHeart peripherals and DSP library functionality on STM32F103.
+ *
+ * @license MIT License
+ * Copyright (c) 2025 Umesh
+ */
+
+#include "stm32f1xx.h"
+#include "core_cm3.h"
+#include "arm_math.h"
+#include "string.h"
+#include <stdint.h>
+#include <stdio.h>
+
+#include "HSE_CLK.h"
+#include "delay.h"
+#include "spi.h"
+#include "adc.h"
+#include "ledconf.h"
+#include "hamming.h"
+
+#define FFT_SIZE 512
+#define PPG_SAMP (&adc_buffer[0])
+#define SPO2_IR (&adc_buffer[1])
+#define SPO2_RED (&adc_buffer[2])
+
+int __errno = 0;
+
+int16_t *pPPG_Sample = PPG_SAMP; // pointer for Green
+int16_t *pSPO2_IR = SPO2_IR;     // pointer for IR
+int16_t *pSPO2_RED = SPO2_RED;   // pointer for RED
+q15_t input[FFT_SIZE * 2];
+
+static q15_t mag[FFT_SIZE] = {0};
+
+q15_t maxVal = 0;
+uint32_t maxIndex = 0;
+q15_t noisefloor = 0;
+volatile q15_t confidence = 0;
+volatile float32_t hr_values = 0.0f;
+q15_t sampleMean = 0;
+
+arm_cfft_radix2_instance_q15 fft_inst;
+
+void DSP_process(void); // DSP_process function prototype
+
+int main(void)
+{
+   // Peripheral and process initialization
+   X_Clock_Init();  // 72MHz CLK
+   spi_init();      // SPI initialization
+   TIM2_Init();     // TIM2 Delay initialization
+   adc_init_cont(); // ADC  initialization
+   led_init();      // LEDs initialization
+
+   arm_cfft_radix2_init_q15(&fft_inst, FFT_SIZE, 0, 1); // forward FFT
+
+   while (1)
+   {
+      if (ACC_COMP)
+      {
+
+         ACC_COMP = false;
+         DSP_process(); // call DSP_process
+
+         // after completion of DSP start the process again
+         start_process();
+      }
+      else
+      {
+
+         _us_delay(50);
+         spi_transmit(hr_values, confidence); // display Heart Rate and confidence
+         _us_delay(50);
+      }
+   }
+   return 0;
+}
+
+void DSP_process(void)
+{
+
+   for (uint16_t i = 0; i < FFT_SIZE / 2; i++)
+   {
+      input[i << 1] = (adc_buffer[i * 3]);
+      input[(i << 1) + 1] = 0;
+   }
+
+   // ZERO PADDING to 512
+   memset(&input[FFT_SIZE], 0, ((FFT_SIZE)) * sizeof(q15_t));
+   // get mean of input only 256 * 2 interleved position
+   arm_mean_q15(&input[0], FFT_SIZE, &sampleMean);
+
+   // remove dc component
+   for (uint16_t i = 0; i < FFT_SIZE; i++)
+   {
+      input[i << 1] = (i < FFT_SIZE / 2) ? input[i << 1] - (sampleMean << 1) : 0; // compensate the means of interleved array multiplying by 2
+      int32_t temp = (int32_t)input[i << 1] * hamming[i];                         // Q15 * Q15 = Q30
+      input[i << 1] = (q15_t)__SSAT((temp >> 15), 16);                            // Back to Q15 and saturate to 16-bit
+      input[(i << 1) + 1] = 0;
+   }
+
+   arm_shift_q15(input, 8, input, FFT_SIZE * 2);
+   arm_cfft_radix2_q15(&fft_inst, input);
+   arm_cmplx_mag_q15(input, mag, FFT_SIZE);
+
+   // get noise floor before removing high bins up from FFT_SIZE/2 since we really dont have true signal above it
+   arm_mean_q15(&mag[0], FFT_SIZE / 2, &noisefloor);
+
+   // remove noise component
+   for (uint16_t i = 0; i < FFT_SIZE; i++)
+   {
+      mag[i] = (i < FFT_SIZE / 2) ? mag[i] - noisefloor : 0;
+   }
+
+   // Bandpass filtering: zero out low and high frequencies
+   memset(&mag[0], 0, 4 * sizeof(q15_t));                // zero bins from 0 to 4
+   memset(&mag[50], 0, (FFT_SIZE - 50) * sizeof(q15_t)); // zero bins 50to end
+
+   arm_max_q15(mag, FFT_SIZE / 2, &maxVal, &maxIndex);
+
+   confidence = (noisefloor > 0) ? maxVal / noisefloor : 0;
+
+   if (confidence < 10 || maxVal < (q15_t)300) // threshold confidence
+   {
+      hr_values = 0;
+      return;
+   }
+
+   // Zero
+   if (maxIndex != 0 && maxIndex != FFT_SIZE - 1)
+   {
+
+      float32_t delta, refined_freq;
+      float32_t mag_km1 = (mag[maxIndex - 1]);
+      mag_km1 = (mag_km1 <= 0) ? 0.001f : mag_km1;
+      float32_t mag_k = (mag[maxIndex]);
+      mag_k = (mag_k <= 0) ? 0.001f : mag_k;
+      float32_t mag_kp1 = (mag[maxIndex + 1]);
+      mag_kp1 = (mag_kp1 <= 0) ? 0.001f : mag_kp1;
+
+      // delta = (mag_km1 - mag_kp1) / (2 * (mag_km1 - 2 * mag_k + mag_kp1));
+
+      // log-parablolic interpolation
+      delta = 0.5f * (logf(mag_km1) - logf(mag_kp1)) / (logf(mag_km1) - 2 * logf(mag_k) + logf(mag_kp1));
+
+      refined_freq = ((float32_t)maxIndex + delta) * 0.217f;
+      hr_values = (60.00f) * refined_freq;
+   }
+   else
+   {
+      hr_values = 0;
+      return;
+   }
+}

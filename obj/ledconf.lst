@@ -1,4 +1,4 @@
-ARM GAS  /tmp/cci9GhTB.s 			page 1
+ARM GAS  /tmp/ccldqpuN.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  /tmp/cci9GhTB.s 			page 1
   35              		.loc 1 20 18 view .LVU3
   36 0004 42F00402 		orr	r2, r2, #4
   37 0008 9A61     		str	r2, [r3, #24]
-ARM GAS  /tmp/cci9GhTB.s 			page 2
+ARM GAS  /tmp/ccldqpuN.s 			page 2
 
 
   21:src/drivers/ledconf.c **** 
@@ -90,45 +90,46 @@ ARM GAS  /tmp/cci9GhTB.s 			page 1
   56 0024 42F48012 		orr	r2, r2, #1048576
   57 0028 1A60     		str	r2, [r3]
   29:src/drivers/ledconf.c **** 
-  30:src/drivers/ledconf.c ****     // default to green LED
-  31:src/drivers/ledconf.c ****     GPIOA->ODR &= ~RED_LED_PIN;
-  58              		.loc 1 31 5 is_stmt 1 view .LVU13
-  59              		.loc 1 31 10 is_stmt 0 view .LVU14
+  30:src/drivers/ledconf.c ****    
+  31:src/drivers/ledconf.c ****     // default to green LED
+  32:src/drivers/ledconf.c ****     GPIOA->ODR &= ~RED_LED_PIN;
+  58              		.loc 1 32 5 is_stmt 1 view .LVU13
+  59              		.loc 1 32 10 is_stmt 0 view .LVU14
   60 002a DA68     		ldr	r2, [r3, #12]
-  61              		.loc 1 31 16 view .LVU15
+  61              		.loc 1 32 16 view .LVU15
   62 002c 22F02002 		bic	r2, r2, #32
   63 0030 DA60     		str	r2, [r3, #12]
-  32:src/drivers/ledconf.c ****     GPIOA->ODR &= ~IR_LED_PIN;
-  64              		.loc 1 32 5 is_stmt 1 view .LVU16
-  65              		.loc 1 32 10 is_stmt 0 view .LVU17
+  33:src/drivers/ledconf.c ****     GPIOA->ODR &= ~IR_LED_PIN;
+  64              		.loc 1 33 5 is_stmt 1 view .LVU16
+  65              		.loc 1 33 10 is_stmt 0 view .LVU17
   66 0032 DA68     		ldr	r2, [r3, #12]
-  67              		.loc 1 32 16 view .LVU18
+  67              		.loc 1 33 16 view .LVU18
   68 0034 22F04002 		bic	r2, r2, #64
   69 0038 DA60     		str	r2, [r3, #12]
-  33:src/drivers/ledconf.c ****     GPIOA->ODR |= GREEN_LED_PIN;
-  70              		.loc 1 33 5 is_stmt 1 view .LVU19
-  71              		.loc 1 33 10 is_stmt 0 view .LVU20
+  34:src/drivers/ledconf.c ****     GPIOA->ODR |= GREEN_LED_PIN;
+  70              		.loc 1 34 5 is_stmt 1 view .LVU19
+  71              		.loc 1 34 10 is_stmt 0 view .LVU20
   72 003a DA68     		ldr	r2, [r3, #12]
-  73              		.loc 1 33 16 view .LVU21
+  73              		.loc 1 34 16 view .LVU21
   74 003c 42F08002 		orr	r2, r2, #128
   75 0040 DA60     		str	r2, [r3, #12]
-  34:src/drivers/ledconf.c **** 
-  35:src/drivers/ledconf.c ****     GPIOC->CRH &= ~(GPIO_CRH_CNF13 | GPIO_CRH_MODE13);
-  76              		.loc 1 35 5 is_stmt 1 view .LVU22
-  77              		.loc 1 35 10 is_stmt 0 view .LVU23
+  35:src/drivers/ledconf.c **** 
+  36:src/drivers/ledconf.c ****     GPIOC->CRH &= ~(GPIO_CRH_CNF13 | GPIO_CRH_MODE13);
+  76              		.loc 1 36 5 is_stmt 1 view .LVU22
+  77              		.loc 1 36 10 is_stmt 0 view .LVU23
   78 0042 044A     		ldr	r2, .L2+4
+ARM GAS  /tmp/ccldqpuN.s 			page 3
+
+
   79 0044 5368     		ldr	r3, [r2, #4]
-ARM GAS  /tmp/cci9GhTB.s 			page 3
-
-
-  80              		.loc 1 35 16 view .LVU24
+  80              		.loc 1 36 16 view .LVU24
   81 0046 23F47003 		bic	r3, r3, #15728640
   82 004a 5360     		str	r3, [r2, #4]
-  36:src/drivers/ledconf.c ****     
-  37:src/drivers/ledconf.c ****   // GPIOC->ODR |= GPIO_ODR_ODR13; //test led off remove later
-  38:src/drivers/ledconf.c ****     
-  39:src/drivers/ledconf.c **** }
-  83              		.loc 1 39 1 view .LVU25
+  37:src/drivers/ledconf.c ****     
+  38:src/drivers/ledconf.c ****   // GPIOC->ODR |= GPIO_ODR_ODR13; //test led off remove later
+  39:src/drivers/ledconf.c ****     
+  40:src/drivers/ledconf.c **** }
+  83              		.loc 1 40 1 view .LVU25
   84 004c 7047     		bx	lr
   85              	.L3:
   86 004e 00BF     		.align	2
@@ -146,161 +147,162 @@ ARM GAS  /tmp/cci9GhTB.s 			page 1
   98              		.type	led_state, %function
   99              	led_state:
  100              	.LFB64:
-  40:src/drivers/ledconf.c **** 
-  41:src/drivers/ledconf.c **** uint8_t state =  0x01;
-  42:src/drivers/ledconf.c **** 
-  43:src/drivers/ledconf.c **** uint8_t led_state()
-  44:src/drivers/ledconf.c **** {
- 101              		.loc 1 44 1 is_stmt 1 view -0
+  41:src/drivers/ledconf.c **** 
+  42:src/drivers/ledconf.c **** uint8_t state =  0x01;
+  43:src/drivers/ledconf.c **** 
+  44:src/drivers/ledconf.c **** uint8_t led_state()
+  45:src/drivers/ledconf.c **** {
+ 101              		.loc 1 45 1 is_stmt 1 view -0
  102              		.cfi_startproc
  103              		@ args = 0, pretend = 0, frame = 0
  104              		@ frame_needed = 0, uses_anonymous_args = 0
  105              		@ link register save eliminated.
-  45:src/drivers/ledconf.c ****      state <<= 1;
- 106              		.loc 1 45 6 view .LVU27
- 107              		.loc 1 45 12 is_stmt 0 view .LVU28
+  46:src/drivers/ledconf.c ****      state <<= 1;
+ 106              		.loc 1 46 6 view .LVU27
+ 107              		.loc 1 46 12 is_stmt 0 view .LVU28
  108 0058 184A     		ldr	r2, .L10
  109 005a 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
  110 005c 5B00     		lsls	r3, r3, #1
  111 005e DBB2     		uxtb	r3, r3
-  46:src/drivers/ledconf.c **** 
-  47:src/drivers/ledconf.c ****     switch (state)
- 112              		.loc 1 47 5 view .LVU29
+  47:src/drivers/ledconf.c **** 
+  48:src/drivers/ledconf.c ****     switch (state)
+ 112              		.loc 1 48 5 view .LVU29
  113 0060 042B     		cmp	r3, #4
-  45:src/drivers/ledconf.c ****      state <<= 1;
- 114              		.loc 1 45 12 view .LVU30
+  46:src/drivers/ledconf.c ****      state <<= 1;
+ 114              		.loc 1 46 12 view .LVU30
  115 0062 1370     		strb	r3, [r2]
- 116              		.loc 1 47 5 is_stmt 1 view .LVU31
+ 116              		.loc 1 48 5 is_stmt 1 view .LVU31
  117 0064 10D0     		beq	.L5
  118 0066 082B     		cmp	r3, #8
  119 0068 1DD0     		beq	.L6
  120 006a 022B     		cmp	r3, #2
  121 006c 19D1     		bne	.L7
-  48:src/drivers/ledconf.c ****     {
-  49:src/drivers/ledconf.c **** 
-ARM GAS  /tmp/cci9GhTB.s 			page 4
+  49:src/drivers/ledconf.c ****     {
+ARM GAS  /tmp/ccldqpuN.s 			page 4
 
 
-  50:src/drivers/ledconf.c ****     case 0x02:
-  51:src/drivers/ledconf.c ****         // Turn on IR only
-  52:src/drivers/ledconf.c ****         GPIOA->ODR &= ~GREEN_LED_PIN;
- 122              		.loc 1 52 9 view .LVU32
- 123              		.loc 1 52 14 is_stmt 0 view .LVU33
+  50:src/drivers/ledconf.c **** 
+  51:src/drivers/ledconf.c ****     case 0x02:
+  52:src/drivers/ledconf.c ****         // Turn on IR only
+  53:src/drivers/ledconf.c ****         
+  54:src/drivers/ledconf.c ****         GPIOA->ODR &= ~GREEN_LED_PIN;
+ 122              		.loc 1 54 9 view .LVU32
+ 123              		.loc 1 54 14 is_stmt 0 view .LVU33
  124 006e 144B     		ldr	r3, .L10+4
  125 0070 D968     		ldr	r1, [r3, #12]
- 126              		.loc 1 52 20 view .LVU34
+ 126              		.loc 1 54 20 view .LVU34
  127 0072 21F08001 		bic	r1, r1, #128
  128 0076 D960     		str	r1, [r3, #12]
-  53:src/drivers/ledconf.c ****         GPIOA->ODR |= IR_LED_PIN;
- 129              		.loc 1 53 9 is_stmt 1 view .LVU35
- 130              		.loc 1 53 14 is_stmt 0 view .LVU36
+  55:src/drivers/ledconf.c ****         GPIOA->ODR |= IR_LED_PIN;
+ 129              		.loc 1 55 9 is_stmt 1 view .LVU35
+ 130              		.loc 1 55 14 is_stmt 0 view .LVU36
  131 0078 D968     		ldr	r1, [r3, #12]
- 132              		.loc 1 53 20 view .LVU37
+ 132              		.loc 1 55 20 view .LVU37
  133 007a 41F04001 		orr	r1, r1, #64
  134              	.L8:
-  54:src/drivers/ledconf.c ****         GPIOA->ODR &= ~RED_LED_PIN;
-  55:src/drivers/ledconf.c **** 
-  56:src/drivers/ledconf.c ****         break;
+  56:src/drivers/ledconf.c ****         GPIOA->ODR &= ~RED_LED_PIN;
   57:src/drivers/ledconf.c **** 
-  58:src/drivers/ledconf.c ****     case 0x04:
+  58:src/drivers/ledconf.c ****         break;
   59:src/drivers/ledconf.c **** 
-  60:src/drivers/ledconf.c ****         // turn of RED only
-  61:src/drivers/ledconf.c ****         GPIOA->ODR &= ~GREEN_LED_PIN;
-  62:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
-  63:src/drivers/ledconf.c ****         GPIOA->ODR |= RED_LED_PIN;
-  64:src/drivers/ledconf.c **** 
-  65:src/drivers/ledconf.c ****         break;
-  66:src/drivers/ledconf.c ****     case 0x08:
-  67:src/drivers/ledconf.c ****         //RESET state
-  68:src/drivers/ledconf.c ****         state = 0x01;
-  69:src/drivers/ledconf.c ****          GPIOA->ODR |= GREEN_LED_PIN;
-  70:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
- 135              		.loc 1 70 20 view .LVU38
+  60:src/drivers/ledconf.c ****     case 0x04:
+  61:src/drivers/ledconf.c **** 
+  62:src/drivers/ledconf.c ****         // turn of RED only
+  63:src/drivers/ledconf.c ****         GPIOA->ODR &= ~GREEN_LED_PIN;
+  64:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
+  65:src/drivers/ledconf.c ****         GPIOA->ODR |= RED_LED_PIN;
+  66:src/drivers/ledconf.c **** 
+  67:src/drivers/ledconf.c ****         break;
+  68:src/drivers/ledconf.c ****     case 0x08:
+  69:src/drivers/ledconf.c ****         //RESET state
+  70:src/drivers/ledconf.c ****         state = 0x01;
+  71:src/drivers/ledconf.c ****          GPIOA->ODR |= GREEN_LED_PIN;
+  72:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
+ 135              		.loc 1 72 20 view .LVU38
  136 007e D960     		str	r1, [r3, #12]
-  71:src/drivers/ledconf.c ****         GPIOA->ODR &= ~RED_LED_PIN;
- 137              		.loc 1 71 9 is_stmt 1 view .LVU39
- 138              		.loc 1 71 14 is_stmt 0 view .LVU40
+  73:src/drivers/ledconf.c ****         GPIOA->ODR &= ~RED_LED_PIN;
+ 137              		.loc 1 73 9 is_stmt 1 view .LVU39
+ 138              		.loc 1 73 14 is_stmt 0 view .LVU40
  139 0080 D968     		ldr	r1, [r3, #12]
- 140              		.loc 1 71 20 view .LVU41
+ 140              		.loc 1 73 20 view .LVU41
  141 0082 21F02001 		bic	r1, r1, #32
  142 0086 0BE0     		b	.L9
  143              	.L5:
-  61:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
- 144              		.loc 1 61 9 is_stmt 1 view .LVU42
-  61:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
- 145              		.loc 1 61 14 is_stmt 0 view .LVU43
+  63:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
+ 144              		.loc 1 63 9 is_stmt 1 view .LVU42
+  63:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
+ 145              		.loc 1 63 14 is_stmt 0 view .LVU43
  146 0088 0D4B     		ldr	r3, .L10+4
  147 008a D968     		ldr	r1, [r3, #12]
-  61:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
- 148              		.loc 1 61 20 view .LVU44
+  63:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
+ 148              		.loc 1 63 20 view .LVU44
  149 008c 21F08001 		bic	r1, r1, #128
  150 0090 D960     		str	r1, [r3, #12]
-  62:src/drivers/ledconf.c ****         GPIOA->ODR |= RED_LED_PIN;
- 151              		.loc 1 62 9 is_stmt 1 view .LVU45
-  62:src/drivers/ledconf.c ****         GPIOA->ODR |= RED_LED_PIN;
-ARM GAS  /tmp/cci9GhTB.s 			page 5
+  64:src/drivers/ledconf.c ****         GPIOA->ODR |= RED_LED_PIN;
+ARM GAS  /tmp/ccldqpuN.s 			page 5
 
 
- 152              		.loc 1 62 14 is_stmt 0 view .LVU46
+ 151              		.loc 1 64 9 is_stmt 1 view .LVU45
+  64:src/drivers/ledconf.c ****         GPIOA->ODR |= RED_LED_PIN;
+ 152              		.loc 1 64 14 is_stmt 0 view .LVU46
  153 0092 D968     		ldr	r1, [r3, #12]
-  62:src/drivers/ledconf.c ****         GPIOA->ODR |= RED_LED_PIN;
- 154              		.loc 1 62 20 view .LVU47
+  64:src/drivers/ledconf.c ****         GPIOA->ODR |= RED_LED_PIN;
+ 154              		.loc 1 64 20 view .LVU47
  155 0094 21F04001 		bic	r1, r1, #64
  156 0098 D960     		str	r1, [r3, #12]
-  63:src/drivers/ledconf.c **** 
- 157              		.loc 1 63 9 is_stmt 1 view .LVU48
-  63:src/drivers/ledconf.c **** 
- 158              		.loc 1 63 14 is_stmt 0 view .LVU49
+  65:src/drivers/ledconf.c **** 
+ 157              		.loc 1 65 9 is_stmt 1 view .LVU48
+  65:src/drivers/ledconf.c **** 
+ 158              		.loc 1 65 14 is_stmt 0 view .LVU49
  159 009a D968     		ldr	r1, [r3, #12]
-  63:src/drivers/ledconf.c **** 
- 160              		.loc 1 63 20 view .LVU50
+  65:src/drivers/ledconf.c **** 
+ 160              		.loc 1 65 20 view .LVU50
  161 009c 41F02001 		orr	r1, r1, #32
  162              	.L9:
- 163              		.loc 1 71 20 view .LVU51
+ 163              		.loc 1 73 20 view .LVU51
  164 00a0 D960     		str	r1, [r3, #12]
-  72:src/drivers/ledconf.c ****         
-  73:src/drivers/ledconf.c ****         break;
- 165              		.loc 1 73 9 is_stmt 1 view .LVU52
- 166              	.L7:
   74:src/drivers/ledconf.c **** 
-  75:src/drivers/ledconf.c ****         
-  76:src/drivers/ledconf.c ****     }
-  77:src/drivers/ledconf.c ****     return state;
- 167              		.loc 1 77 5 view .LVU53
-  78:src/drivers/ledconf.c **** }
- 168              		.loc 1 78 1 is_stmt 0 view .LVU54
+  75:src/drivers/ledconf.c ****         break;
+ 165              		.loc 1 75 9 is_stmt 1 view .LVU52
+ 166              	.L7:
+  76:src/drivers/ledconf.c **** 
+  77:src/drivers/ledconf.c ****         
+  78:src/drivers/ledconf.c ****     }
+  79:src/drivers/ledconf.c ****     return state;
+ 167              		.loc 1 79 5 view .LVU53
+  80:src/drivers/ledconf.c **** }
+ 168              		.loc 1 80 1 is_stmt 0 view .LVU54
  169 00a2 1078     		ldrb	r0, [r2]	@ zero_extendqisi2
  170 00a4 7047     		bx	lr
  171              	.L6:
-  68:src/drivers/ledconf.c ****          GPIOA->ODR |= GREEN_LED_PIN;
- 172              		.loc 1 68 9 is_stmt 1 view .LVU55
-  68:src/drivers/ledconf.c ****          GPIOA->ODR |= GREEN_LED_PIN;
- 173              		.loc 1 68 15 is_stmt 0 view .LVU56
+  70:src/drivers/ledconf.c ****          GPIOA->ODR |= GREEN_LED_PIN;
+ 172              		.loc 1 70 9 is_stmt 1 view .LVU55
+  70:src/drivers/ledconf.c ****          GPIOA->ODR |= GREEN_LED_PIN;
+ 173              		.loc 1 70 15 is_stmt 0 view .LVU56
  174 00a6 0123     		movs	r3, #1
  175 00a8 1370     		strb	r3, [r2]
-  69:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
- 176              		.loc 1 69 10 is_stmt 1 view .LVU57
-  69:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
- 177              		.loc 1 69 15 is_stmt 0 view .LVU58
+  71:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
+ 176              		.loc 1 71 10 is_stmt 1 view .LVU57
+  71:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
+ 177              		.loc 1 71 15 is_stmt 0 view .LVU58
  178 00aa 054B     		ldr	r3, .L10+4
  179 00ac D968     		ldr	r1, [r3, #12]
-  69:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
- 180              		.loc 1 69 21 view .LVU59
+  71:src/drivers/ledconf.c ****         GPIOA->ODR &= ~IR_LED_PIN;
+ 180              		.loc 1 71 21 view .LVU59
  181 00ae 41F08001 		orr	r1, r1, #128
  182 00b2 D960     		str	r1, [r3, #12]
-  70:src/drivers/ledconf.c ****         GPIOA->ODR &= ~RED_LED_PIN;
- 183              		.loc 1 70 9 is_stmt 1 view .LVU60
-  70:src/drivers/ledconf.c ****         GPIOA->ODR &= ~RED_LED_PIN;
- 184              		.loc 1 70 14 is_stmt 0 view .LVU61
+  72:src/drivers/ledconf.c ****         GPIOA->ODR &= ~RED_LED_PIN;
+ 183              		.loc 1 72 9 is_stmt 1 view .LVU60
+  72:src/drivers/ledconf.c ****         GPIOA->ODR &= ~RED_LED_PIN;
+ 184              		.loc 1 72 14 is_stmt 0 view .LVU61
  185 00b4 D968     		ldr	r1, [r3, #12]
-  70:src/drivers/ledconf.c ****         GPIOA->ODR &= ~RED_LED_PIN;
- 186              		.loc 1 70 20 view .LVU62
+  72:src/drivers/ledconf.c ****         GPIOA->ODR &= ~RED_LED_PIN;
+ 186              		.loc 1 72 20 view .LVU62
  187 00b6 21F04001 		bic	r1, r1, #64
+ARM GAS  /tmp/ccldqpuN.s 			page 6
+
+
  188 00ba E0E7     		b	.L8
  189              	.L11:
-ARM GAS  /tmp/cci9GhTB.s 			page 6
-
-
  190              		.align	2
  191              	.L10:
  192 00bc 00000000 		.word	.LANCHOR0
@@ -356,11 +358,11 @@ ARM GAS  /tmp/cci9GhTB.s 			page 1
  242 0047 01       		.uleb128 0x1
  243 0048 02       		.byte	0x2
  244 0049 07       		.byte	0x7
+ARM GAS  /tmp/ccldqpuN.s 			page 7
+
+
  245 004a D1000000 		.4byte	.LASF3
  246 004e 01       		.uleb128 0x1
-ARM GAS  /tmp/cci9GhTB.s 			page 7
-
-
  247 004f 04       		.byte	0x4
  248 0050 05       		.byte	0x5
  249 0051 9F010000 		.4byte	.LASF4
@@ -416,11 +418,11 @@ ARM GAS  /tmp/cci9GhTB.s 			page 1
  299 00b5 03       		.uleb128 0x3
  300 00b6 43524800 		.ascii	"CRH\000"
  301 00ba 6901     		.2byte	0x169
+ARM GAS  /tmp/ccldqpuN.s 			page 8
+
+
  302 00bc 9C000000 		.4byte	0x9c
  303 00c0 04       		.byte	0x4
-ARM GAS  /tmp/cci9GhTB.s 			page 8
-
-
  304 00c1 03       		.uleb128 0x3
  305 00c2 49445200 		.ascii	"IDR\000"
  306 00c6 6A01     		.2byte	0x16a
@@ -476,11 +478,11 @@ ARM GAS  /tmp/cci9GhTB.s 			page 1
  356 013b 9C000000 		.4byte	0x9c
  357 013f 0C       		.byte	0xc
  358 0140 02       		.uleb128 0x2
+ARM GAS  /tmp/ccldqpuN.s 			page 9
+
+
  359 0141 A8000000 		.4byte	.LASF18
  360 0145 AE01     		.2byte	0x1ae
-ARM GAS  /tmp/cci9GhTB.s 			page 9
-
-
  361 0147 9C000000 		.4byte	0x9c
  362 014b 10       		.byte	0x10
  363 014c 02       		.uleb128 0x2
@@ -520,7 +522,7 @@ ARM GAS  /tmp/cci9GhTB.s 			page 1
  397 019b 0A       		.uleb128 0xa
  398 019c 11000000 		.4byte	.LASF30
  399 01a0 01       		.byte	0x1
- 400 01a1 29       		.byte	0x29
+ 400 01a1 2A       		.byte	0x2a
  401 01a2 09       		.byte	0x9
  402 01a3 84000000 		.4byte	0x84
  403 01a7 05       		.uleb128 0x5
@@ -529,18 +531,18 @@ ARM GAS  /tmp/cci9GhTB.s 			page 1
  406 01ad 0B       		.uleb128 0xb
  407 01ae 4A010000 		.4byte	.LASF25
  408 01b2 01       		.byte	0x1
- 409 01b3 2B       		.byte	0x2b
+ 409 01b3 2C       		.byte	0x2c
  410 01b4 09       		.byte	0x9
  411 01b5 84000000 		.4byte	0x84
  412 01b9 58000000 		.4byte	.LFB64
  413 01bd 6C000000 		.4byte	.LFE64-.LFB64
  414 01c1 01       		.uleb128 0x1
  415 01c2 9C       		.byte	0x9c
+ARM GAS  /tmp/ccldqpuN.s 			page 10
+
+
  416 01c3 0C       		.uleb128 0xc
  417 01c4 08010000 		.4byte	.LASF26
-ARM GAS  /tmp/cci9GhTB.s 			page 10
-
-
  418 01c8 01       		.byte	0x1
  419 01c9 12       		.byte	0x12
  420 01ca 06       		.byte	0x6
@@ -596,11 +598,11 @@ ARM GAS  /tmp/cci9GhTB.s 			page 1
  470 002a 11       		.sleb128 17
  471 002b 49       		.uleb128 0x49
  472 002c 13       		.uleb128 0x13
+ARM GAS  /tmp/ccldqpuN.s 			page 11
+
+
  473 002d 38       		.uleb128 0x38
  474 002e 0B       		.uleb128 0xb
-ARM GAS  /tmp/cci9GhTB.s 			page 11
-
-
  475 002f 00       		.byte	0
  476 0030 00       		.byte	0
  477 0031 04       		.uleb128 0x4
@@ -656,11 +658,11 @@ ARM GAS  /tmp/cci9GhTB.s 			page 1
  527 0063 11       		.uleb128 0x11
  528 0064 01       		.byte	0x1
  529 0065 25       		.uleb128 0x25
+ARM GAS  /tmp/ccldqpuN.s 			page 12
+
+
  530 0066 0E       		.uleb128 0xe
  531 0067 13       		.uleb128 0x13
-ARM GAS  /tmp/cci9GhTB.s 			page 12
-
-
  532 0068 0B       		.uleb128 0xb
  533 0069 03       		.uleb128 0x3
  534 006a 0E       		.uleb128 0xe
@@ -716,11 +718,11 @@ ARM GAS  /tmp/cci9GhTB.s 			page 1
  584 009c 00       		.byte	0
  585 009d 3F       		.uleb128 0x3f
  586 009e 19       		.uleb128 0x19
+ARM GAS  /tmp/ccldqpuN.s 			page 13
+
+
  587 009f 03       		.uleb128 0x3
  588 00a0 0E       		.uleb128 0xe
-ARM GAS  /tmp/cci9GhTB.s 			page 13
-
-
  589 00a1 3A       		.uleb128 0x3a
  590 00a2 0B       		.uleb128 0xb
  591 00a3 3B       		.uleb128 0x3b
@@ -776,11 +778,11 @@ ARM GAS  /tmp/cci9GhTB.s 			page 1
  641 0010 00000000 		.4byte	.Ltext0
  642 0014 C4000000 		.4byte	.Letext0-.Ltext0
  643 0018 00000000 		.4byte	0
+ARM GAS  /tmp/ccldqpuN.s 			page 14
+
+
  644 001c 00000000 		.4byte	0
  645              		.section	.debug_line,"",%progbits
-ARM GAS  /tmp/cci9GhTB.s 			page 14
-
-
  646              	.Ldebug_line0:
  647 0000 C8010000 		.section	.debug_str,"MS",%progbits,1
  647      0300CB00 
@@ -836,11 +838,11 @@ ARM GAS  /tmp/cci9GhTB.s 			page 1
  669      7200
  670              	.LASF7:
  671 00bf 6C6F6E67 		.ascii	"long unsigned int\000"
+ARM GAS  /tmp/ccldqpuN.s 			page 15
+
+
  671      20756E73 
  671      69676E65 
-ARM GAS  /tmp/cci9GhTB.s 			page 15
-
-
  671      6420696E 
  671      7400
  672              	.LASF3:
@@ -896,11 +898,11 @@ ARM GAS  /tmp/cci9GhTB.s 			page 1
  695      6720696E 
  695      7400
  696              	.LASF29:
+ARM GAS  /tmp/ccldqpuN.s 			page 16
+
+
  697 0162 2F686F6D 		.ascii	"/home/umesh_adwait/sensor_ppg\000"
  697      652F756D 
-ARM GAS  /tmp/cci9GhTB.s 			page 16
-
-
  697      6573685F 
  697      61647761 
  697      69742F73 
@@ -931,17 +933,17 @@ ARM GAS  /tmp/cci9GhTB.s 			page 1
  711 01ba 4C434B52 		.ascii	"LCKR\000"
  711      00
  712              		.ident	"GCC: (Arm GNU Toolchain 13.3.Rel1 (Build arm-13.24)) 13.3.1 20240614"
-ARM GAS  /tmp/cci9GhTB.s 			page 17
+ARM GAS  /tmp/ccldqpuN.s 			page 17
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 ledconf.c
-     /tmp/cci9GhTB.s:18     .text:00000000 $t
-     /tmp/cci9GhTB.s:24     .text:00000000 led_init
-     /tmp/cci9GhTB.s:88     .text:00000050 $d
-     /tmp/cci9GhTB.s:93     .text:00000058 $t
-     /tmp/cci9GhTB.s:99     .text:00000058 led_state
-     /tmp/cci9GhTB.s:192    .text:000000bc $d
-     /tmp/cci9GhTB.s:202    .data:00000000 state
+     /tmp/ccldqpuN.s:18     .text:00000000 $t
+     /tmp/ccldqpuN.s:24     .text:00000000 led_init
+     /tmp/ccldqpuN.s:88     .text:00000050 $d
+     /tmp/ccldqpuN.s:93     .text:00000058 $t
+     /tmp/ccldqpuN.s:99     .text:00000058 led_state
+     /tmp/ccldqpuN.s:192    .text:000000bc $d
+     /tmp/ccldqpuN.s:202    .data:00000000 state
 
 NO UNDEFINED SYMBOLS

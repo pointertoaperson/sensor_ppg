@@ -4,10 +4,12 @@ dsp_lib//libarm_cortexM3l_math.a(arm_mean_q15.o)
                               obj/main.o (arm_mean_q15)
 dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
                               obj/main.o (arm_max_q15)
-dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_q15.o)
-                              obj/main.o (arm_cfft_radix4_q15)
-dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_init_q15.o)
-                              obj/main.o (arm_cfft_radix4_init_q15)
+dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_q15.o)
+                              obj/main.o (arm_cfft_radix2_q15)
+dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_init_q15.o)
+                              obj/main.o (arm_cfft_radix2_init_q15)
+dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+                              dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_q15.o) (arm_bitreversal_q15)
 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
                               obj/main.o (arm_cmplx_mag_q15)
 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
@@ -15,9 +17,7 @@ dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
 dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
                               obj/main.o (arm_shift_q15)
 dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
-                              dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_init_q15.o) (twiddleCoef_4096_q15)
-dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
-                              dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_q15.o) (arm_bitreversal_q15)
+                              dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_init_q15.o) (twiddleCoef_4096_q15)
 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_mulsf3.o)
                               obj/main.o (__aeabi_fmul)
 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_addsubsf3.o)
@@ -141,12 +141,19 @@ Discarded input sections
  .text          0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
  .data          0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
  .bss           0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
- .text          0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_q15.o)
- .data          0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_q15.o)
- .bss           0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_q15.o)
- .text          0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_init_q15.o)
- .data          0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_init_q15.o)
- .bss           0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_init_q15.o)
+ .text          0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_q15.o)
+ .data          0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_q15.o)
+ .bss           0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_q15.o)
+ .text          0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_init_q15.o)
+ .data          0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_init_q15.o)
+ .bss           0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_init_q15.o)
+ .text          0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+ .data          0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+ .bss           0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+ .text.arm_bitreversal_f32
+                0x00000000       0xbc dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+ .text.arm_bitreversal_q31
+                0x00000000       0x9c dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
  .text          0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
  .data          0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
  .bss           0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
@@ -273,13 +280,6 @@ Discarded input sections
                 0x00000000     0x8000 dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
  .rodata.twiddleCoef_128_q31
                 0x00000000      0x300 dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
- .text          0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
- .data          0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
- .bss           0x00000000        0x0 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
- .text.arm_bitreversal_f32
-                0x00000000       0xbc dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
- .text.arm_bitreversal_q31
-                0x00000000       0x9c dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
  .text          0x00000000      0x168 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_mulsf3.o)
  .data          0x00000000        0x0 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_mulsf3.o)
  .bss           0x00000000        0x0 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_mulsf3.o)
@@ -645,260 +645,260 @@ LOAD /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtn
                 0x08000000                g_pfnVectors
                 0x0800010c                        . = ALIGN (0x4)
 
-.text           0x08000110     0x2210
+.text           0x08000110     0x1e00
                 0x08000110                        . = ALIGN (0x4)
  *(.text)
- .text          0x08000110      0x224 obj/main.o
+ .text          0x08000110      0x228 obj/main.o
                 0x08000110                DSP_process
- .text          0x08000334       0x8c obj/HSE_CLK.o
-                0x08000334                X_Clock_Init
- .text          0x080003c0      0x17c obj/spi.o
-                0x080003c0                spi_init
-                0x080004c4                spi_transmit
-                0x0800051c                cs_low
-                0x0800052c                cs_high
- .text          0x0800053c       0xc4 obj/ledconf.o
-                0x0800053c                led_init
-                0x08000594                led_state
- .text          0x08000600       0x58 obj/delay.o
-                0x08000600                TIM2_Init
-                0x0800062c                _us_delay
- .text          0x08000658       0x50 obj/intrr_event.o
-                0x08000658                DMA1_Channel1_IRQHandler
- .text          0x080006a8      0x18c obj/adc.o
-                0x080006a8                adc_init_cont
-                0x080007c4                stop_process
-                0x080007ec                start_process
- .text          0x08000834      0x21c /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_addsubsf3.o)
-                0x08000834                __aeabi_frsub
-                0x0800083c                __subsf3
-                0x0800083c                __aeabi_fsub
-                0x08000840                __aeabi_fadd
-                0x08000840                __addsf3
-                0x080009a0                __aeabi_ui2f
-                0x080009a0                __floatunsisf
-                0x080009a8                __aeabi_i2f
-                0x080009a8                __floatsisf
-                0x080009c4                __floatundisf
-                0x080009c4                __aeabi_ul2f
-                0x080009d4                __floatdisf
-                0x080009d4                __aeabi_l2f
- .text          0x08000a50      0x2a0 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_muldivsf3.o)
-                0x08000a50                __mulsf3
-                0x08000a50                __aeabi_fmul
-                0x08000bb8                __divsf3
-                0x08000bb8                __aeabi_fdiv
- .text          0x08000cf0       0x4c /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_fixsfsi.o)
-                0x08000cf0                __fixsfsi
-                0x08000cf0                __aeabi_f2iz
- .text          0x08000d3c       0x40 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_fixunssfsi.o)
-                0x08000d3c                __aeabi_f2uiz
-                0x08000d3c                __fixunssfsi
- .text          0x08000d7c       0xec /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_cmpsf2.o)
-                0x08000d7c                __gtsf2
-                0x08000d7c                __gesf2
-                0x08000d84                __lesf2
-                0x08000d84                __ltsf2
-                0x08000d8c                __nesf2
-                0x08000d8c                __eqsf2
-                0x08000d8c                __cmpsf2
-                0x08000dec                __aeabi_cfrcmple
-                0x08000df4                __aeabi_cfcmple
-                0x08000df4                __aeabi_cfcmpeq
-                0x08000e04                __aeabi_fcmpeq
-                0x08000e18                __aeabi_fcmplt
-                0x08000e2c                __aeabi_fcmple
-                0x08000e40                __aeabi_fcmpge
-                0x08000e54                __aeabi_fcmpgt
- .text          0x08000e68       0x2c /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_unordsf2.o)
-                0x08000e68                __aeabi_fcmpun
-                0x08000e68                __unordsf2
+ .text          0x08000338       0x8c obj/HSE_CLK.o
+                0x08000338                X_Clock_Init
+ .text          0x080003c4      0x17c obj/spi.o
+                0x080003c4                spi_init
+                0x080004c8                spi_transmit
+                0x08000520                cs_low
+                0x08000530                cs_high
+ .text          0x08000540       0xc4 obj/ledconf.o
+                0x08000540                led_init
+                0x08000598                led_state
+ .text          0x08000604       0x58 obj/delay.o
+                0x08000604                TIM2_Init
+                0x08000630                _us_delay
+ .text          0x0800065c       0x50 obj/intrr_event.o
+                0x0800065c                DMA1_Channel1_IRQHandler
+ .text          0x080006ac      0x18c obj/adc.o
+                0x080006ac                adc_init_cont
+                0x080007c8                stop_process
+                0x080007f0                start_process
+ .text          0x08000838      0x21c /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_addsubsf3.o)
+                0x08000838                __aeabi_frsub
+                0x08000840                __subsf3
+                0x08000840                __aeabi_fsub
+                0x08000844                __aeabi_fadd
+                0x08000844                __addsf3
+                0x080009a4                __aeabi_ui2f
+                0x080009a4                __floatunsisf
+                0x080009ac                __aeabi_i2f
+                0x080009ac                __floatsisf
+                0x080009c8                __floatundisf
+                0x080009c8                __aeabi_ul2f
+                0x080009d8                __floatdisf
+                0x080009d8                __aeabi_l2f
+ .text          0x08000a54      0x2a0 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_muldivsf3.o)
+                0x08000a54                __mulsf3
+                0x08000a54                __aeabi_fmul
+                0x08000bbc                __divsf3
+                0x08000bbc                __aeabi_fdiv
+ .text          0x08000cf4       0x4c /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_fixsfsi.o)
+                0x08000cf4                __fixsfsi
+                0x08000cf4                __aeabi_f2iz
+ .text          0x08000d40       0x40 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_fixunssfsi.o)
+                0x08000d40                __aeabi_f2uiz
+                0x08000d40                __fixunssfsi
+ .text          0x08000d80       0xec /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_cmpsf2.o)
+                0x08000d80                __gtsf2
+                0x08000d80                __gesf2
+                0x08000d88                __lesf2
+                0x08000d88                __ltsf2
+                0x08000d90                __nesf2
+                0x08000d90                __eqsf2
+                0x08000d90                __cmpsf2
+                0x08000df0                __aeabi_cfrcmple
+                0x08000df8                __aeabi_cfcmple
+                0x08000df8                __aeabi_cfcmpeq
+                0x08000e08                __aeabi_fcmpeq
+                0x08000e1c                __aeabi_fcmplt
+                0x08000e30                __aeabi_fcmple
+                0x08000e44                __aeabi_fcmpge
+                0x08000e58                __aeabi_fcmpgt
+ .text          0x08000e6c       0x2c /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_unordsf2.o)
+                0x08000e6c                __aeabi_fcmpun
+                0x08000e6c                __unordsf2
  *(.text*)
  .text.deregister_tm_clones
-                0x08000e94       0x1c /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
+                0x08000e98       0x1c /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
  .text.register_tm_clones
-                0x08000eb0       0x24 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
+                0x08000eb4       0x24 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
  .text.__do_global_dtors_aux
-                0x08000ed4       0x28 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
+                0x08000ed8       0x28 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
  .text.frame_dummy
-                0x08000efc       0x24 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
- .text.startup  0x08000f20       0x68 obj/main.o
-                0x08000f20                main
+                0x08000f00       0x24 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
+ .text.startup  0x08000f24       0x68 obj/main.o
+                0x08000f24                main
  .text.Reset_Handler
-                0x08000f88       0x44 obj/all_asm.o
-                0x08000f88                Reset_Handler
+                0x08000f8c       0x44 obj/all_asm.o
+                0x08000f8c                Reset_Handler
  .text.Default_Handler
-                0x08000fcc        0x2 obj/all_asm.o
-                0x08000fcc                RTC_Alarm_IRQHandler
-                0x08000fcc                EXTI2_IRQHandler
-                0x08000fcc                DebugMon_Handler
-                0x08000fcc                TIM1_CC_IRQHandler
-                0x08000fcc                HardFault_Handler
-                0x08000fcc                SysTick_Handler
-                0x08000fcc                PVD_IRQHandler
-                0x08000fcc                PendSV_Handler
-                0x08000fcc                NMI_Handler
-                0x08000fcc                EXTI3_IRQHandler
-                0x08000fcc                EXTI0_IRQHandler
-                0x08000fcc                I2C2_EV_IRQHandler
-                0x08000fcc                UsageFault_Handler
-                0x08000fcc                ADC1_2_IRQHandler
-                0x08000fcc                SPI1_IRQHandler
-                0x08000fcc                TAMPER_IRQHandler
-                0x08000fcc                DMA1_Channel4_IRQHandler
-                0x08000fcc                USART3_IRQHandler
-                0x08000fcc                RTC_IRQHandler
-                0x08000fcc                DMA1_Channel7_IRQHandler
-                0x08000fcc                CAN1_RX1_IRQHandler
-                0x08000fcc                TIM4_IRQHandler
-                0x08000fcc                I2C1_EV_IRQHandler
-                0x08000fcc                DMA1_Channel6_IRQHandler
-                0x08000fcc                TIM3_IRQHandler
-                0x08000fcc                RCC_IRQHandler
-                0x08000fcc                TIM1_TRG_COM_IRQHandler
-                0x08000fcc                Default_Handler
-                0x08000fcc                EXTI15_10_IRQHandler
-                0x08000fcc                EXTI9_5_IRQHandler
-                0x08000fcc                SPI2_IRQHandler
-                0x08000fcc                MemManage_Handler
-                0x08000fcc                SVC_Handler
-                0x08000fcc                DMA1_Channel5_IRQHandler
-                0x08000fcc                EXTI4_IRQHandler
-                0x08000fcc                USB_LP_CAN1_RX0_IRQHandler
-                0x08000fcc                USB_HP_CAN1_TX_IRQHandler
-                0x08000fcc                DMA1_Channel3_IRQHandler
-                0x08000fcc                TIM1_UP_IRQHandler
-                0x08000fcc                WWDG_IRQHandler
-                0x08000fcc                TIM2_IRQHandler
-                0x08000fcc                TIM1_BRK_IRQHandler
-                0x08000fcc                EXTI1_IRQHandler
-                0x08000fcc                USART2_IRQHandler
-                0x08000fcc                I2C2_ER_IRQHandler
-                0x08000fcc                DMA1_Channel2_IRQHandler
-                0x08000fcc                CAN1_SCE_IRQHandler
-                0x08000fcc                FLASH_IRQHandler
-                0x08000fcc                BusFault_Handler
-                0x08000fcc                USART1_IRQHandler
-                0x08000fcc                I2C1_ER_IRQHandler
-                0x08000fcc                USBWakeUp_IRQHandler
- *fill*         0x08000fce        0x2 
+                0x08000fd0        0x2 obj/all_asm.o
+                0x08000fd0                RTC_Alarm_IRQHandler
+                0x08000fd0                EXTI2_IRQHandler
+                0x08000fd0                DebugMon_Handler
+                0x08000fd0                TIM1_CC_IRQHandler
+                0x08000fd0                HardFault_Handler
+                0x08000fd0                SysTick_Handler
+                0x08000fd0                PVD_IRQHandler
+                0x08000fd0                PendSV_Handler
+                0x08000fd0                NMI_Handler
+                0x08000fd0                EXTI3_IRQHandler
+                0x08000fd0                EXTI0_IRQHandler
+                0x08000fd0                I2C2_EV_IRQHandler
+                0x08000fd0                UsageFault_Handler
+                0x08000fd0                ADC1_2_IRQHandler
+                0x08000fd0                SPI1_IRQHandler
+                0x08000fd0                TAMPER_IRQHandler
+                0x08000fd0                DMA1_Channel4_IRQHandler
+                0x08000fd0                USART3_IRQHandler
+                0x08000fd0                RTC_IRQHandler
+                0x08000fd0                DMA1_Channel7_IRQHandler
+                0x08000fd0                CAN1_RX1_IRQHandler
+                0x08000fd0                TIM4_IRQHandler
+                0x08000fd0                I2C1_EV_IRQHandler
+                0x08000fd0                DMA1_Channel6_IRQHandler
+                0x08000fd0                TIM3_IRQHandler
+                0x08000fd0                RCC_IRQHandler
+                0x08000fd0                TIM1_TRG_COM_IRQHandler
+                0x08000fd0                Default_Handler
+                0x08000fd0                EXTI15_10_IRQHandler
+                0x08000fd0                EXTI9_5_IRQHandler
+                0x08000fd0                SPI2_IRQHandler
+                0x08000fd0                MemManage_Handler
+                0x08000fd0                SVC_Handler
+                0x08000fd0                DMA1_Channel5_IRQHandler
+                0x08000fd0                EXTI4_IRQHandler
+                0x08000fd0                USB_LP_CAN1_RX0_IRQHandler
+                0x08000fd0                USB_HP_CAN1_TX_IRQHandler
+                0x08000fd0                DMA1_Channel3_IRQHandler
+                0x08000fd0                TIM1_UP_IRQHandler
+                0x08000fd0                WWDG_IRQHandler
+                0x08000fd0                TIM2_IRQHandler
+                0x08000fd0                TIM1_BRK_IRQHandler
+                0x08000fd0                EXTI1_IRQHandler
+                0x08000fd0                USART2_IRQHandler
+                0x08000fd0                I2C2_ER_IRQHandler
+                0x08000fd0                DMA1_Channel2_IRQHandler
+                0x08000fd0                CAN1_SCE_IRQHandler
+                0x08000fd0                FLASH_IRQHandler
+                0x08000fd0                BusFault_Handler
+                0x08000fd0                USART1_IRQHandler
+                0x08000fd0                I2C1_ER_IRQHandler
+                0x08000fd0                USBWakeUp_IRQHandler
+ *fill*         0x08000fd2        0x2 
  .text.arm_mean_q15
-                0x08000fd0       0x54 dsp_lib//libarm_cortexM3l_math.a(arm_mean_q15.o)
-                0x08000fd0                arm_mean_q15
+                0x08000fd4       0x54 dsp_lib//libarm_cortexM3l_math.a(arm_mean_q15.o)
+                0x08000fd4                arm_mean_q15
  .text.arm_max_q15
-                0x08001024       0xdc dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
-                0x08001024                arm_max_q15
- .text.arm_radix4_butterfly_q15
-                0x08001100      0x570 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_q15.o)
-                0x08001100                arm_radix4_butterfly_q15
- .text.arm_radix4_butterfly_inverse_q15
-                0x08001670      0x570 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_q15.o)
-                0x08001670                arm_radix4_butterfly_inverse_q15
- .text.arm_cfft_radix4_q15
-                0x08001be0       0x3c dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_q15.o)
-                0x08001be0                arm_cfft_radix4_q15
- .text.arm_cfft_radix4_init_q15
-                0x08001c1c       0xb0 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_init_q15.o)
-                0x08001c1c                arm_cfft_radix4_init_q15
- .text.arm_cmplx_mag_q15
-                0x08001ccc       0xd0 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
-                0x08001ccc                arm_cmplx_mag_q15
- .text.arm_sqrt_q15
-                0x08001d9c       0xe4 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
-                0x08001d9c                arm_sqrt_q15
- .text.arm_shift_q15
-                0x08001e80      0x10c dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
-                0x08001e80                arm_shift_q15
+                0x08001028       0xdc dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
+                0x08001028                arm_max_q15
+ .text.arm_radix2_butterfly_q15
+                0x08001104      0x360 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_q15.o)
+                0x08001104                arm_radix2_butterfly_q15
+ .text.arm_radix2_butterfly_inverse_q15
+                0x08001464      0x300 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_q15.o)
+                0x08001464                arm_radix2_butterfly_inverse_q15
+ .text.arm_cfft_radix2_q15
+                0x08001764       0x30 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_q15.o)
+                0x08001764                arm_cfft_radix2_q15
+ .text.arm_cfft_radix2_init_q15
+                0x08001794      0x128 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_init_q15.o)
+                0x08001794                arm_cfft_radix2_init_q15
  .text.arm_bitreversal_q15
-                0x08001f8c       0x64 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
-                0x08001f8c                arm_bitreversal_q15
+                0x080018bc       0x64 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+                0x080018bc                arm_bitreversal_q15
+ .text.arm_cmplx_mag_q15
+                0x08001920       0xd0 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
+                0x08001920                arm_cmplx_mag_q15
+ .text.arm_sqrt_q15
+                0x080019f0       0xe4 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
+                0x080019f0                arm_sqrt_q15
+ .text.arm_shift_q15
+                0x08001ad4      0x10c dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
+                0x08001ad4                arm_shift_q15
  .text.__libc_init_array
-                0x08001ff0       0x48 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-init.o)
-                0x08001ff0                __libc_init_array
- .text.memset   0x08002038       0x10 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
-                0x08002038                memset
- .text.logf     0x08002048       0x54 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libm.a(libm_a-wf_log.o)
-                0x08002048                logf
- .text.nanf     0x0800209c        0x8 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libm.a(libm_a-sf_nan.o)
-                0x0800209c                nanf
+                0x08001be0       0x48 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-init.o)
+                0x08001be0                __libc_init_array
+ .text.memset   0x08001c28       0x10 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+                0x08001c28                memset
+ .text.logf     0x08001c38       0x54 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libm.a(libm_a-wf_log.o)
+                0x08001c38                logf
+ .text.nanf     0x08001c8c        0x8 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libm.a(libm_a-sf_nan.o)
+                0x08001c8c                nanf
  .text.__ieee754_logf
-                0x080020a4      0x258 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libm.a(libm_a-ef_log.o)
-                0x080020a4                __ieee754_logf
+                0x08001c94      0x258 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libm.a(libm_a-ef_log.o)
+                0x08001c94                __ieee754_logf
  *(.glue_7)
- .glue_7        0x080022fc        0x0 linker stubs
+ .glue_7        0x08001eec        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x080022fc        0x0 linker stubs
+ .glue_7t       0x08001eec        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x080022fc        0x0 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
+ .eh_frame      0x08001eec        0x0 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
  *(.init)
- .init          0x080022fc        0x4 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crti.o
-                0x080022fc                _init
- .init          0x08002300        0x8 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtn.o
+ .init          0x08001eec        0x4 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crti.o
+                0x08001eec                _init
+ .init          0x08001ef0        0x8 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtn.o
  *(.fini)
- .fini          0x08002308        0x4 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crti.o
-                0x08002308                _fini
- .fini          0x0800230c        0x8 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtn.o
- *fill*         0x08002314        0x4 
- .fini.__stub   0x08002318        0x8 linker stubs
-                0x08002320                        . = ALIGN (0x4)
-                0x08002320                        _etext = .
+ .fini          0x08001ef8        0x4 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crti.o
+                0x08001ef8                _fini
+ .fini          0x08001efc        0x8 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtn.o
+ *fill*         0x08001f04        0x4 
+ .fini.__stub   0x08001f08        0x8 linker stubs
+                0x08001f10                        . = ALIGN (0x4)
+                0x08001f10                        _etext = .
 
-.vfp11_veneer   0x08002320        0x0
- .vfp11_veneer  0x08002320        0x0 linker stubs
+.vfp11_veneer   0x08001f10        0x0
+ .vfp11_veneer  0x08001f10        0x0 linker stubs
 
-.v4_bx          0x08002320        0x0
- .v4_bx         0x08002320        0x0 linker stubs
+.v4_bx          0x08001f10        0x0
+ .v4_bx         0x08001f10        0x0 linker stubs
 
-.iplt           0x08002320        0x0
- .iplt          0x08002320        0x0 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
+.iplt           0x08001f10        0x0
+ .iplt          0x08001f10        0x0 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
 
-.rodata         0x08002320     0x3804
-                0x08002320                        . = ALIGN (0x4)
+.rodata         0x08001f10     0x3804
+                0x08001f10                        . = ALIGN (0x4)
  *(.rodata)
  *(.rodata*)
  .rodata.twiddleCoef_4096_q15
-                0x08002320     0x3000 dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
-                0x08002320                twiddleCoef_4096_q15
+                0x08001f10     0x3000 dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
+                0x08001f10                twiddleCoef_4096_q15
  .rodata.armBitRevTable
-                0x08005320      0x800 dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
-                0x08005320                armBitRevTable
+                0x08004f10      0x800 dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
+                0x08004f10                armBitRevTable
  .rodata.logf.str1.4
-                0x08005b20        0x1 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libm.a(libm_a-wf_log.o)
-                0x08005b24                        . = ALIGN (0x4)
- *fill*         0x08005b21        0x3 
+                0x08005710        0x1 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libm.a(libm_a-wf_log.o)
+                0x08005714                        . = ALIGN (0x4)
+ *fill*         0x08005711        0x3 
 
-.rel.dyn        0x08005b24        0x0
- .rel.iplt      0x08005b24        0x0 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
+.rel.dyn        0x08005714        0x0
+ .rel.iplt      0x08005714        0x0 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x08005b24        0x0
-                0x08005b24                        __exidx_start = .
+.ARM            0x08005714        0x0
+                0x08005714                        __exidx_start = .
  *(.ARM.exidx*)
-                0x08005b24                        __exidx_end = .
+                0x08005714                        __exidx_end = .
 
-.preinit_array  0x08005b24        0x0
-                0x08005b24                        PROVIDE (__preinit_array_start = .)
+.preinit_array  0x08005714        0x0
+                0x08005714                        PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x08005b24                        PROVIDE (__preinit_array_end = .)
+                0x08005714                        PROVIDE (__preinit_array_end = .)
 
-.init_array     0x08005b24        0x4
-                0x08005b24                        PROVIDE (__init_array_start = .)
+.init_array     0x08005714        0x4
+                0x08005714                        PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x08005b24        0x4 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
-                0x08005b28                        PROVIDE (__init_array_end = .)
+ .init_array    0x08005714        0x4 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
+                0x08005718                        PROVIDE (__init_array_end = .)
 
-.fini_array     0x08005b28        0x4
+.fini_array     0x08005718        0x4
                 [!provide]                        PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x08005b28        0x4 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
+ .fini_array    0x08005718        0x4 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end = .)
-                0x08005b2c                        _sidata = LOADADDR (.data)
+                0x0800571c                        _sidata = LOADADDR (.data)
 
-.data           0x20000000      0x214 load address 0x08005b2c
+.data           0x20000000      0x214 load address 0x0800571c
                 0x20000000                        . = ALIGN (0x4)
                 0x20000000                        _sdata = .
  *(.data)
@@ -917,56 +917,55 @@ LOAD /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtn
                 0x20000214                        _edata = .
 
 .tm_clone_table
-                0x20000214        0x0 load address 0x08005d40
+                0x20000214        0x0 load address 0x08005930
  .tm_clone_table
                 0x20000214        0x0 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
  .tm_clone_table
                 0x20000214        0x0 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtend.o
 
-.igot.plt       0x20000214        0x0 load address 0x08005d40
+.igot.plt       0x20000214        0x0 load address 0x08005930
  .igot.plt      0x20000214        0x0 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
                 0x20000214                        . = ALIGN (0x4)
 
-.bss            0x20000214      0xc5c load address 0x08005d40
+.bss            0x20000214     0x1448 load address 0x08005930
                 0x20000214                        _sbss = .
                 0x20000214                        __bss_start__ = _sbss
  *(.bss)
- .bss           0x20000214      0x63c obj/main.o
+ .bss           0x20000214      0xc28 obj/main.o
                 0x20000214                input
-                0x20000614                sampleMean
-                0x20000618                fft_inst
-                0x20000828                noisefloor
-                0x2000082c                maxIndex
-                0x20000830                maxVal
-                0x20000832                confidence
-                0x20000834                hr_values
-                0x20000838                Ifft_inst
-                0x20000848                mean_value
-                0x2000084c                __errno
- .bss           0x20000850      0x604 obj/adc.o
-                0x20000850                adc_val
-                0x20000852                ACC_COMP
-                0x20000854                adc_buffer
+                0x20000a14                sampleMean
+                0x20000a18                fft_inst
+                0x20000e28                noisefloor
+                0x20000e2c                maxIndex
+                0x20000e30                maxVal
+                0x20000e32                confidence
+                0x20000e34                hr_values
+                0x20000e38                __errno
+ .bss           0x20000e3c      0x804 obj/adc.o
+                0x20000e3c                adc_val
+                0x20000e3e                ACC_COMP
+                0x20000e40                adc_buffer
  *(.bss*)
  .bss.completed.1
-                0x20000e54        0x1 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
- *fill*         0x20000e55        0x3 
- .bss.object.0  0x20000e58       0x18 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
+                0x20001640        0x1 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
+ *fill*         0x20001641        0x3 
+ .bss.object.0  0x20001644       0x18 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtbegin.o
  *(COMMON)
-                0x20000e70                        . = ALIGN (0x4)
-                0x20000e70                        _ebss = .
-                0x20000e70                        __bss_end__ = _ebss
+                0x2000165c                        . = ALIGN (0x4)
+                0x2000165c                        _ebss = .
+                0x2000165c                        __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x20000e70      0x600 load address 0x08005d40
-                0x20000e70                        . = ALIGN (0x8)
-                0x20000e70                        PROVIDE (end = .)
+                0x2000165c      0x604 load address 0x08005930
+                0x20001660                        . = ALIGN (0x8)
+ *fill*         0x2000165c        0x4 
+                0x20001660                        PROVIDE (end = .)
                 [!provide]                        PROVIDE (_end = .)
-                0x20001070                        . = (. + _Min_Heap_Size)
- *fill*         0x20000e70      0x200 
-                0x20001470                        . = (. + _Min_Stack_Size)
- *fill*         0x20001070      0x400 
-                0x20001470                        . = ALIGN (0x8)
+                0x20001860                        . = (. + _Min_Heap_Size)
+ *fill*         0x20001660      0x200 
+                0x20001c60                        . = (. + _Min_Stack_Size)
+ *fill*         0x20001860      0x400 
+                0x20001c60                        . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -1001,19 +1000,19 @@ LOAD /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/crtn
  .ARM.attributes
                 0x000001d9       0x33 dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
  .ARM.attributes
-                0x0000020c       0x33 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_q15.o)
+                0x0000020c       0x33 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_q15.o)
  .ARM.attributes
-                0x0000023f       0x33 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_init_q15.o)
+                0x0000023f       0x33 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_init_q15.o)
  .ARM.attributes
-                0x00000272       0x33 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
+                0x00000272       0x33 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
  .ARM.attributes
-                0x000002a5       0x33 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
+                0x000002a5       0x33 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
  .ARM.attributes
-                0x000002d8       0x33 dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
+                0x000002d8       0x33 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
  .ARM.attributes
-                0x0000030b       0x33 dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
+                0x0000030b       0x33 dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
  .ARM.attributes
-                0x0000033e       0x33 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+                0x0000033e       0x33 dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
  .ARM.attributes
                 0x00000371       0x1d /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_addsubsf3.o)
  .ARM.attributes
@@ -1036,52 +1035,52 @@ LOAD /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none
 LOAD /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libm.a
 LOAD /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a
 
-.debug_info     0x00000000     0x5805
- .debug_info    0x00000000      0x8f6 obj/main.o
- .debug_info    0x000008f6      0x1b1 obj/HSE_CLK.o
- .debug_info    0x00000aa7      0x3c0 obj/spi.o
- .debug_info    0x00000e67      0x1d6 obj/ledconf.o
- .debug_info    0x0000103d      0x261 obj/delay.o
- .debug_info    0x0000129e      0x188 obj/intrr_event.o
- .debug_info    0x00001426      0xa27 obj/adc.o
- .debug_info    0x00001e4d      0x15f dsp_lib//libarm_cortexM3l_math.a(arm_mean_q15.o)
- .debug_info    0x00001fac      0x17e dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
- .debug_info    0x0000212a     0x201a dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_q15.o)
- .debug_info    0x00004144      0x25e dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_init_q15.o)
- .debug_info    0x000043a2      0x379 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
- .debug_info    0x0000471b      0x1f8 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
- .debug_info    0x00004913      0x260 dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
- .debug_info    0x00004b73      0x99d dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
- .debug_info    0x00005510      0x2f5 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+.debug_info     0x00000000     0x481b
+ .debug_info    0x00000000      0x8ed obj/main.o
+ .debug_info    0x000008ed      0x1b1 obj/HSE_CLK.o
+ .debug_info    0x00000a9e      0x3c0 obj/spi.o
+ .debug_info    0x00000e5e      0x1d6 obj/ledconf.o
+ .debug_info    0x00001034      0x261 obj/delay.o
+ .debug_info    0x00001295      0x188 obj/intrr_event.o
+ .debug_info    0x0000141d      0xa27 obj/adc.o
+ .debug_info    0x00001e44      0x15f dsp_lib//libarm_cortexM3l_math.a(arm_mean_q15.o)
+ .debug_info    0x00001fa3      0x17e dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
+ .debug_info    0x00002121     0x1039 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_q15.o)
+ .debug_info    0x0000315a      0x25e dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_init_q15.o)
+ .debug_info    0x000033b8      0x2f5 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+ .debug_info    0x000036ad      0x379 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
+ .debug_info    0x00003a26      0x1f8 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
+ .debug_info    0x00003c1e      0x260 dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
+ .debug_info    0x00003e7e      0x99d dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
 
-.debug_abbrev   0x00000000     0x11f5
- .debug_abbrev  0x00000000      0x239 obj/main.o
- .debug_abbrev  0x00000239       0xb5 obj/HSE_CLK.o
- .debug_abbrev  0x000002ee      0x1a3 obj/spi.o
- .debug_abbrev  0x00000491       0xcd obj/ledconf.o
- .debug_abbrev  0x0000055e       0xcf obj/delay.o
- .debug_abbrev  0x0000062d      0x111 obj/intrr_event.o
- .debug_abbrev  0x0000073e      0x217 obj/adc.o
- .debug_abbrev  0x00000955       0xa3 dsp_lib//libarm_cortexM3l_math.a(arm_mean_q15.o)
- .debug_abbrev  0x000009f8       0xb2 dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
- .debug_abbrev  0x00000aaa      0x24c dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_q15.o)
- .debug_abbrev  0x00000cf6      0x103 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_init_q15.o)
- .debug_abbrev  0x00000df9      0x135 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
- .debug_abbrev  0x00000f2e       0xc6 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
- .debug_abbrev  0x00000ff4       0xc0 dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
- .debug_abbrev  0x000010b4       0x84 dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
- .debug_abbrev  0x00001138       0xbd dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+.debug_abbrev   0x00000000     0x11e4
+ .debug_abbrev  0x00000000      0x23a obj/main.o
+ .debug_abbrev  0x0000023a       0xb5 obj/HSE_CLK.o
+ .debug_abbrev  0x000002ef      0x1a3 obj/spi.o
+ .debug_abbrev  0x00000492       0xcd obj/ledconf.o
+ .debug_abbrev  0x0000055f       0xcf obj/delay.o
+ .debug_abbrev  0x0000062e      0x111 obj/intrr_event.o
+ .debug_abbrev  0x0000073f      0x217 obj/adc.o
+ .debug_abbrev  0x00000956       0xa3 dsp_lib//libarm_cortexM3l_math.a(arm_mean_q15.o)
+ .debug_abbrev  0x000009f9       0xb2 dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
+ .debug_abbrev  0x00000aab      0x23a dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_q15.o)
+ .debug_abbrev  0x00000ce5      0x103 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_init_q15.o)
+ .debug_abbrev  0x00000de8       0xbd dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+ .debug_abbrev  0x00000ea5      0x135 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
+ .debug_abbrev  0x00000fda       0xc6 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
+ .debug_abbrev  0x000010a0       0xc0 dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
+ .debug_abbrev  0x00001160       0x84 dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
 
 .debug_loclists
-                0x00000000      0x39e
+                0x00000000      0x32b
  .debug_loclists
-                0x00000000      0x2d2 obj/main.o
+                0x00000000      0x25f obj/main.o
  .debug_loclists
-                0x000002d2       0x86 obj/spi.o
+                0x0000025f       0x86 obj/spi.o
  .debug_loclists
-                0x00000358       0x1d obj/delay.o
+                0x000002e5       0x1d obj/delay.o
  .debug_loclists
-                0x00000375       0x29 obj/adc.o
+                0x00000302       0x29 obj/adc.o
 
 .debug_aranges  0x00000000      0x220
  .debug_aranges
@@ -1103,65 +1102,65 @@ LOAD /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libg
  .debug_aranges
                 0x00000108       0x20 dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
  .debug_aranges
-                0x00000128       0x30 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_q15.o)
+                0x00000128       0x30 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_q15.o)
  .debug_aranges
-                0x00000158       0x20 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_init_q15.o)
+                0x00000158       0x20 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_init_q15.o)
  .debug_aranges
-                0x00000178       0x20 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
+                0x00000178       0x30 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
  .debug_aranges
-                0x00000198       0x20 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
+                0x000001a8       0x20 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
  .debug_aranges
-                0x000001b8       0x20 dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
+                0x000001c8       0x20 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
  .debug_aranges
-                0x000001d8       0x18 dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
+                0x000001e8       0x20 dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
  .debug_aranges
-                0x000001f0       0x30 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+                0x00000208       0x18 dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
 
 .debug_rnglists
-                0x00000000       0xa9
+                0x00000000       0xb8
  .debug_rnglists
-                0x00000000       0x56 obj/main.o
+                0x00000000       0x65 obj/main.o
  .debug_rnglists
-                0x00000056       0x1c obj/spi.o
+                0x00000065       0x1c obj/spi.o
  .debug_rnglists
-                0x00000072       0x37 obj/adc.o
+                0x00000081       0x37 obj/adc.o
 
-.debug_line     0x00000000     0x2e50
- .debug_line    0x00000000      0x484 obj/main.o
- .debug_line    0x00000484      0x1d7 obj/HSE_CLK.o
- .debug_line    0x0000065b      0x381 obj/spi.o
- .debug_line    0x000009dc      0x1cc obj/ledconf.o
- .debug_line    0x00000ba8      0x16c obj/delay.o
- .debug_line    0x00000d14      0x151 obj/intrr_event.o
- .debug_line    0x00000e65      0x346 obj/adc.o
- .debug_line    0x000011ab      0x162 dsp_lib//libarm_cortexM3l_math.a(arm_mean_q15.o)
- .debug_line    0x0000130d      0x16d dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
- .debug_line    0x0000147a      0xfd4 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_q15.o)
- .debug_line    0x0000244e      0x1b4 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_init_q15.o)
- .debug_line    0x00002602      0x192 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
- .debug_line    0x00002794      0x169 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
- .debug_line    0x000028fd      0x17d dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
- .debug_line    0x00002a7a      0x12e dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
- .debug_line    0x00002ba8      0x2a8 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+.debug_line     0x00000000     0x2936
+ .debug_line    0x00000000      0x46f obj/main.o
+ .debug_line    0x0000046f      0x1d7 obj/HSE_CLK.o
+ .debug_line    0x00000646      0x381 obj/spi.o
+ .debug_line    0x000009c7      0x1cc obj/ledconf.o
+ .debug_line    0x00000b93      0x16c obj/delay.o
+ .debug_line    0x00000cff      0x151 obj/intrr_event.o
+ .debug_line    0x00000e50      0x346 obj/adc.o
+ .debug_line    0x00001196      0x162 dsp_lib//libarm_cortexM3l_math.a(arm_mean_q15.o)
+ .debug_line    0x000012f8      0x16d dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
+ .debug_line    0x00001465      0xa87 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_q15.o)
+ .debug_line    0x00001eec      0x1fc dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_init_q15.o)
+ .debug_line    0x000020e8      0x2a8 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+ .debug_line    0x00002390      0x192 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
+ .debug_line    0x00002522      0x169 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
+ .debug_line    0x0000268b      0x17d dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
+ .debug_line    0x00002808      0x12e dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
 
-.debug_str      0x00000000     0x140b
- .debug_str     0x00000000     0x140b obj/main.o
-                                0x4f3 (size before relaxing)
- .debug_str     0x0000140b      0x1ad obj/HSE_CLK.o
- .debug_str     0x0000140b      0x25c obj/spi.o
- .debug_str     0x0000140b      0x1bf obj/ledconf.o
- .debug_str     0x0000140b      0x1ce obj/delay.o
- .debug_str     0x0000140b      0x1cd obj/intrr_event.o
- .debug_str     0x0000140b      0x6a1 obj/adc.o
- .debug_str     0x0000140b      0x21c dsp_lib//libarm_cortexM3l_math.a(arm_mean_q15.o)
- .debug_str     0x0000140b      0x228 dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
- .debug_str     0x0000140b      0x3ad dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_q15.o)
- .debug_str     0x0000140b      0x343 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_init_q15.o)
- .debug_str     0x0000140b      0x2e7 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
- .debug_str     0x0000140b      0x2e1 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
- .debug_str     0x0000140b      0x252 dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
- .debug_str     0x0000140b      0x6cf dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
- .debug_str     0x0000140b      0x2a3 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+.debug_str      0x00000000     0x13ae
+ .debug_str     0x00000000     0x13ae obj/main.o
+                                0x4de (size before relaxing)
+ .debug_str     0x000013ae      0x1ad obj/HSE_CLK.o
+ .debug_str     0x000013ae      0x25c obj/spi.o
+ .debug_str     0x000013ae      0x1bf obj/ledconf.o
+ .debug_str     0x000013ae      0x1ce obj/delay.o
+ .debug_str     0x000013ae      0x1cd obj/intrr_event.o
+ .debug_str     0x000013ae      0x6a1 obj/adc.o
+ .debug_str     0x000013ae      0x21c dsp_lib//libarm_cortexM3l_math.a(arm_mean_q15.o)
+ .debug_str     0x000013ae      0x228 dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
+ .debug_str     0x000013ae      0x355 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_q15.o)
+ .debug_str     0x000013ae      0x343 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_init_q15.o)
+ .debug_str     0x000013ae      0x2a3 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+ .debug_str     0x000013ae      0x2e7 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
+ .debug_str     0x000013ae      0x2e1 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
+ .debug_str     0x000013ae      0x252 dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
+ .debug_str     0x000013ae      0x6cf dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
 
 .comment        0x00000000       0xb5
  .comment       0x00000000       0xb5 obj/main.o
@@ -1174,15 +1173,15 @@ LOAD /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libg
  .comment       0x000000b5       0x46 obj/adc.o
  .comment       0x000000b5       0x71 dsp_lib//libarm_cortexM3l_math.a(arm_mean_q15.o)
  .comment       0x000000b5       0x71 dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
- .comment       0x000000b5       0x71 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_q15.o)
- .comment       0x000000b5       0x71 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_init_q15.o)
+ .comment       0x000000b5       0x71 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_q15.o)
+ .comment       0x000000b5       0x71 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_init_q15.o)
+ .comment       0x000000b5       0x71 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
  .comment       0x000000b5       0x71 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
  .comment       0x000000b5       0x71 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
  .comment       0x000000b5       0x71 dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
  .comment       0x000000b5       0x71 dsp_lib//libarm_cortexM3l_math.a(arm_common_tables.o)
- .comment       0x000000b5       0x71 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
 
-.debug_frame    0x00000000      0x53c
+.debug_frame    0x00000000      0x564
  .debug_frame   0x00000000       0x50 obj/main.o
  .debug_frame   0x00000050       0x20 obj/HSE_CLK.o
  .debug_frame   0x00000070       0x5c obj/spi.o
@@ -1192,38 +1191,38 @@ LOAD /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libg
  .debug_frame   0x00000158       0x5c obj/adc.o
  .debug_frame   0x000001b4       0x30 dsp_lib//libarm_cortexM3l_math.a(arm_mean_q15.o)
  .debug_frame   0x000001e4       0x40 dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
- .debug_frame   0x00000224       0x94 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_q15.o)
- .debug_frame   0x000002b8       0x4c dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_init_q15.o)
- .debug_frame   0x00000304       0x3c dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
- .debug_frame   0x00000340       0x30 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
- .debug_frame   0x00000370       0x30 dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
- .debug_frame   0x000003a0       0x84 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
- .debug_frame   0x00000424       0x4c /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_addsubsf3.o)
- .debug_frame   0x00000470       0x38 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_muldivsf3.o)
- .debug_frame   0x000004a8       0x24 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_fixsfsi.o)
- .debug_frame   0x000004cc       0x24 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_fixunssfsi.o)
- .debug_frame   0x000004f0       0x2c /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-init.o)
- .debug_frame   0x0000051c       0x20 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
+ .debug_frame   0x00000224       0xa0 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_q15.o)
+ .debug_frame   0x000002c4       0x68 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_init_q15.o)
+ .debug_frame   0x0000032c       0x84 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+ .debug_frame   0x000003b0       0x3c dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
+ .debug_frame   0x000003ec       0x30 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
+ .debug_frame   0x0000041c       0x30 dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
+ .debug_frame   0x0000044c       0x4c /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_addsubsf3.o)
+ .debug_frame   0x00000498       0x38 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_muldivsf3.o)
+ .debug_frame   0x000004d0       0x24 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_fixsfsi.o)
+ .debug_frame   0x000004f4       0x24 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/thumb/v7-m/nofp/libgcc.a(_arm_fixunssfsi.o)
+ .debug_frame   0x00000518       0x2c /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-init.o)
+ .debug_frame   0x00000544       0x20 /opt/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/13.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp/libc_nano.a(libc_a-memset.o)
 
-.debug_loc      0x00000000     0x3b74
+.debug_loc      0x00000000     0x3c95
  .debug_loc     0x00000000      0x130 dsp_lib//libarm_cortexM3l_math.a(arm_mean_q15.o)
  .debug_loc     0x00000130      0x1ca dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
- .debug_loc     0x000002fa     0x2556 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_q15.o)
- .debug_loc     0x00002850      0x33a dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_init_q15.o)
- .debug_loc     0x00002b8a      0x337 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
- .debug_loc     0x00002ec1      0x5ef dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
- .debug_loc     0x000034b0      0x3d8 dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
- .debug_loc     0x00003888      0x2ec dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+ .debug_loc     0x000002fa     0x2411 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_q15.o)
+ .debug_loc     0x0000270b      0x5a0 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_init_q15.o)
+ .debug_loc     0x00002cab      0x2ec dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+ .debug_loc     0x00002f97      0x337 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
+ .debug_loc     0x000032ce      0x5ef dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
+ .debug_loc     0x000038bd      0x3d8 dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
 
-.debug_ranges   0x00000000     0x1898
+.debug_ranges   0x00000000      0x928
  .debug_ranges  0x00000000       0x10 dsp_lib//libarm_cortexM3l_math.a(arm_mean_q15.o)
  .debug_ranges  0x00000010       0x10 dsp_lib//libarm_cortexM3l_math.a(arm_max_q15.o)
- .debug_ranges  0x00000020     0x1728 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_q15.o)
- .debug_ranges  0x00001748       0x10 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix4_init_q15.o)
- .debug_ranges  0x00001758       0x80 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
- .debug_ranges  0x000017d8       0x10 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
- .debug_ranges  0x000017e8       0x90 dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
- .debug_ranges  0x00001878       0x20 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+ .debug_ranges  0x00000020      0x7b8 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_q15.o)
+ .debug_ranges  0x000007d8       0x10 dsp_lib//libarm_cortexM3l_math.a(arm_cfft_radix2_init_q15.o)
+ .debug_ranges  0x000007e8       0x20 dsp_lib//libarm_cortexM3l_math.a(arm_bitreversal.o)
+ .debug_ranges  0x00000808       0x80 dsp_lib//libarm_cortexM3l_math.a(arm_cmplx_mag_q15.o)
+ .debug_ranges  0x00000888       0x10 dsp_lib//libarm_cortexM3l_math.a(arm_sqrt_q15.o)
+ .debug_ranges  0x00000898       0x90 dsp_lib//libarm_cortexM3l_math.a(arm_shift_q15.o)
 
 .debug_line_str
                 0x00000000       0xc3

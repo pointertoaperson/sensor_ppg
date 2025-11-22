@@ -51,6 +51,8 @@ arm_cfft_radix2_instance_q15 fft_inst;
 
 void DSP_process(void); // DSP_process function prototype
 
+static float32_t quinns_second_estimator_q15(q15_t *input, uint32_t k);
+
 int main(void)
 {
    // Peripheral and process initialization
@@ -147,16 +149,52 @@ void DSP_process(void)
       mag_kp1 = (mag_kp1 <= 0) ? 0.001f : mag_kp1;
 
       // delta = (mag_km1 - mag_kp1) / (2 * (mag_km1 - 2 * mag_k + mag_kp1));
+#if 1
 
       // log-parablolic interpolation
       delta = 0.5f * (logf(mag_km1) - logf(mag_kp1)) / (logf(mag_km1) - 2 * logf(mag_k) + logf(mag_kp1));
 
       refined_freq = ((float32_t)maxIndex + delta) * 0.108f;
       hr_values = (60.00f) * refined_freq;
+#else
+      // Quinn's estimator-based interpolation
+      delta = quinns_second_estimator_q15(input, maxIndex);
+      refined_freq = ((float32_t)maxIndex + delta) * 0.108f;
+      hr_values = 60.0f * refined_freq;
+#endif
    }
    else
    {
       hr_values = 0;
       return;
    }
+}
+
+/**
+ * @brief Quinn's second estimator for interpolating peak bin
+ */
+static float32_t quinns_second_estimator_q15(q15_t *input, uint32_t k)
+{
+   float32_t alpha = (input[(k - 1) << 2] / input[k << 2]);
+   float32_t beta = input[(k + 1) << 2] / input[k << 2];
+
+   float32_t delta1 = alpha / (1.0f - alpha);
+   float32_t delta2 = beta / (1.0f - beta);
+
+   float32_t term1 = 0.25f * logf(3 * powf(alpha, 4) + 6 * powf(alpha, 2) + 1);
+   float32_t term2 = 0.25f * logf(3 * powf(beta, 4) + 6 * powf(beta, 2) + 1);
+
+   float32_t sqrt_2_3 = sqrtf(2.0f / 3.0f);
+
+   float32_t num1 = powf(alpha, 2) + 1 - sqrt_2_3;
+   float32_t den1 = powf(alpha, 2) + 1 + sqrt_2_3;
+   float32_t term2_1 = (sqrtf(6.0f) / 24.0f) * logf(num1 / den1);
+
+   float32_t num2 = powf(beta, 2) + 1 - sqrt_2_3;
+   float32_t den2 = powf(beta, 2) + 1 + sqrt_2_3;
+   float32_t term2_2 = (sqrtf(6.0f) / 24.0f) * logf(num2 / den2);
+
+   float32_t delta = 0.5f * (delta1 + delta2) + (term2 - term2_2) - (term1 - term2_1);
+
+   return delta;
 }

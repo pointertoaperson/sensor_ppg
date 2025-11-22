@@ -1,0 +1,7 @@
+{
+    "cmake.sourceDirectory": "/home/umesh_adwait/sensor_ppg/esp8266",
+    "files.associations": {
+        "adc.h": "c",
+        "core_cm3.h": "c"
+    }
+}
