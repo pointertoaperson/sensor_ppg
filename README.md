@@ -35,7 +35,7 @@ Originally implemented with **STM32 + ESP8266**, the system has been fully migra
 
 ## Installation
 
-1. Clone the repository:  
+1. Clone the repository inside your esp-idf example folder:  
    ```bash
    git clone https://github.com/pointertoaperson/sensor_ppg.git
 
