@@ -19,16 +19,9 @@ This system is a complete solution for real-time heart rate monitoring using PPG
 
 Originally implemented with **STM32 + ESP8266**, the system has been fully migrated to a **single ESP32**, simplifying the architecture, reducing latency, and improving overall performance.
 
-## Hardware
-
-- ESP32 microcontroller  
-- PPG sensor (e.g., MAX30100/MAX30102)  
-- OLED display (e.g., SSD1306)  
-- Optional: analog filtering components  
-
 ## Software
 
-- ESP-IDF / Arduino framework for ESP32  
+- ESP-IDF 
 - MQTT client library for wireless data transmission  
 - FFT library for frequency estimation  
 - Custom Android app for data visualization  
